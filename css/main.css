@@ -9,13 +9,29 @@ body{
   background-color: white;
 }
 
+#animated-text{
+  text-align: center;
+}
+
 .click{
   color: white;
   font-family: 'Poppins', sans-serif;
   top : 13%;
-  left: 46%;
-  position: absolute;
+  left: 48%;
+  position: absolute; /* Ensures the content is not revealed until the animation */
+  font-size: 30px;
 }
+
+.animation{
+  font-family: 'Poppins', sans-serif;
+  white-space: nowrap;
+  position: relative;
+  padding: 10px;
+  margin-left: -26%; /* Gives that scrolling effect as the typing happens */
+  font-size: 30px;
+}
+
+
 
 .sendlanding{
   color:white;
@@ -23,7 +39,7 @@ body{
 }
 
 h3{
-  font-size: 30px;
+  font-size: 20px;
 }
 
 .canvascontainer{

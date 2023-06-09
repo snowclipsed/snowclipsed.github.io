@@ -44,4 +44,22 @@ function render(){
 }
 
 
+const clicktext = document.getElementById("clickhere")
+
+const tl = gsap.timeline({
+  
+  scrollTrigger: {
+    trigger: clicktext,
+    scrub: true,
+    markers: true,
+    start: "+=50 80%",
+    end: "+=200 40%",
+    toggleActions: "play reverse play reverse",
+  }
+
+});
+
+tl
+  .to(clicktext, {opacity: 1, duration: 1})
+  .to(clicktext, { opacity: 0, duration: 2 },10)
 
