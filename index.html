@@ -10,10 +10,10 @@
 <body>
   <main>
        
-    <div class = "canvascontainer">
+    <div class = "canvascontainer" id = "wrapper">
       <canvas class = "start" id = "hyperspace" style="background-color: white"></canvas>
       <div class = "click" id = "clickhere">
-        <a class = "sendlanding" href="#landing"> 
+        <a class = "sendlanding" href="#top-link"> 
           <div class = 'animation'>
             <h2>
               I'm
@@ -21,16 +21,16 @@
               <span id = 'cursor'>|</span> <br>
             </h2>
           </div> 
-
-          <h3>
+          <h3 class = "shimmer">
             [ Click Here ] 
           </h3>
         </a>
-      </div>  
+      </div>
+      <section class = "top-link" id = "top-link">
+        <h1> <a class = "sendtop" href="#wrapper"> Back to top. </a></h1>
+       </section>
     </div>
-      <section id = "landing">
-       <h1>hello!</h1>
-      </section>
+      
   </main>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.0/gsap.min.js"></script>

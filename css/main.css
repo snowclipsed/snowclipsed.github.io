@@ -14,12 +14,10 @@ body{
 }
 
 .click{
-  color: white;
   font-family: 'Poppins', sans-serif;
-  top : 13%;
+  top : 10%;
   left: 48%;
   position: absolute; /* Ensures the content is not revealed until the animation */
-  font-size: 30px;
 }
 
 .animation{
@@ -27,20 +25,77 @@ body{
   white-space: nowrap;
   position: relative;
   padding: 10px;
-  margin-left: -26%; /* Gives that scrolling effect as the typing happens */
+  margin-left: -28%; /* Gives that scrolling effect as the typing happens */
   font-size: 30px;
+  text-align: left;
 }
 
+.shimmer {
+		text-align: left;
+		color: rgba(255, 255, 255, 0.1);
+		background: -webkit-gradient(linear, left top, right top, from(#222), to(#222), color-stop(0.5, #fff));
+		background: -moz-gradient(linear, left top, right top, from(#222), to(#222), color-stop(0.5, #fff));
+		background: gradient(linear, left top, right top, from(#222), to(#222), color-stop(0.5, #fff));
+		-webkit-background-size: 125px 100%;
+		-moz-background-size: 125px 100%;
+		background-size: 125px 100%;
+		-webkit-background-clip: text;
+		-moz-background-clip: text;
+		background-clip: text;
+		-webkit-animation-name: shimmer;
+		-moz-animation-name: shimmer;
+		animation-name: shimmer;
+		-webkit-animation-duration: 2s;
+		-moz-animation-duration: 2s;
+		animation-duration: 2s;
+		-webkit-animation-iteration-count: infinite;
+		-moz-animation-iteration-count: infinite;
+		animation-iteration-count: infinite;
+		background-repeat: no-repeat;
+		background-position: 0 0;
+		background-color: #222;
+}
 
+@-moz-keyframes shimmer {
+		0% {
+				background-position: top left;
+		}
+		100% {
+				background-position: top right;
+		}
+}
 
+@-webkit-keyframes shimmer {
+		0% {
+				background-position: top left;
+		}
+		100% {
+				background-position: top right;
+		}
+}
+
+@-o-keyframes shimmer {
+		0% {
+				background-position: top left;
+		}
+		100% {
+				background-position: top right;
+		}
+}
+
+@keyframes shimmer {
+		0% {
+				background-position: top left;
+		}
+		100% {
+				background-position: top right;
+		}
+}
 .sendlanding{
   color:white;
   text-decoration:none;
 }
 
-h3{
-  font-size: 20px;
-}
 
 .canvascontainer{
   position: relative;
@@ -52,9 +107,18 @@ h3{
   background-position: center;
 }
 
-h1{
+.sendtop{
+  text-decoration: none;
   color: black;
-  font-size: 4rem;
-  font-family: Arial, Helvetica, sans-serif;
-  text-align: center;
+}
+
+.top-link{
+  font-family: 'Poppins', sans-serif;
+  color: black;
+  white-space: nowrap;
+  position: absolute;
+  top : 85%;
+  left: 45%;
+  font-size: 30px;
+  text-align: left;
 }
