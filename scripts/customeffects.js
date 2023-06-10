@@ -51,7 +51,7 @@ const tl = gsap.timeline({
   scrollTrigger: {
     trigger: clicktext,
     scrub: true,
-    markers: false,
+    markers: true,
     start: "+=70 80%",
     end: "+=200 40%",
     toggleActions: "play reverse play reverse",
@@ -61,5 +61,5 @@ const tl = gsap.timeline({
 
 tl
   .to(clicktext, {opacity: 1, duration: 1})
-  .to(clicktext, { opacity: 0, duration: 2 },10)
+  .to(clicktext, { opacity: 0, duration: 2 },30)
 
