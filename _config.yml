@@ -40,7 +40,7 @@ author: Hardik Bishnoi
 #   "Copyright (c) 2017-{currentYear} <a href="https://example.com">{author}</a>"
 #   "Copyright © 2017-2021 Foobar"
 #
-copyright: "Unpublished Work (cleft) 2022-{currentYear} {author}"
+copyright: "Copyright (cleft) 2022-{currentYear} {author}"
 
 description: >- # this means to ignore newlines until "baseurl:"
   Hey, I am Hardik. I'm a coder passionate about Generative AI and its ethics. I am also an artist.
