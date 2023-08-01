@@ -4,7 +4,7 @@ title: "Stay tuned for what's coming up"
 subtitle: Let's delve into the magic behind intelligent decision making!
 hidden: -related_posts
 categories: ML
-tags: [Updates]
+tags: [updates]
 ---
 
 <h3> Hey there, I'm gonna start posting up blogs here soon! </h3>
