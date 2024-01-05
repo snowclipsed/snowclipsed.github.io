@@ -1,0 +1,113 @@
+- title: General Information
+  type: map
+  contents:
+    - name: Full Name
+      value: Hardik Bishnoi
+    - name: Date of Birth
+      value: 14 September 2001
+    - name: Languages
+      value: English, Hindi, French
+
+- title: Education
+  type: time_table
+  contents:
+    - title: Master of Science, Computer Science
+      institution: Northeastern University, Boston, USA
+      year: 2023 - 2025
+      description:
+        - title : "Fall 2023 (GPA - 4.00/4.00)"
+          contents:
+            - CS5800 <a href = "https://www.khoury.northeastern.edu/home/vip/teach/Algorithms/html/aboutcs5800_mod.html"> Algorithms </a>
+            - CS5010 <a href = "https://northeastern.instructure.com/courses/157059"> Programming Design Paradigms </a>
+        - title : Spring 2024
+          contents:
+            - CS6120 <a href = "https://www.khoury.northeastern.edu/home/dasmith/courses/cs6120/"> Natural Language Processing </a>
+            - CS6140 <a href = "https://www.khoury.northeastern.edu/home/vip/teach/MLcourse/html/index.html"> Machine Learning </a>
+
+    - title: Bachelor of Technology, Computer Science and Engineering
+      institution: Guru Gobind Singh Indraprastha University, New Delhi, India
+      year: 2019 - 2023
+      description:
+        - Applied Physics (I & II)
+        - Applied Mathematics (I, II, III, & IV)
+        - Artificial Intelligence
+        - Signals and Systems
+        - Algorithm Design and Analysis 
+        - Data Structures 
+        - Theory of Automata
+        - Communication Systems
+
+- title: Experience
+  type: time_table
+  contents:
+    - title: Machine Learning Intern
+      institution: Deloitte
+      year: Sep - Dec 2022
+      description:
+        - Lead a tech team and set up collaboration with a social research team to identify the factors that affect employee sentiment and company image
+          on company review sites like Glassdoor and Indeed.
+        - Performed EDA and labeled obtained data.  
+        - Designed and implemented a scalable and deployable multiclass text classifier from scratch
+          using fastText embeddings and BERT to tag employee reviews with the determined factors.  
+        - Performed sentiment analysis on the employee reviews to understand if a factor is being talked
+          about positively or negatively.
+        - Organised results in a dashboard and presented it to various stakeholders and clients
+    - title: Backend Developer
+      institution: Unlearners Tech, Hyderabad, India
+      year: Jun - Jul 2022
+      description:
+        - Supervised the deployment and design of a portable, handheld health-monitoring device called
+          ”Pebbl”, enabling quick, easy and reliable measurement of temperature, oxygen saturation and
+          auscultation. 
+        - Pitched a proposal at the Cisco ThingQbator program and successfully procured a funding of
+          US$7,000 for the startup project.
+        - Developed an API and Deployed a test-version of a website on Amazon Web Services
+
+- title: Publications
+  type: time_table
+  contents:
+    - title: "Revolutionizing Physics : A Comprehensive Survey of Machine Learning Applications (in review)"
+      institution: Institute for Advanced Study, Princeton University
+      year: 2023
+      author: 
+      description:
+        - 'Authors : Rahul Suresh, Hardik Bishnoi, Artem V. Kuklin, Atharva Parikh, Maxim Molokeev, S. Gharat, Hiba. P.'
+
+
+- title: Open Source Projects
+  type: time_table
+  contents:
+    - title: <a href="https://github.com/snowclipsed/SatTrack">Sattelite Tracker</a>
+      year: 2023
+      description: A satellite tracker written in Java.
+      
+- title: Honors and Awards
+  type: time_table
+  contents:
+    - year: 2022
+      items: 
+        - Second Place - Smart India Hackathon Grand Finale (Hardware Edition) 
+    - year: 2021
+      items: 
+        - Cisco ThingQbator Award for ”Remote Health Monitor”
+
+- title: Academic Interests
+  type: nested_list
+  contents:
+    - title: Generative AI
+      items: 
+        - Vision-Language Models
+        - Image Super-Resolution
+        - Synthetic Dataset Production
+        - MoE models
+        - Bit Quantization in large models
+    - title: Reinforcement Learning
+      items:
+        - Markov Decision Processes
+        - Deep Reinforcement Learning
+        - Reinforcement Learning in NLP
+
+- title: Other Interests
+  type: list
+  contents:
+    - <u>Hobbies:</u> Drawing, Game Design

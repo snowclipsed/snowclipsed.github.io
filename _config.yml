@@ -1,220 +1,420 @@
-# Welcome to Jekyll!
-#
-# About Theme
-#
-# Yet another theme for elegant writers with modern flat style and beautiful
-# night/dark mode.
-#
-# Website: https://github.com/jeffreytse/jekyll-theme-yat
-#
-# You can do anything you want, including projects for your clients, as long
-# as you mention an attribution back (credit links in footer or project).
-# See the LICENCE file.
-#
-# This config file is meant for settings that affect your whole blog, values
-# which you are expected to set up once and rarely edit after that.
-#
-# For technical reasons, this file is *NOT* reloaded automatically when you
-# use 'bundle exec jekyll serve'. If you change this file, please restart
-# the server process.
-#
+# -----------------------------------------------------------------------------
 # Site settings
-# These are used to personalize your new site. If you look in the HTML files,
-# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
-# You can create any custom variable you would like, and they will be accessible
-# in the templates via {{ site.myvariable }}.
+# -----------------------------------------------------------------------------
 
-title: Hardik Bishnoi
-email: harrybishnoi@gmail.com
-author: Hardik Bishnoi
+title: Hardik Bishnoi # the website title (if blank, full name will be used instead)
+first_name: Hardik
+middle_name:
+last_name: Bishnoi
+email: bishnoi.h@northeastern.edu
+description: > # the ">" symbol means to ignore newlines until "footer_text:"
+  A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design.
+footer_text: >
+  Powered by <a href="https://jekyllrb.com/" target="_blank">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio">al-folio</a> theme.
+  Hosted by <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.
+keywords: jekyll, jekyll-theme, academic-website, portfolio-website  # add your own keywords or leave empty
 
-# Copyright setting
-# You can use any html code, currently below placeholders are available:
-# * current year: {currentYear}
-# * author: {author} (Value is the same as site.author)
-# * copyright: (c) - ©
-# * copyleft: (cleft)
-# * sound recording copyright: (p) - ℗
-#
-# For example:
-#   "Copyright (c) 2017-{currentYear} <a href="https://example.com">{author}</a>"
-#   "Copyright © 2017-2021 Foobar"
-#
-copyright: "Copyright (cleft) 2022-{currentYear} {author}"
+lang: en # the language of your site (for example: en, fr, cn, ru, etc.)
+icon: 🪐  # the emoji used as the favicon (alternatively, provide image name in /assets/img/)
 
-description: >- # this means to ignore newlines until "baseurl:"
-  Hey, I am Hardik. I'm a coder passionate about Generative AI and its ethics. I am also an artist.
+url: https://snowclipsed.github.io/ # the base hostname & protocol for your site
+baseurl: /me # the subpath of your site, e.g. /blog/. Leave blank for root
+last_updated: true # set to true if you want to display last updated in the footer
+impressum_path:  # set to path to include impressum link in the footer, use the same path as permalink in a page, helps to conform with EU GDPR
 
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://snowclipsed.github.io/" # the base hostname & protocol for your site, e.g. https://example.com
-favicon: "" # the favicon for your site
+# -----------------------------------------------------------------------------
+# Theme
+# -----------------------------------------------------------------------------
 
-# Yat date format
-# refer to https://shopify.github.io/liquid/filters/date/ if you want to customize this
-yat:
-  date_format: "%a, %b %d, %y"
+# repo color theme
+repo_theme_light: default       # https://github.com/anuraghazra/github-readme-stats/blob/master/themes/README.md
+repo_theme_dark: dark           # https://github.com/anuraghazra/github-readme-stats/blob/master/themes/README.md
+repo_trophies:
+  enabled: true
+  theme_light: flat    # https://github.com/ryo-ma/github-profile-trophy
+  theme_dark: gitdimmed  # https://github.com/ryo-ma/github-profile-trophy
 
-# If you want more debug log, you can set true
-# debug: false
+# -----------------------------------------------------------------------------
+# RSS Feed
+# -----------------------------------------------------------------------------
+# will use title and url fields
+# Take a look to https://github.com/jekyll/jekyll-feed for more customization
 
-# If you don't want transparent header, you can set false
-header_transparent: false
+rss_icon: false
 
-# If you want to change the content width, you can set to another value
-content_width: "1000px"
+# -----------------------------------------------------------------------------
+# Layout
+# -----------------------------------------------------------------------------
 
-# Google analytics - GA4
-# google_analytics: [Measurement ID]
-# enableDNT: "false"
+navbar_fixed: false
+footer_fixed: false
 
-# If you want to generate website sitemap, you can set true
-sitemap: true
+# Dimensions
+max_width: 800px
 
-# If you want to change site language, you can set lang option
-# lang: "en"  # default lang is en
+# TODO: add layout settings (single page vs. multi-page)
 
-# Translate languges
-# langs refer to https://cloud.google.com/translate/docs/languages
-# translate_langs:
-#   - lang: en
-#     img: https://cdn.countryflags.com/thumbs/united-states-of-america/flag-400.png
-#     text: English
-#
-#   - lang: fr
-#     img: https://cdn.countryflags.com/thumbs/france/flag-400.png
-#     text: French
-#
-#   - lang: zh-CN
-#     img: https://cdn.countryflags.com/thumbs/china/flag-400.png
-#     text: Chinese(Simple)
-#
-#   - lang: ja
-#     img: https://cdn.countryflags.com/thumbs/japan/flag-400.png
-#     text: Japanese
-#
-#   - lang: ko
-#     img: https://cdn.countryflags.com/thumbs/south-korea/flag-400.png
-#     text: Korean
-#
-#   - lang: ru
-#     img: https://cdn.countryflags.com/thumbs/russia/flag-400.png
-#     text: Russian
+# -----------------------------------------------------------------------------
+# Open Graph & Schema.org
+# -----------------------------------------------------------------------------
+# Display links to the page with a preview object on social media.
+serve_og_meta: false # Include Open Graph meta tags in the HTML head
+serve_schema_org: false # Include Schema.org in the HTML head
+og_image: # The site-wide (default for all links) Open Graph preview image
 
-# You can choose a theme color
-# Default theme colors as below:
-# coolblack: #090a0b
-# spacegrey: #353535
-# snowwhite: #ffffff
-#
-# theme_color: "#200d2b"
+# -----------------------------------------------------------------------------
+# Social integration
+# -----------------------------------------------------------------------------
 
-#
-# Custom color as below:
-theme_color: "#4d29ff"
+github_username: snowclipsed
+gitlab_username: # your GitLab user name
+x_username: snowclipsed
+mastodon_username: # your mastodon instance+username in the format instance.tld/@username
+linkedin_username: hardikbishnoi
+telegram_username: # your Telegram user name
+scholar_userid: # your Google Scholar ID
+semanticscholar_id: # your Semantic Scholar ID
+whatsapp_number: # your WhatsApp number (full phone number in international format. Omit any zeroes, brackets, or dashes when adding the phone number in international format.)
+orcid_id: # your ORCID ID
+medium_username: # your Medium username
+quora_username: # your Quora username
+publons_id: # your ID on Publons
+lattes_id: # your ID on Lattes (Brazilian Lattes CV)
+osf_id: # your OSF ID
+research_gate_profile: # your profile on ResearchGate
+scopus_id: # your profile on Scopus
+blogger_url: # your blogger URL
+work_url: # work page URL
+keybase_username: # your keybase user name
+wikidata_id: # your wikidata id
+wikipedia_id: # your wikipedia id (Case sensitive)
+dblp_url: # your DBLP profile url
+stackoverflow_id: # your stackoverflow id
+kaggle_id: # your kaggle id
+lastfm_id: # your lastfm id
+spotify_id: # your spotify id
+pinterest_id: # your pinterest id
+unsplash_id: # your unsplash id
+instagram_id: # your instagram id
+facebook_id: # your facebook id
+youtube_id: # your youtube channel id (youtube.com/@<youtube_id>)
+discord_id: # your discord id (18-digit unique numerical identifier)
+zotero_username: # your zotero username
+wechat_qr: # filename of your wechat qr-code saved as an image (e.g., wechat-qr.png if saved to assets/img/wechat-qr.png)
 
-# You can choose a brand color
-# Default brand colors as below:
-# orangered: #ff5100
-# greatgold: #f2cb05
-# greenblue: #389092
-#
-brand_color: "#5c4bfa"
-#
-# Custom color as below:
-# brand_color: "#1a8e42"
+contact_note: >
+  Please feel free to use any of the mediums provided to reach out, although I am the most active on Twitter/X
+# -----------------------------------------------------------------------------
+# Analytics and search engine verification
+# -----------------------------------------------------------------------------
 
-# Night/Dark mode
-# Default mode is "auto", "auto" is for auto nightshift
-# (19:00 - 07:00), "manual" is for manual toggle, and
-# "on/off" is for default on/off.
-#
-# Whatever the user's choice is, it will supersede the
-# default setting of the site and be kept during the
-# visit (session). Only the dark mode setting is"manual",
-# it will be always kept on every visit (i.e. no matter
-# the browser is closed or not)
-#
-night_mode: "on"
+google_analytics:  # your Google Analytics measurement ID (format: G-XXXXXXXXXX)
+cronitor_analytics:  # cronitor RUM analytics site ID (format: XXXXXXXXX)
 
-# Code badge setting
-# You can enable or disable the code badge and so on
-code_badge:
-  enabled: "true"
-  color: "#fff"
-  background_color: "#ff4e00"
-  text_transform: "uppercase"  # ("uppercase", "lowercase", "capitalize")
+google_site_verification:  # your google-site-verification ID (Google Search Console)
+bing_site_verification:  # out your bing-site-verification ID (Bing Webmaster)
 
-# If you want to link only specific pages in your header, uncomment
-# this and add the path to the pages in order as they should show up
-header_pages:
-  - index.html
-  - archives.html
-  - categories.html
-  - tags.html
-  - about.html
-  - cv.html
+# -----------------------------------------------------------------------------
+# Blog
+# -----------------------------------------------------------------------------
 
-# Page default value
-defaults:
-  home:
-    heading: "Your awesome heading"
-    subheading: "Your awesome subheading"
-    banner: "Your image url"
+blog_name: hardik's blog # blog_name will be displayed in your blog page
+blog_description: this blog documents my learnings and experiences in academic and personal life 
+permalink: /blog/:year/:title/
 
-# Banner default settings
-# These banner settings are for global banner default, but you can also
-# config it by the front matter for one specific post
-# banner:
-#   video: null             # Video banner source
-#   loop: true              # Video loop
-#   volume: 0               # Video volume (100% is 1.0)
-#   start_at: 0             # Video start time
-#   image: null             # Image banner source
-#   opacity: 1.0            # Banner opacity (100% is 1.0)
-#   background: "rgba(0, 0, 0, 0.8)"  # Banner background (Could be a image)
-#   height: "640px"         # Banner default height
-#   min_height: null        # Banner minimum height
-#   heading_style: null     # Custom heading style (e.g. "font-weight: bold; text-decoration: underline")
-#   subheading_style: null  # Custom subheading style (e.g. color: gold)
+# Pagination
+pagination:
+  enabled: true
 
-# Excerpt size setting
-# excerpt_size: 350
+related_blog_posts:
+  enabled: true
+  max_related: 3
 
-# Pagination setting
-# paginate: 5
+# Giscus comments (RECOMMENDED)
+# Follow instructions on https://giscus.app/ to setup for your repo to fill out
+# the information below.
+giscus:
+  repo: snowclipsed                          # <your-github-user-name>/<your-github-repo-name>
+  repo_id:                       # leave empty or specify your repo_id (see https://giscus.app/) 
+  category: Comments             # name of the category under which discussions will be created
+  category_id:                   # leave empty or specify your category_id (see https://giscus.app/) 
+  mapping: title                 # identify discussions by post title
+  strict: 1                      # use strict identification mode
+  reactions_enabled: 1           # enable (1) or disable (0) emoji reactions
+  input_position: bottom         # whether to display input form below (bottom) or above (top) the comments
+  theme: preferred_color_scheme  # name of the color scheme (preferred works well with al-folio light/dark mode)
+  emit_metadata: 0
+  lang: en
 
-# Disqus comments
-# disqus:
-#   shortname: "Your Disqus username"
+# Disqus comments (DEPRECATED)
+disqus_shortname: al-folio # put your disqus shortname
+# https://help.disqus.com/en/articles/1717111-what-s-a-shortname
 
-# Gitment comments
-# gitment:
-#   username: "Your GitHub username"
-#   repo: "The repo to store comments"
-#   client_id: "Your client ID"
-#   client_secret: "Your client secret"
-#   redirect_uri: "Your redirect url"   # If you use a custom domain name
+# External sources.
+# If you have blog posts published on medium.com or other external sources,
+# you can display them in your blog by adding a link to the RSS feed.
+external_sources:
+  - name: medium.com
+    rss_url: https://medium.com/@al-folio/feed
 
-# Utterances comments
-# See https://utteranc.es/
-# set follow_site_theme true to make utterances' theme follow the site's
+# -----------------------------------------------------------------------------
+# Collections
+# -----------------------------------------------------------------------------
 
-# utterances:
-#   repo: "owner/repo"
-#   issue_term: "title"
-#   label: "utterances comment"
-#   theme: "github-light"
-#   follow_site_theme: true
+collections:
+  news:
+    defaults:
+      layout: post
+    output: true
+    permalink: /news/:path/
+  projects:
+    output: true
+    permalink: /projects/:path/
 
-# Build settings
-# highlighter: none
+announcements:
+  enabled: true
+  scrollable: true # adds a vertical scroll bar if there are more than 3 news items
+  limit: 5 # leave blank to include all the news in the `_news` folder
+
+latest_posts:
+  enabled: true
+  scrollable: true # adds a vertical scroll bar if there are more than 3 new posts items
+  limit: 3 # leave blank to include all the blog posts
+
+# -----------------------------------------------------------------------------
+# Jekyll settings
+# -----------------------------------------------------------------------------
+
+# Markdown and syntax highlight
 markdown: kramdown
-kmarkdown:
+highlighter: rouge
+kramdown:
   input: GFM
+  syntax_highlighter_opts:
+    css_class: 'highlight'
+    span:
+      line_numbers: false
+    block:
+      line_numbers: false
+      start_line: 1
 
+# Includes & excludes
+include: ['_pages']
+exclude:
+  - bin
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+keep_files:
+  - CNAME
+  - .nojekyll
+  - .git
+
+# Plug-ins
 plugins:
+  - jekyll-archives
+  - jekyll-diagrams
+  - jekyll-email-protect
   - jekyll-feed
-  - jekyll-seo-tag
+  - jekyll-get-json
+  - jekyll-imagemagick
+  - jekyll-jupyter-notebook
+  - jekyll-link-attributes
+  - jekyll-minifier
+  - jekyll-paginate-v2
+  - jekyll/scholar
   - jekyll-sitemap
-  - jekyll-paginate
-  - jekyll-spaceship
+  - jekyll-toc
+  - jekyll-twitter-plugin
+  - jemoji
+
+# Sitemap settings
+defaults:
+  - scope:
+      path: "assets"
+    values:
+      sitemap: false
+
+sass:
+  style: compressed
+
+# -----------------------------------------------------------------------------
+# Jekyll Minifier
+# -----------------------------------------------------------------------------
+
+jekyll-minifier:
+  exclude: ['robots.txt']
+  uglifier_args:
+    harmony: true
+
+# -----------------------------------------------------------------------------
+# Jekyll Archives
+# -----------------------------------------------------------------------------
+
+jekyll-archives:
+  enabled: [year, tags, categories] # enables year, tag and category archives (remove if you need to disable one of them).
+  layouts:
+    year: archive-year
+    tag: archive-tag
+    category: archive-category
+  permalinks:
+    year: '/blog/:year/'
+    tag: '/blog/tag/:name/'
+    category: '/blog/category/:name/'
+
+display_tags: ['formatting', 'images', 'links', 'math', 'code'] # these tags will be displayed on the front page of your blog
+display_categories: ['blockquotes'] # these categories will be displayed on the front page of your blog
+
+# -----------------------------------------------------------------------------
+# Jekyll Scholar
+# -----------------------------------------------------------------------------
+
+scholar:
+
+  last_name: [Einstein]
+  first_name: [Albert, A.]
+
+  style: apa
+  locale: en
+
+  source: /_bibliography/
+  bibliography: papers.bib
+  bibliography_template: bib
+  # Note: if you have latex math in your bibtex, the latex filter
+  # preprocessing may conflict with MathJAX if the latter is enabled.
+  # See https://github.com/alshedivat/al-folio/issues/357.
+  bibtex_filters: [latex, smallcaps, superscript]
+
+  replace_strings: true
+  join_strings: true
+
+  details_dir: bibliography
+  details_layout: bibtex.html
+  details_link: Details
+
+  query: "@*"
+  group_by: year
+  group_order: descending
+
+# Display different badges withs stats for your publications
+enable_publication_badges:
+  altmetric: true # Altmetric badge (https://www.altmetric.com/products/altmetric-badges/)
+  dimensions: true # Dimensions badge (https://badge.dimensions.ai/)
+
+# Filter out certain bibtex entry keywords used internally from the bib output
+filtered_bibtex_keywords: [abbr, abstract, arxiv, bibtex_show, html, pdf, selected, supp, blog, code, poster, video, slides, website, preview, altmetric]
+
+# Maximum number of authors to be shown for each publication (more authors are visible on click)
+max_author_limit: 3  # leave blank to always show all authors
+more_authors_animation_delay: 10  # more authors are revealed on click using animation; smaller delay means faster animation
+
+# Enables publication thumbnails. If disabled, none of the publications will display thumbnails, even if specified in the bib entry.
+enable_publication_thumbnails: true
+
+# -----------------------------------------------------------------------------
+# Jekyll Link Attributes
+# -----------------------------------------------------------------------------
+
+# These are the defaults
+external_links:
+  enabled: true
+  rel: external nofollow noopener
+  target: _blank
+  exclude:
+
+
+# -----------------------------------------------------------------------------
+# Responsive WebP Images
+# -----------------------------------------------------------------------------
+
+# MAKE SURE imagemagick is installed and on your PATH before enabling imagemagick. In a terminal, run:
+#   convert -version
+imagemagick:
+  enabled: true # enables responsive images for your site (recommended, see https://github.com/alshedivat/al-folio/issues/537)
+  widths:
+    - 480
+    - 800
+    - 1400
+  input_directories:
+    - assets/img/
+  input_formats:
+    - ".jpg"
+    - ".jpeg"
+    - ".png"
+    - ".tiff"
+    - ".gif"
+  output_formats:
+    webp: "-quality 85"
+
+# -----------------------------------------------------------------------------
+# Jekyll Diagrams
+# -----------------------------------------------------------------------------
+
+jekyll-diagrams:
+    # configuration, see https://github.com/zhustec/jekyll-diagrams.
+    # feel free to comment out this section if not using jekyll diagrams.
+
+
+# -----------------------------------------------------------------------------
+# Optional Features
+# -----------------------------------------------------------------------------
+
+enable_google_analytics:    false  # enables google analytics
+enable_cronitor_analytics: false  # enables cronitor RUM analytics
+enable_google_verification: false  # enables google site verification
+enable_bing_verification:   false  # enables bing site verification
+enable_masonry:             true   # enables automatic project cards arrangement
+enable_math:                true   # enables math typesetting (uses MathJax)
+enable_tooltips:            false  # enables automatic tooltip links generated
+                                   # for each section titles on pages and posts
+enable_darkmode:            true   # enables switching between light/dark modes
+enable_navbar_social:       true  # enables displaying social links in the
+                                   # navbar on the about page
+enable_project_categories:  true   # enables categorization of projects into
+                                   # multiple categories
+enable_medium_zoom:         true   # enables image zoom feature (as on medium.com)
+enable_progressbar:         true   # enables a horizontal progress bar linked to the vertical scroll position
+
+# -----------------------------------------------------------------------------
+# Library versions
+# -----------------------------------------------------------------------------
+
+bootstrap-table:
+  version: "1.22.1"
+jquery:
+  version: "3.6.0"
+  integrity: "sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+mathjax:
+  version: "3.2.0"
+masonry:
+  version: "4.2.2"
+  integrity: "sha256-Nn1q/fx0H7SNLZMQ5Hw5JLaTRZp0yILA/FRexe19VdI="
+mdb:
+  version: "4.20.0"
+  integrity:
+    css: "sha256-jpjYvU3G3N6nrrBwXJoVEYI/0zw8htfFnhT9ljN3JJw="
+    js: "sha256-NdbiivsvWt7VYCt6hYNT3h/th9vSTL4EDWeGs5SN3DA="
+medium_zoom:
+  version: "1.0.8"
+  integrity: "sha256-7PhEpEWEW0XXQ0k6kQrPKwuoIomz8R8IYyuU1Qew4P8="
+
+# -----------------------------------------------------------------------------
+# Get external JSON data
+# -----------------------------------------------------------------------------
+
+jekyll_get_json:
+  - data: resume
+    json: assets/json/resume.json # it can also be an url
+jsonresume:
+  - basics
+  - work
+  - education
+  - publications
+  - projects
+  - volunteer
+  - awards
+  - certificates
+  - skills
+  - languages
+  - interests
+  - references
