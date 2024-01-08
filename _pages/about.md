@@ -23,7 +23,7 @@ Hey! I am Hardik, aka [@snowclipsed](https://twitter.com/snowclipsed) on X (form
 
 I am a graduate student pursuing computer sciences at [Khoury College of Computer Sciences](https://www.khoury.northeastern.edu/), Northeastern University. 
 
-I am interested in researching technologies like [Vision-Language Models](https://huggingface.co/blog/vision_language_pretraining) and [Reinforcement Learning](https://developer.ibm.com/learningpaths/get-started-automated-ai-for-decision-making-api/what-is-automated-ai-for-decision-making). I also like putting them to use to create fun projects and consumer applications. When I am not doing that, I pursue making games and document my learnings and thoughts in my blog.
+I am interested in researching technologies like [Vision-Language Models](https://huggingface.co/blog/vision_language_pretraining), [Object detection and Segmentation](https://paperswithcode.com/task/semantic-segmentation) and [Reinforcement Learning](https://developer.ibm.com/learningpaths/get-started-automated-ai-for-decision-making-api/what-is-automated-ai-for-decision-making). I also like putting them to use to create fun projects and consumer applications. When I am not doing that, I pursue making games and document my learnings and thoughts in my blog.
 
 
 <!-- Write your biography here. Tell the world about yourself. Link to your favorite [subreddit](http://reddit.com). You can put a picture in, too. The code is already in, just name your picture `prof_pic.jpg` and put it in the `img/` folder.
