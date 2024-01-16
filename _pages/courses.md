@@ -121,7 +121,7 @@ nav_order: 2
           </div>
           <div class="col-sm-3">
             <a href="https://snowclipsed.github.io/me/assets/pdf/courses/CS5010_PDP_Fall_2023.pdf">Syllabus</a><br>
-            <a href="https://github.com/snowclipsed/CS5010">Materials</a>
+            <a href="https://github.com/snowclipsed/CS5010">Materials</a><br>
             <a href="https://github.com/snowclipsed/SatTrack">Final Project</a>
           </div>
         </div>
