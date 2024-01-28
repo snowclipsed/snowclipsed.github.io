@@ -1,0 +1,29 @@
+<script src="https://d3js.org/d3.v6.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10.3.0/dist/mermaid.min.js"></script>
+
+<script>
+  let giscusTheme = localStorage.getItem("theme")
+  document.addEventListener('DOMContentLoaded', function () {
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: giscusTheme,
+    })
+    window.mermaid.init(undefined, document.querySelectorAll('.language-mermaid'))
+  })
+
+
+  window.addEventListener('load', function () {
+    var svgs = d3.selectAll(".mermaid svg")
+    svgs.each(function () {
+      var svg = d3.select(this)
+      svg.html("<g>" + svg.html() + "</g>")
+      var inner = svg.select("g")
+      var zoom = d3.zoom().on("zoom", function (event) {
+        inner.attr("transform", event.transform)
+      })
+      svg.call(zoom)
+    })
+  });
+
+
+</script>
