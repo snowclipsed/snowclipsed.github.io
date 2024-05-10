@@ -19,11 +19,11 @@ selected_papers: false # includes a list of papers marked as "selected={true}"
 social: true  # includes social icons at the bottom of the page
 ---
 
-Hey! I am Hardik, you may know me as [@snowclipsed](https://twitter.com/snowclipsed) on X (formerly Twitter) and other platforms.
+<!-- Hey! I am Hardik, you may know me as [@snowclipsed](https://twitter.com/snowclipsed) on X (formerly Twitter) and other platforms. -->
 
-I am a graduate student pursuing CS at [Khoury College of Computer Sciences](https://www.khoury.northeastern.edu/), Northeastern University. 
+I am a graduate student pursuing CS at the [Khoury College of Computer Sciences](https://www.khoury.northeastern.edu/), Northeastern University. 
 
-I am interested in researching technologies like [Vision-Language Models](https://huggingface.co/blog/vision_language_pretraining), [Object detection and Segmentation](https://paperswithcode.com/task/semantic-segmentation) and [Reinforcement Learning](https://developer.ibm.com/learningpaths/get-started-automated-ai-for-decision-making-api/what-is-automated-ai-for-decision-making). I also like putting them to use to create fun projects and consumer applications. When I am not doing that, I pursue making games and document my learnings and thoughts in my blog.
+I am interested in researching technologies like Latent Diffusion Models, Vision-Language Models, Object detection and Segmentation and Reinforcement Learning. I also like putting them to use to create fun projects and consumer applications. When I am not doing that, I pursue making games and document my learnings and thoughts in my blog. This summer I am researching and learning synethetic data generation, GPU programming and fish detection.
 
 
 <!-- Write your biography here. Tell the world about yourself. Link to your favorite [subreddit](http://reddit.com). You can put a picture in, too. The code is already in, just name your picture `prof_pic.jpg` and put it in the `img/` folder.
