@@ -14,7 +14,7 @@ nav_order: 2
     <div class="row">
       <div class="col-sm-10">
         <h5 id="comp311" class="card-title">Natural Language Processing</h5>
-        <h6 class="card-subtitle font-italic">Spring '24</h6>
+        <h6 class="card-subtitle font-italic">Spring '24 | 4.00/4.00</h6>
       </div>
       <div class="col-sm-2 text-sm-right">
         <span class="badge">
@@ -45,7 +45,7 @@ nav_order: 2
     <div class="row">
       <div class="col-sm-10">
         <h5 id="comp311" class="card-title">Deep Learning</h5>
-        <h6 class="card-subtitle font-italic">Spring '24</h6>
+        <h6 class="card-subtitle font-italic">Spring '24 | 4.00/4.00</h6>
       </div>
       <div class="col-sm-2 text-sm-right">
         <span class="badge">

@@ -21,9 +21,11 @@ social: true  # includes social icons at the bottom of the page
 
 <!-- Hey! I am Hardik, you may know me as [@snowclipsed](https://twitter.com/snowclipsed) on X (formerly Twitter) and other platforms. -->
 
-I am a graduate student pursuing CS at the [Khoury College of Computer Sciences](https://www.khoury.northeastern.edu/), Northeastern University. 
+I am a graduate student based in Boston pursuing CS at the [Khoury College of Computer Sciences](https://www.khoury.northeastern.edu/), Northeastern University. 
 
-I am interested in researching technologies like Latent Diffusion Models, Vision-Language Models, Object detection and Segmentation and Reinforcement Learning. I also like putting them to use to create fun projects and consumer applications. When I am not doing that, I pursue making games and document my learnings and thoughts in my blog. This summer I am researching and learning synethetic data generation, GPU programming and fish detection.
+I like technology. I like to make things with it that make life easier. This motivation ends up creating fun, often useful, projects. This summer I am researching generative models like LDMs and LLMs in detail to understand how they work. I am also going to learn GPU programming and work on [detecting fish](https://seagrant.mit.edu/2020/04/02/mit-sea-grant-announces-five-newly-funded-projects/) in rivers.
+
+When I am not researching, I pursue making games and document my thoughts in my blog. I also like playing basketball, video games, and running (strava up soon).
 
 
 <!-- Write your biography here. Tell the world about yourself. Link to your favorite [subreddit](http://reddit.com). You can put a picture in, too. The code is already in, just name your picture `prof_pic.jpg` and put it in the `img/` folder.
