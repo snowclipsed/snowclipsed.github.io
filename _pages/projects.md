@@ -2,10 +2,10 @@
 layout: page
 title: projects
 permalink: /projects/
-description: A growing collection of your cool projects.
+description: This page is a work in progress, collecting projects that I've built and have been building.
 nav: true
-nav_order: 4
-display_categories: [work, fun]
+nav_order: 2
+display_categories: [orbital mechanics]
 horizontal: false
 ---
 

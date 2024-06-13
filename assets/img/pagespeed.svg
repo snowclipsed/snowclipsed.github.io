@@ -54,7 +54,7 @@
 				stroke: none;
 				font-size: 26px;
 				line-height: 26px;
-				font-family: Roboto, Halvetica, Arial, sans-serif
+				font-family: monospace
 			}
 			.metric.guage-title {
 				font-family: 'Courier New', Courier, monospace

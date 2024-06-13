@@ -1,9 +1,9 @@
 ---
 layout: page
-permalink: /courses/
-title: courses
-description: the courses I have taken in reverse chronological order
-nav: true
+permalink: /neu/
+title: neu
+description: my academic experiences in reverse chronological order
+nav: false
 nav_order: 2
 ---
 
