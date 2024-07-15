@@ -4,21 +4,33 @@
 
 // Typography
 
-p,
+.source-code-pro-regular{
+  font-family: "Source Code Pro", monospace;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+}
+
+
 h1,
 h2,
 h3,
 h4,
 h5,
 h6,
+li,
 em,
 div,
-li,
 span,
 strong {
   color: var(--global-text-color);
+  font-family: 'Amulya', sans-serif;
+}
+p{
+  font-family: 'Synonym', sans-serif;
 }
 
+/*******/
 hr {
   border-top: 1px solid var(--global-divider-color);
 }
@@ -59,7 +71,9 @@ figure,
 img {
   max-width: 90vw;
 }
-
+.body{
+  font-family: monospace;
+}
 blockquote {
   background: var(--global-bg-color);
   border-left: 5px solid var(--global-theme-color);
@@ -173,7 +187,7 @@ blockquote {
   .more-info {
     margin-bottom: 5px;
     margin-top: 5px;
-    font-family: 'monospace', sans-serif;
+    font-family: 'Synonym', sans-serif; 
 
     p {
       display: inline-block;
@@ -215,6 +229,17 @@ blockquote {
     }
   }
 }
+
+//ascii
+
+.ascii-art {
+  background-color: transparent; /* Ensures the background is transparent */
+  font-family: Courier;
+  color: inherit; /* Inherits the text color */
+  font-size: inherit; /* Inherits the font size */
+  white-space: pre; /* Preserves whitespace and line breaks */
+}
+
 
 
 // Navbar customization
@@ -273,7 +298,7 @@ blockquote {
 
   .navbar-nav .nav-item.active>.nav-link {
     background-color: inherit;
-    font-weight: bolder;
+    font-weight: bold;
     color: var(--global-theme-color);
 
     &:hover {
@@ -926,6 +951,11 @@ progress::-moz-progress-bar {
 /* Copy button */
 .code-display-wrapper {
   position: relative;
+
+  code, span{
+    font-family: "Source Code Pro", monospace;
+    font-weight: 400;
+  }
 
   .copy {
     background: var(--global-card-bg-color);
