@@ -54,6 +54,76 @@ pagination:
   </div>
   {% endif %}
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Post Heatmap</title>
+    <style>
+        .heatmap {
+            display: grid;
+            grid-template-columns: repeat(53, 1fr); /* 52 weeks + 1 column for labels */
+            gap: 2px;
+        }
+        .heatmap .day {
+            width: 12px;
+            height: 12px;
+            background-color: #ebedf0;
+            border-radius: 2px;
+        }
+        .heatmap .level-1 { background-color: #c6e48b; }
+        .heatmap .level-2 { background-color: #7bc96f; }
+        .heatmap .level-3 { background-color: #239a3b; }
+        .heatmap .level-4 { background-color: #196127; }
+        .heatmap .label {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="heatmap" class="heatmap"></div>
+
+    <script>
+        const postDates = [
+            { date: '2024-01-01', count: 1 },
+            { date: '2024-01-02', count: 2 },
+            // More dates here...
+        ];
+
+        // Dynamically generate the heatmap
+        const heatmap = document.getElementById('heatmap');
+        const startDate = new Date(new Date().getFullYear(), 0, 1);
+        const endDate = new Date();
+
+        for (let week = 0; week < 53; week++) {
+            const weekDiv = document.createElement('div');
+            weekDiv.classList.add('week');
+            for (let day = 0; day < 7; day++) {
+                const dayDiv = document.createElement('div');
+                dayDiv.classList.add('day');
+                
+                const currentDate = new Date(startDate);
+                currentDate.setDate(currentDate.getDate() + week * 7 + day);
+                
+                const dateString = currentDate.toISOString().split('T')[0];
+                const post = postDates.find(p => p.date === dateString);
+                if (post) {
+                    dayDiv.classList.add(`level-${Math.min(post.count, 4)}`);
+                }
+                weekDiv.appendChild(dayDiv);
+            }
+            heatmap.appendChild(weekDiv);
+        }
+    </script>
+</body>
+</html>
+
+
+
   {% assign featured_posts = site.posts | where: "featured", "true" %}
   {% if featured_posts.size > 0 %}
     <br>
