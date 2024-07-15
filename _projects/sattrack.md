@@ -174,5 +174,149 @@ this.satlat = request.positions.get(0).satlatitude;
 
 Now that we have the information required, all that's left is to display the satellite as a point on the map and update the location in real time!
 
-## Displaying Satellite Location on the Map
+## Displaying the satellite on the map
+Before we start displaying the satellite on the map, we need to create a map. In a from-scratch implementation we would consider adding a map and then calculating the coordinates per pixel on the map ourselves. This is a hard problem. Luckily, ARCGiS does this entire process for us. All we need to do is create a JavaFX application window, and then declare a MapView variable. This is our infinite scrollable and pannable workspace inside the JavaFX Application window which will house the map (so that we can zoom in and out and do everything we can with modern mapping applications like Google Maps).
+
+```java
+public class App extends Application {
+
+    private MapView mapView;
+    ...
+```
+Next, we create and call the map itself:
+
+```java
+ArcGISMap map = new ArcGISMap(BasemapStyle.ARCGIS_STREETS_NIGHT);
+mapView.setMap(map);
+```
+
+There's a lot of map styles and can be accessed through BasemapStyle. I chose one with night mode cause it's cool.
+
+Next, we create a graphics overlay to display our graphics (like our satellite image or any other line or point):
+
+```java
+GraphicsOverlay graphicsOverlay = new GraphicsOverlay();
+graphicsOverlay.setLabelsEnabled(true);
+mapView.getGraphicsOverlays().add(graphicsOverlay);
+```
+
+We then create a point to dislay on the overlay:
+
+```java
+Float[] coords = satAPICall(satID);
+Point point = new Point(coords[0], coords[1], SpatialReferences.getWgs84());
+```
+
+Then we set a PictureMarker symbol to the point's coordinates:
+
+```java
+PictureMarkerSymbol satmarker = new PictureMarkerSymbol("src/Images/satimage.png");
+satmarker.setHeight(40);
+satmarker.setWidth(40);
+```
+
+Finally, so that we can apply the image on top of the overlay so it's rendered, we must create a JavaFX Graphic object, and add our graphic to the overlay:
+
+```java
+Graphic satpoint = new Graphic(point, satmarker);
+graphicsOverlay.getGraphics().add(satpoint);
+```
+
+This will display our satellite, but right now we do not have any access to the coordinates we just found through the API. We will then define a function to set our point to a location by calling the API:
+
+```java
+public void setpoint(Graphic point, Graphic text, MapView mapView) throws URISyntaxException, IOException, InterruptedException {
+    Float[] newcoords = satAPICall(satID);
+    Point newpoint = new Point(newcoords[0], newcoords[1], SpatialReferences.getWgs84());
+    point.setGeometry(newpoint);
+    mapView.setViewpoint(new Viewpoint(newcoords[1], newcoords[0], scale));
+}
+```
+
+Here, satAPICall is just an API calling function. You might notice that this function is not being called enough, so we will add a thread which keeps updating every N seconds. We set N as 10 at the top of our file.
+
+
+```java
+Thread updateThread = new Thread(() -> {
+    while (true) {
+        try {
+            setpoint(satpoint, sattextgraphic, mapView);
+            countdown(timeremaining);
+        } catch (URISyntaxException | IOException | InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+        try {
+            Thread.sleep(frequency);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+});
+
+updateThread.start();
+```
+
+Nice! We can now display the satellite image. However, we have no way to actually choose any satellite right now. So let's try defining a list of satellites and a drop down (combo box) menu the queries for user input on that list:
+
+```java
+
+String[] satList = {
+    "ISS",
+    "Hubble Space Telescope",
+    "IRIDIUM 167",
+    "STARLINK-30783"
+};
+
+ComboBox<String> combo_box = new ComboBox<>(FXCollections.observableArrayList(satList));
+combo_box.setValue("ISS"); // Default Value
+
+stackPane.getChildren().add(combo_box);
+StackPane.setAlignment(combo_box, Pos.TOP_RIGHT);
+StackPane.setMargin(combo_box, new Insets(125, 100, 0, 0));
+
+```
+
+We will add a corresponding listener for the combo box:
+
+```java
+combo_box.setOnAction((event) -> {
+    String selection = combo_box.getValue();
+    satID = returnNORADID(selection);
+    try {
+        setpoint(satpoint, sattextgraphic, mapView);
+        countdown(timeremaining);
+    } catch (URISyntaxException | IOException | InterruptedException e) {
+        throw new RuntimeException(e);
+    }
+    sattext.setText(selection);
+});
+```
+
+Now, we will implement a very simple switch statement based function to return the NORAD ID of the satellites based on what satellite name the user has selected which we can use to make an API call with :
+
+```java
+public Integer returnNORADID(String satOption) {
+    int ID;
+    switch (satOption) {
+        case "ISS":
+            ID = 25544;
+            break;
+        case "IRIDIUM 167":
+            ID = 43931;
+            break;
+        case "STARLINK-30783":
+            ID = 58130;
+            break;
+        case "Hubble Space Telescope":
+            ID = 20580;
+            break;
+        default:
+            ID = 25544;
+    }
+    return ID;
+}
+```
+
+
+
 
