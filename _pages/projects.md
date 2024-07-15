@@ -2,10 +2,10 @@
 layout: page
 title: projects
 permalink: /projects/
-description: This page is a work in progress, collecting projects that I've built and have been building.
+description: WIP, This page collects projects that I've built.
 nav: true
 nav_order: 2
-display_categories: [orbital mechanics]
+display_categories: [NLP, orbital mechanics]
 horizontal: false
 ---
 
