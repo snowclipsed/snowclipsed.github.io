@@ -3,7 +3,7 @@ layout: page
 permalink: /repositories/
 title: repositories
 description: this is a summary of my github profile where I contribute regularly towards my projects and learning.
-nav: true
+nav: false
 nav_order: 5
 ---
 
