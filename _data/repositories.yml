@@ -2,13 +2,7 @@ github_users:
   - snowclipsed
 
 github_repos:
+  - snowclipsed/cricket_news
   - snowclipsed/SatTrack
-  - snowclipsed/snowclipsed.github.io
+  - snowclipsed/nvim-config
   - snowclipsed/CS5800-Final-Project
-  # - alshedivat/al-folio
-  # - twbs/bootstrap
-  # - jekyll/jekyll
-  # - jquery/jquery
-  # - FortAwesome/Font-Awesome
-  # - jpswalsh/academicons
-  # - mathjax/MathJax
