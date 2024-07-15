@@ -1,0 +1,63 @@
+---
+layout: page
+title: gallery
+permalink: /gallery/
+description: A collection of my drawings, photographs and some generated images.
+nav: true
+nav_order: 3
+---
+
+<style>
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-gap: 1rem;
+}
+
+.gallery figure {
+  margin: 0;
+}
+
+.gallery img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 4px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.gallery img:hover {
+  transform: scale(1.05);
+}
+</style>
+
+<div class="gallery">
+  {% for file in site.static_files %}
+    {% if file.path contains 'assets/img/gallery' and file.path contains '-1400' %}
+      {% assign file_path = file.path | relative_url %}
+      <figure>
+        <img
+          src="{{ file_path }}"
+          alt="{{ file.basename | replace: '-1400', '' }}"
+          loading="lazy"
+          width="1400"
+          height="auto"
+        />
+      </figure>
+    {% endif %}
+  {% endfor %}
+</div>
+
+<!-- Include lightGallery for image popup -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.1/css/lightgallery.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.1/lightgallery.min.js"></script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  lightGallery(document.querySelector('.gallery'), {
+    selector: 'img',
+    plugins: [],
+    speed: 500,
+  });
+});
+</script>
