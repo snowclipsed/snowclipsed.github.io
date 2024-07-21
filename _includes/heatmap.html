@@ -7,7 +7,7 @@
     <style>
         .heatmap {
             display: grid;
-            grid-template-columns: repeat(53, 1fr); /* 52 weeks + 1 column for labels */
+            grid-template-columns: repeat(53, 1fr);
             gap: 2px;
         }
         .heatmap .day {
@@ -32,35 +32,43 @@
     <div id="heatmap" class="heatmap"></div>
 
     <script>
-        const postDates = [
-            { date: '2024-01-01', count: 1 },
-            { date: '2024-01-02', count: 2 },
-            // More dates here...
-        ];
+        // Fetch the heatmap data from the JSON file
+        fetch('/assets/data/heatmap_data.json')
+            .then(response => response.json())
+            .then(data => {
+                generateHeatmap(data);
+            })
+            .catch(error => {
+                console.error('Error fetching heatmap data:', error);
+                document.getElementById('heatmap').textContent = 'Error loading heatmap data.';
+            });
 
-        // Dynamically generate the heatmap
-        const heatmap = document.getElementById('heatmap');
-        const startDate = new Date(new Date().getFullYear(), 0, 1);
-        const endDate = new Date();
+        function generateHeatmap(postDates) {
+            const heatmap = document.getElementById('heatmap');
+            const startDate = new Date(new Date().getFullYear() - 1, 0, 1); // Start from a year ago
+            const endDate = new Date();
 
-        for (let week = 0; week < 53; week++) {
-            const weekDiv = document.createElement('div');
-            weekDiv.classList.add('week');
-            for (let day = 0; day < 7; day++) {
-                const dayDiv = document.createElement('div');
-                dayDiv.classList.add('day');
-                
-                const currentDate = new Date(startDate);
-                currentDate.setDate(currentDate.getDate() + week * 7 + day);
-                
-                const dateString = currentDate.toISOString().split('T')[0];
-                const post = postDates.find(p => p.date === dateString);
-                if (post) {
-                    dayDiv.classList.add(`level-${Math.min(post.count, 4)}`);
+            for (let week = 0; week < 53; week++) {
+                const weekDiv = document.createElement('div');
+                weekDiv.classList.add('week');
+                for (let day = 0; day < 7; day++) {
+                    const dayDiv = document.createElement('div');
+                    dayDiv.classList.add('day');
+                    
+                    const currentDate = new Date(startDate);
+                    currentDate.setDate(currentDate.getDate() + week * 7 + day);
+                    
+                    if (currentDate <= endDate) {
+                        const dateString = currentDate.toISOString().split('T')[0];
+                        const count = postDates[dateString] || 0;
+                        if (count > 0) {
+                            dayDiv.classList.add(`level-${Math.min(count, 4)}`);
+                        }
+                    }
+                    weekDiv.appendChild(dayDiv);
                 }
-                weekDiv.appendChild(dayDiv);
+                heatmap.appendChild(weekDiv);
             }
-            heatmap.appendChild(weekDiv);
         }
     </script>
 </body>
