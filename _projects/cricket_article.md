@@ -1,7 +1,7 @@
 ---
 layout: page
-title: Cricket Article Generator
-description: Convert cricket commentary to articles in a single click.
+title: sports news gen
+description: Convert sports commentary to articles in a single click.
 importance: 1
 category: NLP
 img: /assets/img/cricket.jpg
