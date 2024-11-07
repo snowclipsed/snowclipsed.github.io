@@ -28,7 +28,7 @@ social: false  # includes social icons at the bottom of the page
 
 Hi, I am snow/snowclipsed. My irl name is Hardik.
 
-Welcome to my little corner on the internet. I am a machine learning engineer based near Boston, MA. I specialize in deep learning architecture research.
+Welcome to my little corner on the internet. I am a machine learning engineer based in the Boston, MA area. I specialize in deep learning architecture research and am interested in inference optimization.
 
 #### currently
 
