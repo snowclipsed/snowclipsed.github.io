@@ -23,7 +23,6 @@ latest_posts: true  # includes a list of the newest posts
 social: false  # includes social icons at the bottom of the page
 ---
 [ [x.com](https://x.com/snowclipsed) ] 
-[ [linkedin](https://www.linkedin.com/in/hardikbishnoi/) ] 
 [ snowclipsed@gmail.com ]
 
 Hi, I am snow/snowclipsed. My irl name is Hardik.
