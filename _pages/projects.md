@@ -5,7 +5,7 @@ permalink: /projects/
 description: WIP, This page collects projects that I've built.
 nav: true
 nav_order: 2
-display_categories: [NLP, orbital mechanics]
+display_categories: [HPC, NLP, orbital mechanics]
 horizontal: false
 ---
 

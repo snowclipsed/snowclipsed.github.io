@@ -1,15 +1,13 @@
 ---
 layout: distill
 title: Satellite Tracker
-description: A real- time satellite tracker written in Java using GIS APIs.
+description: A real- time satellite tracker written in Java.
 importance: 1
 category: orbital mechanics
 img: /assets/img/sattrack.jpg
 bibliography: sattrack.bib
 
 ---
-
-<b>Note: This blog is still under construction!</b>
 
 # Why this project?
 
