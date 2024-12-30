@@ -370,7 +370,7 @@ const CyberpunkPerlin = () => {
                 ...prev, 
                 [key]: parseFloat(e.target.value) 
               }))}
-              className="w-full accent-green-500"
+              className="w-full accent-white"
             />
           </div>
         ))}
