@@ -1,170 +1,166 @@
-'use client';
-
 import React, { useState } from 'react';
-import { Terminal, Book, Network, Mail, Globe, Twitter } from 'lucide-react';
+import { Terminal, Book, Network, Code, Cpu, Brain } from 'lucide-react';
+import CyberpunkBlog from './CyberpunkBlog';
+import CyberpunkContact from './CyberpunkContact';
 import CyberpunkLorenz from './CyberpunkLorenz';
 
-type Section = 'main' | 'blog' | 'contact';
+const CyberpunkPortfolio = () => {
+  const [activeSection, setActiveSection] = useState('main');
+  const [glitchText, setGlitchText] = useState(false);
 
-interface NavItem {
-  id: Section;
-  icon: React.ReactNode;
-  label: string;
-}
-
-const CyberpunkPortfolio: React.FC = () => {
-  const [activeSection, setActiveSection] = useState<Section>('main');
-
-  const navItems: NavItem[] = [
+  const navItems = [
     { id: 'main', icon: <Terminal className="w-5 h-5" />, label: 'メイン' },
     { id: 'blog', icon: <Book className="w-5 h-5" />, label: 'ブログ' },
     { id: 'contact', icon: <Network className="w-5 h-5" />, label: 'コンタクト' }
   ];
 
-  const asciiArt = {
-    main: `
-    スノーエクリプス / SNOW ECLIPSE`,
-    blog: `
-    ╔═══════════════════════════════════╗
-    ║  BLOG SYSTEM v2.0                 ║
-    ║  STATUS: INITIALIZED              ║
-    ║  ENTRIES: LOADING...             ║
-    ╚═══════════════════════════════════╝`,
-    contact: `
-    ╔═══════════════════════════════════╗
-    ║  NETWORK STATUS: ACTIVE           ║
-    ║  ENCRYPTION: ENABLED              ║
-    ║  FIREWALL: ACTIVE                ║
-    ║  CONNECTION: SECURE               ║
-    ╚═══════════════════════════════════╝`
+  const triggerGlitch = () => {
+    setGlitchText(true);
+    setTimeout(() => setGlitchText(false), 100);
   };
 
-  const blogPosts = [
-    {
-      date: '2024.12.28',
-      title: 'Optimizing Neural Network Inference',
-      preview: 'Exploring cutting-edge techniques in model optimization and deployment...'
-    },
-    {
-      date: '2024.12.25',
-      title: 'Low-Level Architecture Deep Dive',
-      preview: 'Understanding the intersection of hardware and ML acceleration...'
-    },
-    {
-      date: '2024.12.20',
-      title: 'Research Notes: Architecture Innovation',
-      preview: 'New approaches to neural network architecture design...'
-    }
-  ];
-
   return (
-    <div className="min-h-screen bg-black text-white font-mono p-4 transition-all duration-300">
-      {/* Header with hover effect */}
-      <header className="border border-white p-4 mb-8 hover:bg-white hover:text-black transition-colors duration-300">
-        <h1 className="text-3xl md:text-4xl mb-2 font-bold">スノーエクリプス / SNOWCLIPSED</h1>
-        <p className="text-lg md:text-xl opacity-80">デジタル・リサーチャー / DIGITAL RESEARCHER</p>
+    <div className="min-h-screen bg-black text-white font-mono p-4 max-w-4xl mx-auto">
+      {/* Enhanced Header */}
+      <header className="border border-white p-6 mb-8 relative group">
+        <div className={`transition-all duration-300 ${glitchText ? 'transform translate-x-1' : ''}`}>
+          <h1 className="text-3xl md:text-4xl mb-2 font-bold relative">
+            <span className="opacity-80 absolute -left-1 -top-1 text-red-500">スノーエクリプス</span>
+            <span className="opacity-80 absolute -left-1 top-1 text-blue-500">スノーエクリプス</span>
+            スノーエクリプス / SNOWCLIPSED
+          </h1>
+          <p className="text-lg md:text-xl opacity-80">
+            ニューラル・アーキテクト / NEURAL ARCHITECT
+          </p>
+        </div>
       </header>
 
-      {/* Navigation with improved hover effects */}
-      <nav className="grid grid-cols-3 gap-2 md:gap-4 mb-8">
+      {/* Navigation */}
+      <nav className="grid grid-cols-3 gap-4 mb-8">
         {navItems.map(({id, icon, label}) => (
           <button
             key={id}
-            onClick={() => setActiveSection(id)}
-            className={`border border-white p-3 md:p-4 flex items-center justify-center gap-2 
-              hover:bg-white hover:text-black transition-all duration-300 
-              ${activeSection === id ? 'bg-white text-black scale-105' : 'hover:scale-105'}`}
+            onClick={() => {
+              setActiveSection(id);
+              triggerGlitch();
+            }}
+            className={`border border-white p-4 flex items-center justify-center gap-2 relative group
+              ${activeSection === id ? 'bg-white text-black' : ''}
+              hover:bg-white hover:text-black transition-all duration-300`}
           >
-            {icon} <span className="hidden md:inline">{label}</span>
+            <div className="relative">
+              <div className="opacity-80 absolute -left-0.5 -top-0.5 text-red-500 pointer-events-none 
+                group-hover:translate-x-1 transition-transform duration-300">
+                {icon}
+              </div>
+              <div className="opacity-80 absolute -left-0.5 top-0.5 text-blue-500 pointer-events-none 
+                group-hover:-translate-x-1 transition-transform duration-300">
+                {icon}
+              </div>
+              {icon}
+            </div>
+            <span className="hidden md:inline">{label}</span>
           </button>
         ))}
       </nav>
 
-      {/* Main Content with smooth transitions */}
-      <div className="border border-white p-4 transition-all duration-500 ease-in-out">
-        {/* ASCII Art Section with hover effect */}
-        <pre className="text-xs md:text-sm lg:text-base overflow-x-auto mb-8 p-4 hover:bg-white hover:text-black transition-colors duration-300 cursor-crosshair font-mono">
-          {asciiArt[activeSection]}
-        </pre>
+      {/* Main Content Container */}
+      <div className="border border-white">
+        <div className="p-6">
+        {activeSection === 'main' && (
+          <div className="space-y-8">
+            {/* Dynamic System - Updated container */}
+            <div className="mb-12">
+              <h2 className="text-2xl mb-4 font-bold">私について / CHAOS ENGINE</h2>
+              {/* Removed fixed height constraint and border that was causing issues */}
+              <div className="w-full">
+                <CyberpunkLorenz />
+              </div>
+            </div>
 
-        {/* Content Sections with transitions */}
-        <div className="transition-all duration-500 ease-in-out">
-          {activeSection === 'main' && (
-            
-            <div className="space-y-6 animate-fade-in">
-              <CyberpunkLorenz />
-              <div className="border border-white p-4">
-              
-                <h2 className="text-2xl mb-4 font-bold">研究分野 / RESEARCH INTERESTS</h2>
-                <div className="space-y-4">
-                  {[
-                    'Deep Learning Architecture Research',
-                    'Inference Optimization',
-                    'Low Level Programming'
-                  ].map((interest, index) => (
-                    <div key={index} 
-                      className="flex items-center gap-2 p-2 hover:bg-white hover:text-black transition-colors duration-300 ">
-                      <Terminal className="w-5 h-5 min-w-[1.25rem]" />
-                      <span>{interest}</span>
+            <div className="mt-8 border-t border-dotted border-white/20 pt-8 w-full" />
+
+              {/* Introduction */}
+              <div className="mb-12 mt-8">
+              <h2 className="text-2xl mb-6 font-bold">研究分野 / ABOUT ME</h2>
+                <div className="space-y-4 opacity-90">
+                  <p>Hi, I am snow/snowclipsed.</p>
+                  <p>Welcome to my digital realm. I am a machine learning engineer specializing in 
+                  deep learning architecture research and inference optimization.</p>
+                </div>
+                <div className="mt-8 border-t border-dotted border-white/20 pt-8 w-full" />
+              </div>
+
+              {/* Research Domains */}
+              <div className="mb-12">
+                <h2 className="text-2xl mb-6 font-bold">研究分野 / RESEARCH DOMAINS</h2>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                  {/* Core Research */}
+                  <div>
+                    <h3 className="text-xl mb-4">
+                      <span className="mr-2">⚙</span>
+                      コア・リサーチ / CORE RESEARCH
+                    </h3>
+                    <div className="space-y-2">
+                      <div className="border border-white/20 p-2">
+                        <span className="text-blue-400 mr-2">◇</span>
+                        Deep Learning Architecture Research
+                      </div>
+                      <div className="border border-white/20 p-2">
+                        <span className="text-blue-400 mr-2">◇</span>
+                        Inference Optimization
+                      </div>
+                      <div className="border border-white/20 p-2">
+                        <span className="text-blue-400 mr-2">◇</span>
+                        Low Level Programming
+                      </div>
                     </div>
-                  ))}
+                  </div>
+
+                  {/* Current Goals */}
+                  <div>
+                    <h3 className="text-xl mb-4">
+                      <span className="mr-2">▷</span>
+                      現在の目標 / CURRENT GOALS
+                    </h3>
+                    <div className="space-y-2">
+                      <div className="border border-white/20 p-2">
+                        <span className="text-green-400 mr-2">⊕</span>
+                        Scaling ML Models
+                      </div>
+                      <div className="border border-white/20 p-2">
+                        <span className="text-green-400 mr-2">⊕</span>
+                        Low-End Device Optimization
+                      </div>
+                      <div className="border border-white/20 p-2">
+                        <span className="text-green-400 mr-2">⊕</span>
+                        CPU/GPU Architecture Research
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Offline Mode */}
+              <div className="mb-8">
+                <h2 className="text-2xl mb-4 font-bold">オフライン・モード / OFFLINE MODE</h2>
+                <div className="border border-white/20 p-4 hover:border-white/40 transition-colors duration-300">
+                  <p className="opacity-90 font-mono">
+                    Beyond the terminal, I create games, write blog posts, make digital art, 
+                    and explore virtual worlds. You can find my thoughts on my blog or follow 
+                    my journey on social media.
+                  </p>
                 </div>
               </div>
             </div>
           )}
 
-          {activeSection === 'blog' && (
-            <div className="space-y-4">
-              {blogPosts.map((post, index) => (
-                <div 
-                  key={post.title}
-                  className="border border-white p-4 hover:bg-white hover:text-black transition-all duration-300 
-                    cursor-pointer transform hover:scale-[1.02]"
-                  style={{ transitionDelay: `${index * 100}ms` }}
-                >
-                  <div className="flex flex-col md:flex-row md:justify-between md:items-center mb-2">
-                    <h3 className="text-xl font-bold">{post.title}</h3>
-                    <span className="opacity-70 text-sm md:text-base">{post.date}</span>
-                  </div>
-                  <p className="opacity-80">{post.preview}</p>
-                </div>
-              ))}
-            </div>
-          )}
-
-          {activeSection === 'contact' && (
-            <div className="space-y-4">
-              {[
-                { icon: <Mail className="w-5 h-5" />, label: 'メール', value: 'snowclipsed@gmail.com' },
-                { icon: <Twitter className="w-5 h-5" />, label: 'Twitter', value: '@snowclipsed', link: 'https://x.com/snowclipsed' }
-              ].map(({icon, label, value, link}, index) => (
-                <div 
-                  key={label}
-                  className="border border-white p-4 flex items-center gap-4 hover:bg-white hover:text-black 
-                    transition-all duration-300 cursor-pointer transform hover:scale-[1.02]"
-                  style={{ transitionDelay: `${index * 100}ms` }}
-                >
-                  {icon}
-                  <div>
-                    <p className="text-sm opacity-70">{label}</p>
-                    {link ? (
-                      <a href={link} target="_blank" rel="noopener noreferrer" 
-                        className="hover:underline hover:opacity-80 transition-opacity duration-300">
-                        {value}
-                      </a>
-                    ) : (
-                      <p>{value}</p>
-                    )}
-                  </div>
-                </div>
-              ))}
-            </div>
-          )}
+          {activeSection === 'blog' && <CyberpunkBlog />}
+          {activeSection === 'contact' && <CyberpunkContact />}
         </div>
       </div>
 
-      {/* Footer with hover effect */}
-      <footer className="border border-white border-t-0 p-4 mt-8 hover:bg-white hover:text-black transition-colors duration-300">
+      <footer className="p-4 mt-8 opacity-70 hover:opacity-100 transition-opacity duration-300">
         <p className="text-center">© 2024 スノーエクリプス</p>
       </footer>
     </div>
