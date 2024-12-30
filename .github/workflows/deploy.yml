@@ -16,19 +16,17 @@ jobs:
         with:
           node-version: '18'
 
-      - name: Navigate to Portfolio Directory
-        working-directory: ./portfolio
+      - name: Install Dependencies
         run: npm install
 
-      - name: Build and Export
-        working-directory: ./portfolio
-        run: |
-          npm run build
-          npm run export
-          touch out/.nojekyll
+      - name: Build
+        run: npm run build
+
+      - name: Add .nojekyll file
+        run: touch out/.nojekyll
 
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           branch: gh-pages
-          folder: portfolio/out
+          folder: out
