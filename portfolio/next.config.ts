@@ -4,8 +4,7 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
-  basePath: '',
-  trailingSlash: true,
-}
+  trailingSlash: true, // Ensure trailing slashes for GitHub Pages compatibility
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;
