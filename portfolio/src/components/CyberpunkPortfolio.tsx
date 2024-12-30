@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Terminal, Book, Network, Code, Cpu, Brain } from 'lucide-react';
+import { Terminal, Book, Network, Target, Brain } from 'lucide-react';
 import CyberpunkBlog from './CyberpunkBlog';
 import CyberpunkContact from './CyberpunkContact';
 import CyberpunkLorenz from './CyberpunkLorenz';
@@ -13,6 +13,7 @@ const CyberpunkPortfolio = () => {
     { id: 'blog', icon: <Book className="w-5 h-5" />, label: 'ブログ' },
     { id: 'contact', icon: <Network className="w-5 h-5" />, label: 'コンタクト' }
   ];
+      
 
   const triggerGlitch = () => {
     setGlitchText(true);
@@ -98,9 +99,8 @@ const CyberpunkPortfolio = () => {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                   {/* Core Research */}
                   <div>
-                    <h3 className="text-xl mb-4">
-                      <span className="mr-2">⚙</span>
-                      コア・リサーチ / CORE RESEARCH
+                  <h3 className="text-xl mb-4 flex items-center gap-2">
+                      <Brain className='w-5 h-5'/> コア・リサーチ / CORE RESEARCH
                     </h3>
                     <div className="space-y-2">
                       <div className="border border-white/20 p-2 hover:border-white/40 transition-colors duration-300">
@@ -120,10 +120,9 @@ const CyberpunkPortfolio = () => {
 
                   {/* Current Goals */}
                   <div>
-                    <h3 className="text-xl mb-4">
-                      <span className="mr-2">▷</span>
-                      現在の目標 / CURRENT GOALS
-                    </h3>
+                  <h3 className="text-xl mb-4 flex items-center gap-2">
+                   <Target className="w-5 h-5" /> 現在の目標 / CURRENT GOALS
+                  </h3>
                     <div className="space-y-2">
                       <div className="border border-white/20 p-2 hover:border-white/40 transition-colors duration-300">
                         <span className="text-green-400 mr-2">⊕</span>
