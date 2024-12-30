@@ -35,24 +35,76 @@ interface SliderConfig {
 }
 
 const CyberpunkLorenz: React.FC = () => {
-    const [points, setPoints] = useState<Point[]>([]);
-    const [asciiFrame, setAsciiFrame] = useState<string>('');
-    const [config, setConfig] = useState<Config>({
-      scale: 2,
-      displayScale: 0.9,  // Matches screenshot
-      xOffset: 80,
-      yOffset: 20,
-      rotateX: 16.0,     // Matches screenshot
-      rotateY: -13.0,    // Matches screenshot
-      rotateZ: -44.0,    // Matches screenshot
-      sigma: 10.3,
-      rho: 23.7,
-      beta: 1.7,
-      speed: 1.0
-    });
+  const [points, setPoints] = useState<Point[]>([]);
+  const [asciiFrame, setAsciiFrame] = useState<string>('');
+  const [isDragging, setIsDragging] = useState(false);
+  const [lastMousePos, setLastMousePos] = useState({ x: 0, y: 0 });
+  const containerRef = useRef<HTMLDivElement>(null);
+  
+  const [config, setConfig] = useState<Config>({
+    scale: 2,
+    displayScale: 0.9,
+    xOffset: 80,
+    yOffset: 30,
+    rotateX: 24.0,
+    rotateY: -18.0,
+    rotateZ: -44.0,
+    sigma: 10.3,
+    rho: 23.7,
+    beta: 1.7,
+    speed: 1.0
+  });
   
   const animationRef = useRef<number | null>(null);
   const dt = 0.01;
+
+  const handleMouseDown = (e: React.MouseEvent) => {
+    setIsDragging(true);
+    setLastMousePos({
+      x: e.clientX,
+      y: e.clientY
+    });
+  };
+
+  const handleMouseMove = (e: React.MouseEvent) => {
+    if (!isDragging) return;
+
+    const deltaX = e.clientX - lastMousePos.x;
+    const deltaY = e.clientY - lastMousePos.y;
+
+    // Adjust rotation sensitivity
+    const rotationSpeed = 0.5;
+
+    setConfig(prev => ({
+      ...prev,
+      rotateY: prev.rotateY + deltaX * rotationSpeed,
+      rotateX: prev.rotateX + deltaY * rotationSpeed
+    }));
+
+    setLastMousePos({
+      x: e.clientX,
+      y: e.clientY
+    });
+  };
+
+  const handleMouseUp = () => {
+    setIsDragging(false);
+  };
+
+  const handleMouseLeave = () => {
+    setIsDragging(false);
+  };
+
+  const handleWheel = (e: React.WheelEvent) => {
+    e.preventDefault();
+    const zoomSpeed = 0.05;
+    const delta = e.deltaY > 0 ? -zoomSpeed : zoomSpeed;
+    
+    setConfig(prev => ({
+      ...prev,
+      displayScale: Math.max(0.5, Math.min(2.5, prev.displayScale + delta))
+    }));
+  };
 
   useEffect(() => {
     let x = 0.1;
@@ -104,8 +156,9 @@ const CyberpunkLorenz: React.FC = () => {
   };
 
   const createAsciiFrame = (points: Point[]): string => {
-    const width = 160;
-    const height = 35;  // Increased height
+    // Calculate dimensions based on container size (approximate character counts)
+    const width = 100;  // Adjusted for typical display width
+    const height = 45; // Adjusted for typical display height
     const buffer: string[][] = Array(height).fill(null).map(() => Array(width).fill(' '));
     const chars = '  ░▒▓█';
     
@@ -171,19 +224,35 @@ const CyberpunkLorenz: React.FC = () => {
     { key: 'sigma', jpLabel: 'σ', enLabel: 'Sigma', min: 1, max: 20, step: 0.1 },
     { key: 'rho', jpLabel: 'ρ', enLabel: 'Rho', min: 0, max: 50, step: 0.1 },
     { key: 'beta', jpLabel: 'β', enLabel: 'Beta', min: 0, max: 10, step: 0.1 },
-    { key: 'displayScale', jpLabel: 'スケール', enLabel: 'Scale', min: 0.5, max: 2.5, step: 0.1 },
     { key: 'speed', jpLabel: '速度', enLabel: 'Speed', min: 0.1, max: 3, step: 0.1 }
   ];
 
   return (
-    <div className="flex gap-4 border border-white p-4">
-      <pre className="font-mono text-xs leading-none whitespace-pre border border-current p-4 overflow-hidden bg-black min-h-[35em]">
-        {asciiFrame}
-      </pre>
+    // Remove fixed height here and use h-full to fill parent container
+    <div className="flex border border-white bg-black h-full">
+      {/* Main visualization container - Added proper dimensions */}
+      <div 
+        ref={containerRef}
+        onMouseDown={handleMouseDown}
+        onMouseMove={handleMouseMove}
+        onMouseUp={handleMouseUp}
+        onMouseLeave={handleMouseLeave}
+        onWheel={handleWheel}
+        className="flex-1 cursor-move border-r border-white"
+      >
+        <pre className="font-mono text-[0.6rem] leading-none whitespace-pre p-2 h-full select-none">
+          {asciiFrame}
+        </pre>
+      </div>
       
-      <div className="w-48 space-y-2 text-xs">
+      {/* Controls panel */}
+      <div className="w-44 flex flex-col p-2 text-[0.6rem] shrink-0">
+        <div className="border border-white p-2 mb-1 text-center">
+          <p>Click and drag to rotate</p>
+          <p>Use mouse wheel to zoom</p>
+        </div>
         {sliders.map(({ key, enLabel, min, max, step }) => (
-          <div key={key} className="border border-current p-2">
+          <div key={key} className="border border-white p-2 mt-1">
             <div className="flex justify-between mb-1">
               <span>{enLabel}</span>
               <span>{config[key].toFixed(1)}</span>
