@@ -106,6 +106,34 @@ const CyberpunkLorenz: React.FC = () => {
     }));
   };
 
+
+  useEffect(() => {
+    const element = containerRef.current;
+    if (!element) return;
+
+    const disableScroll = () => {
+      document.body.style.overflow = 'hidden';
+    };
+
+    const enableScroll = () => {
+      document.body.style.overflow = 'auto';
+    };
+
+    element.addEventListener('mouseenter', disableScroll);
+    element.addEventListener('mouseleave', enableScroll);
+
+    return () => {
+      element.removeEventListener('mouseenter', disableScroll);
+      element.removeEventListener('mouseleave', enableScroll);
+      // Ensure we re-enable scrolling when component unmounts
+      document.body.style.overflow = 'auto';
+    };
+  }, []);
+
+  useEffect(() => {
+    setAsciiFrame(createAsciiFrame(points));
+  }, [points, config]);
+
   useEffect(() => {
     let x = 0.1;
     let y = 0;

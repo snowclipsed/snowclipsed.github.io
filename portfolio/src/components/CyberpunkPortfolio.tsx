@@ -74,7 +74,7 @@ const CyberpunkPortfolio = () => {
             <div className="mb-12">
               <h2 className="text-2xl mb-4 font-bold">私について / CHAOS ENGINE</h2>
               {/* Removed fixed height constraint and border that was causing issues */}
-              <div className="w-full">
+              <div className="w-full" onWheel={e => e.stopPropagation()}>
                 <CyberpunkLorenz />
               </div>
             </div>
