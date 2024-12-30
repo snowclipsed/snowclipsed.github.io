@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useCallback, useRef } from 'react';
 
 interface Point {
   x: number;
@@ -155,10 +155,9 @@ const CyberpunkLorenz: React.FC = () => {
     };
   };
 
-  const createAsciiFrame = (points: Point[]): string => {
-    // Calculate dimensions based on container size (approximate character counts)
-    const width = 100;  // Adjusted for typical display width
-    const height = 45; // Adjusted for typical display height
+  const createAsciiFrame = useCallback((points: Point[]): string => {
+    const width = 100;
+    const height = 45;
     const buffer: string[][] = Array(height).fill(null).map(() => Array(width).fill(' '));
     const chars = '  ░▒▓█';
     
@@ -176,7 +175,7 @@ const CyberpunkLorenz: React.FC = () => {
     });
     
     return buffer.map(row => row.join('')).join('\n');
-  };
+  }, [config.displayScale, project]);
 
   useEffect(() => {
     const animate = () => {
