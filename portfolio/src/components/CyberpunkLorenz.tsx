@@ -133,16 +133,16 @@ const CyberpunkLorenz: React.FC = () => {
     const radY = config.rotateY * Math.PI / 180;
     const radZ = config.rotateZ * Math.PI / 180;
     
-    let x1 = x;
-    let y1 = y * Math.cos(radX) - z * Math.sin(radX);
-    let z1 = y * Math.sin(radX) + z * Math.cos(radX);
+    const x1 = x;
+    const y1 = y * Math.cos(radX) - z * Math.sin(radX);
+    const z1 = y * Math.sin(radX) + z * Math.cos(radX);
     
-    let x2 = x1 * Math.cos(radY) + z1 * Math.sin(radY);
-    let y2 = y1;
-    let z2 = -x1 * Math.sin(radY) + z1 * Math.cos(radY);
+    const x2 = x1 * Math.cos(radY) + z1 * Math.sin(radY);
+    const y2 = y1;
+    const z2 = -x1 * Math.sin(radY) + z1 * Math.cos(radY);
     
-    let x3 = x2 * Math.cos(radZ) - y2 * Math.sin(radZ);
-    let y3 = x2 * Math.sin(radZ) + y2 * Math.cos(radZ);
+    const x3 = x2 * Math.cos(radZ) - y2 * Math.sin(radZ);
+    const y3 = x2 * Math.sin(radZ) + y2 * Math.cos(radZ);
     
     return { x: x3, y: y3, z: z2 };
   };
