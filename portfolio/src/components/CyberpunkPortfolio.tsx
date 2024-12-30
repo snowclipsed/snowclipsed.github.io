@@ -84,6 +84,7 @@ const CyberpunkPortfolio = () => {
               <div className="mb-12 mt-8">
               <h2 className="text-2xl mb-6 font-bold">研究分野 / ABOUT ME</h2>
                 <div className="space-y-4 opacity-90">
+                  
                   <p>Hi, I am snow/snowclipsed.</p>
                   <p>Welcome to my digital realm. I am a machine learning engineer specializing in 
                   deep learning architecture research and inference optimization.</p>
@@ -102,15 +103,15 @@ const CyberpunkPortfolio = () => {
                       コア・リサーチ / CORE RESEARCH
                     </h3>
                     <div className="space-y-2">
-                      <div className="border border-white/20 p-2">
+                      <div className="border border-white/20 p-2 hover:border-white/40 transition-colors duration-300">
                         <span className="text-blue-400 mr-2">◇</span>
                         Deep Learning Architecture Research
                       </div>
-                      <div className="border border-white/20 p-2">
+                      <div className="border border-white/20 p-2 hover:border-white/40 transition-colors duration-300">
                         <span className="text-blue-400 mr-2">◇</span>
                         Inference Optimization
                       </div>
-                      <div className="border border-white/20 p-2">
+                      <div className="border border-white/20 p-2 hover:border-white/40 transition-colors duration-300">
                         <span className="text-blue-400 mr-2">◇</span>
                         Low Level Programming
                       </div>
@@ -124,15 +125,15 @@ const CyberpunkPortfolio = () => {
                       現在の目標 / CURRENT GOALS
                     </h3>
                     <div className="space-y-2">
-                      <div className="border border-white/20 p-2">
+                      <div className="border border-white/20 p-2 hover:border-white/40 transition-colors duration-300">
                         <span className="text-green-400 mr-2">⊕</span>
                         Scaling ML Models
                       </div>
-                      <div className="border border-white/20 p-2">
+                      <div className="border border-white/20 p-2 hover:border-white/40 transition-colors duration-300">
                         <span className="text-green-400 mr-2">⊕</span>
                         Low-End Device Optimization
                       </div>
-                      <div className="border border-white/20 p-2">
+                      <div className="border border-white/20 p-2 hover:border-white/40 transition-colors duration-300">
                         <span className="text-green-400 mr-2">⊕</span>
                         CPU/GPU Architecture Research
                       </div>
@@ -141,16 +142,16 @@ const CyberpunkPortfolio = () => {
                 </div>
               </div>
 
+              <div className="mt-8 border-t border-dotted border-white/20 pt-8 w-full" />
+
               {/* Offline Mode */}
               <div className="mb-8">
                 <h2 className="text-2xl mb-4 font-bold">オフライン・モード / OFFLINE MODE</h2>
-                <div className="border border-white/20 p-4 hover:border-white/40 transition-colors duration-300">
                   <p className="opacity-90 font-mono">
                     Beyond the terminal, I create games, write blog posts, make digital art, 
                     and explore virtual worlds. You can find my thoughts on my blog or follow 
                     my journey on social media.
                   </p>
-                </div>
               </div>
             </div>
           )}
