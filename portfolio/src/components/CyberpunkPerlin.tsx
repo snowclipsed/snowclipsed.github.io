@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect, useCallback, useRef } from 'react';
 
 type ColoredChar = {
@@ -16,6 +17,23 @@ const defaultConfig = {
   heightScale: 1.0
 };
 
+
+/**
+ * CyberpunkPerlin component generates a visual representation of Perlin noise, 
+ * which is a type of gradient noise developed by Ken Perlin in 1983. 
+ * Perlin noise is used in computer graphics for creating textures, terrains, and other 
+ * procedural content. It is a type of coherent noise, meaning it has a smooth gradient of values 
+ * across space.
+ * 
+ * This component allows users to switch between a 2D noise flow mode and a 3D landscape 
+ * mode. Users can also toggle between white and heatmap color modes, and adjust various 
+ * parameters such as scale, speed, zoom, octaves, persistence, contrast, and height scale 
+ * using sliders.
+ * 
+ * The component supports mouse interactions for rotating the 3D landscape view and resetting 
+ * all settings to their default values.
+ * 
+ */
 const CyberpunkPerlin = () => {
   const timeRef = useRef(0);
   const [frame, setFrame] = useState<ColoredChar[][]>([]);
@@ -27,11 +45,25 @@ const CyberpunkPerlin = () => {
   const [isDragging, setIsDragging] = useState(false);
   const [lastMousePos, setLastMousePos] = useState({ x: 0, y: 0 });
 
+
+  /**
+ * Generates a heatmap color based on a given value.
+ *
+ * @param value - The value to be converted to a color, expected to be in the range [0, 1].
+ * @param is3D - Optional boolean indicating if the value is for a 3D point. Defaults to false.
+ * @returns A string representing the color in hexadecimal format.
+ *
+ * This function maps the input value to a color gradient ranging from blue to red.
+ * If `is3D` is true, the value is normalized to the range [0, 1] before mapping.
+ * The color gradient is defined by a series of color stops, and the function interpolates
+ * between these stops to determine the final color.
+ */
+
   const getHeatmapColor = useCallback((value: number, is3D: boolean = false): string => {
     let v;
     if (is3D) {
-      // Instead of scaling relative to heightScale, we'll use a fixed range
-      v = (value + 1) / 2; // Since height values are normalized to [-1, 1]
+      // instead of scaling relative to heightScale, i use a fixed range
+      v = (value + 1) / 2; // since height values are normalized to [-1, 1]. we're doing this so that when we increase heightScale, the colors don't get into only one range
       v = Math.max(0, Math.min(1, v));
     } else {
       v = Math.max(0, Math.min(1, value));
@@ -76,6 +108,20 @@ const CyberpunkPerlin = () => {
     return v <= colors[0].pos ? colors[0].color : colors[colors.length - 1].color;
   }, []);
 
+
+  /**
+ * Rotates a 3D point around the x, y, and z axes based on the current rotation state.
+ *
+ * @param point - A tuple representing the 3D point to be rotated, in the format [x, y, z].
+ * @returns A tuple representing the rotated 3D point, in the format [x, y, z].
+ *
+ * This function applies a series of rotations to the input point:
+ * - First, it rotates the point around the x-axis by the angle specified in `rotation.x`.
+ * - Then, it rotates the resulting point around the y-axis by the angle specified in `rotation.y`.
+ * - Finally, it returns the rotated point.
+ *
+ * The rotation angles are converted from degrees to radians before applying the rotation.
+ */
   const rotatePoint = useCallback((point: [number, number, number]): [number, number, number] => {
     const [x, y, z] = point;
     const toRad = (deg: number) => deg * Math.PI / 180;
@@ -89,6 +135,18 @@ const CyberpunkPerlin = () => {
     return [x2, y1, z2];
   }, [rotation]);
 
+
+  /**
+   * Projects a 3D point onto a 2D plane based on the current configuration.
+   *
+   * @param point - A tuple representing the 3D point to be projected, in the format [x, y, z].
+   * @returns A tuple representing the projected 2D point, in the format [x, y].
+   *
+   * This function applies a perspective projection to the input point:
+   * - The point is scaled based on its distance from the view plane.
+   * - A vertical offset is added to keep the terrain centered as the height scale increases.
+   * - The resulting 2D coordinates are returned.
+   */
   const projectPoint = useCallback((point: [number, number, number]): [number, number] => {
     const viewDistance = 100;
     const [x, y, z] = point;
@@ -98,6 +156,20 @@ const CyberpunkPerlin = () => {
     return [x * scale, (y + verticalOffset) * scale];
   }, [config.heightScale]);
 
+
+  // Perlin Noise Functions
+  
+  /**
+   * Generates 2D Perlin noise value for given coordinates.
+   *
+   * @param x - The x-coordinate.
+   * @param y - The y-coordinate.
+   * @returns A noise value in the range [0, 1].
+   *
+   * This function uses a pseudo-random number generator based on sine and cosine functions
+   * to produce a smooth noise value. The noise value is interpolated between four surrounding
+   * grid points using a fade function.
+   */
   const noise2D = useCallback((x: number, y: number): number => {
     const xi = Math.floor(x);
     const yi = Math.floor(y);
@@ -123,6 +195,18 @@ const CyberpunkPerlin = () => {
            v11 * nx * ny;
   }, []);
 
+
+  /**
+   * Generates a multi-octave Perlin noise value for given coordinates.
+   *
+   * @param x - The x-coordinate.
+   * @param y - The y-coordinate.
+   * @returns A noise value in the range [0, 1].
+   *
+   * This function combines multiple layers (octaves) of Perlin noise to create a more complex and detailed noise pattern.
+   * Each octave has its own frequency and amplitude, which are controlled by the `config` state.
+   * The resulting noise value is normalized to the range [0, 1].
+   */
   const octaveNoise = useCallback((x: number, y: number): number => {
     let result = 0;
     let amp = 1;
@@ -139,6 +223,20 @@ const CyberpunkPerlin = () => {
     return result / maxVal;
   }, [config.octaves, config.persistence, config.lacunarity, noise2D]);
 
+
+
+  /**
+   * Creates a 3D landscape frame for the current time.
+   *
+   * @param currentTime - The current time used to generate the frame.
+   * @returns A 2D array of `ColoredChar` representing the 3D landscape frame.
+   *
+   * This function generates a 3D landscape frame by:
+   * - Initializing a buffer and z-buffer for rendering.
+   * - Generating terrain points using Perlin noise and rotating/projecting them.
+   * - Sorting points by depth and rendering them to the buffer.
+   * - Returning the final buffer representing the 3D landscape.
+   */
   const create3DLandscapeFrame = useCallback((currentTime: number): ColoredChar[][] => {
     const width = 80;
     const height = 48;
@@ -164,7 +262,8 @@ const CyberpunkPerlin = () => {
         let height = octaveNoise(nx + currentTime * 0.1, nz);
         height = Math.pow(height * 0.5 + 0.5, config.contrast) * 2 - 1;
         const heightForColor = height;
-        // Scale height and shift it to keep terrain centered
+
+        // scale height and shift it to keep terrain centered
         height = (height + 0.5) * config.heightScale;
         
         const pos: [number, number, number] = [x * 2, height, z * 2];
@@ -201,6 +300,18 @@ const CyberpunkPerlin = () => {
     return buffer;
   }, [config, colorMode, getHeatmapColor, octaveNoise, projectPoint, rotatePoint]);
 
+
+  /**
+   * Creates a 2D noise frame for the current time.
+   *
+   * @param currentTime - The current time used to generate the frame.
+   * @returns A 2D array of `ColoredChar` representing the noise frame.
+   *
+   * This function generates a 2D noise frame by:
+   * - Initializing a buffer for rendering.
+   * - Generating noise values using Perlin noise and mapping them to characters and colors.
+   * - Returning the final buffer representing the 2D noise.
+   */
   const createNoiseFrame = useCallback((currentTime: number): ColoredChar[][] => {
     const width = 80;
     const height = 48;
