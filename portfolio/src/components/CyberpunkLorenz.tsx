@@ -1,63 +1,92 @@
 import React, { useState, useEffect, useCallback, useRef } from 'react';
 
+/**
+ * Represents a point in 3D space within the Lorenz system.
+ */
 interface Point {
   x: number;
   y: number;
   z: number;
 }
 
+/**
+ * Represents a point projected onto a 2D plane for display.
+ */
 interface ProjectedPoint {
   x: number;
   y: number;
 }
 
+/**
+ * Configuration parameters for the Lorenz system and visualization.
+ */
 interface Config {
-  scale: number;
-  displayScale: number;
-  xOffset: number;
-  yOffset: number;
-  rotateX: number;
-  rotateY: number;
-  rotateZ: number;
-  sigma: number;
-  rho: number;
-  beta: number;
-  speed: number;
+  scale: number;         // Base scale factor for the visualization
+  displayScale: number;  // Additional scale factor for display adjustment
+  xOffset: number;       // Horizontal offset for centering
+  yOffset: number;       // Vertical offset for centering
+  rotateX: number;       // Rotation around X axis (degrees)
+  rotateY: number;       // Rotation around Y axis (degrees)
+  rotateZ: number;       // Rotation around Z axis (degrees)
+  sigma: number;         // σ parameter of the Lorenz system
+  rho: number;          // ρ parameter of the Lorenz system
+  beta: number;         // β parameter of the Lorenz system
+  speed: number;        // Animation speed multiplier
 }
 
+/**
+ * Configuration for the control sliders.
+ */
 interface SliderConfig {
   key: keyof Config;
-  jpLabel: string;
-  enLabel: string;
-  min: number;
-  max: number;
-  step: number;
+  jpLabel: string;      // Japanese label
+  enLabel: string;      // English label
+  min: number;          // Minimum value
+  max: number;          // Maximum value
+  step: number;         // Step size
 }
 
+/**
+ * Default configuration values for the Lorenz system and visualization.
+ * These values create a stable and visually pleasing initial state.
+ */
+const DEFAULT_CONFIG: Config = {
+  scale: 2,
+  displayScale: 0.9,
+  xOffset: 80,
+  yOffset: 30,
+  rotateX: 24.0,
+  rotateY: -18.0,
+  rotateZ: -44.0,
+  sigma: 10.3,
+  rho: 23.7,
+  beta: 1.7,
+  speed: 1.0
+};
+
+/**
+ * CyberpunkLorenz is a React component that renders an interactive ASCII art
+ * visualization of the Lorenz attractor. It supports rotation, zooming, and
+ * real-time parameter adjustment through a control panel.
+ */
 const CyberpunkLorenz = () => {
+  // State management for points and interaction
   const [points, setPoints] = useState<Point[]>([]);
   const [isDragging, setIsDragging] = useState(false);
   const [lastMousePos, setLastMousePos] = useState({ x: 0, y: 0 });
   const [isHeatmap, setIsHeatmap] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
   
-  const [config, setConfig] = useState<Config>({
-    scale: 2,
-    displayScale: 0.9,
-    xOffset: 80,
-    yOffset: 30,
-    rotateX: 24.0,
-    rotateY: -18.0,
-    rotateZ: -44.0,
-    sigma: 10.3,
-    rho: 23.7,
-    beta: 1.7,
-    speed: 1.0
-  });
+  // Initial configuration state
+  const [config, setConfig] = useState<Config>(DEFAULT_CONFIG);
   
   const animationRef = useRef<number | null>(null);
-  const dt = 0.01;
+  const dt = 0.01;  // Time step for numerical integration
 
+  /**
+   * Handles the start of a mouse drag operation.
+   * Initializes dragging state and stores the initial mouse position.
+   */
   const handleMouseDown = (e: React.MouseEvent) => {
     setIsDragging(true);
     setLastMousePos({
@@ -66,12 +95,15 @@ const CyberpunkLorenz = () => {
     });
   };
 
+  /**
+   * Handles mouse movement during drag operations.
+   * Updates rotation angles based on mouse movement delta.
+   */
   const handleMouseMove = (e: React.MouseEvent) => {
     if (!isDragging) return;
 
     const deltaX = e.clientX - lastMousePos.x;
     const deltaY = e.clientY - lastMousePos.y;
-
     const rotationSpeed = 0.5;
 
     setConfig(prev => ({
@@ -86,14 +118,10 @@ const CyberpunkLorenz = () => {
     });
   };
 
-  const handleMouseUp = () => {
-    setIsDragging(false);
-  };
-
-  const handleMouseLeave = () => {
-    setIsDragging(false);
-  };
-
+  /**
+   * Handles mouse scroll wheel events for zooming.
+   * Updates the display scale based on scroll direction.
+   */
   const handleWheel = (e: React.WheelEvent) => {
     e.preventDefault();
     const zoomSpeed = 0.05;
@@ -105,26 +133,43 @@ const CyberpunkLorenz = () => {
     }));
   };
 
+  /**
+   * Rotates a point in 3D space according to the current rotation angles.
+   * Applies rotations around X, Y, and Z axes in sequence.
+   * 
+   * @param point - The point to rotate
+   * @returns The rotated point
+   */
   const rotatePoint = (point: Point): Point => {
     const { x, y, z } = point;
     const radX = config.rotateX * Math.PI / 180;
     const radY = config.rotateY * Math.PI / 180;
     const radZ = config.rotateZ * Math.PI / 180;
     
+    // Rotate around X axis
     const x1 = x;
     const y1 = y * Math.cos(radX) - z * Math.sin(radX);
     const z1 = y * Math.sin(radX) + z * Math.cos(radX);
     
+    // Rotate around Y axis
     const x2 = x1 * Math.cos(radY) + z1 * Math.sin(radY);
     const y2 = y1;
     const z2 = -x1 * Math.sin(radY) + z1 * Math.cos(radY);
     
+    // Rotate around Z axis
     const x3 = x2 * Math.cos(radZ) - y2 * Math.sin(radZ);
     const y3 = x2 * Math.sin(radZ) + y2 * Math.cos(radZ);
     
     return { x: x3, y: y3, z: z2 };
   };
 
+  /**
+   * Projects a 3D point onto the 2D display plane.
+   * Applies rotation, scaling, and offset transformations.
+   * 
+   * @param point - The 3D point to project
+   * @returns The projected 2D point
+   */
   const project = (point: Point): ProjectedPoint => {
     const rotated = rotatePoint(point);
     return {
@@ -133,35 +178,77 @@ const CyberpunkLorenz = () => {
     };
   };
 
+  /**
+   * Determines the color class for a point based on its position relative to
+   * the Lorenz attractor's centers. Creates a concentric circle effect around
+   * the attractor's "eyes".
+   * 
+   * @param point - The point to color
+   * @returns CSS class name for the point's color
+   */
   const getColorClass = useCallback((point: Point): string => {
     if (isHeatmap) {
-      const { x, y } = point;
+      const { x, y, z } = point;
       
-      const center1 = { x: -8.5, y: -8.5 };
-      const center2 = { x: 8.5, y: 8.5 };
+      // Calculate attractor centers based on system parameters
+      const center1 = { 
+        x: Math.sqrt(config.beta * (config.rho - 1)), 
+        y: Math.sqrt(config.beta * (config.rho - 1)),
+        z: config.rho - 1
+      };
+      const center2 = {
+        x: -Math.sqrt(config.beta * (config.rho - 1)),
+        y: -Math.sqrt(config.beta * (config.rho - 1)),
+        z: config.rho - 1
+      };
       
-      const dist1 = Math.sqrt(Math.pow(x - center1.x, 2) + Math.pow(y - center1.y, 2));
-      const dist2 = Math.sqrt(Math.pow(x - center2.x, 2) + Math.pow(y - center2.y, 2));
+      // Calculate 3D distances to both centers
+      const dist1 = Math.sqrt(
+        Math.pow(x - center1.x, 2) + 
+        Math.pow(y - center1.y, 2) + 
+        Math.pow(z - center1.z, 2)
+      );
+      const dist2 = Math.sqrt(
+        Math.pow(x - center2.x, 2) + 
+        Math.pow(y - center2.y, 2) + 
+        Math.pow(z - center2.z, 2)
+      );
       
+      // Use minimum distance and normalize
       const dist = Math.min(dist1, dist2);
+      const maxDist = Math.sqrt(
+        Math.pow(center1.x - center2.x, 2) + 
+        Math.pow(center1.y - center2.y, 2) + 
+        Math.pow(center1.z - center2.z, 2)
+      );
       
-      if (dist < 2) {
+      const normalizedDist = dist / maxDist;
+      
+      // Apply color gradients based on normalized distance
+      if (normalizedDist < 0.15) {
         return 'text-red-500';
-      } else if (dist < 4) {
+      } else if (normalizedDist < 0.3) {
         return 'text-orange-500';
-      } else if (dist < 6) {
+      } else if (normalizedDist < 0.45) {
         return 'text-yellow-500';
-      } else if (dist < 8) {
+      } else if (normalizedDist < 0.6) {
         return 'text-green-500';
-      } else if (dist < 10) {
+      } else if (normalizedDist < 0.75) {
         return 'text-blue-500';
       } else {
         return 'text-violet-500';
       }
     }
     return 'text-white';
-  }, [isHeatmap]);
+  }, [isHeatmap, config.beta, config.rho]);
 
+  /**
+   * Creates an ASCII art frame from the current set of points.
+   * Projects 3D points to 2D and assigns appropriate characters and colors.
+   * 
+   * @param points - Array of 3D points to render
+   * @returns React element containing the ASCII frame
+   */
   const createAsciiFrame = useCallback((points: Point[]): React.ReactElement => {
     const width = 100;
     const height = 45;
@@ -194,28 +281,10 @@ const CyberpunkLorenz = () => {
     );
   }, [config.displayScale, project, getColorClass]);
 
-  useEffect(() => {
-    const element = containerRef.current;
-    if (!element) return;
-
-    const disableScroll = () => {
-      document.body.style.overflow = 'hidden';
-    };
-
-    const enableScroll = () => {
-      document.body.style.overflow = 'auto';
-    };
-
-    element.addEventListener('mouseenter', disableScroll);
-    element.addEventListener('mouseleave', enableScroll);
-
-    return () => {
-      element.removeEventListener('mouseenter', disableScroll);
-      element.removeEventListener('mouseleave', enableScroll);
-      document.body.style.overflow = 'auto';
-    };
-  }, []);
-
+  /**
+   * Initializes the Lorenz system with starting points.
+   * Uses numerical integration to generate initial set of points.
+   */
   useEffect(() => {
     let x = 0.1;
     let y = 0;
@@ -237,6 +306,10 @@ const CyberpunkLorenz = () => {
     setPoints(initialPoints);
   }, [config.sigma, config.rho, config.beta]);
 
+  /**
+   * Handles the animation loop for the Lorenz system.
+   * Continuously updates points using the Lorenz equations.
+   */
   useEffect(() => {
     const animate = () => {
       setPoints(prevPoints => {
@@ -268,6 +341,16 @@ const CyberpunkLorenz = () => {
     };
   }, [config]);
 
+  /**
+   * Controls for the visualization parameters
+   */
+  /**
+   * Handler for configuration changes from the control sliders.
+   * Updates the specified configuration parameter with the new value.
+   * 
+   * @param key - The configuration parameter to update
+   * @param value - The new value for the parameter
+   */
   const handleConfigChange = (key: keyof Config, value: number): void => {
     setConfig(prev => ({ ...prev, [key]: value }));
   };
@@ -288,8 +371,8 @@ const CyberpunkLorenz = () => {
         ref={containerRef}
         onMouseDown={handleMouseDown}
         onMouseMove={handleMouseMove}
-        onMouseUp={handleMouseUp}
-        onMouseLeave={handleMouseLeave}
+        onMouseUp={() => setIsDragging(false)}
+        onMouseLeave={() => setIsDragging(false)}
         onWheel={handleWheel}
         className="flex-1 cursor-move border-r border-white"
       >
@@ -307,6 +390,12 @@ const CyberpunkLorenz = () => {
             className="mt-2 px-2 py-1 border border-white hover:bg-white hover:text-black transition-colors w-full"
           >
             {isHeatmap ? 'Switch to White' : 'Switch to Rainbow'}
+          </button>
+          <button
+            onClick={() => setConfig(DEFAULT_CONFIG)}
+            className="mt-2 px-2 py-1 border border-white hover:bg-white hover:text-black transition-colors w-full"
+          >
+            Reset to Default
           </button>
         </div>
         {sliders.map(({ key, enLabel, min, max, step }) => (
