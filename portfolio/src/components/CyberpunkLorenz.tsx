@@ -34,51 +34,7 @@ interface SliderConfig {
   step: number;
 }
 
-/**
- * CyberpunkLorenz is a React functional component that renders an interactive
- * Lorenz attractor visualization in ASCII art style. The component allows users
- * to rotate and zoom the visualization using mouse interactions and provides
- * sliders to adjust various parameters of the Lorenz system.
- *
- * @component
- * @example
- * return (
- *   <CyberpunkLorenz />
- * )
- *
- * @typedef {Object} Point
- * @property {number} x - The x-coordinate of the point.
- * @property {number} y - The y-coordinate of the point.
- * @property {number} z - The z-coordinate of the point.
- *
- * @typedef {Object} ProjectedPoint
- * @property {number} x - The x-coordinate of the projected point.
- * @property {number} y - The y-coordinate of the projected point.
- *
- * @typedef {Object} Config
- * @property {number} scale - The scale factor for the Lorenz attractor.
- * @property {number} displayScale - The display scale factor for the visualization.
- * @property {number} xOffset - The x-offset for the visualization.
- * @property {number} yOffset - The y-offset for the visualization.
- * @property {number} rotateX - The rotation angle around the X-axis.
- * @property {number} rotateY - The rotation angle around the Y-axis.
- * @property {number} rotateZ - The rotation angle around the Z-axis.
- * @property {number} sigma - The sigma parameter of the Lorenz system.
- * @property {number} rho - The rho parameter of the Lorenz system.
- * @property {number} beta - The beta parameter of the Lorenz system.
- * @property {number} speed - The speed factor for the animation.
- *
- * @typedef {Object} SliderConfig
- * @property {keyof Config} key - The key of the configuration parameter.
- * @property {string} jpLabel - The Japanese label for the slider.
- * @property {string} enLabel - The English label for the slider.
- * @property {number} min - The minimum value for the slider.
- * @property {number} max - The maximum value for the slider.
- * @property {number} step - The step value for the slider.
- *
- * @returns {React.ReactElement} The rendered CyberpunkLorenz component.
- */
-const CyberpunkLorenz: React.FC<{}> = () => {
+const CyberpunkLorenz = () => {
   const [points, setPoints] = useState<Point[]>([]);
   const [isDragging, setIsDragging] = useState(false);
   const [lastMousePos, setLastMousePos] = useState({ x: 0, y: 0 });
@@ -149,13 +105,6 @@ const CyberpunkLorenz: React.FC<{}> = () => {
     }));
   };
 
-
-  /**
-   * Rotates a given point in 3D space based on the current configuration's rotation angles.
-   *
-   * @param point - The point to be rotated, represented by its x, y, and z coordinates.
-   * @returns The rotated point with updated x, y, and z coordinates.
-   */
   const rotatePoint = (point: Point): Point => {
     const { x, y, z } = point;
     const radX = config.rotateX * Math.PI / 180;
@@ -184,40 +133,18 @@ const CyberpunkLorenz: React.FC<{}> = () => {
     };
   };
 
-
-  /**
-   * Determines the color class for a given point based on its position and the current heatmap setting.
-   *
-   * @param point - The point for which to determine the color class.
-   * @returns A string representing the CSS class for the color of the point.
-   *
-   * If the heatmap is enabled, the color is determined based on the distance of the point from two predefined centers,
-   * creating an "onion ring" effect. The closer the point is to a center, the warmer the color.
-   * - Red for distances less than 2 units.
-   * - Orange for distances between 2 and 4 units.
-   * - Yellow for distances between 4 and 6 units.
-   * - Green for distances between 6 and 8 units.
-   * - Blue for distances between 8 and 10 units.
-   * - Violet for distances greater than 10 units.
-   *
-   * If the heatmap is not enabled, the color is white.
-   */
-  const getColorClass = (point: Point): string => {
+  const getColorClass = useCallback((point: Point): string => {
     if (isHeatmap) {
-      const { x, y, z } = point;
+      const { x, y } = point;
       
-      // Define the two attractor centers
       const center1 = { x: -8.5, y: -8.5 };
       const center2 = { x: 8.5, y: 8.5 };
       
-      // Calculate distances to both centers
       const dist1 = Math.sqrt(Math.pow(x - center1.x, 2) + Math.pow(y - center1.y, 2));
       const dist2 = Math.sqrt(Math.pow(x - center2.x, 2) + Math.pow(y - center2.y, 2));
       
-      // Use the smaller distance for coloring
       const dist = Math.min(dist1, dist2);
       
-      // Color based on distance from nearest center (onion ring effect)
       if (dist < 2) {
         return 'text-red-500';
       } else if (dist < 4) {
@@ -233,22 +160,8 @@ const CyberpunkLorenz: React.FC<{}> = () => {
       }
     }
     return 'text-white';
-  };
+  }, [isHeatmap]);
 
-  /**
-   * Generates an ASCII frame from a set of points and returns it as a React element.
-   * 
-   * @param points - An array of Point objects to be projected and rendered.
-   * @returns A React element representing the ASCII frame.
-   * 
-   * The function creates a 2D buffer of characters and a corresponding color buffer.
-   * Each point is projected and scaled according to the display scale configuration.
-   * If the scaled coordinates fall within the buffer dimensions, the character and color
-   * at that position are updated.
-   * 
-   * The resulting buffers are then mapped to a series of div and span elements to create
-   * the final ASCII frame, with appropriate classes for styling.
-   */
   const createAsciiFrame = useCallback((points: Point[]): React.ReactElement => {
     const width = 100;
     const height = 45;
@@ -279,9 +192,7 @@ const CyberpunkLorenz: React.FC<{}> = () => {
         ))}
       </>
     );
-  }, [config.displayScale, project, isHeatmap]);
-
-
+  }, [config.displayScale, project, getColorClass]);
 
   useEffect(() => {
     const element = containerRef.current;
