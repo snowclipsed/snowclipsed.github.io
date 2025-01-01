@@ -17,6 +17,22 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet" />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.MathJax = {
+                tex: {
+                  inlineMath: [['\\\\(', '\\\\)']],
+                  displayMath: [['$$', '$$']],
+                  processEscapes: true,
+                },
+                options: {
+                  skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+                }
+              };
+            `,
+          }}
+        />
       </head>
       <body className="min-h-screen bg-black text-white antialiased">
         <div className="max-w-6xl mx-auto">

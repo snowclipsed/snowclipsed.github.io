@@ -1,10 +1,18 @@
+'use client';
+
+// src/components/CyberpunkPortfolio.tsx
 import React, { useState } from 'react';
 import { Terminal, Book, Network, Target, Brain } from 'lucide-react';
 import CyberpunkBlog from './CyberpunkBlog';
 import CyberpunkContact from './CyberpunkContact';
 import CyberpunkLorenz from './CyberpunkLorenz';
+import type { BlogPost } from '../lib/markdown';
 
-const CyberpunkPortfolio = () => {
+interface CyberpunkPortfolioProps {
+  posts?: BlogPost[];
+}
+
+const CyberpunkPortfolio: React.FC<CyberpunkPortfolioProps> = ({ posts = [] }) => {
   const [activeSection, setActiveSection] = useState('main');
   const [glitchText, setGlitchText] = useState(false);
 
@@ -13,7 +21,6 @@ const CyberpunkPortfolio = () => {
     { id: 'blog', icon: <Book className="w-5 h-5" />, label: 'ブログ' },
     { id: 'contact', icon: <Network className="w-5 h-5" />, label: 'コンタクト' }
   ];
-      
 
   const triggerGlitch = () => {
     setGlitchText(true);
@@ -22,7 +29,7 @@ const CyberpunkPortfolio = () => {
 
   return (
     <div className="min-h-screen bg-black text-white font-mono p-4 max-w-4xl mx-auto">
-      {/* Enhanced Header */}
+      {/* Header */}
       <header className="border border-white p-6 mb-8 relative group">
         <div className={`transition-all duration-300 ${glitchText ? 'transform translate-x-1' : ''}`}>
           <h1 className="text-3xl md:text-4xl mb-2 font-bold relative">
@@ -64,7 +71,6 @@ const CyberpunkPortfolio = () => {
           </button>
         ))}
       </nav>
-
       {/* Main Content Container */}
       <div className="border border-white">
         <div className="p-6">
@@ -155,7 +161,7 @@ const CyberpunkPortfolio = () => {
             </div>
           )}
 
-          {activeSection === 'blog' && <CyberpunkBlog />}
+          {activeSection === 'blog' && <CyberpunkBlog posts={posts} />}
           {activeSection === 'contact' && <CyberpunkContact />}
         </div>
       </div>

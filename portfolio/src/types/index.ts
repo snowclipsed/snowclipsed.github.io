@@ -1,0 +1,1 @@
+export type { BlogPost } from '../lib/markdown';

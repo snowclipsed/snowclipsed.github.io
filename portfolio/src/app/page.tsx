@@ -1,7 +1,7 @@
-'use client';
+import { getAllPosts } from '../lib/markdown';
+import CyberpunkPortfolio from '../components/CyberpunkPortfolio';
 
-import CyberpunkPortfolio from '@/src/components/CyberpunkPortfolio';
-
-export default function Home() {
-  return <CyberpunkPortfolio />;
+export default async function Home() {
+  const posts = await getAllPosts();
+  return <CyberpunkPortfolio posts={posts} />;
 }
