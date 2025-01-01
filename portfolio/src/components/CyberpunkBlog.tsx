@@ -10,14 +10,22 @@ interface CyberpunkBlogProps {
   posts?: BlogPost[];
 }
 
+interface MathJaxWindow extends Window {
+  MathJax?: {
+    typeset: () => void;
+  };
+}
+
 const CyberpunkBlog: React.FC<CyberpunkBlogProps> = ({ posts = [] }) => {
   const [selectedPost, setSelectedPost] = useState<BlogPost | null>(null);
   const [mathjaxLoaded, setMathJaxLoaded] = useState(false);
 
   useEffect(() => {
-    if (selectedPost && mathjaxLoaded && (window as any).MathJax) {
+    const mathJaxWindow = window as unknown as MathJaxWindow;
+    
+    if (selectedPost && mathjaxLoaded && mathJaxWindow.MathJax?.typeset) {
       // Typeset the math when post content changes or MathJax loads
-      (window as any).MathJax.typeset();
+      mathJaxWindow.MathJax.typeset();
     }
   }, [selectedPost, mathjaxLoaded]);
 
