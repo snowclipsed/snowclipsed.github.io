@@ -2,7 +2,7 @@
 import fs from 'fs/promises';
 import path from 'path';
 import matter from 'gray-matter';
-import { marked , Image} from 'marked';
+import { marked, Tokens} from 'marked';
 import { cache } from 'react';
 
 export type BlogPost = {
@@ -15,6 +15,12 @@ export type BlogPost = {
   description: string;
   content: string;
 };
+
+interface ImageProps {
+  href?: string;
+  text?: string;
+  title?: string;
+}
 
 // Custom renderer to handle math and image paths
 const renderer = new marked.Renderer();
@@ -30,21 +36,34 @@ renderer.code = ({ text, lang }: { text: string, lang?: string }) => {
 
 // Handle inline math with type checking
 const originalParagraph = renderer.paragraph.bind(renderer);
-renderer.paragraph = (text) => {
-  if (typeof text !== 'string') {
-    return originalParagraph(text);
+renderer.paragraph = (token: Tokens.Paragraph) => {
+  // Check if the token is a paragraph token
+  if (token.type !== 'paragraph') {
+    return originalParagraph(token);
   }
 
-  // Process inline math expressions
-  const processed = text.replace(/\$([^\$]+)\$/g, (match, math) => {
-    return `\\(${math}\\)`;
+  // Process the text of the paragraph token
+  const processedTokens = token.tokens.map(subToken => {
+    if (subToken.type === 'text') {
+      // Replace inline math expressions in text tokens
+      return {
+        ...subToken,
+        text: subToken.text.replace(/\$([^\$]+)\$/g, (_match: string, math: string) => {
+          return `\\(${math}\\)`;
+        })
+      };
+    }
+    return subToken;
   });
 
-  return originalParagraph(processed);
+  // Create a new paragraph token with processed tokens
+  return originalParagraph({
+    ...token,
+    tokens: processedTokens
+  });
 };
 
-// Simplify image paths
-renderer.image = (image: Image) => {
+renderer.image = (image: Tokens.Image) => {
   if (!image.href) return '';
   
   // If the image path starts with ./ or ../, assume it's relative to the posts directory
@@ -56,13 +75,11 @@ renderer.image = (image: Image) => {
 };
 
 // Configure marked with the custom renderer
+// Configure marked with the custom renderer
 marked.setOptions({
   renderer,
   gfm: true,
   breaks: true,
-  sanitize: false,
-  smartLists: true,
-  smartypants: true
 });
 
 export const getPostBySlug = cache(async (slug: string): Promise<BlogPost> => {
