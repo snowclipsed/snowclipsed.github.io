@@ -2,7 +2,7 @@
 import fs from 'fs/promises';
 import path from 'path';
 import matter from 'gray-matter';
-import { marked } from 'marked';
+import { marked , Image} from 'marked';
 import { cache } from 'react';
 
 export type BlogPost = {
@@ -20,11 +20,12 @@ export type BlogPost = {
 const renderer = new marked.Renderer();
 
 // Handle math blocks
-renderer.code = (code, language) => {
-  if (language === 'math') {
-    return `<div class="math-display">$$${code}$$</div>`;
+// Handle math blocks
+renderer.code = ({ text, lang }: { text: string, lang?: string }) => {
+  if (lang === 'math') {
+    return `<div class="math-display">$$${text}$$</div>`;
   }
-  return `<pre><code class="language-${language}">${code}</code></pre>`;
+  return `<pre><code class="language-${lang}">${text}</code></pre>`;
 };
 
 // Handle inline math with type checking
@@ -43,14 +44,15 @@ renderer.paragraph = (text) => {
 };
 
 // Simplify image paths
-renderer.image = (href, title, text) => {
-  if (!href) return '';
+renderer.image = (image: Image) => {
+  if (!image.href) return '';
   
   // If the image path starts with ./ or ../, assume it's relative to the posts directory
-  if (href.startsWith('./') || href.startsWith('../')) {
-    href = `/blog-images/${href.split('/').pop()}`;
+  let processedHref = image.href;
+  if (image.href.startsWith('./') || image.href.startsWith('../')) {
+    processedHref = `/blog-images/${image.href.split('/').pop()}`;
   }
-  return `<img src="${href}" alt="${text || ''}" title="${title || ''}" class="rounded-lg">`;
+  return `<img src="${processedHref}" alt="${image.text || ''}" title="${image.title || ''}" class="rounded-lg">`;
 };
 
 // Configure marked with the custom renderer
