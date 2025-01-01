@@ -16,12 +16,6 @@ export type BlogPost = {
   content: string;
 };
 
-interface ImageProps {
-  href?: string;
-  text?: string;
-  title?: string;
-}
-
 // Custom renderer to handle math and image paths
 const renderer = new marked.Renderer();
 
