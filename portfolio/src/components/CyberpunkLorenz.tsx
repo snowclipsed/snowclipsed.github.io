@@ -391,7 +391,7 @@ const CyberpunkLorenz = () => {
             onClick={() => setIsHeatmap(prev => !prev)}
             className="mt-2 px-2 py-1 border border-white hover:bg-white hover:text-black transition-colors w-full"
           >
-            {isHeatmap ? 'Switch to White' : 'Switch to Rainbow'}
+            {isHeatmap ? 'Switch to White' : 'Switch to Heatmap'}
           </button>
           <button
             onClick={() => setConfig(DEFAULT_CONFIG)}
