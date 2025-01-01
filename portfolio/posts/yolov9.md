@@ -3,6 +3,7 @@ layout: post
 title: "Understanding the YOLOv9 Paper"
 description: My notes on the YOLOv9 paper.
 categories: research
+date: "2024-02-29"
 tags: [notes, vision, papers, computer science]
 toc:
     sidebar: left
