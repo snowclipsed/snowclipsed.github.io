@@ -27,9 +27,8 @@ An information bottleneck is when we compress high dimensional input data into l
 This is what almost every modern deep learning method does, and is essentially its goal. Deep learning is an inherent compression optimization problem. A model tries to learn the least amount of most important features by a priority basis - that is how we get feature maps and attention. The best model is the one which generalizes perfectly over a concept so as to require learn the least number of features possible while retaining enough information to achieve the best results.
 
 It's hard to measure the ideal amount of information loss from information bottlenecks. The authors in the paper argue that the loss from information bottlenecks may still be non-negligible in many modern techniques because it is simply learning the wrong features and hence the wrong mapping between input and predictions.
-<p align="center">
-    <img src="/assets/img/infobottleneck1.png" alt="alt text" width="90%">
-</p>
+
+![alt text](../public/blog-images/infobottleneck1.png "[size:md] [center] Information Bottleneck")
 
 The information loss due to the bottleneck can be described by in terms of mutual information:
 
@@ -47,9 +46,7 @@ $$
 
 **What does this even mean?**
 
-<p align="center">
-    <img src="/assets/img/infobottleneck2.png" alt="alt text" width="90%">
-</p>
+![alt text](../public/blog-images/infobottleneck2.png "[size:md] [center] Information Bottleneck")
 
 1. This represents that as more neural transformations are applied, the more information is lost. As in, deeper layers mean more information loss since there's consecutive application of transformation functions (neurons).
 
@@ -85,9 +82,8 @@ Where \\(\lambda_i\\) is the weighing coefficient for each auxiliary loss. These
 ## PGI Architecture 
 PGI definitely works well in concept, but adding more neurons to a model is not always the answer because it will lead to slower inference. The auxiliary layers will increase inference costs by 20% when added. However we don't have to work about that with the auxiliary layers because they are only present during the training phase to supervise intermediate layers. During inference, we "turn off" the auxiliary layers. Auxiliary layers also only aim to add new, important information that is missing in the intermediate representations. Hence, this concept will not underparameterize our model because we're not passing the entirety of original information from the image again, just the essential bits.
 
-<p align="center">
-    <img src="/assets/img/PGI.png" alt="alt text" width="70%">
-</p>
+
+![alt text](../public/blog-images/PGI.png "[size:md] [center] PGI")
 
 ### Observations in previous architectures
 Authors found high performance in many models with reversible architectures. DynamicNet uses YoloV7 and merges it with CBNet architecture which has multi-level reversible branches with high parameter utilization. YoloV9 builds on DynamicNet architecture to design reversible branches on which it implements PGI.
@@ -203,10 +199,6 @@ where \\( M \\) ensures that only the relevant activations contributing to the g
 Deep models lose information during the progressive feature extraction process due to the information bottleneck principle, which we argued previously. This is caused due to repeated data (feature) transformations. If we find a method to learn and propagate gradients without the use of excessive transformations, it can potentially decrease model degradation from information loss usually incurred from the transformations. Turns out there does exist such a method, called Cross Stage Partial Networks or CSPNet. 
 
 CSPNet is a foundational architecture built to improve gradient flow, reduce computational complexity and enhance feature extraction efficiency of deep networks. It originally was used to solve the issue of redundant gradient information and information loss in deep convolutional networks, which share a lot of similarities with YOLOv9. CSPNet does this by using a split-transform-merge architecture:
-
-<p align="center">
-    <img src="/assets/img/cspnet.png" alt="alt text" width="80%">
-</p>
 
 - Part 1 is sent through a series of transformations (e.g., convolutions, activation functions).
 
