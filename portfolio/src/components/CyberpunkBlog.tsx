@@ -20,10 +20,9 @@ const CyberpunkBlog: React.FC<CyberpunkBlogProps> = ({ posts = [] }) => {
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedTags, setSelectedTags] = useState<string[]>([]);
   const [sortOrder, setSortOrder] = useState<'asc' | 'desc'>('desc');
-
-  // State for tag management
   const [isTagsExpanded, setIsTagsExpanded] = useState(false);
   const [tagSearchQuery, setTagSearchQuery] = useState('');
+  
   const POPULAR_TAGS_COUNT = 5;
 
   // Get unique tags and their counts
@@ -83,7 +82,6 @@ const CyberpunkBlog: React.FC<CyberpunkBlogProps> = ({ posts = [] }) => {
     setSortOrder(prev => prev === 'asc' ? 'desc' : 'asc');
   };
 
-
   if (selectedPost) {
     return (
       <>
@@ -125,11 +123,16 @@ const CyberpunkBlog: React.FC<CyberpunkBlogProps> = ({ posts = [] }) => {
               </div>
 
               {selectedPost.image && (
-                <img 
-                  src={selectedPost.image} 
-                  alt={selectedPost.title}
-                  className="w-full h-64 object-cover mb-6 rounded-lg"
-                />
+                <div className="relative w-full h-64 mb-6">
+                  <Image 
+                    src={selectedPost.image}
+                    alt={selectedPost.title}
+                    fill
+                    className="rounded-lg object-cover"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    priority
+                  />
+                </div>
               )}
 
               <div 
@@ -142,7 +145,6 @@ const CyberpunkBlog: React.FC<CyberpunkBlogProps> = ({ posts = [] }) => {
       </>
     );
   }
-
 
   return (
     <div className="space-y-4 animate-fade-in">
