@@ -15,6 +15,7 @@ interface CyberpunkPortfolioProps {
 const CyberpunkPortfolio: React.FC<CyberpunkPortfolioProps> = ({ posts = [] }) => {
   const [activeSection, setActiveSection] = useState('main');
   const [glitchText, setGlitchText] = useState(false);
+  const [selectedPost, setSelectedPost] = useState<BlogPost | null>(null);
 
   const navItems = [
     { id: 'main', icon: <Terminal className="w-5 h-5" />, label: 'メイン' },
@@ -26,6 +27,16 @@ const CyberpunkPortfolio: React.FC<CyberpunkPortfolioProps> = ({ posts = [] }) =
     setGlitchText(true);
     setTimeout(() => setGlitchText(false), 100);
   };
+
+  const handleNavigation = (sectionId: string) => {
+    if (sectionId === 'blog' && activeSection === 'blog') {
+      // Reset to blog listing when clicking blog button while in blog section
+      setSelectedPost(null);
+    }
+    setActiveSection(sectionId);
+    triggerGlitch();
+  };
+
   return (
     <div className="min-h-screen transition-colors duration-100
       dark:bg-black dark:text-white
@@ -48,15 +59,12 @@ const CyberpunkPortfolio: React.FC<CyberpunkPortfolioProps> = ({ posts = [] }) =
         </div>
       </header>
 
-      {/* Navigation */}
+         {/* Navigation */}
       <nav className="grid grid-cols-3 gap-4 mb-8">
         {navItems.map(({id, icon, label}) => (
           <button
             key={id}
-            onClick={() => {
-              setActiveSection(id);
-              triggerGlitch();
-            }}
+            onClick={() => handleNavigation(id)}
             className={`border transition-all duration-100
               dark:border-white border-black p-4 
               flex items-center justify-center gap-2 relative group
@@ -185,7 +193,13 @@ const CyberpunkPortfolio: React.FC<CyberpunkPortfolioProps> = ({ posts = [] }) =
             </div>
           )}
 
-          {activeSection === 'blog' && <CyberpunkBlog posts={posts} />}
+        {activeSection === 'blog' && (
+                    <CyberpunkBlog 
+                      posts={posts} 
+                      selectedPost={selectedPost}
+                      setSelectedPost={setSelectedPost}
+                    />
+                  )}
           {activeSection === 'contact' && <CyberpunkContact />}
         </div>
       </div>

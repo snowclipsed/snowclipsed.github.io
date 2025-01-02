@@ -6,16 +6,20 @@ import Image from 'next/image';
 
 interface CyberpunkBlogProps {
   posts?: BlogPost[];
+  selectedPost: BlogPost | null;
+  setSelectedPost: (post: BlogPost | null) => void;
 }
-
 interface MathJaxWindow extends Window {
   MathJax?: {
     typeset: () => void;
   };
 }
 
-const CyberpunkBlog: React.FC<CyberpunkBlogProps> = ({ posts = [] }) => {
-  const [selectedPost, setSelectedPost] = useState<BlogPost | null>(null);
+const CyberpunkBlog: React.FC<CyberpunkBlogProps> = ({ 
+  posts = [], 
+  selectedPost, 
+  setSelectedPost 
+}) => {
   const [mathjaxLoaded, setMathJaxLoaded] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedTags, setSelectedTags] = useState<string[]>([]);
@@ -93,7 +97,7 @@ const CyberpunkBlog: React.FC<CyberpunkBlogProps> = ({ posts = [] }) => {
         <div className="space-y-6 animate-fade-in">
           <button
             onClick={() => setSelectedPost(null)}
-            className="flex items-center gap-2 border border-white px-4 py-2 hover:bg-white hover:text-black transition-colors duration-100 group"
+            className="flex items-center gap-2 border transition-colors duration-100..."
           >
             <ArrowLeft className="w-4 h-4 transition-transform group-hover:-translate-x-1" />
             Back to Posts
