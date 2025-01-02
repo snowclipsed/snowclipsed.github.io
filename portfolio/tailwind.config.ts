@@ -17,9 +17,15 @@ const config: Config = {
       fontFamily: {
         mono: ['JetBrains Mono', 'monospace'],
       },
+      // Keep the animation if you're still using it
+      animation: {
+        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+      },
     },
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/typography'),
+  ],
 };
 
 export default config;
