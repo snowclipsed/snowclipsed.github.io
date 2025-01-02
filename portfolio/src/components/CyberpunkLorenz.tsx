@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState, useEffect, useCallback, useRef } from 'react';
+import { useTheme } from '../context/ThemeContext';
 
 /**
  * Represents a point in 3D space within the Lorenz system.
@@ -78,6 +79,7 @@ const CyberpunkLorenz = () => {
   const [lastMousePos, setLastMousePos] = useState({ x: 0, y: 0 });
   const [isHeatmap, setIsHeatmap] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
+  const { theme } = useTheme();
   
   // Initial configuration state
   const [config, setConfig] = useState<Config>(DEFAULT_CONFIG);
@@ -241,8 +243,8 @@ const CyberpunkLorenz = () => {
         return 'text-violet-500';
       }
     }
-    return 'text-white';
-  }, [isHeatmap, config.beta, config.rho]);
+    return theme === 'dark' ? 'text-white' : 'text-black';
+  }, [isHeatmap, config.beta, config.rho, theme]);
 
   /**
    * Creates an ASCII art frame from the current set of points.
@@ -368,7 +370,10 @@ const CyberpunkLorenz = () => {
   ];
 
   return (
-    <div className="flex border border-white bg-black h-full text-white">
+    <div className="flex border transition-colors duration-100
+      dark:border-white border-black 
+      dark:bg-black bg-white 
+      dark:text-white text-black">
       <div 
         ref={containerRef}
         onMouseDown={handleMouseDown}
@@ -376,7 +381,8 @@ const CyberpunkLorenz = () => {
         onMouseUp={() => setIsDragging(false)}
         onMouseLeave={() => setIsDragging(false)}
         onWheel={handleWheel}
-        className="flex-1 cursor-move border-r border-white"
+        className="flex-1 cursor-move border-r transition-colors duration-100
+          dark:border-white border-black"
       >
         <div className="font-mono text-[0.6rem] leading-none p-2 h-full select-none">
           {createAsciiFrame(points)}
@@ -384,24 +390,34 @@ const CyberpunkLorenz = () => {
       </div>
       
       <div className="w-44 flex flex-col p-2 text-[0.6rem] shrink-0">
-        <div className="border border-white p-2 mb-1 text-center">
+        <div className="border transition-colors duration-100
+          dark:border-white border-black p-2 mb-1 text-center">
           <p>Click and drag to rotate</p>
           <p>Use mouse wheel to zoom</p>
           <button
             onClick={() => setIsHeatmap(prev => !prev)}
-            className="mt-2 px-2 py-1 border border-white hover:bg-white hover:text-black transition-colors w-full"
+            className="mt-2 px-2 py-1 border transition-colors duration-100
+              dark:border-white border-black 
+              hover:bg-black hover:text-white
+              dark:hover:bg-white dark:hover:text-black 
+              w-full"
           >
-            {isHeatmap ? 'Switch to White' : 'Switch to Heatmap'}
+            {isHeatmap ? 'Switch to Monochrome' : 'Switch to Heatmap'}
           </button>
           <button
             onClick={() => setConfig(DEFAULT_CONFIG)}
-            className="mt-2 px-2 py-1 border border-white hover:bg-white hover:text-black transition-colors w-full"
+            className="mt-2 px-2 py-1 border transition-colors duration-100
+              dark:border-white border-black 
+              hover:bg-black hover:text-white
+              dark:hover:bg-white dark:hover:text-black 
+              w-full"
           >
             Reset to Default
           </button>
         </div>
         {sliders.map(({ key, enLabel, min, max, step }) => (
-          <div key={key} className="border border-white p-2 mt-1">
+          <div key={key} className="border transition-colors duration-100
+            dark:border-white border-black p-2 mt-1">
             <div className="flex justify-between mb-1">
               <span>{enLabel}</span>
               <span>{config[key].toFixed(1)}</span>
@@ -413,7 +429,7 @@ const CyberpunkLorenz = () => {
               step={step}
               value={config[key]}
               onChange={(e) => handleConfigChange(key, parseFloat(e.target.value))}
-              className="w-full accent-white"
+              className="w-full accent-current"
             />
           </div>
         ))}
