@@ -60,12 +60,41 @@ renderer.paragraph = (token: Tokens.Paragraph) => {
 renderer.image = (image: Tokens.Image) => {
   if (!image.href) return '';
   
-  // If the image path starts with ./ or ../, assume it's relative to the posts directory
   let processedHref = image.href;
   if (image.href.startsWith('./') || image.href.startsWith('../')) {
     processedHref = `/blog-images/${image.href.split('/').pop()}`;
   }
-  return `<img src="${processedHref}" alt="${image.text || ''}" title="${image.title || ''}" class="rounded-lg">`;
+
+  // Parse size and center options from title
+  const sizeMatch = image.title?.match(/\[size:(sm|md|lg|xl)\]/);
+  const shouldCenter = image.title?.includes('[center]');
+  const cleanTitle = image.title
+    ?.replace(/\[size:(sm|md|lg|xl)\]/, '')
+    ?.replace('[center]', '')
+    ?.trim();
+
+  // Define size classes with proper typing
+  const sizeClasses = {
+    sm: 'w-1/3',
+    md: 'w-1/2',
+    lg: 'w-2/3',
+    xl: 'w-full'
+  } as const;  // Make the object immutable
+
+  // Type-safe size class selection
+  type SizeKey = keyof typeof sizeClasses;
+  const size = sizeMatch ? sizeMatch[1] as SizeKey : 'xl';
+  const sizeCls = sizeClasses[size];
+  
+  const imgTag = `<img src="${processedHref}" 
+    alt="${image.text || ''}" 
+    title="${cleanTitle || ''}" 
+    class="rounded-lg ${sizeCls}"
+  >`;
+  
+  return shouldCenter 
+    ? `<div class="flex justify-center my-8">${imgTag}</div>`
+    : imgTag;
 };
 
 // Configure marked with the custom renderer
