@@ -1,5 +1,7 @@
 import React from 'react';
 import { Mail, Twitter, Globe } from 'lucide-react';
+import CyberpunkPerlin from './CyberpunkPerlin';
+
 
 const CyberpunkContact = () => {
   const contactItems = [
@@ -10,18 +12,10 @@ const CyberpunkContact = () => {
 
   return (
     <div className="space-y-6 animate-fade-in">
-      {/* ASCII Art Header with CRT Effect */}
-      <pre className="text-xs md:text-sm lg:text-base overflow-x-auto p-4 border border-white 
-        hover:bg-white hover:text-black transition-colors duration-300 cursor-crosshair font-mono relative group">
-        <div className="absolute inset-0 bg-white opacity-0 group-hover:opacity-5 transition-opacity duration-300" />
-        {`
-    ╔═══════════════════════════════════╗
-    ║  NETWORK STATUS: ACTIVE           ║
-    ║  ENCRYPTION: ENABLED              ║
-    ║  FIREWALL: ACTIVE                ║
-    ║  CONNECTION: SECURE               ║
-    ╚═══════════════════════════════════╝`}
-      </pre>
+      {/* Perlin Noise Visualization */}
+      <div className="border border-white bg-black">
+        <CyberpunkPerlin />
+      </div>
 
       {/* Contact Items with Enhanced Styling */}
       <div className="space-y-4">

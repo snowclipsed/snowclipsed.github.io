@@ -1,9 +1,6 @@
-'use client';
-
 import React, { useState, useEffect } from 'react';
-import { Terminal, Tag, Calendar, User, ArrowLeft } from 'lucide-react';
+import { Terminal, Tag, Calendar, User, ArrowLeft, Search, SortAsc, SortDesc, Filter } from 'lucide-react';
 import type { BlogPost } from '../lib/markdown';
-import CyberpunkPerlin from './CyberpunkPerlin';
 import Script from 'next/script';
 
 interface CyberpunkBlogProps {
@@ -19,12 +16,48 @@ interface MathJaxWindow extends Window {
 const CyberpunkBlog: React.FC<CyberpunkBlogProps> = ({ posts = [] }) => {
   const [selectedPost, setSelectedPost] = useState<BlogPost | null>(null);
   const [mathjaxLoaded, setMathJaxLoaded] = useState(false);
+  const [searchQuery, setSearchQuery] = useState('');
+  const [selectedTags, setSelectedTags] = useState<string[]>([]);
+  const [sortOrder, setSortOrder] = useState<'asc' | 'desc'>('desc');
+
+  // State for tag management
+  const [isTagsExpanded, setIsTagsExpanded] = useState(false);
+  const [tagSearchQuery, setTagSearchQuery] = useState('');
+  const [popularTagsCount, setPopularTagsCount] = useState(5);
+
+  // Get unique tags and their counts
+  const tagCounts = posts.flatMap(post => post.tags).reduce((acc, tag) => {
+    acc[tag] = (acc[tag] || 0) + 1;
+    return acc;
+  }, {} as Record<string, number>);
+
+  // Get all unique tags
+  const allTags = Object.keys(tagCounts).sort((a, b) => tagCounts[b] - tagCounts[a]);
+
+  // Filter tags based on search
+  const filteredTags = allTags.filter(tag => 
+    tag.toLowerCase().includes(tagSearchQuery.toLowerCase())
+  );
+
+  // Get popular tags for initial display
+  const popularTags = allTags.slice(0, popularTagsCount);
+
+  // Filter and sort posts
+  const filteredPosts = posts.filter(post => {
+    const matchesSearch = post.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+                         post.description.toLowerCase().includes(searchQuery.toLowerCase());
+    const matchesTags = selectedTags.length === 0 || 
+                       selectedTags.every(tag => post.tags.includes(tag));
+    return matchesSearch && matchesTags;
+  }).sort((a, b) => {
+    const dateA = new Date(a.date).getTime();
+    const dateB = new Date(b.date).getTime();
+    return sortOrder === 'asc' ? dateA - dateB : dateB - dateA;
+  });
 
   useEffect(() => {
     const mathJaxWindow = window as unknown as MathJaxWindow;
-    
     if (selectedPost && mathjaxLoaded && mathJaxWindow.MathJax?.typeset) {
-      // Typeset the math when post content changes or MathJax loads
       mathJaxWindow.MathJax.typeset();
     }
   }, [selectedPost, mathjaxLoaded]);
@@ -36,6 +69,19 @@ const CyberpunkBlog: React.FC<CyberpunkBlogProps> = ({ posts = [] }) => {
       day: '2-digit'
     }).replace(/\//g, '.');
   };
+
+  const toggleTag = (tag: string) => {
+    setSelectedTags(prev => 
+      prev.includes(tag) 
+        ? prev.filter(t => t !== tag)
+        : [...prev, tag]
+    );
+  };
+
+  const toggleSortOrder = () => {
+    setSortOrder(prev => prev === 'asc' ? 'desc' : 'asc');
+  };
+
 
   if (selectedPost) {
     return (
@@ -99,20 +145,146 @@ const CyberpunkBlog: React.FC<CyberpunkBlogProps> = ({ posts = [] }) => {
 
   return (
     <div className="space-y-4 animate-fade-in">
-      {/* Perlin Noise Visualization */}
-      <div className="border border-white bg-black">
-        <CyberpunkPerlin />
+      {/* Search and Filter Controls */}
+      <div className="border border-white p-4 space-y-4">
+        {/* Search Bar */}
+        <div className="relative">
+          <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-white/60" />
+          <input
+            type="text"
+            placeholder="Search posts..."
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+            className="w-full bg-black border border-white/30 py-2 pl-10 pr-4 text-white placeholder-white/50 focus:border-white/60 focus:outline-none transition-colors duration-300"
+          />
+        </div>
+
+        {/* Tags Filter */}
+        <div className="space-y-4">
+          <div className="flex items-center justify-between">
+            <div className="flex items-center gap-2">
+              <Filter className="w-4 h-4" />
+              <span className="text-sm">Filter by tags:</span>
+            </div>
+            <button
+              onClick={() => setIsTagsExpanded(!isTagsExpanded)}
+              className="text-sm border border-white/30 px-3 py-1 hover:border-white/60 transition-colors duration-300"
+            >
+              {isTagsExpanded ? 'Show Less' : 'Show All Tags'}
+            </button>
+          </div>
+
+          {/* Popular/Selected Tags */}
+          <div className="flex flex-wrap gap-2">
+            {(isTagsExpanded ? [] : popularTags).map(tag => (
+              <button
+                key={tag}
+                onClick={() => toggleTag(tag)}
+                className={`flex items-center gap-1 px-3 py-1 text-sm border group
+                  ${selectedTags.includes(tag)
+                    ? 'border-white bg-white text-black'
+                    : 'border-white/30 hover:border-white/60'}
+                  transition-colors duration-300`}
+              >
+                <Tag className="w-3 h-3" />
+                <span>{tag}</span>
+                <span className="ml-1 text-xs opacity-60 group-hover:opacity-100">
+                  ({tagCounts[tag]})
+                </span>
+              </button>
+            ))}
+          </div>
+
+          {/* Expanded Tags Section */}
+          {isTagsExpanded && (
+            <div className="border border-white/30 p-4 space-y-4">
+              {/* Tag Search */}
+              <div className="relative">
+                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-white/60" />
+                <input
+                  type="text"
+                  placeholder="Search tags..."
+                  value={tagSearchQuery}
+                  onChange={(e) => setTagSearchQuery(e.target.value)}
+                  className="w-full bg-black border border-white/30 py-2 pl-10 pr-4 text-white placeholder-white/50 focus:border-white/60 focus:outline-none transition-colors duration-300"
+                />
+              </div>
+
+              {/* All Tags */}
+              <div className="flex flex-wrap gap-2 max-h-48 overflow-y-auto custom-scrollbar">
+                {filteredTags.map(tag => (
+                  <button
+                    key={tag}
+                    onClick={() => toggleTag(tag)}
+                    className={`flex items-center gap-1 px-3 py-1 text-sm border group
+                      ${selectedTags.includes(tag)
+                        ? 'border-white bg-white text-black'
+                        : 'border-white/30 hover:border-white/60'}
+                      transition-colors duration-300`}
+                  >
+                    <Tag className="w-3 h-3" />
+                    <span>{tag}</span>
+                    <span className="ml-1 text-xs opacity-60 group-hover:opacity-100">
+                      ({tagCounts[tag]})
+                    </span>
+                  </button>
+                ))}
+              </div>
+
+              {/* Selected Tags Section */}
+              {selectedTags.length > 0 && (
+                <div className="border-t border-white/20 pt-4">
+                  <div className="flex items-center gap-2 mb-2">
+                    <span className="text-sm">Selected Tags:</span>
+                    <button
+                      onClick={() => setSelectedTags([])}
+                      className="text-xs border border-white/30 px-2 py-1 hover:border-white/60 transition-colors duration-300"
+                    >
+                      Clear All
+                    </button>
+                  </div>
+                  <div className="flex flex-wrap gap-2">
+                    {selectedTags.map(tag => (
+                      <button
+                        key={tag}
+                        onClick={() => toggleTag(tag)}
+                        className="flex items-center gap-1 px-3 py-1 text-sm border border-white bg-white text-black group transition-colors duration-300"
+                      >
+                        <Tag className="w-3 h-3" />
+                        <span>{tag}</span>
+                        <span className="ml-1">×</span>
+                      </button>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </div>
+          )}
+        </div>
+
+        {/* Sort Control */}
+        <button
+          onClick={toggleSortOrder}
+          className="flex items-center gap-2 px-3 py-1 border border-white/30 hover:border-white/60 transition-colors duration-300"
+        >
+          {sortOrder === 'asc' ? (
+            <SortAsc className="w-4 h-4" />
+          ) : (
+            <SortDesc className="w-4 h-4" />
+          )}
+          Sort by Date ({sortOrder === 'asc' ? 'Oldest' : 'Newest'} First)
+        </button>
       </div>
 
       {/* Posts List */}
       <div className="space-y-4 mt-4">
-        {posts.map((post, index) => (
+        {filteredPosts.map((post, index) => (
           <div 
             key={post.slug}
             className="border border-white p-4 relative group cursor-pointer"
             style={{ 
               transform: `translateX(${index * 5}px)`,
-              zIndex: posts.length - index 
+              zIndex: filteredPosts.length - index 
             }}
             onClick={() => setSelectedPost(post)}
           >
