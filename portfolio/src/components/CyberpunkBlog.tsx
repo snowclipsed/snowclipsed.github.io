@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Terminal, Tag, Calendar, User, ArrowLeft, Search, SortAsc, SortDesc, Filter } from 'lucide-react';
 import type { BlogPost } from '../lib/markdown';
 import Script from 'next/script';
+import Image from 'next/image';
 
 interface CyberpunkBlogProps {
   posts?: BlogPost[];
@@ -23,7 +24,7 @@ const CyberpunkBlog: React.FC<CyberpunkBlogProps> = ({ posts = [] }) => {
   // State for tag management
   const [isTagsExpanded, setIsTagsExpanded] = useState(false);
   const [tagSearchQuery, setTagSearchQuery] = useState('');
-  const [popularTagsCount, setPopularTagsCount] = useState(5);
+  const POPULAR_TAGS_COUNT = 5;
 
   // Get unique tags and their counts
   const tagCounts = posts.flatMap(post => post.tags).reduce((acc, tag) => {
@@ -40,7 +41,7 @@ const CyberpunkBlog: React.FC<CyberpunkBlogProps> = ({ posts = [] }) => {
   );
 
   // Get popular tags for initial display
-  const popularTags = allTags.slice(0, popularTagsCount);
+  const popularTags = allTags.slice(0, POPULAR_TAGS_COUNT);
 
   // Filter and sort posts
   const filteredPosts = posts.filter(post => {
