@@ -24,6 +24,8 @@ jobs:
 
       - name: Build
         working-directory: ./portfolio
+        env:
+          NEXT_PUBLIC_BASE_PATH: /your-repo-name  # Replace with your actual repo name
         run: npm run build
 
       - name: Add .nojekyll file
@@ -35,4 +37,4 @@ jobs:
         with:
           branch: gh-pages
           folder: portfolio/out
-          token: ${{ secrets.PERSONAL_TOKEN }}  # Use the secret here
+          token: ${{ secrets.PERSONAL_TOKEN }}

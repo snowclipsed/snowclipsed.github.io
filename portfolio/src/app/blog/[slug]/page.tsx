@@ -14,15 +14,14 @@ export async function generateStaticParams() {
 
 type Props = {
   params: Promise<{ slug: string }>;
-  searchParams: { [key: string]: string | string[] | undefined };
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
 }
 
 export async function generateMetadata(
   props: Props,
   parent: ResolvingMetadata
 ): Promise<Metadata> {
-  const { params } = props;
-  const resolvedParams = await params;
+  const resolvedParams = await props.params;
   
   // Fetch the post data
   const post = await getPostBySlug(resolvedParams.slug).catch(() => null);
@@ -49,8 +48,7 @@ export async function generateMetadata(
 }
 
 export default async function BlogPost(props: Props) {
-  const { params } = props;
-  const resolvedParams = await params;
+  const resolvedParams = await props.params;
   
   try {
     const [post, posts] = await Promise.all([
@@ -72,7 +70,6 @@ export default async function BlogPost(props: Props) {
       </Suspense>
     );
   } catch {
-    // If any error occurs, show the 404 page
     notFound();
   }
 }
