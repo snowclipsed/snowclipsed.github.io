@@ -173,69 +173,83 @@ const CyberpunkLorenz = () => {
   }, [project, getColorClass]);
 
   // Animation Effect
-  useEffect(() => {
-    const animate = () => {
-      setPoints(prevPoints => {
-        const newPoints = [...prevPoints];
-        const last = newPoints[newPoints.length - 1];
-        
-        const dx = config.sigma * (last.y - last.x) * dt * config.speed;
-        const dy = (last.x * (config.rho - last.z) - last.y) * dt * config.speed;
-        const dz = (last.x * last.y - config.beta * last.z) * dt * config.speed;
-        
-        newPoints.push({
-          x: last.x + dx,
-          y: last.y + dy,
-          z: last.z + dz
-        });
-        
-        if (newPoints.length > 1000) newPoints.shift();
-        return newPoints;
+
+useEffect(() => {
+  let isActive = true;
+
+  const animate = () => {
+    if (!isActive) return;
+
+    setPoints(prevPoints => {
+      const newPoints = [...prevPoints];
+      const last = newPoints[newPoints.length - 1];
+      
+      const dx = config.sigma * (last.y - last.x) * dt * config.speed;
+      const dy = (last.x * (config.rho - last.z) - last.y) * dt * config.speed;
+      const dz = (last.x * last.y - config.beta * last.z) * dt * config.speed;
+      
+      newPoints.push({
+        x: last.x + dx,
+        y: last.y + dy,
+        z: last.z + dz
       });
       
-      timeRef.current += dt;
-      animationRef.current = requestAnimationFrame(animate);
-    };
+      if (newPoints.length > 1000) newPoints.shift();
+      return newPoints;
+    });
     
-    // Initialize points
-    let x = 0.1;
-    let y = 0;
-    let z = 0;
-    const initialPoints: Point[] = [];
-    
-    for(let i = 0; i < 1000; i++) {
-      const dx = config.sigma * (y - x) * dt;
-      const dy = (x * (config.rho - z) - y) * dt;
-      const dz = (x * y - config.beta * z) * dt;
-      
-      x += dx;
-      y += dy;
-      z += dz;
-      
-      initialPoints.push({ x, y, z });
-    }
-    
-    setPoints(initialPoints);
+    timeRef.current += dt;
     animationRef.current = requestAnimationFrame(animate);
+  };
+  
+  // Initialize points
+  let x = 0.1;
+  let y = 0;
+  let z = 0;
+  const initialPoints: Point[] = [];
+  
+  for(let i = 0; i < 1000; i++) {
+    const dx = config.sigma * (y - x) * dt;
+    const dy = (x * (config.rho - z) - y) * dt;
+    const dz = (x * y - config.beta * z) * dt;
     
-    return () => {
-      if (animationRef.current !== null) {
-        cancelAnimationFrame(animationRef.current);
-        animationRef.current = null;
-      }
-    };
-  }, [config.sigma, config.rho, config.beta, config.speed]);
+    x += dx;
+    y += dy;
+    z += dz;
+    
+    initialPoints.push({ x, y, z });
+  }
+  
+  setPoints(initialPoints);
+  animationRef.current = requestAnimationFrame(animate);
+  
+  // Cleanup function
+  return () => {
+    isActive = false;
+    if (animationRef.current !== null) {
+      cancelAnimationFrame(animationRef.current);
+      animationRef.current = null;
+    }
+  };
+}, [config.sigma, config.rho, config.beta, config.speed]);
 
   const handleMouseDown = useCallback((e: React.MouseEvent) => {
-    setIsDragging(true);
-    setLastMousePos({
-      x: e.clientX,
-      y: e.clientY
-    });
+    // Only handle drag if we're clicking directly on the container
+    if (e.target === e.currentTarget || (e.target as HTMLElement).closest('.font-mono')) {
+      setIsDragging(true);
+      setLastMousePos({
+        x: e.clientX,
+        y: e.clientY
+      });
+    }
   }, []);
 
   const handleMouseMove = useCallback((e: React.MouseEvent) => {
     if (!isDragging) return;
+
+    // Prevent default behaviors
+    e.preventDefault();
+    e.stopPropagation();
 
     const deltaX = e.clientX - lastMousePos.x;
     const deltaY = e.clientY - lastMousePos.y;
@@ -253,18 +267,57 @@ const CyberpunkLorenz = () => {
     });
   }, [isDragging, lastMousePos]);
 
+  const handleMouseUp = useCallback(() => {
+    setIsDragging(false);
+  }, []);
+
   const handleWheel = useCallback((e: React.WheelEvent) => {
+    // Only handle zoom if we're directly over the visualization
     if (containerRef.current?.contains(e.target as Node)) {
-      e.stopPropagation();
-      const zoomSpeed = 0.05;
-      const delta = e.deltaY > 0 ? -zoomSpeed : zoomSpeed;
-      
-      setConfig(prev => ({
-        ...prev,
-        displayScale: Math.max(0.5, Math.min(2.5, prev.displayScale + delta))
-      }));
+      // Don't prevent default behavior globally
+      // Only prevent if we're actually going to handle the zoom
+      if (e.deltaY !== 0) {
+        e.preventDefault(); // Use preventDefault instead of stopPropagation
+        
+        const zoomSpeed = 0.05;
+        const delta = e.deltaY > 0 ? -zoomSpeed : zoomSpeed;
+        
+        setConfig(prev => ({
+          ...prev,
+          displayScale: Math.max(0.5, Math.min(2.5, prev.displayScale + delta))
+        }));
+      }
     }
   }, []);
+
+  useEffect(() => {
+    if (!containerRef.current) return;
+    
+    const container = containerRef.current;
+    let isZooming = false;
+  
+    const wheelHandler = (e: WheelEvent) => {
+      if (isZooming) {
+        e.preventDefault();
+      }
+    };
+  
+    container.addEventListener('wheel', wheelHandler, { passive: false });
+  
+    return () => {
+      container.removeEventListener('wheel', wheelHandler);
+    };
+  }, []);
+
+
+  useEffect(() => {
+    // Add global mouse up listener to handle cases where mouse is released outside the component
+    document.addEventListener('mouseup', handleMouseUp);
+    
+    return () => {
+      document.removeEventListener('mouseup', handleMouseUp);
+    };
+  }, [handleMouseUp]);
 
   const sliders: SliderConfig[] = [
     { key: 'rotateX', jpLabel: 'X軸', enLabel: 'X Axis', min: -180, max: 180, step: 1 },
@@ -285,8 +338,8 @@ const CyberpunkLorenz = () => {
         ref={containerRef}
         onMouseDown={handleMouseDown}
         onMouseMove={handleMouseMove}
-        onMouseUp={() => setIsDragging(false)}
-        onMouseLeave={() => setIsDragging(false)}
+        onMouseUp={handleMouseUp}
+        onMouseLeave={handleMouseUp}
         onWheel={handleWheel}
         className="flex-1 cursor-move border-r transition-colors duration-100
           dark:border-white border-black

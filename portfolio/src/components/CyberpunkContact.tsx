@@ -1,8 +1,9 @@
-'use client';  // Fixed the typo from 'use-client'
+'use client';
 
 import React from 'react';
 import { Mail, Twitter, Globe } from 'lucide-react';
 import CyberpunkPerlin from './CyberpunkPerlin';
+import CyberpunkLorenz from './CyberpunkLorenz';
 
 const CyberpunkContact = () => {
   const contactItems = [
@@ -18,7 +19,7 @@ const CyberpunkContact = () => {
         <CyberpunkPerlin />
       </div>
 
-      {/* Contact Items with Enhanced Styling */}
+      {/* Contact Items */}
       <div className="space-y-4">
         {contactItems.map((item, index) => (
           <div 
@@ -71,6 +72,19 @@ const CyberpunkContact = () => {
             </div>
           </div>
         ))}
+      </div>
+
+      {/* Optional: Additional Information Section */}
+      <div className="border transition-colors duration-100 dark:border-white border-black p-4 mt-8">
+        <h2 className="text-xl mb-4 flex items-center gap-2">
+          <span className="text-blue-400 mr-2">▶</span>
+          コミュニケーション / COMMUNICATION
+        </h2>
+        <p className="opacity-80 font-mono">
+          Feel free to reach out for collaboration, research discussions, 
+          or just to chat about machine learning and technology. I'm always 
+          interested in connecting with fellow researchers and developers.
+        </p>
       </div>
     </div>
   );
