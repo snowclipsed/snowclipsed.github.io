@@ -1,7 +1,9 @@
+// src/app/blog/[slug]/page.tsx
 import { getPostBySlug, getAllPosts } from '../../../lib/markdown';
 import CyberpunkPortfolio from '../../../components/CyberpunkPortfolio';
-import { Metadata } from 'next';
+import { Metadata, ResolvingMetadata } from 'next';
 import { notFound } from 'next/navigation';
+import { Suspense } from 'react';
 
 export async function generateStaticParams() {
   const posts = await getAllPosts();
@@ -10,13 +12,24 @@ export async function generateStaticParams() {
   }));
 }
 
-export async function generateMetadata({
-  params,
-}: {
-  params: { slug: string }
-}): Promise<Metadata> {
-  const post = await getPostBySlug(params.slug).catch(() => null);
+type Props = {
+  params: Promise<{ slug: string }>;
+  searchParams: { [key: string]: string | string[] | undefined };
+}
+
+export async function generateMetadata(
+  props: Props,
+  parent: ResolvingMetadata
+): Promise<Metadata> {
+  const { params } = props;
+  const resolvedParams = await params;
   
+  // Fetch the post data
+  const post = await getPostBySlug(resolvedParams.slug).catch(() => null);
+  
+  // Get the parent metadata
+  const previousImages = (await parent).openGraph?.images || [];
+
   if (!post) {
     return {
       title: 'Post Not Found - Snowclipsed',
@@ -30,25 +43,35 @@ export async function generateMetadata({
     openGraph: {
       title: post.title,
       description: post.description,
-      images: post.image ? [post.image] : [],
+      images: post.image ? [post.image, ...previousImages] : previousImages,
     },
   };
 }
 
-// We need to make this async again to await the promises
-export default async function Page({ params }: { params: { slug: string } }) {
-  const post = await getPostBySlug(params.slug);
-  const posts = await getAllPosts();
+export default async function BlogPost(props: Props) {
+  const { params } = props;
+  const resolvedParams = await params;
   
-  if (!post) {
+  try {
+    const [post, posts] = await Promise.all([
+      getPostBySlug(resolvedParams.slug),
+      getAllPosts()
+    ]);
+
+    if (!post) {
+      notFound();
+    }
+
+    return (
+      <Suspense fallback={<div>Loading...</div>}>
+        <CyberpunkPortfolio 
+          posts={posts} 
+          initialSection="blog"
+          initialPost={post} 
+        />
+      </Suspense>
+    );
+  } catch (error) {
     notFound();
   }
-
-  return (
-    <CyberpunkPortfolio 
-      posts={posts} 
-      initialSection="blog"
-      initialPost={post} 
-    />
-  );
 }
