@@ -1,13 +1,7 @@
-// src/app/blog/page.tsx
+import CyberpunkShell from '../../components/CyberpunkShell';
 import { getAllPosts } from '../../lib/markdown';
-import CyberpunkPortfolio from '../../components/CyberpunkPortfolio';
-import CyberpunkBlog from '../../components/CyberpunkBlog';
 
 export default async function BlogPage() {
   const posts = await getAllPosts();
-  return (
-    <CyberpunkPortfolio>
-      <CyberpunkBlog posts={posts} />
-    </CyberpunkPortfolio>
-  );
+  return <CyberpunkShell posts={posts} />;
 }

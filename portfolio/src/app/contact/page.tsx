@@ -1,11 +1,5 @@
-// src/app/contact/page.tsx
-import CyberpunkPortfolio from '../../components/CyberpunkPortfolio';
-import CyberpunkContact from '../../components/CyberpunkContact';
+import CyberpunkShell from '../../components/CyberpunkShell';
 
 export default function ContactPage() {
-  return (
-    <CyberpunkPortfolio>
-      <CyberpunkContact />
-    </CyberpunkPortfolio>
-  );
+  return <CyberpunkShell />;
 }
