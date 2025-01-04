@@ -207,13 +207,14 @@ const CyberpunkPortfolio: React.FC<CyberpunkPortfolioProps> = ({
             </div>
           )}
 
-        {activeSection === 'blog' && (
-                <CyberpunkBlog 
-                  posts={posts} 
-                  selectedPost={selectedPost}
-                  setSelectedPost={setSelectedPost}
-                />
-              )}
+          {activeSection === 'blog' && (
+                      <CyberpunkBlog 
+                        posts={posts} 
+                        selectedPost={selectedPost}
+                        setSelectedPost={setSelectedPost}
+                      />
+                    )}
+          {activeSection === 'contact' && <CyberpunkContact />}
         </div>
       </div>
 
