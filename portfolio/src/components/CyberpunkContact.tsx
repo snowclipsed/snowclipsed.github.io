@@ -3,7 +3,6 @@
 import React from 'react';
 import { Mail, Twitter, Globe } from 'lucide-react';
 import CyberpunkPerlin from './CyberpunkPerlin';
-import CyberpunkLorenz from './CyberpunkLorenz';
 
 const CyberpunkContact = () => {
   const contactItems = [
@@ -82,7 +81,7 @@ const CyberpunkContact = () => {
         </h2>
         <p className="opacity-80 font-mono">
           Feel free to reach out for collaboration, research discussions, 
-          or just to chat about machine learning and technology. I'm always 
+          or just to chat about machine learning and technology. I&apos;m always 
           interested in connecting with fellow researchers and developers.
         </p>
       </div>
