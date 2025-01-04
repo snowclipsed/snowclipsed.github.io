@@ -18,20 +18,30 @@ jobs:
         with:
           node-version: '18'
 
+      - name: List directories for debugging
+        run: |
+          echo "Current directory:"
+          pwd
+          echo "Directory contents:"
+          ls -la
+
       - name: Install Dependencies
+        working-directory: ./portfolio
         run: npm install
 
       - name: Build
+        working-directory: ./portfolio
         env:
           NEXT_PUBLIC_BASE_PATH: ''  # For username.github.io repos, this should be empty
         run: npm run build
 
       - name: Add .nojekyll file
+        working-directory: ./portfolio
         run: touch out/.nojekyll
 
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           branch: gh-pages
-          folder: out
+          folder: portfolio/out
           token: ${{ secrets.PERSONAL_TOKEN }}
