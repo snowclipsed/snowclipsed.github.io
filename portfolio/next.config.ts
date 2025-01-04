@@ -5,8 +5,7 @@ const nextConfig = {
     unoptimized: true,
   },
   trailingSlash: true, // For GitHub Pages compatibility
-  // Remove appDir flag as it's now stable and enabled by default
-  basePath: process.env.NEXT_PUBLIC_BASE_PATH || '', // For GitHub Pages subdirectory support
+  // For username.github.io repos, we don't need basePath or assetPrefix
 };
 
 module.exports = nextConfig;
