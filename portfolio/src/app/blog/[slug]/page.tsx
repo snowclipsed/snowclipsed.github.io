@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import CyberpunkShell from '../../../components/CyberpunkShell';
-import { getAllPosts, getPostBySlug, BlogPost as MarkdownBlogPost } from '../../../lib/markdown';
+import { getAllPosts, getPostBySlug } from '../../../lib/markdown';
 
 // Update the props type to match Next.js expectations more closely
 type Params = {
