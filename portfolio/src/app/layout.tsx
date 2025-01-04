@@ -44,8 +44,12 @@ export default function RootLayout({
         dark:bg-black dark:text-white
         bg-white text-black">
         <ThemeProvider>
-          <div className="min-h-screen">
-            <div className="max-w-6xl mx-auto">
+          <div className="min-h-screen flex justify-center items-center">
+            <div style={{
+              transform: 'scale(0.67)',  // Adjust this value to scale everything
+              transformOrigin: 'center top',
+              width: '100%'
+            }}>
               {children}
             </div>
           </div>
@@ -54,3 +58,4 @@ export default function RootLayout({
     </html>
   );
 }
+
