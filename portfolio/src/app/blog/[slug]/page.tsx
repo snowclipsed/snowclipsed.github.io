@@ -71,7 +71,8 @@ export default async function BlogPost(props: Props) {
         />
       </Suspense>
     );
-  } catch (error) {
+  } catch {
+    // If any error occurs, show the 404 page
     notFound();
   }
 }
