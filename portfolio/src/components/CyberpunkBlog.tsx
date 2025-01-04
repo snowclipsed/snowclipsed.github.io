@@ -1,28 +1,16 @@
-import React, { useState, useEffect } from 'react';
+'use client';
+
+import React, { useState } from 'react';
 import { useRouter } from 'next/navigation';
-import { Terminal, Tag, Calendar, User, ArrowLeft, Search, SortAsc, SortDesc, Filter } from 'lucide-react';
+import { Terminal, Tag, Calendar, User, Search, SortAsc, SortDesc, Filter } from 'lucide-react';
 import type { BlogPost } from '../lib/markdown';
-import Script from 'next/script';
-import Image from 'next/image';
 
 interface CyberpunkBlogProps {
   posts?: BlogPost[];
-  selectedPost: BlogPost | null;
-  setSelectedPost: (post: BlogPost | null) => void;
-}
-interface MathJaxWindow extends Window {
-  MathJax?: {
-    typeset: () => void;
-  };
 }
 
-const CyberpunkBlog: React.FC<CyberpunkBlogProps> = ({ 
-  posts = [], 
-  selectedPost, 
-  setSelectedPost 
-}) => {
+const CyberpunkBlog: React.FC<CyberpunkBlogProps> = ({ posts = [] }) => {
   const router = useRouter();
-  const [mathjaxLoaded, setMathJaxLoaded] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedTags, setSelectedTags] = useState<string[]>([]);
   const [sortOrder, setSortOrder] = useState<'asc' | 'desc'>('desc');
@@ -61,13 +49,6 @@ const CyberpunkBlog: React.FC<CyberpunkBlogProps> = ({
     return sortOrder === 'asc' ? dateA - dateB : dateB - dateA;
   });
 
-  useEffect(() => {
-    const mathJaxWindow = window as unknown as MathJaxWindow;
-    if (selectedPost && mathjaxLoaded && mathJaxWindow.MathJax?.typeset) {
-      mathJaxWindow.MathJax.typeset();
-    }
-  }, [selectedPost, mathjaxLoaded]);
-
   const formatDate = (dateString: string) => {
     return new Date(dateString).toLocaleDateString('en-US', {
       year: 'numeric',
@@ -88,74 +69,10 @@ const CyberpunkBlog: React.FC<CyberpunkBlogProps> = ({
     setSortOrder(prev => prev === 'asc' ? 'desc' : 'asc');
   };
 
-
   const handlePostClick = (post: BlogPost) => {
     router.push(`/blog/${post.slug}`);
   };
 
-  if (selectedPost) {
-    return (
-      <>
-        <Script
-          src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js"
-          strategy="lazyOnload"
-          onLoad={() => setMathJaxLoaded(true)}
-        />
-        <div className="space-y-6 animate-fade-in">
-          <button
-            onClick={() => setSelectedPost(null)}
-            className="flex items-center gap-2 border transition-colors duration-100..."
-          >
-            <ArrowLeft className="w-4 h-4 transition-transform group-hover:-translate-x-1" />
-            Back to Posts
-          </button>
-          
-          <article className="prose prose-invert max-w-none">
-            <div className="border border-white p-6">
-              <h1 className="text-3xl font-bold mb-4 font-mono">{selectedPost.title}</h1>
-              
-              <div className="flex flex-wrap gap-4 mb-6 text-sm opacity-80 font-mono">
-                <div className="flex items-center gap-2">
-                  <Calendar className="w-4 h-4" />
-                  {formatDate(selectedPost.date)}
-                </div>
-                <div className="flex items-center gap-2">
-                  <User className="w-4 h-4" />
-                  {selectedPost.author}
-                </div>
-                <div className="flex flex-wrap gap-2">
-                  {selectedPost.tags.map(tag => (
-                    <span key={tag} className="flex items-center gap-1">
-                      <Tag className="w-4 h-4" />
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-              </div>
-
-              {selectedPost.image && (
-                <div className="relative w-full h-64 mb-6">
-                  <Image 
-                    src={selectedPost.image}
-                    alt={selectedPost.title}
-                    fill
-                    className="rounded-lg object-cover"
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                    priority
-                  />
-                </div>
-              )}
-
-              <div 
-                dangerouslySetInnerHTML={{ __html: selectedPost.content }}
-                className="prose prose-invert prose-pre:bg-gray-900 prose-pre:border prose-pre:border-white/20 max-w-none font-mono"
-              />
-            </div>
-          </article>
-        </div>
-      </>
-    );
-  }
   return (
     <div className="space-y-4 animate-fade-in">
       {/* Search and Filter Controls */}
@@ -377,6 +294,6 @@ const CyberpunkBlog: React.FC<CyberpunkBlogProps> = ({
       </div>
     </div>
   );
-}
+};
 
 export default CyberpunkBlog;

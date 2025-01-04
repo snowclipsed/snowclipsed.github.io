@@ -1,9 +1,9 @@
 // src/lib/markdown.ts
-import fs from 'fs/promises';
 import path from 'path';
 import matter from 'gray-matter';
-import { marked, Tokens} from 'marked';
+import { marked, Tokens } from 'marked';
 import { cache } from 'react';
+import { readFile, readdir } from 'fs/promises';
 
 export type BlogPost = {
   slug: string;
@@ -19,7 +19,6 @@ export type BlogPost = {
 // Custom renderer to handle math and image paths
 const renderer = new marked.Renderer();
 
-// Handle math blocks
 // Handle math blocks
 renderer.code = ({ text, lang }: { text: string, lang?: string }) => {
   if (lang === 'math') {
@@ -98,7 +97,6 @@ renderer.image = (image: Tokens.Image) => {
 };
 
 // Configure marked with the custom renderer
-// Configure marked with the custom renderer
 marked.setOptions({
   renderer,
   gfm: true,
@@ -106,27 +104,32 @@ marked.setOptions({
 });
 
 export const getPostBySlug = cache(async (slug: string): Promise<BlogPost> => {
-  const postsDirectory = path.join(process.cwd(), 'posts');
-  const fullPath = path.join(postsDirectory, `${slug}.md`);
-  const fileContents = await fs.readFile(fullPath, 'utf8');
-  const { data, content } = matter(fileContents);
-  
-  return {
-    slug,
-    title: data.title,
-    date: data.date,
-    author: data.author,
-    tags: data.tags || [],
-    image: data.image || '',
-    description: data.description,
-    content: await Promise.resolve(marked.parse(content))
-  };
+  try {
+    const postsDirectory = path.join(process.cwd(), 'posts');
+    const fullPath = path.join(postsDirectory, `${slug}.md`);
+    const fileContents = await readFile(fullPath, 'utf8');
+    const { data, content } = matter(fileContents);
+    
+    return {
+      slug,
+      title: data.title,
+      date: data.date,
+      author: data.author,
+      tags: data.tags || [],
+      image: data.image || '',
+      description: data.description,
+      content: await Promise.resolve(marked.parse(content))
+    };
+  } catch (error) {
+    console.error(`Error reading post ${slug}:`, error);
+    throw error;
+  }
 });
 
 export const getAllPosts = cache(async (): Promise<BlogPost[]> => {
-  const postsDirectory = path.join(process.cwd(), 'posts');
   try {
-    const files = await fs.readdir(postsDirectory);
+    const postsDirectory = path.join(process.cwd(), 'posts');
+    const files = await readdir(postsDirectory);
     
     const slugs = files
       .filter(file => file.endsWith('.md'))

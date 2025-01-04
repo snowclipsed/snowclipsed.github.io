@@ -1,7 +1,8 @@
+'use client';  // Fixed the typo from 'use-client'
+
 import React from 'react';
 import { Mail, Twitter, Globe } from 'lucide-react';
 import CyberpunkPerlin from './CyberpunkPerlin';
-
 
 const CyberpunkContact = () => {
   const contactItems = [
@@ -74,4 +75,5 @@ const CyberpunkContact = () => {
     </div>
   );
 };
+
 export default CyberpunkContact;
