@@ -46,7 +46,7 @@ export default function RootLayout({
         <ThemeProvider>
           <div className="min-h-screen flex justify-center items-center">
             <div style={{
-              transform: 'scale(0.67)',
+              transform: 'scale(0.60)',
               transformOrigin: 'center top',
               width: '100%'
             }}>

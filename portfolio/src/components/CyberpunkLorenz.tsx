@@ -294,7 +294,7 @@ useEffect(() => {
     if (!containerRef.current) return;
     
     const container = containerRef.current;
-    let isZooming = false;
+    const isZooming = false; // Changed to const since it's not reassigned
   
     const wheelHandler = (e: WheelEvent) => {
       if (isZooming) {

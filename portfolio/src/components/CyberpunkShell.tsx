@@ -7,12 +7,12 @@ import { useRouter, usePathname } from 'next/navigation';
 import CyberpunkLorenz from './CyberpunkLorenz';
 import CyberpunkBlog from './CyberpunkBlog';
 import CyberpunkContact from './CyberpunkContact';
+import type { BlogPost } from '../lib/markdown';  // Import the BlogPost type directly
 
 interface CyberpunkShellProps {
-  posts?: any[];
-  initialPost?: any;
+  posts?: BlogPost[];
+  initialPost?: BlogPost;
 }
-
 interface ErrorBoundaryProps {
   children: React.ReactNode;
 }
@@ -27,7 +27,7 @@ class LorenzErrorBoundary extends React.Component<ErrorBoundaryProps, ErrorBound
     this.state = { hasError: false };
   }
 
-  static getDerivedStateFromError(_: Error): ErrorBoundaryState {
+  static getDerivedStateFromError(): ErrorBoundaryState {
     return { hasError: true };
   }
 
@@ -44,7 +44,7 @@ class LorenzErrorBoundary extends React.Component<ErrorBoundaryProps, ErrorBound
   }
 }
 
-export default function CyberpunkShell({ posts, initialPost }: CyberpunkShellProps) {
+export default function CyberpunkShell({ posts = [], initialPost }: CyberpunkShellProps) {
   const router = useRouter();
   const pathname = usePathname();
   const [glitchText, setGlitchText] = useState(false);
@@ -60,11 +60,11 @@ export default function CyberpunkShell({ posts, initialPost }: CyberpunkShellPro
     navItems.forEach(({ id }) => {
       router.prefetch(id);
     });
-  }, [router]);
+  }, [router, navItems]);
 
   // Debug scroll events
   useEffect(() => {
-    const handleScroll = (e: Event) => {
+    const handleScroll = () => {
       console.log('Scroll event detected', {
         pathname,
         currentHref: window.location.href,
@@ -119,7 +119,7 @@ export default function CyberpunkShell({ posts, initialPost }: CyberpunkShellPro
                 while also pursuing research in deep learning architecture design. My goal 
                 is to make AI more accessible and efficient, with a particular emphasis 
                 on lower-end hardware.</p>
-              <p>When I'm not diving deep into neural networks, I enjoy implementing 
+              <p>When I&apos;m not diving deep into neural networks, I enjoy implementing 
                 retro-style terminal graphics and exploring the intersection of art 
                 and technology.</p>
             </div>
