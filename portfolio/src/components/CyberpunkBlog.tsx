@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import { useRouter } from 'next/navigation';
-import { Terminal, Tag, Calendar, User, Search, SortAsc, SortDesc, Filter } from 'lucide-react';
+import { Terminal, Tag, Search, SortAsc, SortDesc, Filter } from 'lucide-react';
 import type { BlogPost } from '../lib/markdown';
 
 interface CyberpunkBlogProps {

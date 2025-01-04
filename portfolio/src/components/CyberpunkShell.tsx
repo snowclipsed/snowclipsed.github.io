@@ -1,18 +1,19 @@
 'use client';
 
-import React, { useState, useCallback, useEffect } from 'react';
+import React, { useState, useCallback, useEffect, useMemo } from 'react';
 import { Terminal, Book, Network, Brain, Target } from 'lucide-react';
 import ThemeToggle from './ThemeToggle';
 import { useRouter, usePathname } from 'next/navigation';
 import CyberpunkLorenz from './CyberpunkLorenz';
 import CyberpunkBlog from './CyberpunkBlog';
 import CyberpunkContact from './CyberpunkContact';
-import type { BlogPost } from '../lib/markdown';  // Import the BlogPost type directly
+import type { BlogPost } from '../lib/markdown';
 
 interface CyberpunkShellProps {
   posts?: BlogPost[];
   initialPost?: BlogPost;
 }
+
 interface ErrorBoundaryProps {
   children: React.ReactNode;
 }
@@ -45,22 +46,21 @@ class LorenzErrorBoundary extends React.Component<ErrorBoundaryProps, ErrorBound
 }
 
 export default function CyberpunkShell({ posts = [], initialPost }: CyberpunkShellProps) {
-  const router = useRouter();
-  const pathname = usePathname();
-  const [glitchText, setGlitchText] = useState(false);
-
-  const navItems = [
-    { id: '/', icon: <Terminal className="w-5 h-5" />, label: 'メイン' },
-    { id: '/blog', icon: <Book className="w-5 h-5" />, label: 'ブログ' },
-    { id: '/contact', icon: <Network className="w-5 h-5" />, label: 'コンタクト' }
-  ];
-
-  // Prefetch all routes
-  useEffect(() => {
-    navItems.forEach(({ id }) => {
-      router.prefetch(id);
-    });
-  }, [router, navItems]);
+    const router = useRouter();
+    const pathname = usePathname();
+    const [glitchText, setGlitchText] = useState(false);
+  
+    const navItems = useMemo(() => [
+      { id: '/', icon: <Terminal className="w-5 h-5" />, label: 'メイン' },
+      { id: '/blog', icon: <Book className="w-5 h-5" />, label: 'ブログ' },
+      { id: '/contact', icon: <Network className="w-5 h-5" />, label: 'コンタクト' }
+    ], []); // Empty dependency array since these items never change
+  
+    useEffect(() => {
+      navItems.forEach(({ id }) => {
+        router.prefetch(id);
+      });
+    }, [router, navItems]);
 
   // Debug scroll events
   useEffect(() => {
@@ -119,9 +119,11 @@ export default function CyberpunkShell({ posts = [], initialPost }: CyberpunkShe
                 while also pursuing research in deep learning architecture design. My goal 
                 is to make AI more accessible and efficient, with a particular emphasis 
                 on lower-end hardware.</p>
-              <p>When I&apos;m not diving deep into neural networks, I enjoy implementing 
-                retro-style terminal graphics and exploring the intersection of art 
-                and technology.</p>
+                <p className="opacity-90 font-mono">
+                    When I&apos;m not diving deep into neural networks, I enjoy implementing 
+                    retro-style terminal graphics and exploring the intersection of art 
+                    and technology.
+                </p>
             </div>
             <div className="mt-8 border-t border-dotted transition-colors duration-100 
               dark:border-white/20 border-black/20 pt-8 w-full" />
@@ -225,7 +227,7 @@ export default function CyberpunkShell({ posts = [], initialPost }: CyberpunkShe
       dark:bg-black dark:text-white
       bg-white text-black
       font-mono p-4 max-w-4xl mx-auto">
-      
+        
       <ThemeToggle />
 
       {/* Header */}
