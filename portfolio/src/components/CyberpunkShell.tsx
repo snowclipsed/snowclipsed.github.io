@@ -54,8 +54,8 @@ export default function CyberpunkShell({ posts = [], initialPost }: CyberpunkShe
       { id: '/', icon: <Terminal className="w-5 h-5" />, label: 'メイン' },
       { id: '/blog', icon: <Book className="w-5 h-5" />, label: 'ブログ' },
       { id: '/contact', icon: <Network className="w-5 h-5" />, label: 'コンタクト' }
-    ], []); // Empty dependency array since these items never change
-  
+    ], []);
+    
     useEffect(() => {
       navItems.forEach(({ id }) => {
         router.prefetch(id);
