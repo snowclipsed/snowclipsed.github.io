@@ -4,7 +4,11 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
-  trailingSlash: true, // Ensure trailing slashes for GitHub Pages compatibility
+  trailingSlash: true, // For GitHub Pages compatibility
+  // Add this to ensure static paths are generated correctly
+  experimental: {
+    appDir: true
+  }
 };
 
 module.exports = nextConfig;
