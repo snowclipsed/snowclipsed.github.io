@@ -3,16 +3,12 @@ import { notFound } from 'next/navigation';
 import CyberpunkShell from '../../../components/CyberpunkShell';
 import { getAllPosts, getPostBySlug } from '../../../lib/markdown';
 
-// Update the props type to match Next.js expectations more closely
+// Explicitly type for Next.js page component
 type Params = {
   slug: string;
 };
 
-type Props = {
-  params: Params;
-};
-
-export default async function BlogPost({ params }: Props) {
+export default async function BlogPost({ params }: { params: Params }) {
   try {
     const [post, posts] = await Promise.all([
       getPostBySlug(params.slug),
@@ -27,8 +23,11 @@ export default async function BlogPost({ params }: Props) {
   }
 }
 
-// Update metadata generation to match the new Props type
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
+export async function generateMetadata({ 
+  params 
+}: { 
+  params: Params 
+}): Promise<Metadata> {
   try {
     const post = await getPostBySlug(params.slug);
 
@@ -49,7 +48,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
 }
 
-// Static params generation remains the same
 export async function generateStaticParams() {
   const posts = await getAllPosts();
   return posts.map((post) => ({
