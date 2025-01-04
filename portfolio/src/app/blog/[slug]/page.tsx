@@ -1,8 +1,16 @@
-// src/app/blog/[slug]/page.tsx
+
 import { getPostBySlug, getAllPosts } from '../../../lib/markdown';
 import CyberpunkPortfolio from '../../../components/CyberpunkPortfolio';
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
+
+type BlogPostParams = {
+  slug: string;
+}
+
+interface BlogPostPageProps {
+  params: BlogPostParams;
+}
 
 export async function generateStaticParams() {
   const posts = await getAllPosts();
@@ -11,12 +19,8 @@ export async function generateStaticParams() {
   }));
 }
 
-export async function generateMetadata({ 
-  params 
-}: { 
-  params: { slug: string } 
-}): Promise<Metadata> {
-  const post = await getPostBySlug(params.slug).catch(() => null);
+export async function generateMetadata(props: BlogPostPageProps): Promise<Metadata> {
+  const post = await getPostBySlug(props.params.slug).catch(() => null);
   
   if (!post) {
     return {
@@ -36,12 +40,8 @@ export async function generateMetadata({
   };
 }
 
-export default async function BlogPost({ 
-  params 
-}: { 
-  params: { slug: string } 
-}) {
-  const post = await getPostBySlug(params.slug).catch(() => null);
+const BlogPost = async (props: BlogPostPageProps) => {
+  const post = await getPostBySlug(props.params.slug).catch(() => null);
   
   if (!post) {
     notFound();
@@ -57,3 +57,5 @@ export default async function BlogPost({
     />
   );
 }
+
+export default BlogPost;
