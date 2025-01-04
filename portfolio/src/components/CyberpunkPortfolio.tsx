@@ -1,7 +1,7 @@
 'use client';
 
 // src/components/CyberpunkPortfolio.tsx
-import React, { useState } from 'react';
+import React, { useState, useEffect} from 'react';
 import { Terminal, Book, Network, Target, Brain } from 'lucide-react';
 import CyberpunkBlog from './CyberpunkBlog';
 import CyberpunkContact from './CyberpunkContact';
@@ -11,11 +11,18 @@ import type { BlogPost } from '../lib/markdown';
 
 interface CyberpunkPortfolioProps {
   posts?: BlogPost[];
+  initialSection?: string;
+  initialPost?: BlogPost | null;
 }
-const CyberpunkPortfolio: React.FC<CyberpunkPortfolioProps> = ({ posts = [] }) => {
-  const [activeSection, setActiveSection] = useState('main');
+
+const CyberpunkPortfolio: React.FC<CyberpunkPortfolioProps> = ({ 
+  posts = [], 
+  initialSection = 'main',
+  initialPost = null
+}) => {
+  const [activeSection, setActiveSection] = useState(initialSection);
   const [glitchText, setGlitchText] = useState(false);
-  const [selectedPost, setSelectedPost] = useState<BlogPost | null>(null);
+  const [selectedPost, setSelectedPost] = useState<BlogPost | null>(initialPost);
 
   const navItems = [
     { id: 'main', icon: <Terminal className="w-5 h-5" />, label: 'メイン' },
@@ -36,6 +43,13 @@ const CyberpunkPortfolio: React.FC<CyberpunkPortfolioProps> = ({ posts = [] }) =
     setActiveSection(sectionId);
     triggerGlitch();
   };
+
+  useEffect(() => {
+    if (initialPost) {
+      setSelectedPost(initialPost);
+      setActiveSection('blog');
+    }
+  }, [initialPost]);
 
   return (
     <div className="min-h-screen transition-colors duration-100
@@ -194,13 +208,12 @@ const CyberpunkPortfolio: React.FC<CyberpunkPortfolioProps> = ({ posts = [] }) =
           )}
 
         {activeSection === 'blog' && (
-                    <CyberpunkBlog 
-                      posts={posts} 
-                      selectedPost={selectedPost}
-                      setSelectedPost={setSelectedPost}
-                    />
-                  )}
-          {activeSection === 'contact' && <CyberpunkContact />}
+                <CyberpunkBlog 
+                  posts={posts} 
+                  selectedPost={selectedPost}
+                  setSelectedPost={setSelectedPost}
+                />
+              )}
         </div>
       </div>
 

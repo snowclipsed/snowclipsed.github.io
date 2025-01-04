@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useRouter } from 'next/navigation';
 import { Terminal, Tag, Calendar, User, ArrowLeft, Search, SortAsc, SortDesc, Filter } from 'lucide-react';
 import type { BlogPost } from '../lib/markdown';
 import Script from 'next/script';
@@ -20,6 +21,7 @@ const CyberpunkBlog: React.FC<CyberpunkBlogProps> = ({
   selectedPost, 
   setSelectedPost 
 }) => {
+  const router = useRouter();
   const [mathjaxLoaded, setMathJaxLoaded] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedTags, setSelectedTags] = useState<string[]>([]);
@@ -84,6 +86,11 @@ const CyberpunkBlog: React.FC<CyberpunkBlogProps> = ({
 
   const toggleSortOrder = () => {
     setSortOrder(prev => prev === 'asc' ? 'desc' : 'asc');
+  };
+
+
+  const handlePostClick = (post: BlogPost) => {
+    router.push(`/blog/${post.slug}`);
   };
 
   if (selectedPost) {
@@ -320,7 +327,7 @@ const CyberpunkBlog: React.FC<CyberpunkBlogProps> = ({
               transform: `translateX(${index * 5}px)`,
               zIndex: filteredPosts.length - index 
             }}
-            onClick={() => setSelectedPost(post)}
+            onClick={() => handlePostClick(post)}
           >
             <div className="relative">
               <div className="opacity-80 absolute -left-0.5 -top-0.5 text-red-500 pointer-events-none 
