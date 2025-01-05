@@ -2,9 +2,42 @@
 
 import React, { useEffect, useRef } from 'react';
 
+interface MathJaxConfig {
+  tex: {
+    inlineMath: string[][];
+    displayMath: string[][];
+    processEscapes: boolean;
+    processEnvironments: boolean;
+  };
+  options: {
+    skipHtmlTags: string[];
+    processHtmlClass: string;
+  };
+  startup: {
+    pageReady: () => Promise<void>;
+  };
+}
+
+// Define the complete MathJax interface
+interface MathJaxObject {
+  typesetPromise?: () => Promise<void>;
+  tex?: MathJaxConfig['tex'];
+  options?: MathJaxConfig['options'];
+  startup?: MathJaxConfig['startup'];
+  Hub?: any;
+  Ajax?: any;
+  Message?: any;
+  HTML?: any;
+  Callback?: any;
+  InputJax?: any;
+  OutputJax?: any;
+  ElementJax?: any;
+  Localization?: any;
+}
+
 declare global {
   interface Window {
-    MathJax: any;
+    MathJax?: MathJaxObject;
   }
 }
 
@@ -22,7 +55,7 @@ const MathJaxProvider: React.FC<MathJaxProviderProps> = ({ children }) => {
       script.async = true;
       
       // Configure MathJax before loading the script
-      window.MathJax = {
+      const mathJaxConfig = {
         tex: {
           inlineMath: [['\\(', '\\)']],
           displayMath: [['$$', '$$']],
@@ -41,9 +74,15 @@ const MathJaxProvider: React.FC<MathJaxProviderProps> = ({ children }) => {
         }
       };
 
+      // Instead of direct assignment, extend the existing MathJax object
+      window.MathJax = {
+        ...window.MathJax,
+        ...mathJaxConfig
+      };
+
       script.addEventListener('load', () => {
         console.log('MathJax script loaded');
-        window.MathJax.typesetPromise?.();
+        window.MathJax?.typesetPromise?.();
       });
 
       document.head.appendChild(script);
