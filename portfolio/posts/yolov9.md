@@ -28,7 +28,7 @@ This is what almost every modern deep learning method does, and is essentially i
 
 It's hard to measure the ideal amount of information loss from information bottlenecks. The authors in the paper argue that the loss from information bottlenecks may still be non-negligible in many modern techniques because it is simply learning the wrong features and hence the wrong mapping between input and predictions.
 
-![alt text](../public/blog-images/infobottleneck1.png "[size:md] [center] Information Bottleneck")
+![alt text](/images/infobottleneck1.png "[size:md] [center] Information Bottleneck")
 
 The information loss due to the bottleneck can be described by in terms of mutual information:
 
@@ -46,7 +46,7 @@ $$
 
 **What does this even mean?**
 
-![alt text](../public/blog-images/infobottleneck2.png "[size:md] [center] Information Bottleneck")
+![alt text]( /images/infobottleneck2.png "[size:md][center] Information Bottleneck")
 
 1. This represents that as more neural transformations are applied, the more information is lost. As in, deeper layers mean more information loss since there's consecutive application of transformation functions (neurons).
 
@@ -83,7 +83,7 @@ Where \\(\lambda_i\\) is the weighing coefficient for each auxiliary loss. These
 PGI definitely works well in concept, but adding more neurons to a model is not always the answer because it will lead to slower inference. The auxiliary layers will increase inference costs by 20% when added. However we don't have to work about that with the auxiliary layers because they are only present during the training phase to supervise intermediate layers. During inference, we "turn off" the auxiliary layers. Auxiliary layers also only aim to add new, important information that is missing in the intermediate representations. Hence, this concept will not underparameterize our model because we're not passing the entirety of original information from the image again, just the essential bits.
 
 
-![alt text](../public/blog-images/PGI.png "[size:md] [center] PGI")
+![alt text]( /images/PGI.png "[size:md] [center] PGI")
 
 ### Observations in previous architectures
 Authors found high performance in many models with reversible architectures. DynamicNet uses YoloV7 and merges it with CBNet architecture which has multi-level reversible branches with high parameter utilization. YoloV9 builds on DynamicNet architecture to design reversible branches on which it implements PGI.

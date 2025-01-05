@@ -212,7 +212,22 @@ export default function CyberpunkShell({ posts = [], initialPost }: CyberpunkShe
     
     if (pathname.startsWith('/blog/')) {
       if (initialPost) {
-        return <article className="prose dark:prose-invert max-w-none" dangerouslySetInnerHTML={{ __html: initialPost.content }} />;
+        return (
+          <article className="prose dark:prose-invert max-w-none">
+            <div 
+              dangerouslySetInnerHTML={{ __html: initialPost.content }}
+              className="math-content"
+            />
+            <style jsx global>{`
+              .math-block {
+                @apply my-4 overflow-x-auto;
+              }
+              .MathJax {
+                @apply dark:text-white text-black;
+              }
+            `}</style>
+          </article>
+        );
       }
     }
     
