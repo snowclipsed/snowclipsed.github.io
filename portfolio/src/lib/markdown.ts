@@ -1,7 +1,7 @@
 // src/lib/markdown.ts
 import path from 'path';
 import matter from 'gray-matter';
-import { marked, Renderer, Tokens } from 'marked';
+import { marked, Tokens } from 'marked';
 import { cache } from 'react';
 import { readFile, readdir } from 'fs/promises';
 
