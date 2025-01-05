@@ -6,13 +6,13 @@
 8:I[6213,[],"MetadataBoundary"]
 a:I[6213,[],"ViewportBoundary"]
 c:I[4835,[],""]
-:HL["/_next/static/css/ed5bae64553c4be6.css","style"]
-0:{"P":null,"b":"5WOvy7naeVpfFugOWiJDd","p":"","c":["","blog",""],"i":false,"f":[[["",{"children":["blog",{"children":["__PAGE__",{}]}]},"$undefined","$undefined",true],["",["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/ed5bae64553c4be6.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]],["$","html",null,{"lang":"en","suppressHydrationWarning":true,"className":"dark","children":[["$","head",null,{"children":[["$","link",null,{"rel":"preconnect","href":"https://fonts.googleapis.com"}],["$","link",null,{"rel":"preconnect","href":"https://fonts.gstatic.com","crossOrigin":"anonymous"}],["$","link",null,{"href":"https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap","rel":"stylesheet"}],["$","script",null,{"dangerouslySetInnerHTML":{"__html":"\n              // Prevent flash of wrong theme\n              const savedTheme = localStorage.getItem('theme') || 'dark';\n              document.documentElement.classList.add(savedTheme);\n\n              window.MathJax = {\n                tex: {\n                  inlineMath: [['\\\\(', '\\\\)']],\n                  displayMath: [['$$', '$$']],\n                  processEscapes: true,\n                },\n                options: {\n                  skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']\n                }\n              };\n            "}}]]}],["$","body",null,{"className":"antialiased transition-colors duration-100 dark:bg-black dark:text-white bg-white text-black","children":["$","$L2",null,{"children":["$","div",null,{"className":"min-h-screen flex justify-center items-center","children":["$","div",null,{"style":{"transform":"scale(0.60)","transformOrigin":"center top","width":"100%"},"children":["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L4",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[[],[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":404}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]]],"forbidden":"$undefined","unauthorized":"$undefined"}]}]}]}]}]]}]]}],{"children":["blog",["$","$1","c",{"children":[null,["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children","blog","children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L4",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":["__PAGE__",["$","$1","c",{"children":["$L5",null,["$","$L6",null,{"children":"$L7"}]]}],{},null,false]},null,false]},null,false],["$","$1","h",{"children":[null,["$","$1","Q2oKsdTHM0nHr8qi-n3PJ",{"children":[["$","$L8",null,{"children":"$L9"}],["$","$La",null,{"children":"$Lb"}],null]}]]}],false]],"m":"$undefined","G":["$c","$undefined"],"s":false,"S":true}
+:HL["/_next/static/css/d8418b1bf73a9a2f.css","style"]
+0:{"P":null,"b":"R1bkvCcxypZSTMbKPLczX","p":"","c":["","blog",""],"i":false,"f":[[["",{"children":["blog",{"children":["__PAGE__",{}]}]},"$undefined","$undefined",true],["",["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/d8418b1bf73a9a2f.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]],["$","html",null,{"lang":"en","suppressHydrationWarning":true,"className":"dark","children":[["$","head",null,{"children":[["$","link",null,{"rel":"preconnect","href":"https://fonts.googleapis.com"}],["$","link",null,{"rel":"preconnect","href":"https://fonts.gstatic.com","crossOrigin":"anonymous"}],["$","link",null,{"href":"https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap","rel":"stylesheet"}],["$","script",null,{"dangerouslySetInnerHTML":{"__html":"\n              // Prevent flash of wrong theme\n              const savedTheme = localStorage.getItem('theme') || 'dark';\n              document.documentElement.classList.add(savedTheme);\n\n              window.MathJax = {\n                tex: {\n                  inlineMath: [['\\\\(', '\\\\)']],\n                  displayMath: [['$$', '$$']],\n                  processEscapes: true,\n                },\n                options: {\n                  skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']\n                }\n              };\n            "}}]]}],["$","body",null,{"className":"antialiased transition-colors duration-100 dark:bg-black dark:text-white bg-white text-black","children":["$","$L2",null,{"children":["$","div",null,{"className":"min-h-screen flex justify-center items-center","children":["$","div",null,{"style":{"transform":"scale(0.60)","transformOrigin":"center top","width":"100%"},"children":["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L4",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[[],[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":404}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]]],"forbidden":"$undefined","unauthorized":"$undefined"}]}]}]}]}]]}]]}],{"children":["blog",["$","$1","c",{"children":[null,["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children","blog","children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L4",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":["__PAGE__",["$","$1","c",{"children":["$L5",null,["$","$L6",null,{"children":"$L7"}]]}],{},null,false]},null,false]},null,false],["$","$1","h",{"children":[null,["$","$1","U_vOXpQ7H1HrUcDw_ZKMR",{"children":[["$","$L8",null,{"children":"$L9"}],["$","$La",null,{"children":"$Lb"}],null]}]]}],false]],"m":"$undefined","G":["$c","$undefined"],"s":false,"S":true}
 b:[["$","meta","0",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
 9:[["$","meta","0",{"charSet":"utf-8"}],["$","title","1",{"children":"Snowclipsed - Digital Research"}],["$","meta","2",{"name":"description","content":"Deep Learning Architecture Research, Inference Optimization, and Low Level Programming"}]]
 7:null
-d:I[4787,["508","static/chunks/508-ae17c9dd091f5b27.js","831","static/chunks/app/blog/page-265a84e685f68c8c.js"],"default"]
-e:T4fb1,<p>This is another paper in the YOLO iteration. I like vision papers a lot and these are my notes from my reading of the paper.</p>
+d:I[7362,["369","static/chunks/369-b4a37221cbaebf1e.js","362","static/chunks/362-194b833c79b7c39e.js","831","static/chunks/app/blog/page-33fcba29aa5cb1ed.js"],"default"]
+e:T4f1a,<p>This is another paper in the YOLO iteration. I like vision papers a lot and these are my notes from my reading of the paper.</p>
 <p>Original paper <a href="https://arxiv.org/abs/2402.13616">link</a>.</p>
 <h1>What exactly is the problem with current models?</h1>
 <p> Object detection models can be simplified as learning the most important features in a training set which can allow it to predict the location (bounding box) or segmentation map of a given test object. Ideally, we want such models to be robustly generalized - an object detection world model which can one shot any test object in any scenario as long as it has seen objects of a similar class. There has been a push towards achieving this ideal but not without roadblocks in convergence, which the paper focuses a lot on. </p>
@@ -21,28 +21,26 @@ e:T4fb1,<p>This is another paper in the YOLO iteration. I like vision papers a l
 <p>An information bottleneck is when we compress high dimensional input data into lower dimension features by retaining the most important features to reduce computational complexity for training and inference, but at the same time it leads to data loss because we have to trim some features. </p>
 <p>This is what almost every modern deep learning method does, and is essentially its goal. Deep learning is an inherent compression optimization problem. A model tries to learn the least amount of most important features by a priority basis - that is how we get feature maps and attention. The best model is the one which generalizes perfectly over a concept so as to require learn the least number of features possible while retaining enough information to achieve the best results.</p>
 <p>It&#39;s hard to measure the ideal amount of information loss from information bottlenecks. The authors in the paper argue that the loss from information bottlenecks may still be non-negligible in many modern techniques because it is simply learning the wrong features and hence the wrong mapping between input and predictions.</p>
-<p><div class="flex justify-center my-8"><img src="/blog-images/infobottleneck1.png" 
-    alt="alt text" 
-    title="Information Bottleneck" 
-    class="rounded-lg w-1/2"
-  ></div></p>
+<p><div class="flex justify-center my-8"><img src="/images/infobottleneck1.png" alt="alt text" title="Information Bottleneck" class="rounded-lg w-1/2"></div></p>
 <p>The information loss due to the bottleneck can be described by in terms of mutual information:</p>
-<p>$$<br>    I(X,X) \ge I(X, f\theta(X) \ge I(X, g\phi(f\theta(X)))<br>$$</p>
+<p>$$
+    I(X,X) \ge I(X, f\theta(X) \ge I(X, g\phi(f\theta(X)))
+$$</p>
 <p>Here \(I\) is the mutual information. Mathematically, \(MI(X;Y)\) is defined  as:</p>
-<p>$$<br>MI(X;Y) = ∑p(x,y) \log_2(\frac{p(x,y)}{p(x)p(y)})<br>$$</p>
+<p>$$
+MI(X;Y) = ∑p(x,y) \log_2(\frac{p(x,y)}{p(x)p(y)})
+$$</p>
 <p>..where \(p(x)\) and \(p(y)\) are the marginal probability distributions of X and \(Y\), respectively, and \(p(x,y)\) is their joint probability distribution. Intuitively, MI measures how much knowing the value of X reduces uncertainty about Y, or conversely, how much knowing the value of Y reduces uncertainty about X. \(f\) and \(g\) are transformation functions with trainable parameters \(\theta\) and \(\phi\).</p>
 <p><strong>What does this even mean?</strong></p>
-<p><div class="flex justify-center my-8"><img src="/blog-images/infobottleneck2.png" 
-    alt="alt text" 
-    title="Information Bottleneck" 
-    class="rounded-lg w-1/2"
-  ></div></p>
+<p><div class="flex justify-center my-8"><img src="/images/infobottleneck2.png" alt="alt text" title="Information Bottleneck" class="rounded-lg w-1/2"></div></p>
 <ol>
 <li><p>This represents that as more neural transformations are applied, the more information is lost. As in, deeper layers mean more information loss since there&#39;s consecutive application of transformation functions (neurons).</p>
 </li>
-<li><p>This means a model with deeper layers retain lesser info about both the input and target.<br>Hence it would naturally perform worse.</p>
+<li><p>This means a model with deeper layers retain lesser info about both the input and target. 
+Hence it would naturally perform worse.</p>
 </li>
-<li><p>A model with larger number of parameters has much more parameters and can learn larger number of features (information) about the data.<br>This is why width is important in deep networks than depth itself.</p>
+<li><p>A model with larger number of parameters has much more parameters and can learn larger number of features (information) about the data. 
+This is why width is important in deep networks than depth itself.</p>
 </li>
 <li><p>This increase in width can only increase the scope of learning more information by simply increasing the number of params, but the information loss per param is still the same (or, often increased because of more connections).</p>
 </li>
@@ -60,15 +58,13 @@ e:T4fb1,<p>This is another paper in the YOLO iteration. I like vision papers a l
 <h2>Programmable Gradient Information</h2>
 <p>To solve the previous issues, YOLOv9 utilizes <strong>Programmable Gradient Information</strong> (PGI). PGI tries to solve the issues caused by information bottlenecks and gradient inefficiency by combining both deep supervision and reversible architectures. </p>
 <p>The motive of deep supervision in object detection, as I mentioned before, is to act as guidance for a model&#39;s layers to ensure they are learning the right features. A popular method of implementing deep supervision is through auxiliary branches. These are temporary branches which will act as checks for the hidden deep layers in a network by supervising them on the intermediate representation they produce. The auxiliary branch makes the intermediate layers perform predictions based on the representations they produce. This also has an added effect of breaking down the final learning objective into more manageable tasks. The final loss into a standard main loss (\(L_{main}\)) computed at the end of the network and auxiliary losses computed at the intermediate predictions in the auxiliary layers (\(L_{aux}\)). We can of course represent it as :</p>
-<p>$$<br>\mathcal{L}<em>{total} = \mathcal{L}</em>{main} + \sum_{i} \lambda_i \mathcal{L}_{aux,i}<br>$$</p>
+<p>$$
+\mathcal{L}<em>{total} = \mathcal{L}</em>{main} + \sum_{i} \lambda_i \mathcal{L}_{aux,i}
+$$</p>
 <p>Where \(\lambda_i\) is the weighing coefficient for each auxiliary loss. These auxiliary losses guide the intermediate layers to learn features more effectively, ensuring better representation across the network.</p>
 <h2>PGI Architecture</h2>
 <p>PGI definitely works well in concept, but adding more neurons to a model is not always the answer because it will lead to slower inference. The auxiliary layers will increase inference costs by 20% when added. However we don&#39;t have to work about that with the auxiliary layers because they are only present during the training phase to supervise intermediate layers. During inference, we &quot;turn off&quot; the auxiliary layers. Auxiliary layers also only aim to add new, important information that is missing in the intermediate representations. Hence, this concept will not underparameterize our model because we&#39;re not passing the entirety of original information from the image again, just the essential bits.</p>
-<p><div class="flex justify-center my-8"><img src="/blog-images/PGI.png" 
-    alt="alt text" 
-    title="PGI" 
-    class="rounded-lg w-1/2"
-  ></div></p>
+<p><div class="flex justify-center my-8"><img src="/images/PGI.png" alt="alt text" title="PGI" class="rounded-lg w-1/2"></div></p>
 <h3>Observations in previous architectures</h3>
 <p>Authors found high performance in many models with reversible architectures. DynamicNet uses YoloV7 and merges it with CBNet architecture which has multi-level reversible branches with high parameter utilization. YoloV9 builds on DynamicNet architecture to design reversible branches on which it implements PGI.</p>
 <ul>
@@ -94,12 +90,20 @@ e:T4fb1,<p>This is another paper in the YOLO iteration. I like vision papers a l
 <li><p>The final predictions might place bounding boxes inaccurately or fail to recognize objects altogether.</p>
 </li>
 </ul>
-<p>If \( h_i \) represents the output of the \( i \)-th layer, and \(\ \epsilon_i \) the error at this layer. The output at the next layer can be written as:<br>$$<br>h_{i+1} = f(h_i) + \epsilon_i,<br>$$<br>where \( f(\cdot) \) is the transformation function. When \( \epsilon_i \) is propagated to the next layer, it may interact non-linearly with \( f(\cdot) \), compounding the error:</p>
-<p>$$<br>\epsilon_{i+1} = g(f(h_i + \epsilon_i)) - g(f(h_i)),<br>$$</p>
+<p>If \( h_i \) represents the output of the \( i \)-th layer, and \(\ \epsilon_i \) the error at this layer. The output at the next layer can be written as:
+$$
+h_{i+1} = f(h_i) + \epsilon_i,
+$$
+where \( f(\cdot) \) is the transformation function. When \( \epsilon_i \) is propagated to the next layer, it may interact non-linearly with \( f(\cdot) \), compounding the error:</p>
+<p>$$
+\epsilon_{i+1} = g(f(h_i + \epsilon_i)) - g(f(h_i)),
+$$</p>
 <p>where \( g(\cdot) \) represents the next transformation. As this process repeats across layers, \(\epsilon_{total}\) grows, particularly in deeper networks, leading to distorted representations and predictions.</p>
 <p>The effect of this problem does not stop here. Since it effects our error, it effects our gradient. And because of this backpropagation amplifies the original effect of error accumulation across the network - causing gradient degredation.</p>
 <p>For instance, in a deep network, if the gradient of the loss function with respect to a weight in an earlier layer is denoted by:</p>
-<p>$$<br>\frac{\partial \mathcal{L}}{\partial W_i} = \frac{\partial \mathcal{L}}{\partial h_N} \cdot \frac{\partial h_N}{\partial h_{N-1}} \cdot \ldots \cdot \frac{\partial h_{i+1}}{\partial W_i},<br>$$</p>
+<p>$$
+\frac{\partial \mathcal{L}}{\partial W_i} = \frac{\partial \mathcal{L}}{\partial h_N} \cdot \frac{\partial h_N}{\partial h_{N-1}} \cdot \ldots \cdot \frac{\partial h_{i+1}}{\partial W_i},
+$$</p>
 <p>where \( N \) is the number of layers, any instability (e.g., large or small derivatives) in intermediate layers amplifies inaccuracies, affecting weight updates. This leads to the phenomenon where earlier layers either &quot;freeze&quot; (due to negligible updates) or oscillate (due to erratic updates), compromising their ability to extract meaningful features.</p>
 <h2>Error Accumulation through Auxiliary Layers</h2>
 <p>This problem is more than simply relevant for YOLOv9 because of its usage of deep supervision through auxiliary layers. Deep supervision, while a strategy to address such issues, can itself contribute to error accumulation if not implemented carefully. The aim of this method, as we discussed previously, is to guide intermediate layers to learn more meaningful representations. However, if the auxiliary losses are poorly designed or conflict with the primary task, they can introduce new errors. This leads to the model prioritizing learning features which do not align with the main task at all, achieving the opposing effect of what we originally wanted. </p>
@@ -109,22 +113,34 @@ e:T4fb1,<p>This is another paper in the YOLO iteration. I like vision papers a l
 <h1>Reversible Functions : Why do we need them?</h1>
 <p>Reversible functions in YOLOv9 are primarily applied to enhance memory efficiency during training while maintaining model accuracy. They address the challenge of storing intermediate activations required for backpropagation. However the biggest advantage of reversible functions is the minimal information loss while reconstructing previous activations.</p>
 <p>To understand reversible functions, let&#39;s consider a function \(r_\psi(X)\), which may have an inverse transformation \(v_\zeta()\). This means when we apply \(v_\zeta()\) on \(r_\psi(X)\), we get \(X\) back:</p>
-<p>$$<br>    X = v_\zeta(r_\psi(X))<br>$$</p>
+<p>$$
+    X = v_\zeta(r_\psi(X))
+$$</p>
 <p>where \(\psi\) and \(\zeta\) are parameters.</p>
 <p>A reversible function results in a perfect recreation of the initial data \(X\), this means it has no information loss:</p>
-<p>$$<br>    I(X,X) = I(X, r_\psi(X)) = I(X, v_\zeta(r_\psi(X))<br>$$</p>
+<p>$$
+    I(X,X) = I(X, r_\psi(X)) = I(X, v_\zeta(r_\psi(X))
+$$</p>
 <p>Hence the activations can be recomputed through reversible functions. This leads to better performance. This can be mathematically represented as :</p>
-<p>$$<br>    X^{l+1} = X^l + f\theta ^{l+1}(X^l)<br>$$</p>
+<p>$$
+    X^{l+1} = X^l + f\theta ^{l+1}(X^l)
+$$</p>
 <p>This exact method was used in the PreAct ResNet model, where the equation above depicts the \(l\) th layer and a transformation function \(f\) is applied on the \(l\)-th layer. We can see that it is a reversible function as \(X^{l+1}\) can be obtained by explicitly passing \(X^l\) (Data from \(l\)-th layer) to the subsequent layers. This leads to good convergence but high complexity. Hence why PreAct ResNet must need high amount of layers to function well (susceptible to underparameterization).</p>
 <p>We can pose the information bottleneck equation above as a mapping from input \(X\) to target \(Y\):</p>
-<p>$$<br>    I(X,Y) \ge I(Y,X) \ge I(Y, f\theta(X) \ge \dots \ge I(Y, \hat Y)<br>$$ </p>
+<p>$$
+    I(X,Y) \ge I(Y,X) \ge I(Y, f\theta(X) \ge \dots \ge I(Y, \hat Y)
+$$ </p>
 <p>Because of underparameterization in the shallow layers, a lot of information can be lost in the first few layers itself during \(I(Y,X)\). If we lose information in the start, the succeeding transformation functions will have no way to recover the lost information. Hence the goal for getting reliable gradients is minimizing information loss while mapping \(X\) to \(Y\) as in \(I(Y,X)\) from \(I(X,X)\).</p>
 <p>To mitigate the problems caused by solely utilizing reversible functions without making the model extremely beefy, we simply selectively utilize the reversible function property in combination with the auxiliary branch during training. These layers are placed in shallow layers where the bottleneck is more prominent, as well as in the auxiliary branch itself. </p>
 <p>For example, consider an intermediate activation \( X^{l} \) at layer \( l \). When transformed by a reversible function \( r_\psi \), it produces \( X^{l+1} = X^l + f_\theta(X^l) \), where \( f_\theta \) is the transformation applied. To reconstruct \( X^l \) during backpropagation, we compute:</p>
-<p>$$<br>X^l = X^{l+1} - f_\theta(X^l),<br>$$</p>
+<p>$$
+X^l = X^{l+1} - f_\theta(X^l),
+$$</p>
 <p>ensuring that the original data is retrievable. This framework avoids the explicit storage of \( X^l \), significantly reducing memory usage. However, this process becomes computationally expensive for all layers due to the repetitive evaluations of \( f_\theta \). </p>
 <p>This is where we try to see where exactly we can cut corners just enough while reconstructing our activations - by asking if it is necessary to reconstruct all activations at all? YOLOv9 does this by using an approximation function to reconstruct only the activations which are relevant and contribute importantly to the gradient flow. We can dynamically apply a mask \(M\) on the activations which we want to recompute. Then, we define the approximation function \( v_\zeta \) which reconstructs the masked input efficiently:</p>
-<p>$$<br>X = v_\zeta(r_\psi(X) \cdot M),<br>$$</p>
+<p>$$
+X = v_\zeta(r_\psi(X) \cdot M),
+$$</p>
 <p>where \( M \) ensures that only the relevant activations contributing to the gradient flow are computed. This selective reconstruction reduces the computational load while maintaining the integrity of the gradients.</p>
 <h1>Better feature extraction with GELAN</h1>
 <p>Deep models lose information during the progressive feature extraction process due to the information bottleneck principle, which we argued previously. This is caused due to repeated data (feature) transformations. If we find a method to learn and propagate gradients without the use of excessive transformations, it can potentially decrease model degradation from information loss usually incurred from the transformations. Turns out there does exist such a method, called Cross Stage Partial Networks or CSPNet. </p>
@@ -135,4 +151,4 @@ e:T4fb1,<p>This is another paper in the YOLO iteration. I like vision papers a l
 <li><p>Part 2 bypasses the transformations</p>
 </li>
 </ul>
-5:["$","$Ld",null,{"posts":[{"slug":"yolov9","title":"Understanding the YOLOv9 Paper","date":"2024-02-29","author":"snowclipsed","tags":["notes","vision","papers","computer science"],"image":"","description":"My notes on the YOLOv9 paper.","content":"$e"}]}]
+5:["$","$Ld",null,{"posts":[{"slug":"yolov9","title":"Understanding the YOLOv9 Paper","date":"2024-02-29","author":"snowclipsed","tags":["notes","vision","papers","computer science"],"image":"","description":"My notes on the YOLOv9 paper.","content":"$e"},{"slug":"mathtest","title":"Testing Math Rendering","date":"2024-01-04","author":"snowclipsed","tags":["test","math"],"image":"","description":"A simple test post for math rendering","content":"<h1>Math Rendering Test</h1>\n<p>This is a simple inline math test: $E = mc^2$</p>\n<p>Here&#39;s a display math block:</p>\n<pre><code class=\"language-math\">\\int_{-\\infty}^{\\infty} e^{-x^2} dx = \\sqrt{\\pi}\n</code></pre>\n<p>And another inline math: $f(x) = \\frac{1}{1 + e^{-x}}$</p>\n"}]}]
