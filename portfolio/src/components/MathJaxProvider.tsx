@@ -18,21 +18,66 @@ interface MathJaxConfig {
   };
 }
 
+// Define specific interfaces for each MathJax component
+interface MathJaxHub {
+  Queue: (fn: (() => void)[]) => void;
+  Config: (config: unknown) => void;
+}
+
+interface MathJaxAjax {
+  loadComplete: (file: string) => void;
+  loaded: Record<string, boolean>;
+}
+
+interface MathJaxMessage {
+  Set: (message: string, n?: number, delay?: number) => void;
+  Clear: (n?: number, delay?: number) => void;
+}
+
+interface MathJaxHTML {
+  Cookie: {
+    prefix: string;
+    expires: number;
+  };
+}
+
+interface MathJaxCallback {
+  Queue: (callbacks: unknown[]) => void;
+  Signal: (callback: unknown) => void;
+}
+
+interface MathJaxInputJax {
+  TeX: unknown;
+}
+
+interface MathJaxOutputJax {
+  CommonHTML: unknown;
+}
+
+interface MathJaxElementJax {
+  mml: unknown;
+}
+
+interface MathJaxLocalization {
+  _: (id: string, message: string, ...args: string[]) => string;
+  setLocale: (locale: string) => void;
+}
+
 // Define the complete MathJax interface
 interface MathJaxObject {
   typesetPromise?: () => Promise<void>;
   tex?: MathJaxConfig['tex'];
   options?: MathJaxConfig['options'];
   startup?: MathJaxConfig['startup'];
-  Hub?: any;
-  Ajax?: any;
-  Message?: any;
-  HTML?: any;
-  Callback?: any;
-  InputJax?: any;
-  OutputJax?: any;
-  ElementJax?: any;
-  Localization?: any;
+  Hub?: MathJaxHub;
+  Ajax?: MathJaxAjax;
+  Message?: MathJaxMessage;
+  HTML?: MathJaxHTML;
+  Callback?: MathJaxCallback;
+  InputJax?: MathJaxInputJax;
+  OutputJax?: MathJaxOutputJax;
+  ElementJax?: MathJaxElementJax;
+  Localization?: MathJaxLocalization;
 }
 
 declare global {
