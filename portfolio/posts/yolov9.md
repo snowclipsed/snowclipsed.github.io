@@ -5,7 +5,7 @@ author: snowclipsed
 description: My notes on the YOLOv9 paper.
 categories: research
 date: "2024-02-29"
-tags: [notes, vision, papers, computer science]
+tags: [vision, research, computer science]
 toc:
     sidebar: left
 ---

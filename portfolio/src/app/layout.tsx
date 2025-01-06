@@ -2,7 +2,7 @@
 import type { Metadata } from 'next';
 import { ThemeProvider } from '../context/ThemeContext';
 import './globals.css';
-
+import './prism-cyberpunk.css';
 export const metadata: Metadata = {
   title: 'Snowclipsed - Digital Research',
   description: 'Deep Learning Architecture Research, Inference Optimization, and Low Level Programming',

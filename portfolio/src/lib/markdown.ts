@@ -1,9 +1,15 @@
-// src/lib/markdown.ts
 import path from 'path';
 import matter from 'gray-matter';
 import { marked, Tokens } from 'marked';
 import { cache } from 'react';
 import { readFile, readdir } from 'fs/promises';
+import Prism from 'prismjs';
+import 'prismjs/components/prism-typescript';
+import 'prismjs/components/prism-javascript';
+import 'prismjs/components/prism-css';
+import 'prismjs/components/prism-json';
+import 'prismjs/components/prism-bash';
+import 'prismjs/components/prism-yaml';
 
 export type BlogPost = {
   slug: string;
@@ -16,9 +22,46 @@ export type BlogPost = {
   content: string;
 };
 
-// In your markdown.ts file, update the image renderer:
 // Create a new instance of our custom renderer
 const renderer = new marked.Renderer();
+
+// Custom code block renderer
+renderer.code = ({ text, lang }: Tokens.Code) => {
+  if (!lang) {
+    return `<pre class="my-4 p-4 bg-black/5 dark:bg-white/5 rounded-lg overflow-x-auto"><code>${text}</code></pre>`;
+  }
+
+  // Ensure the language is loaded in Prism
+  const validLanguage = Prism.languages[lang] ? lang : 'plaintext';
+
+  // Highlight the code
+  const highlightedCode = Prism.highlight(
+    text,
+    Prism.languages[validLanguage],
+    validLanguage
+  );
+
+  // Return the highlighted code with cyberpunk styling
+  return `
+    <div class="relative my-4 group">
+      <div class="absolute -inset-px bg-gradient-to-r from-transparent via-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-200"></div>
+      <div class="relative">
+        <div class="flex items-center justify-between px-4 py-2 bg-black/10 dark:bg-white/10 border-b border-black/20 dark:border-white/20">
+          <span class="text-sm opacity-60">${validLanguage}</span>
+          <button 
+            class="px-2 py-1 text-xs border border-transparent hover:border-current opacity-60 hover:opacity-100 transition-all duration-200"
+            onclick="navigator.clipboard.writeText(this.parentElement.nextElementSibling.textContent)"
+          >
+            Copy
+          </button>
+        </div>
+        <pre class="p-4 bg-black/5 dark:bg-white/5 overflow-x-auto">
+          <code class="language-${validLanguage}">${highlightedCode}</code>
+        </pre>
+      </div>
+    </div>
+  `;
+};
 
 renderer.image = (image: Tokens.Image) => {
   if (!image.href) return '';
@@ -64,7 +107,11 @@ renderer.image = (image: Tokens.Image) => {
 
 
 // Configure marked with our custom renderer
-marked.use({ renderer });
+marked.use({ 
+  renderer,
+  breaks: true,
+  gfm: true
+});
 
 export const getPostBySlug = cache(async (slug: string): Promise<BlogPost> => {
   try {

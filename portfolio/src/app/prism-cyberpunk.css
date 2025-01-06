@@ -1,0 +1,130 @@
+/* Cyberpunk Brutalist Theme for Prism.js */
+code[class*="language-"],
+pre[class*="language-"] {
+  color: #ffffff;
+  background: none;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 0.875rem;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.6;
+  tab-size: 2;
+  hyphens: none;
+}
+
+/* Dark theme styles */
+.dark {
+  --token-comment: #6c6c6c;
+  --token-function: #ffffff;
+  --token-keyword: #ffffff;
+  --token-string: #dfdfdf;
+  --token-variable: #b4b4b4;
+  --token-number: #ffffff;
+  --token-operator: #8d8d8d;
+  --token-punctuation: #8d8d8d;
+}
+
+/* Light theme styles */
+:root {
+  --token-comment: #757575;
+  --token-function: #000000;
+  --token-keyword: #000000;
+  --token-string: #2f2f2f;
+  --token-variable: #404040;
+  --token-number: #000000;
+  --token-operator: #666666;
+  --token-punctuation: #666666;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+  color: var(--token-comment);
+  font-style: italic;
+}
+
+.token.namespace {
+  opacity: 0.7;
+}
+
+.token.property,
+.token.tag,
+.token.boolean,
+.token.number,
+.token.constant,
+.token.symbol {
+  color: var(--token-number);
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin {
+  color: var(--token-string);
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.token.punctuation {
+  color: var(--token-operator);
+}
+
+.token.atrule,
+.token.attr-value,
+.token.keyword {
+  color: var(--token-keyword);
+  font-weight: bold;
+}
+
+.token.function,
+.token.class-name {
+  color: var(--token-function);
+}
+
+.token.regex,
+.token.important,
+.token.variable {
+  color: var(--token-variable);
+}
+
+.token.important,
+.token.bold {
+  font-weight: bold;
+}
+
+.token.italic {
+  font-style: italic;
+}
+
+/* Add glitch effect on hover */
+pre[class*="language-"]:hover .line-highlight {
+  animation: glitch 0.3s cubic-bezier(.25, .46, .45, .94) both infinite;
+}
+
+@keyframes glitch {
+  0% {
+    transform: translate(0);
+  }
+  20% {
+    transform: translate(-2px, 2px);
+  }
+  40% {
+    transform: translate(-2px, -2px);
+  }
+  60% {
+    transform: translate(2px, 2px);
+  }
+  80% {
+    transform: translate(2px, -2px);
+  }
+  100% {
+    transform: translate(0);
+  }
+}
