@@ -1,12 +1,11 @@
 import React from 'react';
-import { Mail, Twitter, Globe, Github} from 'lucide-react';
+import { Mail, Twitter, Github} from 'lucide-react';
 import CyberpunkPerlin from './CyberpunkPerlin';
 
 const CyberpunkContact = () => {
   const contactItems = [
     { icon: <Mail className="w-5 h-5" />, label: 'メール', value: 'snowclipsed@gmail.com' },
     { icon: <Twitter className="w-5 h-5" />, label: 'ツイッター', value: '@snowclipsed', link: 'https://x.com/snowclipsed' },
-    { icon: <Globe className="w-5 h-5" />, label: 'ウェブサイト', value: 'snowclipsed.xyz' },
     { icon: <Github className="w-5 h-5" />, label: 'ギットハブ', value: 'snowclipsed', link: 'https://github.com/snowclipsed' }
   ];
 
