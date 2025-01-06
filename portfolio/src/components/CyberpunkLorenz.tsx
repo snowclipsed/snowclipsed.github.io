@@ -66,9 +66,9 @@ const CyberpunkLorenz = () => {
     const center = getRotationCenter();
     
     // Translate point to origin (relative to rotation center)
-    let x = point.x - center.x;
-    let y = point.y - center.y;
-    let z = point.z - center.z;
+    const x = point.x - center.x;
+    const y = point.y - center.y;
+    const z = point.z - center.z;
     
     const radX = config.rotateX * Math.PI / 180;
     const radY = config.rotateY * Math.PI / 180;
