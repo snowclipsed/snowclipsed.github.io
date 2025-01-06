@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useCallback, useEffect} from 'react';
 import { useRouter } from 'next/navigation';
 import { Terminal, Tag, Search, SortAsc, SortDesc, Filter } from 'lucide-react';
 import type { BlogPost } from '../lib/markdown';
@@ -11,6 +11,8 @@ interface CyberpunkBlogProps {
 
 const CyberpunkBlog: React.FC<CyberpunkBlogProps> = ({ posts = [] }) => {
   const router = useRouter();
+  const [isNavigating, setIsNavigating] = useState(false);
+
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedTags, setSelectedTags] = useState<string[]>([]);
   const [sortOrder, setSortOrder] = useState<'asc' | 'desc'>('desc');
@@ -69,9 +71,16 @@ const CyberpunkBlog: React.FC<CyberpunkBlogProps> = ({ posts = [] }) => {
     setSortOrder(prev => prev === 'asc' ? 'desc' : 'asc');
   };
 
-  const handlePostClick = (post: BlogPost) => {
-    router.push(`/blog/${post.slug}`);
-  };
+  const handlePostClick = useCallback((post: BlogPost) => {
+    if (isNavigating) return;
+    setIsNavigating(true);
+    router.push(`/blog/${post.slug}`, { scroll: false });
+  }, [router, isNavigating]);
+
+
+  useEffect(() => {
+    return () => setIsNavigating(false);
+  }, []);
 
   return (
     <div className="space-y-4 animate-fade-in">

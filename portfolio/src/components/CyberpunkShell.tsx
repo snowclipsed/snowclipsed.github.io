@@ -1,13 +1,16 @@
 'use client';
 
-import React, { useState, useCallback, useEffect, useMemo } from 'react';
+import React, { useState, useCallback, useEffect, useMemo, useRef } from 'react';
+import { useRouter, usePathname } from 'next/navigation';
 import { Terminal, Book, Network, Brain, Target } from 'lucide-react';
 import ThemeToggle from './ThemeToggle';
-import { useRouter, usePathname } from 'next/navigation';
 import CyberpunkLorenz from './CyberpunkLorenz';
 import CyberpunkBlog from './CyberpunkBlog';
 import CyberpunkContact from './CyberpunkContact';
 import type { BlogPost } from '../lib/markdown';
+import dynamic from 'next/dynamic';
+import { Suspense } from 'react';
+
 
 interface CyberpunkShellProps {
   posts?: BlogPost[];
@@ -21,6 +24,15 @@ interface ErrorBoundaryProps {
 interface ErrorBoundaryState {
   hasError: boolean;
 }
+
+const DynamicLorenz = dynamic(() => import('./CyberpunkLorenz'), {
+  ssr: false,
+  loading: () => (
+    <div className="w-full h-[400px] flex items-center justify-center">
+      Loading Visualization...
+    </div>
+  )
+});
 
 class LorenzErrorBoundary extends React.Component<ErrorBoundaryProps, ErrorBoundaryState> {
   constructor(props: ErrorBoundaryProps) {
@@ -46,15 +58,15 @@ class LorenzErrorBoundary extends React.Component<ErrorBoundaryProps, ErrorBound
 }
 
 export default function CyberpunkShell({ posts = [], initialPost }: CyberpunkShellProps) {
-    const router = useRouter();
-    const pathname = usePathname();
-    const [glitchText, setGlitchText] = useState(false);
-  
-    const navItems = useMemo(() => [
-      { id: '/', icon: <Terminal className="w-5 h-5" />, label: 'メイン' },
-      { id: '/blog', icon: <Book className="w-5 h-5" />, label: 'ブログ' },
-      { id: '/contact', icon: <Network className="w-5 h-5" />, label: 'コンタクト' }
-    ], []);
+  const router = useRouter();
+  const pathname = usePathname();
+  const [glitchText, setGlitchText] = useState(false);
+
+  const navItems = useMemo(() => [
+    { id: '/', icon: <Terminal className="w-5 h-5" />, label: 'メイン' },
+    { id: '/blog', icon: <Book className="w-5 h-5" />, label: 'ブログ' },
+    { id: '/contact', icon: <Network className="w-5 h-5" />, label: 'コンタクト' }
+  ], []);
     
     useEffect(() => {
       navItems.forEach(({ id }) => {
@@ -77,33 +89,38 @@ export default function CyberpunkShell({ posts = [], initialPost }: CyberpunkShe
   }, [pathname]);
 
   const handleNavigation = useCallback((path: string) => {
-    console.log('Navigation clicked:', path);
+    if (path === pathname) return;
     
-    // First trigger the visual effect
+    // Trigger glitch effect
     setGlitchText(true);
-    setTimeout(() => setGlitchText(false), 100);
-    
-    // Then do the navigation with a slight delay to ensure visual effects work
-    setTimeout(() => {
-      window.history.pushState({}, '', path);
-      router.refresh();
-    }, 0);
-  }, [router]);
 
-  const renderContent = () => {
-    // Home Page
+    // Use router.push immediately
+    router.push(path);
+    
+    // Reset glitch after animation
+    setTimeout(() => {
+        setGlitchText(false);
+    }, 50);
+}, [pathname, router]);
+
+
+
+   // Only render content after initial mount to prevent hydration issues
+   const renderContent = () => {
+    // Home page with Lorenz
     if (pathname === '/' || pathname === '') {
-      return (
-        <div className="space-y-8">
-          {/* Dynamic System */}
-          <div className="mb-12">
-            <h2 className="text-2xl mb-4 font-bold">私について / CHAOS ENGINE</h2>
-            <div className="w-full">
-              <LorenzErrorBoundary>
-                <CyberpunkLorenz />
-              </LorenzErrorBoundary>
-            </div>
-          </div>
+        return (
+            <div className="space-y-8">
+                 <div className="mb-12">
+                  <h2 className="text-2xl mb-4 font-bold">私について / CHAOS ENGINE</h2>
+                  <div className="w-full">
+                    <LorenzErrorBoundary>
+                      <Suspense>
+                        <DynamicLorenz />
+                      </Suspense>
+                    </LorenzErrorBoundary>
+                  </div>
+                </div>
 
           <div className="mt-8 border-t border-dotted transition-colors duration-100 
             dark:border-white/20 border-black/20 pt-8 w-full" />
@@ -205,10 +222,10 @@ export default function CyberpunkShell({ posts = [], initialPost }: CyberpunkShe
       );
     }
     
-    // Blog Pages
+    // Blog pages
     if (pathname === '/blog' || pathname === '/blog/') {
       return <CyberpunkBlog posts={posts} />;
-    }
+  }
     
     if (pathname.startsWith('/blog/')) {
       if (initialPost) {
@@ -239,9 +256,9 @@ export default function CyberpunkShell({ posts = [], initialPost }: CyberpunkShe
 
   return (
     <div className="min-h-screen transition-colors duration-100
-      dark:bg-black dark:text-white
-      bg-white text-black
-      font-mono p-4 max-w-4xl mx-auto">
+        dark:bg-black dark:text-white
+        bg-white text-black
+        font-mono p-4 max-w-4xl mx-auto">
         
       <ThemeToggle />
 
@@ -260,45 +277,42 @@ export default function CyberpunkShell({ posts = [], initialPost }: CyberpunkShe
       </header>
 
       {/* Navigation */}
-      <nav className="grid grid-cols-3 gap-4 mb-8">
-        {navItems.map(({id, icon, label}) => (
-          <button
-            key={id}
-            onClick={(e) => {
-              e.preventDefault();
-              handleNavigation(id);
-            }}
-            className={`border transition-all duration-100
-              dark:border-white border-black p-4 
-              flex items-center justify-center gap-2 relative group
-              ${pathname === id || (id === '/' && pathname === '') 
-                ? 'dark:bg-white dark:text-black bg-black text-white' 
-                : ''}
-              dark:hover:bg-white dark:hover:text-black
-              hover:bg-black hover:text-white`}
-          >
-            <div className="relative">
-              <div className="opacity-80 absolute -left-0.5 -top-0.5 text-red-500 pointer-events-none 
-                group-hover:translate-x-1 transition-transform duration-100">
+       <nav className="grid grid-cols-3 gap-4 mb-8">
+                {navItems.map(({id, icon, label}) => (
+                    <button
+                        key={id}
+                        onClick={() => handleNavigation(id)}
+                        className={`border transition-all duration-100
+                            dark:border-white border-black p-4 
+                            flex items-center justify-center gap-2 relative group
+                            ${pathname === id || (id === '/' && pathname === '') 
+                                ? 'dark:bg-white dark:text-black bg-black text-white' 
+                                : ''}
+                            dark:hover:bg-white dark:hover:text-black
+                            hover:bg-black hover:text-white`}
+                    >
+              <div className="relative">
+                <div className="opacity-80 absolute -left-0.5 -top-0.5 text-red-500 pointer-events-none 
+                  group-hover:translate-x-1 transition-transform duration-100">
+                  {icon}
+                </div>
+                <div className="opacity-80 absolute -left-0.5 top-0.5 text-blue-500 pointer-events-none 
+                  group-hover:-translate-x-1 transition-transform duration-100">
+                  {icon}
+                </div>
                 {icon}
               </div>
-              <div className="opacity-80 absolute -left-0.5 top-0.5 text-blue-500 pointer-events-none 
-                group-hover:-translate-x-1 transition-transform duration-100">
-                {icon}
-              </div>
-              {icon}
-            </div>
-            <span className="hidden md:inline">{label}</span>
-          </button>
-        ))}
-      </nav>
+              <span className="hidden md:inline">{label}</span>
+            </button>
+          ))}
+        </nav>
 
       {/* Main Content Container */}
       <main className="border transition-colors duration-100 dark:border-white border-black">
-        <div className="p-6">
-          {renderContent()}
-        </div>
-      </main>
+                <div className="p-6">
+                    {renderContent()}
+                </div>
+            </main>
 
       <footer className="p-4 mt-8 opacity-70 hover:opacity-100 transition-opacity duration-100">
         <p className="text-center">© 2024 スノーエクリプス</p>
