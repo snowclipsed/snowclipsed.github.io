@@ -4,7 +4,6 @@ import React, { useState, useCallback, useEffect, useMemo, useRef } from 'react'
 import { useRouter, usePathname } from 'next/navigation';
 import { Terminal, Book, Network, Brain, Target } from 'lucide-react';
 import ThemeToggle from './ThemeToggle';
-import CyberpunkLorenz from './CyberpunkLorenz';
 import CyberpunkBlog from './CyberpunkBlog';
 import CyberpunkContact from './CyberpunkContact';
 import type { BlogPost } from '../lib/markdown';
