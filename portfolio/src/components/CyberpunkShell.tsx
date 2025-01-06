@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useCallback, useEffect, useMemo } from 'react';
+import React, { useCallback, useEffect, useMemo } from 'react';
 import { useRouter, usePathname } from 'next/navigation';
 import { Terminal, Book, Network, Brain, Target } from 'lucide-react';
 import ThemeToggle from './ThemeToggle';
@@ -59,7 +59,6 @@ class LorenzErrorBoundary extends React.Component<ErrorBoundaryProps, ErrorBound
 export default function CyberpunkShell({ posts = [], initialPost }: CyberpunkShellProps) {
   const router = useRouter();
   const pathname = usePathname();
-  const [glitchText, setGlitchText] = useState(false);
 
   const navItems = useMemo(() => [
     { id: '/', icon: <Terminal className="w-5 h-5" />, label: 'メイン' },
@@ -90,18 +89,9 @@ export default function CyberpunkShell({ posts = [], initialPost }: CyberpunkShe
   const handleNavigation = useCallback((path: string) => {
     if (path === pathname) return;
     
-    // Trigger glitch effect
-    setGlitchText(true);
-
-    // Use router.push immediately
+    // Remove references to glitch effect
     router.push(path);
-    
-    // Reset glitch after animation
-    setTimeout(() => {
-        setGlitchText(false);
-    }, 50);
-}, [pathname, router]);
-
+  }, [pathname, router]);
 
 
    // Only render content after initial mount to prevent hydration issues
@@ -263,7 +253,7 @@ export default function CyberpunkShell({ posts = [], initialPost }: CyberpunkShe
 
       {/* Header */}
       <header className="border transition-colors duration-100 dark:border-white border-black p-6 mb-8 relative group">
-        <div className={`transition-all duration-100 ${glitchText ? 'transform translate-x-1' : ''}`}>
+        <div className="transition-all duration-100">
           <h1 className="text-3xl md:text-4xl mb-2 font-bold relative">
             <span className="opacity-80 absolute -left-1 -top-1 text-red-500">スノーエクリプス</span>
             <span className="opacity-80 absolute -left-1 top-1 text-blue-500">スノーエクリプス</span>

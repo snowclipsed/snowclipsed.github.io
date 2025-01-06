@@ -1,89 +1,76 @@
-'use client';
-
 import React from 'react';
-import { Mail, Twitter, Globe } from 'lucide-react';
+import { Mail, Twitter, Globe, Github} from 'lucide-react';
 import CyberpunkPerlin from './CyberpunkPerlin';
 
 const CyberpunkContact = () => {
   const contactItems = [
     { icon: <Mail className="w-5 h-5" />, label: 'メール', value: 'snowclipsed@gmail.com' },
-    { icon: <Twitter className="w-5 h-5" />, label: 'Twitter', value: '@snowclipsed', link: 'https://x.com/snowclipsed' },
-    { icon: <Globe className="w-5 h-5" />, label: 'Website', value: 'snowclipsed.xyz' }
+    { icon: <Twitter className="w-5 h-5" />, label: 'ツイッター', value: '@snowclipsed', link: 'https://x.com/snowclipsed' },
+    { icon: <Globe className="w-5 h-5" />, label: 'ウェブサイト', value: 'snowclipsed.xyz' },
+    { icon: <Github className="w-5 h-5" />, label: 'ギットハブ', value: 'snowclipsed', link: 'https://github.com/snowclipsed' }
   ];
 
   return (
-    <div className="space-y-6 animate-fade-in">
-      {/* Perlin Noise Visualization */}
-      <div className="border transition-colors duration-100 dark:border-white border-black dark:bg-black bg-white">
-        <CyberpunkPerlin />
+    <div className="space-y-8 animate-fade-in">
+      {/* Dimensional Flow Section */}
+      <div className="space-y-4">
+        <div className="flex items-center gap-2">
+          <h2 className="text-2xl font-bold">ディメンショナル・フロー / DIMENSIONAL FLOW</h2>
+        </div>
+        <div className="border transition-colors duration-100 dark:border-white border-black">
+          <CyberpunkPerlin />
+        </div>
       </div>
 
-      {/* Contact Items */}
+      {/* Contact Header */}
+      <div className="flex items-center gap-2">
+        <h2 className="text-2xl font-bold">コンタクト / CONTACT</h2>
+      </div>
+
+      {/* Contact Grid - Clean Version */}
       <div className="space-y-4">
-        {contactItems.map((item, index) => (
+        {contactItems.map((item) => (
           <div 
             key={item.label}
-            className="border transition-colors duration-100 dark:border-white border-black p-4 relative group cursor-pointer"
-            style={{ 
-              transform: `translateX(${index * 5}px)`,
-              zIndex: contactItems.length - index 
-            }}
+            className="border transition-colors duration-100 dark:border-white border-black p-6 relative group hover:bg-black/5 dark:hover:bg-white/5"
           >
-            {/* Icon with Glitch Effect */}
-            <div className="relative inline-block">
-              <div className="opacity-80 absolute -left-0.5 -top-0.5 text-red-500 pointer-events-none 
-                group-hover:translate-x-1 transition-transform duration-100">
+            <div className="flex items-center gap-6">
+              <div className="w-5 flex-shrink-0">
                 {item.icon}
               </div>
-              <div className="opacity-80 absolute -left-0.5 top-0.5 text-blue-500 pointer-events-none 
-                group-hover:-translate-x-1 transition-transform duration-100">
-                {item.icon}
+
+              <div className="flex flex-col">
+                <p className="text-sm opacity-70 mb-1">{item.label}</p>
+                {item.link ? (
+                  <a 
+                    href={item.link} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="hover:text-blue-500 transition-colors duration-100 font-mono"
+                  >
+                    {item.value}
+                  </a>
+                ) : (
+                  <p className="font-mono">
+                    {item.value}
+                  </p>
+                )}
               </div>
-              {item.icon}
-            </div>
-
-            <div className="ml-4 inline-block">
-              <p className="text-sm opacity-70 group-hover:opacity-100 transition-opacity duration-100">
-                {item.label}
-              </p>
-              {item.link ? (
-                <a 
-                  href={item.link} 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="hover:text-red-500 transition-colors duration-100"
-                >
-                  {item.value}
-                </a>
-              ) : (
-                <p className="group-hover:text-blue-500 transition-colors duration-100">
-                  {item.value}
-                </p>
-              )}
-            </div>
-
-            {/* Hover Border Animation */}
-            <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-100">
-              <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-current to-transparent" />
-              <div className="absolute top-0 right-0 w-px h-full bg-gradient-to-b from-transparent via-current to-transparent" />
-              <div className="absolute bottom-0 right-0 w-full h-px bg-gradient-to-r from-transparent via-current to-transparent" />
-              <div className="absolute top-0 left-0 w-px h-full bg-gradient-to-b from-transparent via-current to-transparent" />
             </div>
           </div>
         ))}
       </div>
 
-      {/* Optional: Additional Information Section */}
-      <div className="border transition-colors duration-100 dark:border-white border-black p-4 mt-8">
-        <h2 className="text-xl mb-4 flex items-center gap-2">
-          <span className="text-blue-400 mr-2">▶</span>
-          コミュニケーション / COMMUNICATION
-        </h2>
-        <p className="opacity-80 font-mono">
-          Feel free to reach out for collaboration, research discussions, 
-          or just to chat about machine learning and technology. I&apos;m always 
-          interested in connecting with fellow researchers and developers.
-        </p>
+      {/* About Section */}
+      <div className="border transition-colors duration-100 dark:border-white border-black">
+        <div className="p-6">
+          <h2 className="text-xl font-bold mb-4">リサーチ＆コラボレーション / RESEARCH & COLLABORATION</h2>
+          <p className="font-mono opacity-80">
+            Feel free to reach out for collaboration, research discussions, 
+            or just to chat about machine learning and technology. I'm always 
+            interested in connecting with fellow researchers and developers.
+          </p>
+        </div>
       </div>
     </div>
   );
