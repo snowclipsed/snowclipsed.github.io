@@ -67,7 +67,7 @@ const CyberpunkContact = () => {
           <h2 className="text-xl font-bold mb-4">リサーチ＆コラボレーション / RESEARCH & COLLABORATION</h2>
           <p className="font-mono opacity-80">
             Feel free to reach out for collaboration, research discussions, 
-            or just to chat about machine learning and technology. I'm always 
+            or just to chat about machine learning and technology. I&apos;m always 
             interested in connecting with fellow researchers and developers.
           </p>
         </div>
