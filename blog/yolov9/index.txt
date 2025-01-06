@@ -1,5 +1,5 @@
 1:"$Sreact.fragment"
-2:I[8308,["177","static/chunks/app/layout-4f29c14b17dc40b5.js"],"ThemeProvider"]
+2:I[8308,["177","static/chunks/app/layout-0c4d063dd6fe438d.js"],"ThemeProvider"]
 3:I[5244,[],""]
 4:I[3866,[],""]
 5:I[8173,["560","static/chunks/app/blog/%5Bslug%5D/not-found-4509230feeaeaa83.js"],""]
@@ -7,14 +7,14 @@
 9:I[6213,[],"MetadataBoundary"]
 b:I[6213,[],"ViewportBoundary"]
 d:I[4835,[],""]
-:HL["/_next/static/css/20f24a276c986f7a.css","style"]
-0:{"P":null,"b":"DFFYPwUHtCehseExB61Bi","p":"","c":["","blog","yolov9",""],"i":false,"f":[[["",{"children":["blog",{"children":[["slug","yolov9","d"],{"children":["__PAGE__",{}]}]}]},"$undefined","$undefined",true],["",["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/20f24a276c986f7a.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]],["$","html",null,{"lang":"en","suppressHydrationWarning":true,"className":"dark","children":[["$","head",null,{"children":[["$","link",null,{"rel":"preconnect","href":"https://fonts.googleapis.com"}],["$","link",null,{"rel":"preconnect","href":"https://fonts.gstatic.com","crossOrigin":"anonymous"}],["$","link",null,{"href":"https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap","rel":"stylesheet"}],["$","script",null,{"dangerouslySetInnerHTML":{"__html":"\n              // Prevent flash of wrong theme\n              const savedTheme = localStorage.getItem('theme') || 'dark';\n              document.documentElement.classList.add(savedTheme);\n\n              window.MathJax = {\n                tex: {\n                  inlineMath: [['\\\\(', '\\\\)']],\n                  displayMath: [['$$', '$$']],\n                  processEscapes: true,\n                },\n                options: {\n                  skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']\n                }\n              };\n            "}}]]}],["$","body",null,{"className":"antialiased transition-colors duration-100 dark:bg-black dark:text-white bg-white text-black","children":["$","$L2",null,{"children":["$","div",null,{"className":"min-h-screen flex justify-center items-center","children":["$","div",null,{"style":{"transform":"scale(0.60)","transformOrigin":"center top","width":"100%"},"children":["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L4",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[[],[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":404}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]]],"forbidden":"$undefined","unauthorized":"$undefined"}]}]}]}]}]]}]]}],{"children":["blog",["$","$1","c",{"children":[null,["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children","blog","children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L4",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["slug","yolov9","d"],["$","$1","c",{"children":[null,["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children","blog","children","$0:f:0:1:2:children:2:children:0","children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L4",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[[],["$","div",null,{"className":"min-h-screen flex items-center justify-center","children":["$","div",null,{"className":"text-center space-y-4","children":[["$","h1",null,{"className":"text-4xl font-bold","children":"404"}],["$","h2",null,{"className":"text-xl","children":"Post Not Found"}],["$","p",null,{"className":"text-gray-500","children":"The blog post you're looking for doesn't exist."}],["$","$L5",null,{"href":"/","className":"text-blue-500 hover:underline","children":"Return Home"}]]}]}]],"forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":["__PAGE__",["$","$1","c",{"children":["$L6",null,["$","$L7",null,{"children":"$L8"}]]}],{},null,false]},null,false]},null,false]},null,false],["$","$1","h",{"children":[null,["$","$1","_QLYU8fiTL0_GNMR0d2rZ",{"children":[["$","$L9",null,{"children":"$La"}],["$","$Lb",null,{"children":"$Lc"}],null]}]]}],false]],"m":"$undefined","G":["$d","$undefined"],"s":false,"S":true}
+:HL["/_next/static/css/1bb54b7ccf86c848.css","style"]
+0:{"P":null,"b":"RNkmHbTVJCrSj7edmi6ZK","p":"","c":["","blog","yolov9",""],"i":false,"f":[[["",{"children":["blog",{"children":[["slug","yolov9","d"],{"children":["__PAGE__",{}]}]}]},"$undefined","$undefined",true],["",["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/1bb54b7ccf86c848.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]],["$","html",null,{"lang":"en","suppressHydrationWarning":true,"className":"dark","children":[["$","head",null,{"children":[["$","link",null,{"rel":"preconnect","href":"https://fonts.googleapis.com"}],["$","link",null,{"rel":"preconnect","href":"https://fonts.gstatic.com","crossOrigin":"anonymous"}],["$","link",null,{"href":"https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap","rel":"stylesheet"}],["$","script",null,{"dangerouslySetInnerHTML":{"__html":"\n              // Prevent flash of wrong theme\n              const savedTheme = localStorage.getItem('theme') || 'dark';\n              document.documentElement.classList.add(savedTheme);\n\n              window.MathJax = {\n                tex: {\n                  inlineMath: [['\\\\(', '\\\\)']],\n                  displayMath: [['$$', '$$']],\n                  processEscapes: true,\n                },\n                options: {\n                  skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']\n                }\n              };\n            "}}]]}],["$","body",null,{"className":"antialiased transition-colors duration-100 dark:bg-black dark:text-white bg-white text-black","children":["$","$L2",null,{"children":["$","div",null,{"className":"min-h-screen flex justify-center items-center","children":["$","div",null,{"style":{"transform":"scale(0.60)","transformOrigin":"center top","width":"100%"},"children":["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L4",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[[],[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":404}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]]],"forbidden":"$undefined","unauthorized":"$undefined"}]}]}]}]}]]}]]}],{"children":["blog",["$","$1","c",{"children":[null,["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children","blog","children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L4",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["slug","yolov9","d"],["$","$1","c",{"children":[null,["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children","blog","children","$0:f:0:1:2:children:2:children:0","children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L4",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[[],["$","div",null,{"className":"min-h-screen flex items-center justify-center","children":["$","div",null,{"className":"text-center space-y-4","children":[["$","h1",null,{"className":"text-4xl font-bold","children":"404"}],["$","h2",null,{"className":"text-xl","children":"Post Not Found"}],["$","p",null,{"className":"text-gray-500","children":"The blog post you're looking for doesn't exist."}],["$","$L5",null,{"href":"/","className":"text-blue-500 hover:underline","children":"Return Home"}]]}]}]],"forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":["__PAGE__",["$","$1","c",{"children":["$L6",null,["$","$L7",null,{"children":"$L8"}]]}],{},null,false]},null,false]},null,false]},null,false],["$","$1","h",{"children":[null,["$","$1","hEkAq06v-OhQLeYLer4Px",{"children":[["$","$L9",null,{"children":"$La"}],["$","$Lb",null,{"children":"$Lc"}],null]}]]}],false]],"m":"$undefined","G":["$d","$undefined"],"s":false,"S":true}
 c:[["$","meta","0",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
 a:[["$","meta","0",{"charSet":"utf-8"}],["$","title","1",{"children":"Understanding the YOLOv9 Paper"}],["$","meta","2",{"name":"description","content":"My notes on the YOLOv9 paper."}]]
 8:null
 e:I[8881,["618","static/chunks/618-f5e461a63b2d837f.js","738","static/chunks/738-a7fe2d0583591b8f.js","953","static/chunks/app/blog/%5Bslug%5D/page-33760b7bfd62df67.js"],"default"]
 f:I[7738,["618","static/chunks/618-f5e461a63b2d837f.js","738","static/chunks/738-a7fe2d0583591b8f.js","953","static/chunks/app/blog/%5Bslug%5D/page-33760b7bfd62df67.js"],"default"]
-10:T4f1a,<p>This is another paper in the YOLO iteration. I like vision papers a lot and these are my notes from my reading of the paper.</p>
+10:T4f6c,<p>This is another paper in the YOLO iteration. I like vision papers a lot and these are my notes from my reading of the paper.</p>
 <p>Original paper <a href="https://arxiv.org/abs/2402.13616">link</a>.</p>
 <h1>What exactly is the problem with current models?</h1>
 <p> Object detection models can be simplified as learning the most important features in a training set which can allow it to predict the location (bounding box) or segmentation map of a given test object. Ideally, we want such models to be robustly generalized - an object detection world model which can one shot any test object in any scenario as long as it has seen objects of a similar class. There has been a push towards achieving this ideal but not without roadblocks in convergence, which the paper focuses a lot on. </p>
@@ -25,24 +25,18 @@ f:I[7738,["618","static/chunks/618-f5e461a63b2d837f.js","738","static/chunks/738
 <p>It&#39;s hard to measure the ideal amount of information loss from information bottlenecks. The authors in the paper argue that the loss from information bottlenecks may still be non-negligible in many modern techniques because it is simply learning the wrong features and hence the wrong mapping between input and predictions.</p>
 <p><div class="flex justify-center my-8"><img src="/images/infobottleneck1.png" alt="alt text" title="Information Bottleneck" class="rounded-lg w-1/2"></div></p>
 <p>The information loss due to the bottleneck can be described by in terms of mutual information:</p>
-<p>$$
-    I(X,X) \ge I(X, f\theta(X) \ge I(X, g\phi(f\theta(X)))
-$$</p>
+<p>$$<br>    I(X,X) \ge I(X, f\theta(X) \ge I(X, g\phi(f\theta(X)))<br>$$</p>
 <p>Here \(I\) is the mutual information. Mathematically, \(MI(X;Y)\) is defined  as:</p>
-<p>$$
-MI(X;Y) = ∑p(x,y) \log_2(\frac{p(x,y)}{p(x)p(y)})
-$$</p>
+<p>$$<br>MI(X;Y) = ∑p(x,y) \log_2(\frac{p(x,y)}{p(x)p(y)})<br>$$</p>
 <p>..where \(p(x)\) and \(p(y)\) are the marginal probability distributions of X and \(Y\), respectively, and \(p(x,y)\) is their joint probability distribution. Intuitively, MI measures how much knowing the value of X reduces uncertainty about Y, or conversely, how much knowing the value of Y reduces uncertainty about X. \(f\) and \(g\) are transformation functions with trainable parameters \(\theta\) and \(\phi\).</p>
 <p><strong>What does this even mean?</strong></p>
 <p><div class="flex justify-center my-8"><img src="/images/infobottleneck2.png" alt="alt text" title="Information Bottleneck" class="rounded-lg w-1/2"></div></p>
 <ol>
 <li><p>This represents that as more neural transformations are applied, the more information is lost. As in, deeper layers mean more information loss since there&#39;s consecutive application of transformation functions (neurons).</p>
 </li>
-<li><p>This means a model with deeper layers retain lesser info about both the input and target. 
-Hence it would naturally perform worse.</p>
+<li><p>This means a model with deeper layers retain lesser info about both the input and target.<br>Hence it would naturally perform worse.</p>
 </li>
-<li><p>A model with larger number of parameters has much more parameters and can learn larger number of features (information) about the data. 
-This is why width is important in deep networks than depth itself.</p>
+<li><p>A model with larger number of parameters has much more parameters and can learn larger number of features (information) about the data.<br>This is why width is important in deep networks than depth itself.</p>
 </li>
 <li><p>This increase in width can only increase the scope of learning more information by simply increasing the number of params, but the information loss per param is still the same (or, often increased because of more connections).</p>
 </li>
@@ -60,9 +54,7 @@ This is why width is important in deep networks than depth itself.</p>
 <h2>Programmable Gradient Information</h2>
 <p>To solve the previous issues, YOLOv9 utilizes <strong>Programmable Gradient Information</strong> (PGI). PGI tries to solve the issues caused by information bottlenecks and gradient inefficiency by combining both deep supervision and reversible architectures. </p>
 <p>The motive of deep supervision in object detection, as I mentioned before, is to act as guidance for a model&#39;s layers to ensure they are learning the right features. A popular method of implementing deep supervision is through auxiliary branches. These are temporary branches which will act as checks for the hidden deep layers in a network by supervising them on the intermediate representation they produce. The auxiliary branch makes the intermediate layers perform predictions based on the representations they produce. This also has an added effect of breaking down the final learning objective into more manageable tasks. The final loss into a standard main loss (\(L_{main}\)) computed at the end of the network and auxiliary losses computed at the intermediate predictions in the auxiliary layers (\(L_{aux}\)). We can of course represent it as :</p>
-<p>$$
-\mathcal{L}<em>{total} = \mathcal{L}</em>{main} + \sum_{i} \lambda_i \mathcal{L}_{aux,i}
-$$</p>
+<p>$$<br>\mathcal{L}<em>{total} = \mathcal{L}</em>{main} + \sum_{i} \lambda_i \mathcal{L}_{aux,i}<br>$$</p>
 <p>Where \(\lambda_i\) is the weighing coefficient for each auxiliary loss. These auxiliary losses guide the intermediate layers to learn features more effectively, ensuring better representation across the network.</p>
 <h2>PGI Architecture</h2>
 <p>PGI definitely works well in concept, but adding more neurons to a model is not always the answer because it will lead to slower inference. The auxiliary layers will increase inference costs by 20% when added. However we don&#39;t have to work about that with the auxiliary layers because they are only present during the training phase to supervise intermediate layers. During inference, we &quot;turn off&quot; the auxiliary layers. Auxiliary layers also only aim to add new, important information that is missing in the intermediate representations. Hence, this concept will not underparameterize our model because we&#39;re not passing the entirety of original information from the image again, just the essential bits.</p>
@@ -92,20 +84,12 @@ $$</p>
 <li><p>The final predictions might place bounding boxes inaccurately or fail to recognize objects altogether.</p>
 </li>
 </ul>
-<p>If \( h_i \) represents the output of the \( i \)-th layer, and \(\ \epsilon_i \) the error at this layer. The output at the next layer can be written as:
-$$
-h_{i+1} = f(h_i) + \epsilon_i,
-$$
-where \( f(\cdot) \) is the transformation function. When \( \epsilon_i \) is propagated to the next layer, it may interact non-linearly with \( f(\cdot) \), compounding the error:</p>
-<p>$$
-\epsilon_{i+1} = g(f(h_i + \epsilon_i)) - g(f(h_i)),
-$$</p>
+<p>If \( h_i \) represents the output of the \( i \)-th layer, and \(\ \epsilon_i \) the error at this layer. The output at the next layer can be written as:<br>$$<br>h_{i+1} = f(h_i) + \epsilon_i,<br>$$<br>where \( f(\cdot) \) is the transformation function. When \( \epsilon_i \) is propagated to the next layer, it may interact non-linearly with \( f(\cdot) \), compounding the error:</p>
+<p>$$<br>\epsilon_{i+1} = g(f(h_i + \epsilon_i)) - g(f(h_i)),<br>$$</p>
 <p>where \( g(\cdot) \) represents the next transformation. As this process repeats across layers, \(\epsilon_{total}\) grows, particularly in deeper networks, leading to distorted representations and predictions.</p>
 <p>The effect of this problem does not stop here. Since it effects our error, it effects our gradient. And because of this backpropagation amplifies the original effect of error accumulation across the network - causing gradient degredation.</p>
 <p>For instance, in a deep network, if the gradient of the loss function with respect to a weight in an earlier layer is denoted by:</p>
-<p>$$
-\frac{\partial \mathcal{L}}{\partial W_i} = \frac{\partial \mathcal{L}}{\partial h_N} \cdot \frac{\partial h_N}{\partial h_{N-1}} \cdot \ldots \cdot \frac{\partial h_{i+1}}{\partial W_i},
-$$</p>
+<p>$$<br>\frac{\partial \mathcal{L}}{\partial W_i} = \frac{\partial \mathcal{L}}{\partial h_N} \cdot \frac{\partial h_N}{\partial h_{N-1}} \cdot \ldots \cdot \frac{\partial h_{i+1}}{\partial W_i},<br>$$</p>
 <p>where \( N \) is the number of layers, any instability (e.g., large or small derivatives) in intermediate layers amplifies inaccuracies, affecting weight updates. This leads to the phenomenon where earlier layers either &quot;freeze&quot; (due to negligible updates) or oscillate (due to erratic updates), compromising their ability to extract meaningful features.</p>
 <h2>Error Accumulation through Auxiliary Layers</h2>
 <p>This problem is more than simply relevant for YOLOv9 because of its usage of deep supervision through auxiliary layers. Deep supervision, while a strategy to address such issues, can itself contribute to error accumulation if not implemented carefully. The aim of this method, as we discussed previously, is to guide intermediate layers to learn more meaningful representations. However, if the auxiliary losses are poorly designed or conflict with the primary task, they can introduce new errors. This leads to the model prioritizing learning features which do not align with the main task at all, achieving the opposing effect of what we originally wanted. </p>
@@ -115,34 +99,22 @@ $$</p>
 <h1>Reversible Functions : Why do we need them?</h1>
 <p>Reversible functions in YOLOv9 are primarily applied to enhance memory efficiency during training while maintaining model accuracy. They address the challenge of storing intermediate activations required for backpropagation. However the biggest advantage of reversible functions is the minimal information loss while reconstructing previous activations.</p>
 <p>To understand reversible functions, let&#39;s consider a function \(r_\psi(X)\), which may have an inverse transformation \(v_\zeta()\). This means when we apply \(v_\zeta()\) on \(r_\psi(X)\), we get \(X\) back:</p>
-<p>$$
-    X = v_\zeta(r_\psi(X))
-$$</p>
+<p>$$<br>    X = v_\zeta(r_\psi(X))<br>$$</p>
 <p>where \(\psi\) and \(\zeta\) are parameters.</p>
 <p>A reversible function results in a perfect recreation of the initial data \(X\), this means it has no information loss:</p>
-<p>$$
-    I(X,X) = I(X, r_\psi(X)) = I(X, v_\zeta(r_\psi(X))
-$$</p>
+<p>$$<br>    I(X,X) = I(X, r_\psi(X)) = I(X, v_\zeta(r_\psi(X))<br>$$</p>
 <p>Hence the activations can be recomputed through reversible functions. This leads to better performance. This can be mathematically represented as :</p>
-<p>$$
-    X^{l+1} = X^l + f\theta ^{l+1}(X^l)
-$$</p>
+<p>$$<br>    X^{l+1} = X^l + f\theta ^{l+1}(X^l)<br>$$</p>
 <p>This exact method was used in the PreAct ResNet model, where the equation above depicts the \(l\) th layer and a transformation function \(f\) is applied on the \(l\)-th layer. We can see that it is a reversible function as \(X^{l+1}\) can be obtained by explicitly passing \(X^l\) (Data from \(l\)-th layer) to the subsequent layers. This leads to good convergence but high complexity. Hence why PreAct ResNet must need high amount of layers to function well (susceptible to underparameterization).</p>
 <p>We can pose the information bottleneck equation above as a mapping from input \(X\) to target \(Y\):</p>
-<p>$$
-    I(X,Y) \ge I(Y,X) \ge I(Y, f\theta(X) \ge \dots \ge I(Y, \hat Y)
-$$ </p>
+<p>$$<br>    I(X,Y) \ge I(Y,X) \ge I(Y, f\theta(X) \ge \dots \ge I(Y, \hat Y)<br>$$ </p>
 <p>Because of underparameterization in the shallow layers, a lot of information can be lost in the first few layers itself during \(I(Y,X)\). If we lose information in the start, the succeeding transformation functions will have no way to recover the lost information. Hence the goal for getting reliable gradients is minimizing information loss while mapping \(X\) to \(Y\) as in \(I(Y,X)\) from \(I(X,X)\).</p>
 <p>To mitigate the problems caused by solely utilizing reversible functions without making the model extremely beefy, we simply selectively utilize the reversible function property in combination with the auxiliary branch during training. These layers are placed in shallow layers where the bottleneck is more prominent, as well as in the auxiliary branch itself. </p>
 <p>For example, consider an intermediate activation \( X^{l} \) at layer \( l \). When transformed by a reversible function \( r_\psi \), it produces \( X^{l+1} = X^l + f_\theta(X^l) \), where \( f_\theta \) is the transformation applied. To reconstruct \( X^l \) during backpropagation, we compute:</p>
-<p>$$
-X^l = X^{l+1} - f_\theta(X^l),
-$$</p>
+<p>$$<br>X^l = X^{l+1} - f_\theta(X^l),<br>$$</p>
 <p>ensuring that the original data is retrievable. This framework avoids the explicit storage of \( X^l \), significantly reducing memory usage. However, this process becomes computationally expensive for all layers due to the repetitive evaluations of \( f_\theta \). </p>
 <p>This is where we try to see where exactly we can cut corners just enough while reconstructing our activations - by asking if it is necessary to reconstruct all activations at all? YOLOv9 does this by using an approximation function to reconstruct only the activations which are relevant and contribute importantly to the gradient flow. We can dynamically apply a mask \(M\) on the activations which we want to recompute. Then, we define the approximation function \( v_\zeta \) which reconstructs the masked input efficiently:</p>
-<p>$$
-X = v_\zeta(r_\psi(X) \cdot M),
-$$</p>
+<p>$$<br>X = v_\zeta(r_\psi(X) \cdot M),<br>$$</p>
 <p>where \( M \) ensures that only the relevant activations contributing to the gradient flow are computed. This selective reconstruction reduces the computational load while maintaining the integrity of the gradients.</p>
 <h1>Better feature extraction with GELAN</h1>
 <p>Deep models lose information during the progressive feature extraction process due to the information bottleneck principle, which we argued previously. This is caused due to repeated data (feature) transformations. If we find a method to learn and propagate gradients without the use of excessive transformations, it can potentially decrease model degradation from information loss usually incurred from the transformations. Turns out there does exist such a method, called Cross Stage Partial Networks or CSPNet. </p>
@@ -153,4 +125,581 @@ $$</p>
 <li><p>Part 2 bypasses the transformations</p>
 </li>
 </ul>
-6:["$","$Le",null,{"children":["$","$Lf",null,{"posts":[{"slug":"yolov9","title":"Understanding the YOLOv9 Paper","date":"2024-02-29","author":"snowclipsed","tags":["notes","vision","papers","computer science"],"image":"","description":"My notes on the YOLOv9 paper.","content":"$10"},{"slug":"mathtest","title":"Testing Math Rendering","date":"2024-01-04","author":"snowclipsed","tags":["test","math"],"image":"","description":"A simple test post for math rendering","content":"<h1>Math Rendering Test</h1>\n<p>This is a simple inline math test: $E = mc^2$</p>\n<p>Here&#39;s a display math block:</p>\n<pre><code class=\"language-math\">\\int_{-\\infty}^{\\infty} e^{-x^2} dx = \\sqrt{\\pi}\n</code></pre>\n<p>And another inline math: $f(x) = \\frac{1}{1 + e^{-x}}$</p>\n"}],"initialPost":"$6:props:children:props:posts:0"}]}]
+11:T48b,<h1>Math Rendering Test</h1>
+<p>This is a simple inline math test: $E = mc^2$</p>
+<p>Here&#39;s a display math block:</p>
+
+    <div class="relative my-4 group">
+      <div class="absolute -inset-px bg-gradient-to-r from-transparent via-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-200"></div>
+      <div class="relative">
+        <div class="flex items-center justify-between px-4 py-2 bg-black/10 dark:bg-white/10 border-b border-black/20 dark:border-white/20">
+          <span class="text-sm opacity-60">plaintext</span>
+          <button 
+            class="px-2 py-1 text-xs border border-transparent hover:border-current opacity-60 hover:opacity-100 transition-all duration-200"
+            onclick="navigator.clipboard.writeText(this.parentElement.nextElementSibling.textContent)"
+          >
+            Copy
+          </button>
+        </div>
+        <pre class="p-4 bg-black/5 dark:bg-white/5 overflow-x-auto">
+          <code class="language-plaintext">\int_{-\infty}^{\infty} e^{-x^2} dx = \sqrt{\pi}</code>
+        </pre>
+      </div>
+    </div>
+  <p>And another inline math: $f(x) = \frac{1}{1 + e^{-x}}$</p>
+12:T8887,<h1>Why this project?</h1>
+<p>A satellite tracker is something I have wanted to make since a long time. I had researched about <a href="https://en.wikipedia.org/wiki/Two-line_element_set">two line elements</a> and how one can generate ground tracks for satellites using complex algorithms like SGP4, like in <a href="https://github.com/anoved/Ground-Track-Generator">this repo</a>. I wanted to understand concepts of orbital mechanics and map projection through a practical project</p>
+<p>To deploy my project, please go to <a href="https://github.com/snowclipsed/SatTrack">this repository</a> and follow the README instructions!</p>
+<h1>Approach</h1>
+<p>A satellite tracker in principle works by displaying the coordinates of a given satellite at a point in time either through projecting its overhead coordinates on a map (2D) or displaying the satellite&#39;s position in a 3D environment. For this project, I use the classic first approach to project the location of a satellite on a map. </p>
+<p>To do this, we must look at the entire system through a Earth-centered reference frame in 3 dimensions. Then we can understand what exactly a projection is in the context of orbiting bodies. A projection is the intersecting point of the ground with a line drawn from the Earth&#39;s center to the satellite, such that the line is normal to the spherical coordinate system/the ground. <d-cite key="snyder1981map"></d-cite></p>
+<p>The crux of the problem is that the Earth and the satellite are moving at different speeds, and the reference frame is not. Both these bodies are also moving at non-constant velocities (since most satellites do not have a perfectly eccentric orbit, their speeds are not the same throughout the orbit). <d-cite key="stackoverflow_post"></d-cite> <d-cite key="space_stackexchange_post"></d-cite> </p>
+<p>Then, we convert the projection of a satellite&#39;s coordinates on the 3D sphere into 2D by changing out map projection from WGS84 to a cylindrical projection like mercerator.</p>
+<p><b> Note : </b> I will not be going into detail about orbital mechanics and map projections in this specific blog since this is more oriented towards the implementation of the project, but I will cover them in a seperate blog in the future! However, in case you are interested, check out the references in the end. <d-cite key="neacsu_snyder"></d-cite></p>
+<p>Luckily, there are several GiS tools which we can use to calculate and project satellite coordinates to maps. One such popular tool is <a href="https://www.arcgis.com/index.html">ArcGIS</a> which can allow one to display interactive maps and perform geocode and display geocode based geometries on a map. ArcGIS offers a developer API key which can be used to build applications for non-consumer purposes. We will use the Java SDK and API service from ArcGIS to render our map and plot the satellite as a moving point on the map. </p>
+<p>However, we still have to figure out how to fetch the position of the satellite in real time. To do this, we can either compute the current position of the satellite by propagating two line elements to the current timestamp, or fetch the coordinates directly from a satellite tracker API. Many such free APIs exist, and I chose <a href="https://www.n2yo.com/api/">N2YO&#39;s REST API</a> for the job. </p>
+<h1>Procedure</h1>
+<p>I developed the satellite tracker in the IntelliJ IDEA IDE. This can be done in any other Java IDE.</p>
+<p>Let us first instantiate what functionalities we need in our tracker. To do that, let us revisit what exactly a satellite tracker means. In essence, a satellite tracker is a program which can display the live location of a given satellite. Some trackers also carry the capability to display the ground track of a satellite.</p>
+<p>From this, we can extract our first goal, to display the location of one satellite on the map. But first, we first must display the map itself.</p>
+<h2>Displaying a map using ArcGIS</h2>
+<p>ArcGIS supports using Java to display an interactive map using a JavaFX application. JavaFX is a software platform and graphical user interface (GUI) toolkit for creating rich desktop applications. This means we can follow the standard JavaFx lifecyle of Initialization, Start, Scene, User interaction and updation, and Termination. We first initiate an Application class which has the main and the start functions. </p>
+
+    <div class="relative my-4 group">
+      <div class="absolute -inset-px bg-gradient-to-r from-transparent via-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-200"></div>
+      <div class="relative">
+        <div class="flex items-center justify-between px-4 py-2 bg-black/10 dark:bg-white/10 border-b border-black/20 dark:border-white/20">
+          <span class="text-sm opacity-60">plaintext</span>
+          <button 
+            class="px-2 py-1 text-xs border border-transparent hover:border-current opacity-60 hover:opacity-100 transition-all duration-200"
+            onclick="navigator.clipboard.writeText(this.parentElement.nextElementSibling.textContent)"
+          >
+            Copy
+          </button>
+        </div>
+        <pre class="p-4 bg-black/5 dark:bg-white/5 overflow-x-auto">
+          <code class="language-plaintext">public class App extends Application {
+
+    public static void main(String[] args) {
+        Application.launch(args);
+    }
+
+    public void start(Stage stage) {
+    }
+}</code>
+        </pre>
+      </div>
+    </div>
+  <p>JavaFX renders UI components in a heirarichal order. The start function passes a <code>stage</code> as a component. In JavaFX, <code>stage</code> represents an application window, and all the GUI is housed within that window. It is the first component in the heirarchy. A <code>stage</code> usually houses a GUI container called a <code>scene</code>. A <code>stage</code> may possess multiple <code>scenes</code> but only one is shown at a time. </p>
+<p>A <code>scene</code> houses <code>pane(s)</code>, which are the root node to which GUI components are attached.  A <code>pane</code> can be of many types depending on how we want our UI to render. You can read more about panes <a href="https://docs.oracle.com/javafx/2/layout/builtin_layouts.htm">here</a><d-cite key="oraclejavafxlayouts"></d-cite>. The type of pane we will be using for this project is called a StackPane. A StackPane is exactly what it sounds like, it is based on the Stack data structure and the nodes which are added to the StackPane first are rendered last, in the LIFO order. All of this comes together in 3 lines of code.</p>
+
+    <div class="relative my-4 group">
+      <div class="absolute -inset-px bg-gradient-to-r from-transparent via-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-200"></div>
+      <div class="relative">
+        <div class="flex items-center justify-between px-4 py-2 bg-black/10 dark:bg-white/10 border-b border-black/20 dark:border-white/20">
+          <span class="text-sm opacity-60">plaintext</span>
+          <button 
+            class="px-2 py-1 text-xs border border-transparent hover:border-current opacity-60 hover:opacity-100 transition-all duration-200"
+            onclick="navigator.clipboard.writeText(this.parentElement.nextElementSibling.textContent)"
+          >
+            Copy
+          </button>
+        </div>
+        <pre class="p-4 bg-black/5 dark:bg-white/5 overflow-x-auto">
+          <code class="language-plaintext">StackPane stackPane = new StackPane();
+        Scene scene = new Scene(stackPane);
+        stage.setScene(scene);</code>
+        </pre>
+      </div>
+    </div>
+  <p>Next, we can start adding the map UI nodes. ArcGIS provides an SDK to render a map using their free developer API. You can import the libraries from ArcGIS by following <a href="https://developers.arcgis.com/java/install-and-set-up/">these instructions</a> to use Gradle/Maven. I use Gradle in my setup in the repository. </p>
+<p>To access the API key we must first store it as a string in a seperate file which we can read the API string from.</p>
+
+    <div class="relative my-4 group">
+      <div class="absolute -inset-px bg-gradient-to-r from-transparent via-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-200"></div>
+      <div class="relative">
+        <div class="flex items-center justify-between px-4 py-2 bg-black/10 dark:bg-white/10 border-b border-black/20 dark:border-white/20">
+          <span class="text-sm opacity-60">plaintext</span>
+          <button 
+            class="px-2 py-1 text-xs border border-transparent hover:border-current opacity-60 hover:opacity-100 transition-all duration-200"
+            onclick="navigator.clipboard.writeText(this.parentElement.nextElementSibling.textContent)"
+          >
+            Copy
+          </button>
+        </div>
+        <pre class="p-4 bg-black/5 dark:bg-white/5 overflow-x-auto">
+          <code class="language-plaintext"> String yourAPIKey = System.getProperty("apiKey");
+ ArcGISRuntimeEnvironment.setApiKey(yourAPIKey);</code>
+        </pre>
+      </div>
+    </div>
+  <p>Then, we can create a new ArcGIS map and set the map to a MapView GUI node. </p>
+
+    <div class="relative my-4 group">
+      <div class="absolute -inset-px bg-gradient-to-r from-transparent via-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-200"></div>
+      <div class="relative">
+        <div class="flex items-center justify-between px-4 py-2 bg-black/10 dark:bg-white/10 border-b border-black/20 dark:border-white/20">
+          <span class="text-sm opacity-60">plaintext</span>
+          <button 
+            class="px-2 py-1 text-xs border border-transparent hover:border-current opacity-60 hover:opacity-100 transition-all duration-200"
+            onclick="navigator.clipboard.writeText(this.parentElement.nextElementSibling.textContent)"
+          >
+            Copy
+          </button>
+        </div>
+        <pre class="p-4 bg-black/5 dark:bg-white/5 overflow-x-auto">
+          <code class="language-plaintext">ArcGISMap map = new ArcGISMap(BasemapStyle.ARCGIS_IMAGERY_STANDARD);
+
+      // create a map view and set the map to it
+      mapView = new MapView();
+      mapView.setMap(map);</code>
+        </pre>
+      </div>
+    </div>
+  <p>This will allow us to display the map in a JavaFX application window.</p>
+<p>Next, we will learn how to fetch the required location information for the satellite using our RESTful API.</p>
+<h2>Fetching Satellite Position</h2>
+<p>To fetch the position we are making use of <a href="https://www.n2yo.com/api/">N2YO&#39;s free satellite API</a>. To accomplish this, we need to define what variables we need from the API. Then, we can make a GET request to the API which then outputs a response in JSON containing the information we need.</p>
+<p>The base URL format that we will be using is :</p>
+
+    <div class="relative my-4 group">
+      <div class="absolute -inset-px bg-gradient-to-r from-transparent via-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-200"></div>
+      <div class="relative">
+        <div class="flex items-center justify-between px-4 py-2 bg-black/10 dark:bg-white/10 border-b border-black/20 dark:border-white/20">
+          <span class="text-sm opacity-60">json</span>
+          <button 
+            class="px-2 py-1 text-xs border border-transparent hover:border-current opacity-60 hover:opacity-100 transition-all duration-200"
+            onclick="navigator.clipboard.writeText(this.parentElement.nextElementSibling.textContent)"
+          >
+            Copy
+          </button>
+        </div>
+        <pre class="p-4 bg-black/5 dark:bg-white/5 overflow-x-auto">
+          <code class="language-json">/positions/<span class="token punctuation">{</span>id<span class="token punctuation">}</span>/<span class="token punctuation">{</span>observer_lat<span class="token punctuation">}</span>/<span class="token punctuation">{</span>observer_lng<span class="token punctuation">}</span>/<span class="token punctuation">{</span>observer_alt<span class="token punctuation">}</span>/<span class="token punctuation">{</span>seconds<span class="token punctuation">}</span></code>
+        </pre>
+      </div>
+    </div>
+  <p>Let us define a class <code>Satellite</code> which we will use to perform the GET request and store the information from the request. We will pass the variables to pass into the GET request as parameters to this class.</p>
+
+    <div class="relative my-4 group">
+      <div class="absolute -inset-px bg-gradient-to-r from-transparent via-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-200"></div>
+      <div class="relative">
+        <div class="flex items-center justify-between px-4 py-2 bg-black/10 dark:bg-white/10 border-b border-black/20 dark:border-white/20">
+          <span class="text-sm opacity-60">plaintext</span>
+          <button 
+            class="px-2 py-1 text-xs border border-transparent hover:border-current opacity-60 hover:opacity-100 transition-all duration-200"
+            onclick="navigator.clipboard.writeText(this.parentElement.nextElementSibling.textContent)"
+          >
+            Copy
+          </button>
+        </div>
+        <pre class="p-4 bg-black/5 dark:bg-white/5 overflow-x-auto">
+          <code class="language-plaintext">Satellite(String satID, String sec, String obsLat, String obsLong, String APIKEY) throws URISyntaxException, IOException, InterruptedException {
+    ...
+</code>
+        </pre>
+      </div>
+    </div>
+  <p>Next, we will use HttpRequest to build a GET request to send to N2YO.</p>
+
+    <div class="relative my-4 group">
+      <div class="absolute -inset-px bg-gradient-to-r from-transparent via-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-200"></div>
+      <div class="relative">
+        <div class="flex items-center justify-between px-4 py-2 bg-black/10 dark:bg-white/10 border-b border-black/20 dark:border-white/20">
+          <span class="text-sm opacity-60">plaintext</span>
+          <button 
+            class="px-2 py-1 text-xs border border-transparent hover:border-current opacity-60 hover:opacity-100 transition-all duration-200"
+            onclick="navigator.clipboard.writeText(this.parentElement.nextElementSibling.textContent)"
+          >
+            Copy
+          </button>
+        </div>
+        <pre class="p-4 bg-black/5 dark:bg-white/5 overflow-x-auto">
+          <code class="language-plaintext">HttpRequest getRequest = HttpRequest.newBuilder()
+                .uri(new URI("https://api.n2yo.com/rest/v1/satellite/positions/" + satID + "/" + obsLat + "/" + obsLong + "/0/" + sec + "/&amp;apiKey="+ APIKEY))
+                .GET()
+                .build();</code>
+        </pre>
+      </div>
+    </div>
+  <p>We will then create an HttpClient and make a GET request to N2YO and try to get a response from the API. </p>
+
+    <div class="relative my-4 group">
+      <div class="absolute -inset-px bg-gradient-to-r from-transparent via-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-200"></div>
+      <div class="relative">
+        <div class="flex items-center justify-between px-4 py-2 bg-black/10 dark:bg-white/10 border-b border-black/20 dark:border-white/20">
+          <span class="text-sm opacity-60">plaintext</span>
+          <button 
+            class="px-2 py-1 text-xs border border-transparent hover:border-current opacity-60 hover:opacity-100 transition-all duration-200"
+            onclick="navigator.clipboard.writeText(this.parentElement.nextElementSibling.textContent)"
+          >
+            Copy
+          </button>
+        </div>
+        <pre class="p-4 bg-black/5 dark:bg-white/5 overflow-x-auto">
+          <code class="language-plaintext">HttpClient httpClient = HttpClient.newHttpClient();
+HttpResponse&lt;String> getResponse = httpClient.send(getRequest, HttpResponse.BodyHandlers.ofString());</code>
+        </pre>
+      </div>
+    </div>
+  <p>Since this response is being recieved as a Json String, we will have to parse this using a Json String parser to utilize the components inside. To do this, we first must look at a sample response given in N2YO&#39;s website:</p>
+
+    <div class="relative my-4 group">
+      <div class="absolute -inset-px bg-gradient-to-r from-transparent via-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-200"></div>
+      <div class="relative">
+        <div class="flex items-center justify-between px-4 py-2 bg-black/10 dark:bg-white/10 border-b border-black/20 dark:border-white/20">
+          <span class="text-sm opacity-60">plaintext</span>
+          <button 
+            class="px-2 py-1 text-xs border border-transparent hover:border-current opacity-60 hover:opacity-100 transition-all duration-200"
+            onclick="navigator.clipboard.writeText(this.parentElement.nextElementSibling.textContent)"
+          >
+            Copy
+          </button>
+        </div>
+        <pre class="p-4 bg-black/5 dark:bg-white/5 overflow-x-auto">
+          <code class="language-plaintext">{
+  "info": {
+    "satname": "SPACE STATION",
+    "satid": 25544,
+    "transactionscount": 5
+  },
+  "positions": [
+    {
+      "satlatitude": -39.90318514,
+      "satlongitude": 158.28897924,
+      "sataltitude": 417.85,
+      "azimuth": 254.31,
+      "elevation": -69.09,
+      "ra": 44.77078138,
+      "dec": -43.99279118,
+      "timestamp": 1521354418
+    },
+    {
+      "satlatitude": -39.86493451,
+      "satlongitude": 158.35261287,
+      "sataltitude": 417.84,
+      "azimuth": 254.33,
+      "elevation": -69.06,
+      "ra": 44.81676119,
+      "dec": -43.98086419,
+      "timestamp": 1521354419
+    }
+  ]
+}</code>
+        </pre>
+      </div>
+    </div>
+  <p>We note that the response is in a nested format, so we must use define two classes for the <code>info</code> and <code>positions</code> section. Each of these classes will contain the get and set function for all the variables. On top of that, we must define a <code>Request</code> class which encapsulates both the subclasses. The names of the variables should be the same as the ones in the Json response.</p>
+<p>Once we have created those classes, we can then use ObjectMapper to map the response body to the given variables inside the classes. We can then access these variables for the stored information.</p>
+
+    <div class="relative my-4 group">
+      <div class="absolute -inset-px bg-gradient-to-r from-transparent via-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-200"></div>
+      <div class="relative">
+        <div class="flex items-center justify-between px-4 py-2 bg-black/10 dark:bg-white/10 border-b border-black/20 dark:border-white/20">
+          <span class="text-sm opacity-60">plaintext</span>
+          <button 
+            class="px-2 py-1 text-xs border border-transparent hover:border-current opacity-60 hover:opacity-100 transition-all duration-200"
+            onclick="navigator.clipboard.writeText(this.parentElement.nextElementSibling.textContent)"
+          >
+            Copy
+          </button>
+        </div>
+        <pre class="p-4 bg-black/5 dark:bg-white/5 overflow-x-auto">
+          <code class="language-plaintext">ObjectMapper mapper = new ObjectMapper();
+
+Request request = mapper.readValue(getResponse.body(), Request.class);
+
+
+this.satname = request.info.satname;
+this.satlong = request.positions.get(0).satlongitude;
+this.satlat = request.positions.get(0).satlatitude;</code>
+        </pre>
+      </div>
+    </div>
+  <p>Now that we have the information required, all that&#39;s left is to display the satellite as a point on the map and update the location in real time!</p>
+<h2>Displaying the satellite on the map</h2>
+<p>Before we start displaying the satellite on the map, we need to create a map. In a from-scratch implementation we would consider adding a map and then calculating the coordinates per pixel on the map ourselves. This is a hard problem. Luckily, ARCGiS does this entire process for us. All we need to do is create a JavaFX application window, and then declare a MapView variable. This is our infinite scrollable and pannable workspace inside the JavaFX Application window which will house the map (so that we can zoom in and out and do everything we can with modern mapping applications like Google Maps).</p>
+
+    <div class="relative my-4 group">
+      <div class="absolute -inset-px bg-gradient-to-r from-transparent via-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-200"></div>
+      <div class="relative">
+        <div class="flex items-center justify-between px-4 py-2 bg-black/10 dark:bg-white/10 border-b border-black/20 dark:border-white/20">
+          <span class="text-sm opacity-60">plaintext</span>
+          <button 
+            class="px-2 py-1 text-xs border border-transparent hover:border-current opacity-60 hover:opacity-100 transition-all duration-200"
+            onclick="navigator.clipboard.writeText(this.parentElement.nextElementSibling.textContent)"
+          >
+            Copy
+          </button>
+        </div>
+        <pre class="p-4 bg-black/5 dark:bg-white/5 overflow-x-auto">
+          <code class="language-plaintext">public class App extends Application {
+
+    private MapView mapView;
+    ...</code>
+        </pre>
+      </div>
+    </div>
+  <p>Next, we create and call the map itself:</p>
+
+    <div class="relative my-4 group">
+      <div class="absolute -inset-px bg-gradient-to-r from-transparent via-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-200"></div>
+      <div class="relative">
+        <div class="flex items-center justify-between px-4 py-2 bg-black/10 dark:bg-white/10 border-b border-black/20 dark:border-white/20">
+          <span class="text-sm opacity-60">plaintext</span>
+          <button 
+            class="px-2 py-1 text-xs border border-transparent hover:border-current opacity-60 hover:opacity-100 transition-all duration-200"
+            onclick="navigator.clipboard.writeText(this.parentElement.nextElementSibling.textContent)"
+          >
+            Copy
+          </button>
+        </div>
+        <pre class="p-4 bg-black/5 dark:bg-white/5 overflow-x-auto">
+          <code class="language-plaintext">ArcGISMap map = new ArcGISMap(BasemapStyle.ARCGIS_STREETS_NIGHT);
+mapView.setMap(map);</code>
+        </pre>
+      </div>
+    </div>
+  <p>There&#39;s a lot of map styles and can be accessed through BasemapStyle. I chose one with night mode cause it&#39;s cool.</p>
+<p>Next, we create a graphics overlay to display our graphics (like our satellite image or any other line or point):</p>
+
+    <div class="relative my-4 group">
+      <div class="absolute -inset-px bg-gradient-to-r from-transparent via-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-200"></div>
+      <div class="relative">
+        <div class="flex items-center justify-between px-4 py-2 bg-black/10 dark:bg-white/10 border-b border-black/20 dark:border-white/20">
+          <span class="text-sm opacity-60">plaintext</span>
+          <button 
+            class="px-2 py-1 text-xs border border-transparent hover:border-current opacity-60 hover:opacity-100 transition-all duration-200"
+            onclick="navigator.clipboard.writeText(this.parentElement.nextElementSibling.textContent)"
+          >
+            Copy
+          </button>
+        </div>
+        <pre class="p-4 bg-black/5 dark:bg-white/5 overflow-x-auto">
+          <code class="language-plaintext">GraphicsOverlay graphicsOverlay = new GraphicsOverlay();
+graphicsOverlay.setLabelsEnabled(true);
+mapView.getGraphicsOverlays().add(graphicsOverlay);</code>
+        </pre>
+      </div>
+    </div>
+  <p>We then create a point to dislay on the overlay:</p>
+
+    <div class="relative my-4 group">
+      <div class="absolute -inset-px bg-gradient-to-r from-transparent via-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-200"></div>
+      <div class="relative">
+        <div class="flex items-center justify-between px-4 py-2 bg-black/10 dark:bg-white/10 border-b border-black/20 dark:border-white/20">
+          <span class="text-sm opacity-60">plaintext</span>
+          <button 
+            class="px-2 py-1 text-xs border border-transparent hover:border-current opacity-60 hover:opacity-100 transition-all duration-200"
+            onclick="navigator.clipboard.writeText(this.parentElement.nextElementSibling.textContent)"
+          >
+            Copy
+          </button>
+        </div>
+        <pre class="p-4 bg-black/5 dark:bg-white/5 overflow-x-auto">
+          <code class="language-plaintext">Float[] coords = satAPICall(satID);
+Point point = new Point(coords[0], coords[1], SpatialReferences.getWgs84());</code>
+        </pre>
+      </div>
+    </div>
+  <p>Then we set a PictureMarker symbol to the point&#39;s coordinates:</p>
+
+    <div class="relative my-4 group">
+      <div class="absolute -inset-px bg-gradient-to-r from-transparent via-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-200"></div>
+      <div class="relative">
+        <div class="flex items-center justify-between px-4 py-2 bg-black/10 dark:bg-white/10 border-b border-black/20 dark:border-white/20">
+          <span class="text-sm opacity-60">plaintext</span>
+          <button 
+            class="px-2 py-1 text-xs border border-transparent hover:border-current opacity-60 hover:opacity-100 transition-all duration-200"
+            onclick="navigator.clipboard.writeText(this.parentElement.nextElementSibling.textContent)"
+          >
+            Copy
+          </button>
+        </div>
+        <pre class="p-4 bg-black/5 dark:bg-white/5 overflow-x-auto">
+          <code class="language-plaintext">PictureMarkerSymbol satmarker = new PictureMarkerSymbol("src/Images/satimage.png");
+satmarker.setHeight(40);
+satmarker.setWidth(40);</code>
+        </pre>
+      </div>
+    </div>
+  <p>Finally, so that we can apply the image on top of the overlay so it&#39;s rendered, we must create a JavaFX Graphic object, and add our graphic to the overlay:</p>
+
+    <div class="relative my-4 group">
+      <div class="absolute -inset-px bg-gradient-to-r from-transparent via-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-200"></div>
+      <div class="relative">
+        <div class="flex items-center justify-between px-4 py-2 bg-black/10 dark:bg-white/10 border-b border-black/20 dark:border-white/20">
+          <span class="text-sm opacity-60">plaintext</span>
+          <button 
+            class="px-2 py-1 text-xs border border-transparent hover:border-current opacity-60 hover:opacity-100 transition-all duration-200"
+            onclick="navigator.clipboard.writeText(this.parentElement.nextElementSibling.textContent)"
+          >
+            Copy
+          </button>
+        </div>
+        <pre class="p-4 bg-black/5 dark:bg-white/5 overflow-x-auto">
+          <code class="language-plaintext">Graphic satpoint = new Graphic(point, satmarker);
+graphicsOverlay.getGraphics().add(satpoint);</code>
+        </pre>
+      </div>
+    </div>
+  <p>This will display our satellite, but right now we do not have any access to the coordinates we just found through the API. We will then define a function to set our point to a location by calling the API:</p>
+
+    <div class="relative my-4 group">
+      <div class="absolute -inset-px bg-gradient-to-r from-transparent via-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-200"></div>
+      <div class="relative">
+        <div class="flex items-center justify-between px-4 py-2 bg-black/10 dark:bg-white/10 border-b border-black/20 dark:border-white/20">
+          <span class="text-sm opacity-60">plaintext</span>
+          <button 
+            class="px-2 py-1 text-xs border border-transparent hover:border-current opacity-60 hover:opacity-100 transition-all duration-200"
+            onclick="navigator.clipboard.writeText(this.parentElement.nextElementSibling.textContent)"
+          >
+            Copy
+          </button>
+        </div>
+        <pre class="p-4 bg-black/5 dark:bg-white/5 overflow-x-auto">
+          <code class="language-plaintext">public void setpoint(Graphic point, Graphic text, MapView mapView) throws URISyntaxException, IOException, InterruptedException {
+    Float[] newcoords = satAPICall(satID);
+    Point newpoint = new Point(newcoords[0], newcoords[1], SpatialReferences.getWgs84());
+    point.setGeometry(newpoint);
+    mapView.setViewpoint(new Viewpoint(newcoords[1], newcoords[0], scale));
+}</code>
+        </pre>
+      </div>
+    </div>
+  <p>Here, satAPICall is just an API calling function. You might notice that this function is not being called enough, so we will add a thread which keeps updating every N seconds. We set N as 10 at the top of our file.</p>
+
+    <div class="relative my-4 group">
+      <div class="absolute -inset-px bg-gradient-to-r from-transparent via-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-200"></div>
+      <div class="relative">
+        <div class="flex items-center justify-between px-4 py-2 bg-black/10 dark:bg-white/10 border-b border-black/20 dark:border-white/20">
+          <span class="text-sm opacity-60">plaintext</span>
+          <button 
+            class="px-2 py-1 text-xs border border-transparent hover:border-current opacity-60 hover:opacity-100 transition-all duration-200"
+            onclick="navigator.clipboard.writeText(this.parentElement.nextElementSibling.textContent)"
+          >
+            Copy
+          </button>
+        </div>
+        <pre class="p-4 bg-black/5 dark:bg-white/5 overflow-x-auto">
+          <code class="language-plaintext">Thread updateThread = new Thread(() -> {
+    while (true) {
+        try {
+            setpoint(satpoint, sattextgraphic, mapView);
+            countdown(timeremaining);
+        } catch (URISyntaxException | IOException | InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+        try {
+            Thread.sleep(frequency);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+});
+
+updateThread.start();</code>
+        </pre>
+      </div>
+    </div>
+  <p>Nice! We can now display the satellite image. However, we have no way to actually choose any satellite right now. So let&#39;s try defining a list of satellites and a drop down (combo box) menu the queries for user input on that list:</p>
+
+    <div class="relative my-4 group">
+      <div class="absolute -inset-px bg-gradient-to-r from-transparent via-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-200"></div>
+      <div class="relative">
+        <div class="flex items-center justify-between px-4 py-2 bg-black/10 dark:bg-white/10 border-b border-black/20 dark:border-white/20">
+          <span class="text-sm opacity-60">plaintext</span>
+          <button 
+            class="px-2 py-1 text-xs border border-transparent hover:border-current opacity-60 hover:opacity-100 transition-all duration-200"
+            onclick="navigator.clipboard.writeText(this.parentElement.nextElementSibling.textContent)"
+          >
+            Copy
+          </button>
+        </div>
+        <pre class="p-4 bg-black/5 dark:bg-white/5 overflow-x-auto">
+          <code class="language-plaintext">
+String[] satList = {
+    "ISS",
+    "Hubble Space Telescope",
+    "IRIDIUM 167",
+    "STARLINK-30783"
+};
+
+ComboBox&lt;String> combo_box = new ComboBox&lt;>(FXCollections.observableArrayList(satList));
+combo_box.setValue("ISS"); // Default Value
+
+stackPane.getChildren().add(combo_box);
+StackPane.setAlignment(combo_box, Pos.TOP_RIGHT);
+StackPane.setMargin(combo_box, new Insets(125, 100, 0, 0));
+</code>
+        </pre>
+      </div>
+    </div>
+  <p>We will add a corresponding listener for the combo box:</p>
+
+    <div class="relative my-4 group">
+      <div class="absolute -inset-px bg-gradient-to-r from-transparent via-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-200"></div>
+      <div class="relative">
+        <div class="flex items-center justify-between px-4 py-2 bg-black/10 dark:bg-white/10 border-b border-black/20 dark:border-white/20">
+          <span class="text-sm opacity-60">plaintext</span>
+          <button 
+            class="px-2 py-1 text-xs border border-transparent hover:border-current opacity-60 hover:opacity-100 transition-all duration-200"
+            onclick="navigator.clipboard.writeText(this.parentElement.nextElementSibling.textContent)"
+          >
+            Copy
+          </button>
+        </div>
+        <pre class="p-4 bg-black/5 dark:bg-white/5 overflow-x-auto">
+          <code class="language-plaintext">combo_box.setOnAction((event) -> {
+    String selection = combo_box.getValue();
+    satID = returnNORADID(selection);
+    try {
+        setpoint(satpoint, sattextgraphic, mapView);
+        countdown(timeremaining);
+    } catch (URISyntaxException | IOException | InterruptedException e) {
+        throw new RuntimeException(e);
+    }
+    sattext.setText(selection);
+});</code>
+        </pre>
+      </div>
+    </div>
+  <p>Now, we will implement a very simple switch statement based function to return the NORAD ID of the satellites based on what satellite name the user has selected which we can use to make an API call with :</p>
+
+    <div class="relative my-4 group">
+      <div class="absolute -inset-px bg-gradient-to-r from-transparent via-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-200"></div>
+      <div class="relative">
+        <div class="flex items-center justify-between px-4 py-2 bg-black/10 dark:bg-white/10 border-b border-black/20 dark:border-white/20">
+          <span class="text-sm opacity-60">plaintext</span>
+          <button 
+            class="px-2 py-1 text-xs border border-transparent hover:border-current opacity-60 hover:opacity-100 transition-all duration-200"
+            onclick="navigator.clipboard.writeText(this.parentElement.nextElementSibling.textContent)"
+          >
+            Copy
+          </button>
+        </div>
+        <pre class="p-4 bg-black/5 dark:bg-white/5 overflow-x-auto">
+          <code class="language-plaintext">public Integer returnNORADID(String satOption) {
+    int ID;
+    switch (satOption) {
+        case "ISS":
+            ID = 25544;
+            break;
+        case "IRIDIUM 167":
+            ID = 43931;
+            break;
+        case "STARLINK-30783":
+            ID = 58130;
+            break;
+        case "Hubble Space Telescope":
+            ID = 20580;
+            break;
+        default:
+            ID = 25544;
+    }
+    return ID;
+}</code>
+        </pre>
+      </div>
+    </div>
+  6:["$","$Le",null,{"children":["$","$Lf",null,{"posts":[{"slug":"yolov9","title":"Understanding the YOLOv9 Paper","date":"2024-02-29","author":"snowclipsed","tags":["vision","research","computer science"],"image":"","description":"My notes on the YOLOv9 paper.","content":"$10"},{"slug":"mathtest","title":"Testing Math Rendering","date":"2024-01-04","author":"snowclipsed","tags":["test","math"],"image":"","description":"A simple test post for math rendering","content":"$11"},{"slug":"sattrack","title":"Satellite Tracker","date":"2023-11-31","author":"$undefined","tags":["orbital mechanics","java","computer science"],"image":"","description":"A real- time satellite tracker written in Java.","content":"$12"}],"initialPost":"$6:props:children:props:posts:0"}]}]
