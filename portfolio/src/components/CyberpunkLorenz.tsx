@@ -45,8 +45,31 @@ const CyberpunkLorenz = () => {
   const [config, setConfig] = useState<Config>(DEFAULT_CONFIG);
   const [frame, setFrame] = useState<ColoredChar[][]>([]);
 
+  // Calculate the center of rotation based on the Lorenz attractor's parameters
+  const getRotationCenter = useCallback((): Point => {
+    // The Lorenz attractor has two stable points (the "eyes")
+    // Their positions depend on the system parameters
+    const r = Math.sqrt(config.beta * (config.rho - 1));
+    const eye1 = { x: r, y: r, z: config.rho - 1 };
+    const eye2 = { x: -r, y: -r, z: config.rho - 1 };
+    
+    // Return the midpoint between the two eyes
+    return {
+      x: (eye1.x + eye2.x) / 2,
+      y: (eye1.y + eye2.y) / 2,
+      z: (eye1.z + eye2.z) / 2
+    };
+  }, [config.beta, config.rho]);
+
   const rotatePoint = useCallback((point: Point): Point => {
-    const { x, y, z } = point;
+    // Get the center of rotation
+    const center = getRotationCenter();
+    
+    // Translate point to origin (relative to rotation center)
+    let x = point.x - center.x;
+    let y = point.y - center.y;
+    let z = point.z - center.z;
+    
     const radX = config.rotateX * Math.PI / 180;
     const radY = config.rotateY * Math.PI / 180;
     const radZ = config.rotateZ * Math.PI / 180;
@@ -65,17 +88,24 @@ const CyberpunkLorenz = () => {
     const x3 = x2 * Math.cos(radZ) - y2 * Math.sin(radZ);
     const y3 = x2 * Math.sin(radZ) + y2 * Math.cos(radZ);
     
-    return { x: x3, y: y3, z: z2 };
-  }, [config.rotateX, config.rotateY, config.rotateZ]);
+    // Translate back from origin
+    return { 
+      x: x3 + center.x,
+      y: y3 + center.y,
+      z: z2 + center.z
+    };
+  }, [config.rotateX, config.rotateY, config.rotateZ, getRotationCenter]);
 
   const project = useCallback((point: Point): { x: number; y: number } => {
     const rotated = rotatePoint(point);
-    const scale = config.scale;
+    const center = getRotationCenter();
+    
+    // Adjust projection to maintain center position
     return {
-      x: Math.floor(rotated.x * scale + 80),
-      y: Math.floor(rotated.y * scale + 30)
+      x: Math.floor((rotated.x - center.x) * config.scale + 50),
+      y: Math.floor((rotated.y - center.y) * config.scale + 25)
     };
-  }, [config.scale, rotatePoint]);
+  }, [config.scale, rotatePoint, getRotationCenter]);
 
   const getColor = useCallback((point: Point): string => {
     if (!isHeatmap) return theme === 'dark' ? '#ffffff' : '#000000';
@@ -127,10 +157,12 @@ const CyberpunkLorenz = () => {
     );
     
     // Sort points by Z for proper depth
+    const center = getRotationCenter();
     const sortedPoints = [...points].sort((a, b) => {
       const rotatedA = rotatePoint(a);
       const rotatedB = rotatePoint(b);
-      return rotatedB.z - rotatedA.z;
+      // Sort based on distance from rotation center for better depth perception
+      return (rotatedB.z - center.z) - (rotatedA.z - center.z);
     });
     
     sortedPoints.forEach(point => {
@@ -147,12 +179,12 @@ const CyberpunkLorenz = () => {
     });
     
     return buffer;
-  }, [project, getColor, rotatePoint, theme]);
+  }, [project, getColor, rotatePoint, theme, getRotationCenter]);
 
   // Initialize and run animation
-  useEffect(() => {
+   useEffect(() => {
     // Initialize points
-    let points: Point[] = [];
+    const points: Point[] = [];
     let x = 0.1, y = 0, z = 0;
     const dt = 0.01;
     
@@ -185,7 +217,6 @@ const CyberpunkLorenz = () => {
       
       pointsRef.current = [...pointsRef.current.slice(1), newPoint];
       
-      // Update frame every few milliseconds to avoid too many rerenders
       if (animationTime % 2 === 0) {
         setFrame(createFrame(pointsRef.current));
       }
@@ -202,7 +233,6 @@ const CyberpunkLorenz = () => {
       }
     };
   }, [config.sigma, config.rho, config.beta, config.speed, createFrame]);
-
   const handleMouseDown = useCallback((e: React.MouseEvent) => {
     if (e.target === e.currentTarget || (e.target as HTMLElement).closest('.visualization-area')) {
       setIsDragging(true);

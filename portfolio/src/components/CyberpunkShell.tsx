@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useCallback, useEffect, useMemo, useRef } from 'react';
+import React, { useState, useCallback, useEffect, useMemo } from 'react';
 import { useRouter, usePathname } from 'next/navigation';
 import { Terminal, Book, Network, Brain, Target } from 'lucide-react';
 import ThemeToggle from './ThemeToggle';
