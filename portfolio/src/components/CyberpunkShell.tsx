@@ -304,7 +304,7 @@ export default function CyberpunkShell({ posts = [], initialPost }: CyberpunkShe
             </main>
 
       <footer className="p-4 mt-8 opacity-70 hover:opacity-100 transition-opacity duration-100">
-        <p className="text-center">© 2024 スノーエクリプス</p>
+        <p className="text-center">© 2025 snowclipsed / スノーエクリプス</p>
       </footer>
     </div>
   );
