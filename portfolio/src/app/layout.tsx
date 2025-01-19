@@ -3,9 +3,30 @@ import type { Metadata } from 'next';
 import { ThemeProvider } from '../context/ThemeContext';
 import './globals.css';
 import './prism-cyberpunk.css';
+
 export const metadata: Metadata = {
   title: 'Snowclipsed - Digital Research',
   description: 'Deep Learning Architecture Research, Inference Optimization, and Low Level Programming',
+  icons: {
+    icon: [
+      { url: '/favicon.ico', sizes: 'any' },
+      { url: '/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
+      { url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
+      { url: '/favicon-192x192.png', sizes: '192x192', type: 'image/png' },
+      { url: '/favicon-512x512.png', sizes: '512x512', type: 'image/png' },
+    ],
+    apple: [
+      { url: '/apple-touch-icon.png', sizes: '180x180' },
+    ],
+    other: [
+      {
+        rel: 'mask-icon',
+        url: '/safari-pinned-tab.svg',
+        color: '#000000'  // Replace with your brand color
+      }
+    ]
+  },
+  manifest: '/site.webmanifest',
 };
 
 export default function RootLayout({
@@ -19,6 +40,10 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet" />
+        {/* Microsoft Tile Color */}
+        <meta name="msapplication-TileColor" content="#000000" />
+        {/* Theme Color for mobile browsers */}
+        <meta name="theme-color" content="#000000" />
         <script
           dangerouslySetInnerHTML={{
             __html: `
