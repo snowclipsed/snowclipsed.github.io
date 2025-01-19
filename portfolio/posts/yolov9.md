@@ -73,8 +73,8 @@ To solve the previous issues, YOLOv9 utilizes **Programmable Gradient Informatio
 
 The motive of deep supervision in object detection, as I mentioned before, is to act as guidance for a model's layers to ensure they are learning the right features. A popular method of implementing deep supervision is through auxiliary branches. These are temporary branches which will act as checks for the hidden deep layers in a network by supervising them on the intermediate representation they produce. The auxiliary branch makes the intermediate layers perform predictions based on the representations they produce. This also has an added effect of breaking down the final learning objective into more manageable tasks. The final loss into a standard main loss (\\(L_{main}\\)) computed at the end of the network and auxiliary losses computed at the intermediate predictions in the auxiliary layers (\\(L_{aux}\\)). We can of course represent it as :
 
-$$
-\mathcal{L}_{total} = \mathcal{L}_{main} + \sum_{i} \lambda_i \mathcal{L}_{aux,i}
+$$ 
+\mathcal{L}\_{total} = \mathcal{L}\_{main} + \sum_{i} \lambda_i \mathcal{L}\_{aux,i} 
 $$
 
 Where \\(\lambda_i\\) is the weighing coefficient for each auxiliary loss. These auxiliary losses guide the intermediate layers to learn features more effectively, ensuring better representation across the network.
