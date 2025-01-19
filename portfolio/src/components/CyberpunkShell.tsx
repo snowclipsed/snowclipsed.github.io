@@ -119,16 +119,15 @@ export default function CyberpunkShell({ posts = [], initialPost }: CyberpunkShe
             <h2 className="text-2xl mb-6 font-bold">研究分野 / ABOUT ME</h2>
             <div className="space-y-4 opacity-90">
               <p>Hi, I am snow/snowclipsed.</p>
-              <p>Welcome to my digital realm. I am a machine learning engineer specializing in 
+              <p>Welcome to my site. I am a machine learning engineer specializing in 
                 deep learning architecture research and inference optimization.</p>
               <p>I primarily focus on large language model optimization with transformers, 
                 while also pursuing research in deep learning architecture design. My goal 
                 is to make AI more accessible and efficient, with a particular emphasis 
                 on lower-end hardware.</p>
                 <p className="opacity-90 font-mono">
-                    When I&apos;m not diving deep into neural networks, I enjoy implementing 
-                    retro-style terminal graphics and exploring the intersection of art 
-                    and technology.
+                    If I&apos;m not diving deep into neural networks, I am probably nerd-sniped by something else.
+                    I&apos;ve been enjoying writing <a href='https://gist.github.com/snowclipsed/24aebbdd51218f4e17ad428630cc91d6'> <u>high performance CPU kernels</u> </a> and learning to write minecraft shaders (reveal soon!).
                 </p>
             </div>
             <div className="mt-8 border-t border-dotted transition-colors duration-100 
@@ -161,7 +160,13 @@ export default function CyberpunkShell({ posts = [], initialPost }: CyberpunkShe
                     dark:border-white/20 border-black/20 p-2 
                     dark:hover:border-white/40 hover:border-black/40">
                     <span className="text-blue-400 mr-2">◇</span>
-                    Low Level Programming
+                    Low-level and GPU Programming
+                  </div>
+                  <div className="border transition-colors duration-100 
+                    dark:border-white/20 border-black/20 p-2 
+                    dark:hover:border-white/40 hover:border-black/40">
+                    <span className="text-blue-400 mr-2">◇</span>
+                    Applied Machine Learning
                   </div>
                 </div>
               </div>
@@ -176,19 +181,25 @@ export default function CyberpunkShell({ posts = [], initialPost }: CyberpunkShe
                     dark:border-white/20 border-black/20 p-2 
                     dark:hover:border-white/40 hover:border-black/40">
                     <span className="text-green-400 mr-2">⊕</span>
-                    Scaling ML Models
+                    Scaling ML Models for Low-End Devices
                   </div>
                   <div className="border transition-colors duration-100 
                     dark:border-white/20 border-black/20 p-2 
                     dark:hover:border-white/40 hover:border-black/40">
                     <span className="text-green-400 mr-2">⊕</span>
-                    Low-End Device Optimization
+                    Mech-Interp and Visualization
                   </div>
                   <div className="border transition-colors duration-100 
                     dark:border-white/20 border-black/20 p-2 
                     dark:hover:border-white/40 hover:border-black/40">
                     <span className="text-green-400 mr-2">⊕</span>
-                    CPU/GPU Architecture Research
+                    Graphics Shaders
+                  </div>
+                  <div className="border transition-colors duration-100 
+                    dark:border-white/20 border-black/20 p-2 
+                    dark:hover:border-white/40 hover:border-black/40">
+                    <span className="text-green-400 mr-2">⊕</span>
+                    Gaussian Splats and NeRFs
                   </div>
                 </div>
               </div>
@@ -204,7 +215,7 @@ export default function CyberpunkShell({ posts = [], initialPost }: CyberpunkShe
             <p className="opacity-90 font-mono">
               Beyond the terminal, I create games, write blog posts, make digital art, 
               and explore virtual worlds. You can find my thoughts on my blog or follow 
-              my journey on social media.
+              my journey on <a href='https://x.com/snowclipsed'><u>social media</u></a>.
             </p>
           </div>
         </div>
