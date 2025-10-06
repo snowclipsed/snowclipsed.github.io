@@ -96,132 +96,130 @@ export default function CyberpunkShell({ posts = [], initialPost }: CyberpunkShe
 
    // Only render content after initial mount to prevent hydration issues
    const renderContent = () => {
-    // Home page with Lorenz
-    if (pathname === '/' || pathname === '') {
-        return (
-            <div className="space-y-8">
-                 <div className="mb-12">
-                  <h2 className="text-2xl mb-4 font-bold">私について / CHAOS ENGINE</h2>
-                  <div className="w-full">
-                    <LorenzErrorBoundary>
-                      <Suspense>
-                        <DynamicLorenz />
-                      </Suspense>
-                    </LorenzErrorBoundary>
-                  </div>
-                </div>
+if (pathname === '/' || pathname === '') {
+  return (
+    <div className="space-y-8">
+      {/* Introduction */}
+      <div className="mb-12">
+        <h2 className="text-2xl mb-6 font-bold">私について / ABOUT ME</h2>
+        <div className="space-y-4 opacity-90">
+          <p>Hi, I am snow/snowclipsed.</p>
+          <p>Welcome to my site. I am a machine learning engineer specializing in 
+            deep learning architecture research and inference optimization.</p>
+          <p>I primarily focus on large language model optimization with transformers, 
+            while also pursuing research in deep learning architecture design. My goal 
+            is to make AI more accessible and efficient, with a particular emphasis 
+            on lower-end hardware.</p>
+          <p className="opacity-90 font-mono">
+            If I&apos;m not diving deep into neural networks, I am probably nerd-sniped by something else.
+            I&apos;ve been enjoying writing <a href='https://gist.github.com/snowclipsed/24aebbdd51218f4e17ad428630cc91d6'> <u>high performance CPU kernels</u> </a> and learning to write minecraft shaders (reveal soon!).
+          </p>
+        </div>
+      </div>
 
-          <div className="mt-8 border-t border-dotted transition-colors duration-100 
-            dark:border-white/20 border-black/20 pt-8 w-full" />
+      <div className="border-t border-dotted transition-colors duration-100 
+        dark:border-white/20 border-black/20 pt-8 w-full" />
 
-          {/* Introduction */}
-          <div className="mb-12 mt-8">
-            <h2 className="text-2xl mb-6 font-bold">研究分野 / ABOUT ME</h2>
-            <div className="space-y-4 opacity-90">
-              <p>Hi, I am snow/snowclipsed.</p>
-              <p>Welcome to my site. I am a machine learning engineer specializing in 
-                deep learning architecture research and inference optimization.</p>
-              <p>I primarily focus on large language model optimization with transformers, 
-                while also pursuing research in deep learning architecture design. My goal 
-                is to make AI more accessible and efficient, with a particular emphasis 
-                on lower-end hardware.</p>
-                <p className="opacity-90 font-mono">
-                    If I&apos;m not diving deep into neural networks, I am probably nerd-sniped by something else.
-                    I&apos;ve been enjoying writing <a href='https://gist.github.com/snowclipsed/24aebbdd51218f4e17ad428630cc91d6'> <u>high performance CPU kernels</u> </a> and learning to write minecraft shaders (reveal soon!).
-                </p>
-            </div>
-            <div className="mt-8 border-t border-dotted transition-colors duration-100 
-              dark:border-white/20 border-black/20 pt-8 w-full" />
-          </div>
-
-          {/* Research Domains */}
-          <div className="mb-12">
-            <h2 className="text-2xl mb-6 font-bold">研究分野 / RESEARCH DOMAINS</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {/* Core Research */}
-              <div>
-                <h3 className="text-xl mb-4 flex items-center gap-2">
-                  <Brain className="w-5 h-5"/> コア・リサーチ / CORE RESEARCH
-                </h3>
-                <div className="space-y-2">
-                  <div className="border transition-colors duration-100 
-                    dark:border-white/20 border-black/20 p-2 
-                    dark:hover:border-white/40 hover:border-black/40">
-                    <span className="text-blue-400 mr-2">◇</span>
-                    Deep Learning Architecture Research
-                  </div>
-                  <div className="border transition-colors duration-100 
-                    dark:border-white/20 border-black/20 p-2 
-                    dark:hover:border-white/40 hover:border-black/40">
-                    <span className="text-blue-400 mr-2">◇</span>
-                    Inference Optimization
-                  </div>
-                  <div className="border transition-colors duration-100 
-                    dark:border-white/20 border-black/20 p-2 
-                    dark:hover:border-white/40 hover:border-black/40">
-                    <span className="text-blue-400 mr-2">◇</span>
-                    Low-level and GPU Programming
-                  </div>
-                  <div className="border transition-colors duration-100 
-                    dark:border-white/20 border-black/20 p-2 
-                    dark:hover:border-white/40 hover:border-black/40">
-                    <span className="text-blue-400 mr-2">◇</span>
-                    Applied Machine Learning
-                  </div>
-                </div>
+      {/* Research Domains */}
+      <div className="mb-12">
+        <h2 className="text-2xl mb-6 font-bold">研究分野 / RESEARCH DOMAINS</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {/* Core Research */}
+          <div>
+            <h3 className="text-xl mb-4 flex items-center gap-2">
+              <Brain className="w-5 h-5"/> コア・リサーチ / CORE RESEARCH
+            </h3>
+            <div className="space-y-2">
+              <div className="border transition-colors duration-100 
+                dark:border-white/20 border-black/20 p-2 
+                dark:hover:border-white/40 hover:border-black/40">
+                <span className="text-blue-400 mr-2">◇</span>
+                Deep Learning Architecture Research
               </div>
-
-              {/* Current Goals */}
-              <div>
-                <h3 className="text-xl mb-4 flex items-center gap-2">
-                  <Target className="w-5 h-5" /> 現在の目標 / CURRENT GOALS
-                </h3>
-                <div className="space-y-2">
-                  <div className="border transition-colors duration-100 
-                    dark:border-white/20 border-black/20 p-2 
-                    dark:hover:border-white/40 hover:border-black/40">
-                    <span className="text-green-400 mr-2">⊕</span>
-                    Scaling ML Models for Low-End Devices
-                  </div>
-                  <div className="border transition-colors duration-100 
-                    dark:border-white/20 border-black/20 p-2 
-                    dark:hover:border-white/40 hover:border-black/40">
-                    <span className="text-green-400 mr-2">⊕</span>
-                    Mech-Interp and Visualization
-                  </div>
-                  <div className="border transition-colors duration-100 
-                    dark:border-white/20 border-black/20 p-2 
-                    dark:hover:border-white/40 hover:border-black/40">
-                    <span className="text-green-400 mr-2">⊕</span>
-                    Graphics Shaders
-                  </div>
-                  <div className="border transition-colors duration-100 
-                    dark:border-white/20 border-black/20 p-2 
-                    dark:hover:border-white/40 hover:border-black/40">
-                    <span className="text-green-400 mr-2">⊕</span>
-                    Gaussian Splats and NeRFs
-                  </div>
-                </div>
+              <div className="border transition-colors duration-100 
+                dark:border-white/20 border-black/20 p-2 
+                dark:hover:border-white/40 hover:border-black/40">
+                <span className="text-blue-400 mr-2">◇</span>
+                Inference Optimization
+              </div>
+              <div className="border transition-colors duration-100 
+                dark:border-white/20 border-black/20 p-2 
+                dark:hover:border-white/40 hover:border-black/40">
+                <span className="text-blue-400 mr-2">◇</span>
+                Low-level and GPU Programming
+              </div>
+              <div className="border transition-colors duration-100 
+                dark:border-white/20 border-black/20 p-2 
+                dark:hover:border-white/40 hover:border-black/40">
+                <span className="text-blue-400 mr-2">◇</span>
+                Applied Machine Learning
               </div>
             </div>
           </div>
 
-          <div className="mt-8 border-t border-dotted transition-colors duration-100 
-            dark:border-white/20 border-black/20 pt-8 w-full" />
-
-          {/* Offline Mode */}
-          <div className="mb-8">
-            <h2 className="text-2xl mb-4 font-bold">オフライン・モード / OFFLINE MODE</h2>
-            <p className="opacity-90 font-mono">
-              Beyond the terminal, I create games, write blog posts, make digital art, 
-              and explore virtual worlds. You can find my thoughts on my blog or follow 
-              my journey on <a href='https://x.com/snowclipsed'><u>social media</u></a>.
-            </p>
+          {/* Current Goals */}
+          <div>
+            <h3 className="text-xl mb-4 flex items-center gap-2">
+              <Target className="w-5 h-5" /> 現在の目標 / CURRENT GOALS
+            </h3>
+            <div className="space-y-2">
+              <div className="border transition-colors duration-100 
+                dark:border-white/20 border-black/20 p-2 
+                dark:hover:border-white/40 hover:border-black/40">
+                <span className="text-green-400 mr-2">⊕</span>
+                Scaling ML Models for Low-End Devices
+              </div>
+              <div className="border transition-colors duration-100 
+                dark:border-white/20 border-black/20 p-2 
+                dark:hover:border-white/40 hover:border-black/40">
+                <span className="text-green-400 mr-2">⊕</span>
+                Mech-Interp and Visualization
+              </div>
+              <div className="border transition-colors duration-100 
+                dark:border-white/20 border-black/20 p-2 
+                dark:hover:border-white/40 hover:border-black/40">
+                <span className="text-green-400 mr-2">⊕</span>
+                Graphics Shaders
+              </div>
+              <div className="border transition-colors duration-100 
+                dark:border-white/20 border-black/20 p-2 
+                dark:hover:border-white/40 hover:border-black/40">
+                <span className="text-green-400 mr-2">⊕</span>
+                Gaussian Splats and NeRFs
+              </div>
+            </div>
           </div>
         </div>
-      );
-    }
-    
+      </div>
+
+      <div className="border-t border-dotted transition-colors duration-100 
+        dark:border-white/20 border-black/20 pt-8 w-full" />
+
+      {/* Offline Mode */}
+      <div className="mb-8">
+        <h2 className="text-2xl mb-4 font-bold">オフライン・モード / OFFLINE MODE</h2>
+        <p className="opacity-90 font-mono">
+          Beyond the terminal, I create games, write blog posts, make digital art, 
+          and explore virtual worlds. You can find my thoughts on my blog or follow 
+          my journey on <a href='https://x.com/snowclipsed'><u>social media</u></a>.
+        </p>
+      </div>
+
+      {/* Lorenz at bottom as signature */}
+      <div className="mt-12 pt-8 pb-8 border-t border-dotted transition-colors duration-100 
+        dark:border-white/20 border-black/20">
+        <h2 className="text-xl mb-4 opacity-70 text-center">カオス・エンジン / CHAOS ENGINE</h2>
+        <div className="w-full min-h-[500px] overflow-hidden relative">
+          <LorenzErrorBoundary>
+            <Suspense>
+              <DynamicLorenz />
+            </Suspense>
+          </LorenzErrorBoundary>
+        </div>
+      </div>
+    </div>
+  );
+}
     // Blog pages
     if (pathname === '/blog' || pathname === '/blog/') {
       return <CyberpunkBlog posts={posts} />;
@@ -258,12 +256,12 @@ export default function CyberpunkShell({ posts = [], initialPost }: CyberpunkShe
     <div className="min-h-screen transition-colors duration-100
         dark:bg-black dark:text-white
         bg-white text-black
-        font-mono p-4 max-w-4xl mx-auto">
+        font-mono p-2 md:p-4 max-w-4xl mx-auto">
         
       <ThemeToggle />
 
       {/* Header */}
-      <header className="border transition-colors duration-100 dark:border-white border-black p-6 mb-8 relative group">
+      <header className="border transition-colors duration-100 dark:border-white border-black p-4 md:p-6 mb-6 md:mb-8 relative group">
         <div className="transition-all duration-100">
           <h1 className="text-3xl md:text-4xl mb-2 font-bold relative">
             <span className="opacity-80 absolute -left-1 -top-1 text-red-500">スノーエクリプス</span>
@@ -309,10 +307,10 @@ export default function CyberpunkShell({ posts = [], initialPost }: CyberpunkShe
 
       {/* Main Content Container */}
       <main className="border transition-colors duration-100 dark:border-white border-black">
-                <div className="p-6">
-                    {renderContent()}
-                </div>
-            </main>
+          <div className="p-4 md:p-6">
+              {renderContent()}
+          </div>
+      </main>
 
       <footer className="p-4 mt-8 opacity-70 hover:opacity-100 transition-opacity duration-100">
         <p className="text-center">© 2025 snowclipsed / スノーエクリプス</p>
