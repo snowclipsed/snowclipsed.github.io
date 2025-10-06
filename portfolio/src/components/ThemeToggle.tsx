@@ -1,6 +1,5 @@
 'use client';
 
-// src/components/ThemeToggle.tsx
 import React from 'react';
 import { Sun, Moon } from 'lucide-react';
 import { useTheme } from '../context/ThemeContext';
@@ -11,9 +10,9 @@ const ThemeToggle: React.FC = () => {
   return (
     <button
       onClick={toggleTheme}
-      className="fixed top-4 right-4 p-2 border group transition-all duration-100
+      className="fixed top-2 right-2 md:top-4 md:right-4 p-2 border group transition-all duration-100
         dark:border-white dark:hover:bg-white dark:hover:text-black
-        border-black hover:bg-black hover:text-white"
+        border-black hover:bg-black hover:text-white z-50"
     >
       {theme === 'dark' ? (
         <div className="relative">
