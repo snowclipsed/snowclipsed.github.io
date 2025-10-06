@@ -4,6 +4,31 @@ import { ThemeProvider } from '../context/ThemeContext';
 import './globals.css';
 import './prism-cyberpunk.css';
 
+export const metadata: Metadata = {
+  title: 'Snowclipsed // AI Research',
+  description: 'Deep Learning Architecture Research, Inference Optimization, and Low Level Programming',
+  icons: {
+    icon: [
+      { url: '/favicon.ico', sizes: 'any' },
+      { url: '/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
+      { url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
+      { url: '/favicon-192x192.png', sizes: '192x192', type: 'image/png' },
+      { url: '/favicon-512x512.png', sizes: '512x512', type: 'image/png' },
+    ],
+    apple: [
+      { url: '/apple-touch-icon.png', sizes: '180x180' },
+    ],
+    other: [
+      {
+        rel: 'mask-icon',
+        url: '/safari-pinned-tab.svg',
+        color: '#000000'
+      }
+    ]
+  },
+  manifest: '/site.webmanifest',
+};
+
 export default function RootLayout({
   children,
 }: {
