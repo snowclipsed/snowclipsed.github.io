@@ -101,7 +101,7 @@ if (pathname === '/' || pathname === '') {
     <div className="space-y-8">
       {/* Introduction */}
       <div className="mb-12">
-        <h2 className="text-2xl mb-6 font-bold">私について / ABOUT ME</h2>
+        <h2 className="text-xl md:text-2xl mb-4 font-bold">私について / ABOUT ME</h2>
         <div className="space-y-4 opacity-90">
           <p>Hi, I am snow/snowclipsed.</p>
           <p>Welcome to my site. I am a machine learning engineer specializing in 
@@ -122,7 +122,7 @@ if (pathname === '/' || pathname === '') {
 
       {/* Research Domains */}
       <div className="mb-12">
-        <h2 className="text-2xl mb-6 font-bold">研究分野 / RESEARCH DOMAINS</h2>
+        <h2 className="text-xl md:text-2xl mb-4 font-bold">研究分野 / RESEARCH DOMAINS</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {/* Core Research */}
           <div>
@@ -197,8 +197,8 @@ if (pathname === '/' || pathname === '') {
 
       {/* Offline Mode */}
       <div className="mb-8">
-        <h2 className="text-2xl mb-4 font-bold">オフライン・モード / OFFLINE MODE</h2>
-        <p className="opacity-90 font-mono">
+        <h2 className="text-xl md:text-2xl mb-4 font-bold">オフライン・モード / OFFLINE MODE</h2>
+        <p className="text-sm md:text-base opacity-90">
           Beyond the terminal, I create games, write blog posts, make digital art, 
           and explore virtual worlds. You can find my thoughts on my blog or follow 
           my journey on <a href='https://x.com/snowclipsed'><u>social media</u></a>.
@@ -263,12 +263,12 @@ if (pathname === '/' || pathname === '') {
       {/* Header */}
       <header className="border transition-colors duration-100 dark:border-white border-black p-4 md:p-6 mb-6 md:mb-8 relative group">
         <div className="transition-all duration-100">
-          <h1 className="text-3xl md:text-4xl mb-2 font-bold relative">
+          <h1 className="text-2xl md:text-4xl mb-2 font-bold relative">
             <span className="opacity-80 absolute -left-1 -top-1 text-red-500">スノーエクリプス</span>
             <span className="opacity-80 absolute -left-1 top-1 text-blue-500">スノーエクリプス</span>
             スノーエクリプス / SNOWCLIPSED
           </h1>
-          <p className="text-lg md:text-xl opacity-80">
+          <p className="text-sm md:text-base opacity-90">
             ニューラル・アーキテクト / NEURAL ARCHITECT
           </p>
         </div>
