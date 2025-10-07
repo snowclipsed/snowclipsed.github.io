@@ -108,7 +108,7 @@ if (pathname === '/' || pathname === '') {
               I like to build things and use them. Most days I&apos;m working on multimodal systems and inference optimization, and lately training models which are actually good.</p>
             <p>Currently deep in reinforcement learning, mechanistic interpretability, and many other things. I think a lot about alignment and what intelligence actually means. </p>
           <p className="opacity-90 font-mono">
-            I get nerd-sniped by basically anything in science — computer systems, cosmology, orbital dynamics, whatever rabbit hole appears. I have opinions about where AI is going. Still figuring out if theyr&apos;e right.
+            I get nerd-sniped by basically anything in science — computer systems, cosmology, orbital dynamics, whatever rabbit hole appears. I have opinions about where AI is going. Still figuring out if they&apos;re right.
           </p>
         </div>
       </div>
