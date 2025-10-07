@@ -103,16 +103,12 @@ if (pathname === '/' || pathname === '') {
       <div className="mb-12">
         <h2 className="text-xl md:text-2xl mb-4 font-bold">私について / ABOUT ME</h2>
         <div className="space-y-4 opacity-90">
-          <p>Hi, I am snow/snowclipsed.</p>
-          <p>Welcome to my site. I am a machine learning engineer specializing in 
-            deep learning architecture research and inference optimization.</p>
-          <p>I primarily focus on large language model optimization with transformers, 
-            while also pursuing research in deep learning architecture design. My goal 
-            is to make AI more accessible and efficient, with a particular emphasis 
-            on lower-end hardware.</p>
+            <p>Hi, I am snow/snowclipsed.</p>
+            <p>I'm a machine learning engineer at NEU obsessed with making neural networks run fast on hardware (potato or not).
+              I like to build things and use them. Most days I'm working on multimodal systems and inference optimization, and lately training models which are actually good.</p>
+            <p>Currently deep in reinforcement learning, mechanistic interpretability, and many other things. I think a lot about alignment and what intelligence actually means. </p>
           <p className="opacity-90 font-mono">
-            If I&apos;m not diving deep into neural networks, I am probably nerd-sniped by something else.
-            I&apos;ve been enjoying writing <a href='https://gist.github.com/snowclipsed/24aebbdd51218f4e17ad428630cc91d6'> <u>high performance CPU kernels</u> </a> and learning to write minecraft shaders (reveal soon!).
+            I get nerd-sniped by basically anything in science — computer systems, cosmology, orbital dynamics, whatever rabbit hole appears. I have opinions about where AI is going. Still figuring out if they're right.
           </p>
         </div>
       </div>
@@ -134,19 +130,19 @@ if (pathname === '/' || pathname === '') {
                 dark:border-white/20 border-black/20 p-2 
                 dark:hover:border-white/40 hover:border-black/40">
                 <span className="text-blue-400 mr-2">◇</span>
-                Deep Learning Architecture Research
+                Multimodal and Long-Horizon RL
               </div>
               <div className="border transition-colors duration-100 
                 dark:border-white/20 border-black/20 p-2 
                 dark:hover:border-white/40 hover:border-black/40">
                 <span className="text-blue-400 mr-2">◇</span>
-                Inference Optimization
+                Inference and Training Optimization
               </div>
               <div className="border transition-colors duration-100 
                 dark:border-white/20 border-black/20 p-2 
                 dark:hover:border-white/40 hover:border-black/40">
                 <span className="text-blue-400 mr-2">◇</span>
-                Low-level and GPU Programming
+                Model Curiosity and Exploration
               </div>
               <div className="border transition-colors duration-100 
                 dark:border-white/20 border-black/20 p-2 
@@ -167,13 +163,13 @@ if (pathname === '/' || pathname === '') {
                 dark:border-white/20 border-black/20 p-2 
                 dark:hover:border-white/40 hover:border-black/40">
                 <span className="text-green-400 mr-2">⊕</span>
-                Scaling ML Models for Low-End Devices
+                Distributed Training and Inference
               </div>
               <div className="border transition-colors duration-100 
                 dark:border-white/20 border-black/20 p-2 
                 dark:hover:border-white/40 hover:border-black/40">
                 <span className="text-green-400 mr-2">⊕</span>
-                Mech-Interp and Visualization
+                Computer-Use Agents
               </div>
               <div className="border transition-colors duration-100 
                 dark:border-white/20 border-black/20 p-2 
