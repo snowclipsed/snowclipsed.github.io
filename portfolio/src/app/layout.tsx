@@ -5,7 +5,7 @@ import './globals.css';
 import './prism-cyberpunk.css';
 
 export const metadata: Metadata = {
-  title: 'Snowclipsed // AI Research',
+  title: 'Snow\'s Site',
   description: 'Deep Learning Architecture Research, Inference Optimization, and Low Level Programming',
   icons: {
     icon: [
