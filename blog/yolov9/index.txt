@@ -8,13 +8,162 @@
 b:I[6213,[],"ViewportBoundary"]
 d:I[4835,[],""]
 :HL["/_next/static/css/116e80e7d664f8f5.css","style"]
-0:{"P":null,"b":"r3a0sg50WH8dOn2sUjIdB","p":"","c":["","blog","yolov9",""],"i":false,"f":[[["",{"children":["blog",{"children":[["slug","yolov9","d"],{"children":["__PAGE__",{}]}]}]},"$undefined","$undefined",true],["",["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/116e80e7d664f8f5.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]],["$","html",null,{"lang":"en","suppressHydrationWarning":true,"className":"dark","children":[["$","head",null,{"children":[["$","link",null,{"rel":"preconnect","href":"https://fonts.googleapis.com"}],["$","link",null,{"rel":"preconnect","href":"https://fonts.gstatic.com","crossOrigin":"anonymous"}],["$","link",null,{"href":"https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap","rel":"stylesheet"}],["$","meta",null,{"name":"msapplication-TileColor","content":"#000000"}],["$","meta",null,{"name":"theme-color","content":"#000000"}],["$","script",null,{"dangerouslySetInnerHTML":{"__html":"\n              const savedTheme = localStorage.getItem('theme') || 'dark';\n              document.documentElement.classList.add(savedTheme);\n\n              window.MathJax = {\n                tex: {\n                  inlineMath: [['\\\\(', '\\\\)']],\n                  displayMath: [['$$', '$$']],\n                  processEscapes: true,\n                },\n                options: {\n                  skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']\n                }\n              };\n            "}}],["$","style",null,{"children":"\n          /* Mobile: Smaller base font size to counteract no scaling */\n          @media (max-width: 767px) {\n            html { font-size: 12px; }\n          }\n          /* Desktop: Normal font size with scaling */\n          @media (min-width: 768px) {\n            html { font-size: 16px; }\n          }\n        "}]]}],["$","body",null,{"className":"antialiased transition-colors duration-100 dark:bg-black dark:text-white bg-white text-black","children":["$","$L2",null,{"children":["$","div",null,{"className":"min-h-screen flex justify-center items-center","children":["$","div",null,{"className":"scale-100 md:scale-[1.0] origin-top w-full","children":["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L4",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[[],[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":404}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]]],"forbidden":"$undefined","unauthorized":"$undefined"}]}]}]}]}]]}]]}],{"children":["blog",["$","$1","c",{"children":[null,["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children","blog","children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L4",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["slug","yolov9","d"],["$","$1","c",{"children":[null,["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children","blog","children","$0:f:0:1:2:children:2:children:0","children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L4",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[[],["$","div",null,{"className":"min-h-screen flex items-center justify-center","children":["$","div",null,{"className":"text-center space-y-4","children":[["$","h1",null,{"className":"text-4xl font-bold","children":"404"}],["$","h2",null,{"className":"text-xl","children":"Post Not Found"}],["$","p",null,{"className":"text-gray-500","children":"The blog post you're looking for doesn't exist."}],["$","$L5",null,{"href":"/","className":"text-blue-500 hover:underline","children":"Return Home"}]]}]}]],"forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":["__PAGE__",["$","$1","c",{"children":["$L6",null,["$","$L7",null,{"children":"$L8"}]]}],{},null,false]},null,false]},null,false]},null,false],["$","$1","h",{"children":[null,["$","$1","pMjDEiKJVOXiIvKhlLrvH",{"children":[["$","$L9",null,{"children":"$La"}],["$","$Lb",null,{"children":"$Lc"}],null]}]]}],false]],"m":"$undefined","G":["$d","$undefined"],"s":false,"S":true}
+0:{"P":null,"b":"9C5e4BNY8XVkf_5bg9xPV","p":"","c":["","blog","yolov9",""],"i":false,"f":[[["",{"children":["blog",{"children":[["slug","yolov9","d"],{"children":["__PAGE__",{}]}]}]},"$undefined","$undefined",true],["",["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/116e80e7d664f8f5.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]],["$","html",null,{"lang":"en","suppressHydrationWarning":true,"className":"dark","children":[["$","head",null,{"children":[["$","link",null,{"rel":"preconnect","href":"https://fonts.googleapis.com"}],["$","link",null,{"rel":"preconnect","href":"https://fonts.gstatic.com","crossOrigin":"anonymous"}],["$","link",null,{"href":"https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap","rel":"stylesheet"}],["$","meta",null,{"name":"msapplication-TileColor","content":"#000000"}],["$","meta",null,{"name":"theme-color","content":"#000000"}],["$","script",null,{"dangerouslySetInnerHTML":{"__html":"\n              const savedTheme = localStorage.getItem('theme') || 'dark';\n              document.documentElement.classList.add(savedTheme);\n\n              window.MathJax = {\n                tex: {\n                  inlineMath: [['\\\\(', '\\\\)']],\n                  displayMath: [['$$', '$$']],\n                  processEscapes: true,\n                },\n                options: {\n                  skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']\n                }\n              };\n            "}}],["$","style",null,{"children":"\n          /* Mobile: Smaller base font size to counteract no scaling */\n          @media (max-width: 767px) {\n            html { font-size: 12px; }\n          }\n          /* Desktop: Normal font size with scaling */\n          @media (min-width: 768px) {\n            html { font-size: 16px; }\n          }\n        "}]]}],["$","body",null,{"className":"antialiased transition-colors duration-100 dark:bg-black dark:text-white bg-white text-black","children":["$","$L2",null,{"children":["$","div",null,{"className":"min-h-screen flex justify-center items-center","children":["$","div",null,{"className":"scale-100 md:scale-[1.0] origin-top w-full","children":["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L4",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[[],[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":404}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]]],"forbidden":"$undefined","unauthorized":"$undefined"}]}]}]}]}]]}]]}],{"children":["blog",["$","$1","c",{"children":[null,["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children","blog","children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L4",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["slug","yolov9","d"],["$","$1","c",{"children":[null,["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children","blog","children","$0:f:0:1:2:children:2:children:0","children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L4",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[[],["$","div",null,{"className":"min-h-screen flex items-center justify-center","children":["$","div",null,{"className":"text-center space-y-4","children":[["$","h1",null,{"className":"text-4xl font-bold","children":"404"}],["$","h2",null,{"className":"text-xl","children":"Post Not Found"}],["$","p",null,{"className":"text-gray-500","children":"The blog post you're looking for doesn't exist."}],["$","$L5",null,{"href":"/","className":"text-blue-500 hover:underline","children":"Return Home"}]]}]}]],"forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":["__PAGE__",["$","$1","c",{"children":["$L6",null,["$","$L7",null,{"children":"$L8"}]]}],{},null,false]},null,false]},null,false]},null,false],["$","$1","h",{"children":[null,["$","$1","91yluaGiWK2j_tL0HSMns",{"children":[["$","$L9",null,{"children":"$La"}],["$","$Lb",null,{"children":"$Lc"}],null]}]]}],false]],"m":"$undefined","G":["$d","$undefined"],"s":false,"S":true}
 c:[["$","meta","0",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
 a:[["$","meta","0",{"charSet":"utf-8"}],["$","title","1",{"children":"Understanding the YOLOv9 Paper"}],["$","meta","2",{"name":"description","content":"My notes on the YOLOv9 paper."}],["$","link","3",{"rel":"manifest","href":"/site.webmanifest","crossOrigin":"$undefined"}],["$","link","4",{"rel":"icon","href":"/favicon.ico","sizes":"any"}],["$","link","5",{"rel":"icon","href":"/favicon-16x16.png","sizes":"16x16","type":"image/png"}],["$","link","6",{"rel":"icon","href":"/favicon-32x32.png","sizes":"32x32","type":"image/png"}],["$","link","7",{"rel":"icon","href":"/favicon-192x192.png","sizes":"192x192","type":"image/png"}],["$","link","8",{"rel":"icon","href":"/favicon-512x512.png","sizes":"512x512","type":"image/png"}],["$","link","9",{"rel":"apple-touch-icon","href":"/apple-touch-icon.png","sizes":"180x180"}],["$","link","10",{"rel":"mask-icon","href":"/safari-pinned-tab.svg","color":"#000000"}]]
 8:null
-e:I[8881,["321","static/chunks/321-14e9b0818460c0f7.js","738","static/chunks/738-1dda720f4e536999.js","953","static/chunks/app/blog/%5Bslug%5D/page-727f3d52741632b8.js"],"default"]
-f:I[7738,["321","static/chunks/321-14e9b0818460c0f7.js","738","static/chunks/738-1dda720f4e536999.js","953","static/chunks/app/blog/%5Bslug%5D/page-727f3d52741632b8.js"],"default"]
-10:T4f65,<p>This is another paper in the YOLO iteration. I like vision papers a lot and these are my notes from my reading of the paper.</p>
+e:I[8881,["321","static/chunks/321-14e9b0818460c0f7.js","738","static/chunks/738-132473797a2960c5.js","953","static/chunks/app/blog/%5Bslug%5D/page-727f3d52741632b8.js"],"default"]
+f:I[7738,["321","static/chunks/321-14e9b0818460c0f7.js","738","static/chunks/738-132473797a2960c5.js","953","static/chunks/app/blog/%5Bslug%5D/page-727f3d52741632b8.js"],"default"]
+10:T62a1,<h2>What are long horizon tasks (and why should we care about them)?</h2>
+<p>Science-fiction AIs such as TARS, Cortana or the Terminator all exhibit a quality that today’s systems still lack, which is the capacity to pursue far-off goals on their own. We do have “agents”, but once the chain of actions stretches beyond a certain number of turns their performance collapses, and there&#39;s no easy way of training these models. These <em>long-horizon tasks</em> are exactly what I care about - how can we teach a language model to carry out long-horizon tasks without paying an astronomical training bill? This is exactly we will try to explore in this blog-series. In part I of this series, we will focus on using reinforcement learning methods head-on and analyse our results. In part II, we will use our learnings to make something better. </p>
+<p>But first.. we need a proxy task to experiment on.</p>
+<h2>Why Must We Solve a Cube?</h2>
+<p>Ever solved a Rubik&#39;s cube? It&#39;s <em>deceptively</em> hard when you&#39;re starting out. Sure, you can scramble it in a few seconds, but the state space you&#39;ve just plunged into is combinatorial, and it contains roughly around \(4.3 \times 10^{19}\) possible configurations! To put it to scale, if you were to stack a tower of cubes for every state, you&#39;d be shooting way past the current brightest star in the sky (Sirius) and then do it again past planet <a href="https://www.halopedia.org/Reach">Reach</a>. That&#39;s a lot of cubes. Still, traditional algorithmic solvers struggle with this enormousness, and this is why clever methods like the <a href="https://kociemba.org/math/twophase.htm">two phase solver</a> exist—they narrow down the search space by satisfying a set of conditions. Learnt algorithms are the same way, they create latent representations and have biases which allow them to cut through most of the search space.</p>
+<p>So you think about it, a Rubik&#39;s cube is exactly the kind of long-horizon problem we&#39;re looking to test - it takes multiple steps to reach the solution space, and it is verifiable that they reached a solution. The state graph is vertex-transitive (every scramble looks like every other scramble from the right vantage point), so there are no privileged &quot;easy corners&quot; where the agent can camp. Best of all, God, on an alias of the brute-force cluster that exhaustively enumerated the cube state group - has announced that the diameter of this graph is <a href="https://www.cube20.org/">20 moves in the half-turn metric</a>. Twenty! That is a <em>constant</em> that fits inside a tweet (and makes our problem tractable to learn for an agent), yet the shortest path between two arbitrary vertices is still long enough to punish greedy myopia.<br><img src="/images/godstable.png" alt="alt text" title="" class="rounded-lg w-full"></p>
+<p>The cube is also <em>deterministic</em>. Which means, in principle, you only need the starting state to solve the whole thing - that&#39;s why blindfolded cubing exists! But it&#39;s hard because you cannot state-action mappings, the key again is cutting down these massive search spaces through learnt approaches. Humans get around this by only memorizing small algorithms like PLL using learning and pattern recognition to know <em>when</em> to apply a combination of these algorithms to get closer to the solution.</p>
+<h2>How are we going to do it?</h2>
+<p>There are several ways to teach a language model a new skill. If you want it deeply integrated into the model&#39;s fundamental capabilities, you&#39;d include it heavily in the pretraining data mix. But pretraining is prohibitively expensive, and continued pretraining faces the same cost barrier. Supervised fine-tuning is cheaper - you just create input-output examples demonstrating the skill. The problem is that it&#39;s shallow. The model learns to pattern-match and mimic rather than truly internalizing the underlying capability. What if instead you could simulate an environment where the model experiments and learns through trial and error, discovering the skill on its own? That&#39;s exactly what reinforcement learning does, and unless you&#39;ve been living under a rock, you&#39;ve probably heard about it by now.</p>
+<p>There&#39;s actually another reason that we&#39;re going to choose a Rubik&#39;s cube as our long-horizon problem of choice : The cube itself makes for a fascinating reinforcement learning study because it sits at this uncomfortable intersection where it <em>feels</em> like it should be tractable for modern RL, but it keeps resisting straightforward RL approaches. So that&#39;s <em>exactly</em> what we&#39;re going to do - hit the ground running with some straightforward approaches and see if they fail, and then try to investigate why.</p>
+<h2>A Quick Detour: What&#39;s GRPO?</h2>
+<p>Now, there&#39;s various reinforcement learning algorithms that we can utilize to train our language model how to solve a rubik&#39;s cube. Among those dozens of policy-gradient acronyms floating around, Group Relative Policy Optimization is the one whose reference implementation already speaks transformer and comes with a great support from the verifiers library. That single convenience is why we borrow its machinery for the cube.</p>
+<p>I&#39;ll only cover GRPO on a high level, but here are some resources if you want to read more about the internals of how GRPO works.</p>
+<p>The ritual is actually disarmingly short. For a given scramble \(s\) we prompt the network once and sample a <em>batch</em> of roll-outs:</p>
+<p>$$ {\tau_1, \tau_2, \ldots, \tau_G}, \quad \text{each } \tau_i = (a_{i,1}, \ldots, a_{i,T_i}) $$</p>
+<p>A <em>verifier</em> (in our case a Kociemba solver) labels every trajectory with a sparse reward</p>
+<p>$$ R(\tau_i) = \mathbb{1}[\text{cube-state after } \tau_i \text{ is solved}] $$</p>
+<p>GRPO turns the batch into a <em>relative</em> signal. Let:</p>
+<p>$$ \bar{A}_i = R(\tau_i) - \langle R \rangle $$</p>
+<p>be the advantage of trajectory \(i\) versus the batch mean \(\langle R \rangle\). The policy gradient is</p>
+<p>$$ J_{\text{GRPO}}(\theta) = \mathbb{E}<em>{q, {o_i}} \left[ \frac{1}{G} \sum</em>{i=1}^{G} \min\left(\frac{\pi_\theta(o_i|q)}{\pi_{\theta_{\text{old}}}(o_i|q)} A_i, \text{clip}\left(\frac{\pi_\theta(o_i|q)}{\pi_{\theta_{\text{old}}}(o_i|q)}, 1-\epsilon, 1+\epsilon\right) A_i \right) - \beta D_{\text{KL}}[\pi_\theta || \pi_{\text{ref}}] \right] $$</p>
+<p>In words: up-weight the moves that appear in <em>above-average</em> roll-outs, down-weight the rest. The baseline is not a learned value network but the empirical mean of the <em>same</em> group, so the update is <em>zero-centred</em> by construction and needs no critic. When the model samples a group of trajectories, the algorithm pushes probability mass toward whichever ones scored above the group average. This works beautifully when your model can already occasionally stumble into some success, because then you have clear winners to amplify. </p>
+<h2>Experiments with Reward Modeling</h2>
+<p>To get started, we need to first create our environment which will allow our language model to interact with a rubiks cube. And to create our environment, we need to solve two problems : 1) problem representation 2) reward model.</p>
+<p>Let&#39;s quickly jump back to how humans solve Rubik&#39;s cubes ; each mental step we decide to play an algorithm of \(N\) moves. We can model after this behavior to incentivize the model to make its own algorithms ; a multi-turn setup where the model could take \(K\) turns of maximum \(N\) moves each. For verifiability, we will use the very popular <a href="https://www.speedsolving.com/wiki/index.php/Singmaster_notation">singmaster notation</a>: Each face gets a letter: F (front), B (back), U (up), D (down), L (left), R (right). The letter alone means turn that face 90° clockwise. We add a prime symbol (like R&#39;) for counterclockwise, or a 2 (like U2) for 180°. So &quot;R U R&#39; U&#39;&quot; means: right clockwise, up clockwise, right counter-clockwise, up counter-clockwise.</p>
+<p><img src="/images/singmaster.png" alt="alt text" title="" class="rounded-lg w-full"></p>
+<p>The cube state has to be represented as text and each face (U/L/F/R/B/D) gets its own grid format with colors as single letters, looking something like <code>TOP(U): WRB/OWG/YWW</code>. It&#39;s regex-friendly, preserves spatial relationships, and reasonably compact. The model interacts through Singmaster notation by outputting moves in <code>&lt;move&gt;...&lt;/move&gt;</code> tags.</p>
+<p>For the RL setup, I used GRPO with a multi-turn structure where the model could take up \(K\) turns of \(N\) moves each. Since a sparse reward may be too harsh for the our policy when we&#39;re just starting out, we shape the reward for rewarding progress and efficiency while keeping the reward function as positive only:</p>
+<ul>
+<li>A small format bonus of \(0.1\) for using the correct <code>&lt;move&gt;...&lt;/move&gt;</code> tags</li>
+<li>If it solves the cube: base reward of \(1.0\) plus an efficiency bonus \(\min(1.0, \frac{d}{t})\) where \(d\) is the initial distance and \(t\) is turns used</li>
+<li>If it doesn&#39;t solve it: a progress reward of \(\frac{\max(0, d - d_{\text{final}})}{d}\) that measures how much closer it got</li>
+</ul>
+<p>During designing the reward, the primary idea is to keep enough variance between good and bad approaches. Remember, GRPO setup samples multiple rollouts per prompt, groups them, and pushes probability mass toward better-performing completions <strong>within each group</strong>.</p>
+<h3>Curriculum</h3>
+<p>Feeding the agent 1–20-move scrambles on day one is educational malpractice. The trainer therefore exposes only scrambles in a user-chosen band \([s_{\min}, s_{\max}]\) and can be configured to expand the band once the rolling success rate exceeds a threshold. This is in contrast with an approach like DeepCubeA where they train their network on the full combination range, where there&#39;s no explicit curriculum but more of an emergent one because the model learns the combinations in the order of easy to hard. However, they train for hundreds of thousands of steps, which we cannot, so we schedule ours by hand and keep the wall-time budget honest.</p>
+<h3>The Diagnostic: The 1-Move Test</h3>
+<p>Before we dream of twenty-move solutions we check whether the network can walk one step. This will both act as a baseline test for the capability of our models to solve the cube because we&#39;re testing if it can execute the most basic moves.</p>
+<p>A 1-move scramble has exactly twelve legal continuations (6 Faces x 2 Directions); one of them rewinds the scramble, the other eleven leave the cube mixed. This will essentially make our reward structure sparser and essentially cancels out the &quot;efficiency&quot; term if the cube is unsolved and doubles it if it&#39;s solved, but since we&#39;ve reduced our search space, it should be tractable.</p>
+<p>A random policy should succeed with a probability \(\frac{1}{12} \approx 8.3%\) per attempt. So even if we have 16 rollouts per group and given a single episode step, you should hit the correct move occasionally just by chance, and GRPO should immediately amplify it. However, this is not what we see in practice!</p>
+<p><img src="/images/flatreward.png" alt="alt text" title="" class="rounded-lg w-full"></p>
+<p>As you can see, the mean reward stays relatively flat throughout and hugs the format bonus of 0.1. This is <em>not</em> good and means that the model is generally not learning! Well, why is this happening? We can try and diagnose the issue by analyzing the completion logs to get a sense of what was going on. Using the logs we can plot the moves that the model likes to take, the moves it gets correct and the overall reward distribution.</p>
+<p><img src="/images/chart.png" alt="alt text" title="" class="rounded-lg w-full"></p>
+<p>[<em>Note : We&#39;re only logging every 2 steps so not all the steps were captured, but this should be a decent sample size to allow us to understand what&#39;s going on.</em>]</p>
+<p>So, across 1,832 attempts we get 10 successful solves. That&#39;s a 0.55% success rate, and that&#39;s worse than random by about 10x! What&#39;s interesting is that it&#39;s not that the model has collapsed to a single move even though it&#39;s heavily skewed. We do see that the model clearly explores, but it just explores wrongly. It plays R about 420 times (which is nearly a quarter of the attempts) followed by B, L, D, U in decreasing frequency, and never really any prime moves or double rotations.</p>
+<p>This extreme bias essentially creates extreme reward sparsity because there&#39;s no clear pattern for GRPO to latch onto, because there&#39;s basically no in group variance in most cases. When all your rollouts never solve anything, there&#39;s nothing to amplify. This is what happens when the prior is too strong, the signal becomes too sparse and too noisy to overcome the strong prior. There&#39;s a chance that this may work when scaled up, but that&#39;s an insane amount of compute to introduce a base capability!</p>
+<h2>Reward-shaping, curricula, prayers</h2>
+<p>Once I realized that the 1-move test was failing, I tried getting inspired by Potential-Based Reward Shaping (PBRS)—adding \(\gamma \Phi(s&#39;) - \Phi(s)\) where \( \Phi(s) = -0.5 \cdot d(s)\). In traditional RL with learned value functions, this is theoretically sound because the value function absorbs the potential. But GRPO works on <em>relative</em> differences within rollout groups so this results in shifting every advantage by the same constant and leaves the <em>relative</em> structure untouched.</p>
+<p>I also tried explicit distance feedback (telling the model &quot;you&#39;re now \(k\) moves from solved&quot; after each action), and showing the solved state as a reference ; thinking traces got more confident but they were still confidently wrong, so scores didn&#39;t improve. I tried various progress ratios, efficiency bonuses, completion bonuses. None of it mattered because the underlying problem was that the model never reached differentiated outcomes.</p>
+<p>Reasoning models actually consistently outperformed non-reasoning models. I hypothesis this is not because they were reasoning better about cube mechanics, but because longer generations = more stochasticity in the action distribution = slightly more exploration. Still not enough to overcome mode collapse, though.</p>
+<p><img src="/images/thinkingbetter.png" alt="alt text" title="" class="rounded-lg w-full"></p>
+<p>The representation experiments provided the final irony. I held a hypothesis that if we give the model a cube representation that is more represented in the dataset (by simply sampling the model about it), we may get better or more confident results. And yes! When I gave the model the flat unfolded net - the representation it found most natural - it started generating moves that looked <em>scarily</em> informed. &quot;Ah, I see the orange face needs to move to the top layer,&quot; it would declare, before proposing a sequence that would make any cuber weep. The model had learned to <em>talk</em> about cubes like an expert while remaining fundamentally unable to <em>solve</em> them. The distribution of the moves taken did not budge much but the models simply got more confident at justifying their moves!</p>
+<p><img src="/images/wrongmove.png" alt="alt text" title="" class="rounded-lg w-full"></p>
+<h2>Post-mortem</h2>
+<h3>What GRPO does (and what it needs)</h3>
+<p>Let&#39;s be precise about how GRPO works. For each question, say \(q\), GRPO samples a group of outputs which we can represent as \({o_1, o_2, o_3, \ldots, o_G}\) from the old policy \(\pi_{\theta_{\text{old}}}\) and scores them with some rewards \({r_1, r_2, r_3, \ldots, r_G}\) and then computes the advantage function to measure how much better a particular response is compared to the average response in the group:</p>
+<p>$$ A_i = \frac{r_i - \text{mean}({r_1, r_2, \ldots, r_G})}{\text{std}({r_1, r_2, \ldots, r_G})} $$</p>
+<p>Verifiers by default uses a &quot;corrected&quot; GRPO variation that removes the normalization term from the advantage calculation. So the advantage actually becomes:</p>
+<p>$$ A_i = r_i - \text{mean}({r_1, r_2, \ldots, r_G}) $$</p>
+<p>Notice the critical thing here again, the advantage is literally coming from the <em>relative differences between the group</em>. When we talked about GRPO earlier, I briefly mention that GRPO works well if there&#39;s enough variance. However, if all the rewards in a group are similar, something else happens - the advantage \(A_i \to 0\) for all \(i\). Let&#39;s find out the downstream effects of this.</p>
+<p>Now, the advantage will be used to optimize the policy by maximizing:<br>$$ J_{\text{GRPO}}(\theta) = \mathbb{E}_{q, o_i} \left[ \frac{1}{G} \sum_{i=1}^{G} \min\left(\frac{\pi_\theta(o_i|q)}{\pi_{\theta_{\text{old}}}(o_i|q)} A_i, \operatorname{clip}\left(\frac{\pi_\theta(o_i|q)}{\pi_{\theta_{\text{old}}}(o_i|q)}, 1-\epsilon, 1+\epsilon\right) A_i \right) - \beta D_{\text{KL}}[\pi_\theta || \pi_{\text{ref}}] \right] $$</p>
+<p>If all your rewards are similar, the advantage \(A_i \to 0\) for all \(i\). If we plug this into the policy:</p>
+<p>$$ J_{\text{GRPO}}(\theta) \approx \mathbb{E}_{q, o_i} \left[ \frac{1}{G} \sum_{i=1}^{G} 0 - \beta D_{\text{KL}}[\pi_\theta || \pi_{\text{ref}}] \right] = - \beta D_{\text{KL}}[\pi_\theta || \pi_{\text{ref}}] $$</p>
+<p>So when \(A_i \to 0\) the objective reduces to just minimizing KL divergence from the reference policy! This effectively turns into a no-op because we&#39;re just trying to stay close to where we started and stay anchored to our initial bad policy. We can actually see this reflected in a very very small (and often zero!) grad norm which spikes from these incredibly sparse updates!</p>
+<p><img src="/images/gradnorm.png" alt="alt text" title="" class="rounded-lg w-full"></p>
+<p>Let&#39;s calculate how many times do we actually get useful signal in our group from our 0.55% success rate. Suppose the number of rollouts per group is 16, then the probability that there&#39;s at least one success becomes:</p>
+<p>$$ P(\text{at least 1 success}) = 1 - (1 - 0.0055)^{16} = 1 - (0.9945)^{16} \approx 0.084 $$</p>
+<p>So only about 8.4% of groups have any success at all. In the other 91.6% of groups, all rewards cluster around 0.1 (format reward), all advantages are near zero, and the gradient collapses to pure KL regularization. This is also what the reward distribution graph justifies.</p>
+<p>This immediately points towards the hypothesis that any strong baseline should immediately help in allowing a model to learn further. I am of course, remotely not the first person to observe this - if we look at the DeepSeekMath paper (which introduces GRPO), they try to explain why reinforcement learning works in the first place:</p>
+<p><img src="/images/deepseeksnippet.png" alt="alt text" title="" class="rounded-lg w-full"></p>
+<p>Translation : They compare compares Pass@K (&quot;does <em>any</em> sample solve it?&quot;) with Maj@K (&quot;does majority voting solve it?&quot;). GRPO boosts Maj@K while barely touching Pass@K.</p>
+<p>GRPO doesn&#39;t teach new skills. It shifts probability mass toward solutions the model can already sometimes produce. If your Pass@K is 0, the algorithm has nothing to amplify; the relative advantages stay zero and you burn compute turning the KL crank. Our 4B and 3B checkpoints sit squarely in the &quot;Pass@K ≈0&quot; regime.</p>
+<p>There&#39;s a whole subfield which does study capability aquisition, and the consensus is quite clear: <a href="https://arxiv.org/abs/2507.10616">&quot;capability acquisition occurs during pre-training and continual fine-tuning, while GRPO mainly amplifies skills the base model already has&quot;</a> and <a href="https://huggingface.co/blog/lmassaron/gemma-grpo">&quot;The method works by leveraging existing capabilities that do not easily emerge from greedy decoding but sometimes show up when working with higher temperatures.&quot;</a></p>
+<p>But does any model hold the mandate of the cube? (Or, at least for 1 move?). Well, I put OpenAI&#39;s latest family through the wringer. Here&#39;s what Pass@5 performance looks like:</p>
+<p><img src="/images/gpt5cube.png" alt="alt text" title="" class="rounded-lg w-full"></p>
+<p>We can clearly see the capabilities evaporating as the parameter budget decreases and drops between some latent representation threshold. Our Qwen checkpoints sit <em>below</em> GPT-5-nano, i.e. in the region where Pass@K is indistinguishable from zero.</p>
+<p>However, the GPT-5 gap just doesn&#39;t sit right, so I ran some head-to-head on 1-move scrambles across families, and reran GPT-5.</p>
+<table>
+<thead>
+<tr>
+<th>model</th>
+<th>avg reward / 2.0</th>
+<th>solves / 50</th>
+<th>equiv. %</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>GPT-5</td>
+<td>1.76</td>
+<td>44</td>
+<td>88 %</td>
+</tr>
+<tr>
+<td>Claude Sonnet 4.5</td>
+<td>0.60</td>
+<td>15</td>
+<td>30 %</td>
+</tr>
+<tr>
+<td>Claude Opus 4</td>
+<td>0.36</td>
+<td>9</td>
+<td>18 %</td>
+</tr>
+<tr>
+<td>Gemini 2.5 Flash</td>
+<td>0.20</td>
+<td>5</td>
+<td>10 %</td>
+</tr>
+<tr>
+<td>Kimi k2</td>
+<td>0.04</td>
+<td>1</td>
+<td>2 %</td>
+</tr>
+<tr>
+<td>Qwen-235B</td>
+<td>0.00</td>
+<td>0</td>
+<td>0 %</td>
+</tr>
+<tr>
+<td>Qwen-4B</td>
+<td>0</td>
+<td>0</td>
+<td>0 %</td>
+</tr>
+<tr>
+<td>our Qwen-4B</td>
+<td>~0</td>
+<td>1 / 183</td>
+<td>0.55 %</td>
+</tr>
+</tbody></table>
+<p>Remember, random guessing sits at 8.3%. GPT-5 seems to be playing another game entirely, and the chinese models seem to be terrible shape rotators. I did expect claude to score higher than what it did, so that indeed comes as a surprise.||||</p>
+<h2>When in doubt, blame the data (and then the parameters)</h2>
+<p>The corpus giveth and the corpus withholdeth. Internet text should be largely unhelpful to all the models in this regard. If we peek at the forums, they overflow with something like &quot;spam the R U R′ U′ until the corner permutes&quot; and &quot;white cross first&quot;, but almost nobody writes out the full 54-sticker before/after. The causal model &quot;R maps <em>this</em> state to <em>that</em> state&quot; is largely absent from the raw corpus, unless OpenAI has hands on some significantly large piece of multiturn puzzle data that it has generalized on.</p>
+<p>Distillation tells the same story. Qwen 4B inherited every linguistic prior its 235B teacher had, hence the obsessive over-generation of R. But since the teacher itself never learned the conditional mapping, there was nothing <em>to</em> distil. Strong-to-weak knowledge transfer works only when the <em>strong</em> model actually possesses the knowledge. Compression can&#39;t create what isn&#39;t there. And our empirical observation with parameter scale dictates that the incredibly smaller distilled model should probably only perform worse.</p>
+<p>To put all of this bluntly, the literature had drawn the map in fluorescent ink:</p>
+<p><strong>&quot;Here be dragons - bring either a bigger model, a distilled prior, or architectural biases that match the domain.&quot;</strong></p>
+<p>And so I charged in with a 4B param scribbler and a dream.</p>
+<p>The dragons won... for now.</p>
+<p><img src="/images/againstdragons.png" alt="alt text" title="" class="rounded-lg w-full"></p>
+<h2>What&#39;s Next (Part II)?</h2>
+<p>GRPO can&#39;t bootstrap capability from nothing. So we stop praying for emergent algorithms and hand them to the model instead. Our cube simulator is also a bottomless generator for SFT : scramble, ask Kociemba for the optimal reversal, record the trace, repeat. Now you may say &quot;erm, that&#39;s memorization&quot; - but memorisation is not a dirty word here because it&#39;s needed as a warmup for building our functional baseline. Once the weights have cached the macro patterns we can go back to RL to <em>compress</em> them.</p>
+<p>However, we can also only do SFT for low-depths in our scramble graph since the possible state space expands exponentially as the number of moves goes up. Another hard learnt lesson for RL is to take the pre-RL baseline more seriously because some tasks may just be too hard for a model to start with. So once that supervised checkpoint reaches a respectable solve-rate on held-out 5-move scrambles we unfreeze the RL loop. The answer also may lie in simply choosing a better model with an more acceptable baseline than Qwen, but I am not giving up on my tiny warriors just yet.</p>
+<p><img src="/images/cubegraph.png" alt="cubegraph" title="" class="rounded-lg w-full"><br>GRPO now starts from a prior that already respects primes and doubles, so its job is reduced to <em>compression</em> by shaving excess turns and stitching algorithms. We can further augment this by doing something like multi-token prediction, but instead predict multiple moves at once, like our original environment envisioned, and then reward based on that. If all of this does not work, we can also look into less complex cubes, like 2x2 cubes with a much smaller state-space.</p>
+<p>All shall be revealed in part II.</p>
+11:T4f65,<p>This is another paper in the YOLO iteration. I like vision papers a lot and these are my notes from my reading of the paper.</p>
 <p>Original paper <a href="https://arxiv.org/abs/2402.13616">link</a>.</p>
 <h1>What exactly is the problem with current models?</h1>
 <p> Object detection models can be simplified as learning the most important features in a training set which can allow it to predict the location (bounding box) or segmentation map of a given test object. Ideally, we want such models to be robustly generalized - an object detection world model which can one shot any test object in any scenario as long as it has seen objects of a similar class. There has been a push towards achieving this ideal but not without roadblocks in convergence, which the paper focuses a lot on. </p>
@@ -125,559 +274,4 @@ f:I[7738,["321","static/chunks/321-14e9b0818460c0f7.js","738","static/chunks/738
 <li><p>Part 2 bypasses the transformations</p>
 </li>
 </ul>
-11:T8887,<h1>Why this project?</h1>
-<p>A satellite tracker is something I have wanted to make since a long time. I had researched about <a href="https://en.wikipedia.org/wiki/Two-line_element_set">two line elements</a> and how one can generate ground tracks for satellites using complex algorithms like SGP4, like in <a href="https://github.com/anoved/Ground-Track-Generator">this repo</a>. I wanted to understand concepts of orbital mechanics and map projection through a practical project</p>
-<p>To deploy my project, please go to <a href="https://github.com/snowclipsed/SatTrack">this repository</a> and follow the README instructions!</p>
-<h1>Approach</h1>
-<p>A satellite tracker in principle works by displaying the coordinates of a given satellite at a point in time either through projecting its overhead coordinates on a map (2D) or displaying the satellite&#39;s position in a 3D environment. For this project, I use the classic first approach to project the location of a satellite on a map. </p>
-<p>To do this, we must look at the entire system through a Earth-centered reference frame in 3 dimensions. Then we can understand what exactly a projection is in the context of orbiting bodies. A projection is the intersecting point of the ground with a line drawn from the Earth&#39;s center to the satellite, such that the line is normal to the spherical coordinate system/the ground. <d-cite key="snyder1981map"></d-cite></p>
-<p>The crux of the problem is that the Earth and the satellite are moving at different speeds, and the reference frame is not. Both these bodies are also moving at non-constant velocities (since most satellites do not have a perfectly eccentric orbit, their speeds are not the same throughout the orbit). <d-cite key="stackoverflow_post"></d-cite> <d-cite key="space_stackexchange_post"></d-cite> </p>
-<p>Then, we convert the projection of a satellite&#39;s coordinates on the 3D sphere into 2D by changing out map projection from WGS84 to a cylindrical projection like mercerator.</p>
-<p><b> Note : </b> I will not be going into detail about orbital mechanics and map projections in this specific blog since this is more oriented towards the implementation of the project, but I will cover them in a seperate blog in the future! However, in case you are interested, check out the references in the end. <d-cite key="neacsu_snyder"></d-cite></p>
-<p>Luckily, there are several GiS tools which we can use to calculate and project satellite coordinates to maps. One such popular tool is <a href="https://www.arcgis.com/index.html">ArcGIS</a> which can allow one to display interactive maps and perform geocode and display geocode based geometries on a map. ArcGIS offers a developer API key which can be used to build applications for non-consumer purposes. We will use the Java SDK and API service from ArcGIS to render our map and plot the satellite as a moving point on the map. </p>
-<p>However, we still have to figure out how to fetch the position of the satellite in real time. To do this, we can either compute the current position of the satellite by propagating two line elements to the current timestamp, or fetch the coordinates directly from a satellite tracker API. Many such free APIs exist, and I chose <a href="https://www.n2yo.com/api/">N2YO&#39;s REST API</a> for the job. </p>
-<h1>Procedure</h1>
-<p>I developed the satellite tracker in the IntelliJ IDEA IDE. This can be done in any other Java IDE.</p>
-<p>Let us first instantiate what functionalities we need in our tracker. To do that, let us revisit what exactly a satellite tracker means. In essence, a satellite tracker is a program which can display the live location of a given satellite. Some trackers also carry the capability to display the ground track of a satellite.</p>
-<p>From this, we can extract our first goal, to display the location of one satellite on the map. But first, we first must display the map itself.</p>
-<h2>Displaying a map using ArcGIS</h2>
-<p>ArcGIS supports using Java to display an interactive map using a JavaFX application. JavaFX is a software platform and graphical user interface (GUI) toolkit for creating rich desktop applications. This means we can follow the standard JavaFx lifecyle of Initialization, Start, Scene, User interaction and updation, and Termination. We first initiate an Application class which has the main and the start functions. </p>
-
-    <div class="relative my-4 group">
-      <div class="absolute -inset-px bg-gradient-to-r from-transparent via-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-200"></div>
-      <div class="relative">
-        <div class="flex items-center justify-between px-4 py-2 bg-black/10 dark:bg-white/10 border-b border-black/20 dark:border-white/20">
-          <span class="text-sm opacity-60">plaintext</span>
-          <button 
-            class="px-2 py-1 text-xs border border-transparent hover:border-current opacity-60 hover:opacity-100 transition-all duration-200"
-            onclick="navigator.clipboard.writeText(this.parentElement.nextElementSibling.textContent)"
-          >
-            Copy
-          </button>
-        </div>
-        <pre class="p-4 bg-black/5 dark:bg-white/5 overflow-x-auto">
-          <code class="language-plaintext">public class App extends Application {
-
-    public static void main(String[] args) {
-        Application.launch(args);
-    }
-
-    public void start(Stage stage) {
-    }
-}</code>
-        </pre>
-      </div>
-    </div>
-  <p>JavaFX renders UI components in a heirarichal order. The start function passes a <code>stage</code> as a component. In JavaFX, <code>stage</code> represents an application window, and all the GUI is housed within that window. It is the first component in the heirarchy. A <code>stage</code> usually houses a GUI container called a <code>scene</code>. A <code>stage</code> may possess multiple <code>scenes</code> but only one is shown at a time. </p>
-<p>A <code>scene</code> houses <code>pane(s)</code>, which are the root node to which GUI components are attached.  A <code>pane</code> can be of many types depending on how we want our UI to render. You can read more about panes <a href="https://docs.oracle.com/javafx/2/layout/builtin_layouts.htm">here</a><d-cite key="oraclejavafxlayouts"></d-cite>. The type of pane we will be using for this project is called a StackPane. A StackPane is exactly what it sounds like, it is based on the Stack data structure and the nodes which are added to the StackPane first are rendered last, in the LIFO order. All of this comes together in 3 lines of code.</p>
-
-    <div class="relative my-4 group">
-      <div class="absolute -inset-px bg-gradient-to-r from-transparent via-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-200"></div>
-      <div class="relative">
-        <div class="flex items-center justify-between px-4 py-2 bg-black/10 dark:bg-white/10 border-b border-black/20 dark:border-white/20">
-          <span class="text-sm opacity-60">plaintext</span>
-          <button 
-            class="px-2 py-1 text-xs border border-transparent hover:border-current opacity-60 hover:opacity-100 transition-all duration-200"
-            onclick="navigator.clipboard.writeText(this.parentElement.nextElementSibling.textContent)"
-          >
-            Copy
-          </button>
-        </div>
-        <pre class="p-4 bg-black/5 dark:bg-white/5 overflow-x-auto">
-          <code class="language-plaintext">StackPane stackPane = new StackPane();
-        Scene scene = new Scene(stackPane);
-        stage.setScene(scene);</code>
-        </pre>
-      </div>
-    </div>
-  <p>Next, we can start adding the map UI nodes. ArcGIS provides an SDK to render a map using their free developer API. You can import the libraries from ArcGIS by following <a href="https://developers.arcgis.com/java/install-and-set-up/">these instructions</a> to use Gradle/Maven. I use Gradle in my setup in the repository. </p>
-<p>To access the API key we must first store it as a string in a seperate file which we can read the API string from.</p>
-
-    <div class="relative my-4 group">
-      <div class="absolute -inset-px bg-gradient-to-r from-transparent via-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-200"></div>
-      <div class="relative">
-        <div class="flex items-center justify-between px-4 py-2 bg-black/10 dark:bg-white/10 border-b border-black/20 dark:border-white/20">
-          <span class="text-sm opacity-60">plaintext</span>
-          <button 
-            class="px-2 py-1 text-xs border border-transparent hover:border-current opacity-60 hover:opacity-100 transition-all duration-200"
-            onclick="navigator.clipboard.writeText(this.parentElement.nextElementSibling.textContent)"
-          >
-            Copy
-          </button>
-        </div>
-        <pre class="p-4 bg-black/5 dark:bg-white/5 overflow-x-auto">
-          <code class="language-plaintext"> String yourAPIKey = System.getProperty("apiKey");
- ArcGISRuntimeEnvironment.setApiKey(yourAPIKey);</code>
-        </pre>
-      </div>
-    </div>
-  <p>Then, we can create a new ArcGIS map and set the map to a MapView GUI node. </p>
-
-    <div class="relative my-4 group">
-      <div class="absolute -inset-px bg-gradient-to-r from-transparent via-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-200"></div>
-      <div class="relative">
-        <div class="flex items-center justify-between px-4 py-2 bg-black/10 dark:bg-white/10 border-b border-black/20 dark:border-white/20">
-          <span class="text-sm opacity-60">plaintext</span>
-          <button 
-            class="px-2 py-1 text-xs border border-transparent hover:border-current opacity-60 hover:opacity-100 transition-all duration-200"
-            onclick="navigator.clipboard.writeText(this.parentElement.nextElementSibling.textContent)"
-          >
-            Copy
-          </button>
-        </div>
-        <pre class="p-4 bg-black/5 dark:bg-white/5 overflow-x-auto">
-          <code class="language-plaintext">ArcGISMap map = new ArcGISMap(BasemapStyle.ARCGIS_IMAGERY_STANDARD);
-
-      // create a map view and set the map to it
-      mapView = new MapView();
-      mapView.setMap(map);</code>
-        </pre>
-      </div>
-    </div>
-  <p>This will allow us to display the map in a JavaFX application window.</p>
-<p>Next, we will learn how to fetch the required location information for the satellite using our RESTful API.</p>
-<h2>Fetching Satellite Position</h2>
-<p>To fetch the position we are making use of <a href="https://www.n2yo.com/api/">N2YO&#39;s free satellite API</a>. To accomplish this, we need to define what variables we need from the API. Then, we can make a GET request to the API which then outputs a response in JSON containing the information we need.</p>
-<p>The base URL format that we will be using is :</p>
-
-    <div class="relative my-4 group">
-      <div class="absolute -inset-px bg-gradient-to-r from-transparent via-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-200"></div>
-      <div class="relative">
-        <div class="flex items-center justify-between px-4 py-2 bg-black/10 dark:bg-white/10 border-b border-black/20 dark:border-white/20">
-          <span class="text-sm opacity-60">json</span>
-          <button 
-            class="px-2 py-1 text-xs border border-transparent hover:border-current opacity-60 hover:opacity-100 transition-all duration-200"
-            onclick="navigator.clipboard.writeText(this.parentElement.nextElementSibling.textContent)"
-          >
-            Copy
-          </button>
-        </div>
-        <pre class="p-4 bg-black/5 dark:bg-white/5 overflow-x-auto">
-          <code class="language-json">/positions/<span class="token punctuation">{</span>id<span class="token punctuation">}</span>/<span class="token punctuation">{</span>observer_lat<span class="token punctuation">}</span>/<span class="token punctuation">{</span>observer_lng<span class="token punctuation">}</span>/<span class="token punctuation">{</span>observer_alt<span class="token punctuation">}</span>/<span class="token punctuation">{</span>seconds<span class="token punctuation">}</span></code>
-        </pre>
-      </div>
-    </div>
-  <p>Let us define a class <code>Satellite</code> which we will use to perform the GET request and store the information from the request. We will pass the variables to pass into the GET request as parameters to this class.</p>
-
-    <div class="relative my-4 group">
-      <div class="absolute -inset-px bg-gradient-to-r from-transparent via-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-200"></div>
-      <div class="relative">
-        <div class="flex items-center justify-between px-4 py-2 bg-black/10 dark:bg-white/10 border-b border-black/20 dark:border-white/20">
-          <span class="text-sm opacity-60">plaintext</span>
-          <button 
-            class="px-2 py-1 text-xs border border-transparent hover:border-current opacity-60 hover:opacity-100 transition-all duration-200"
-            onclick="navigator.clipboard.writeText(this.parentElement.nextElementSibling.textContent)"
-          >
-            Copy
-          </button>
-        </div>
-        <pre class="p-4 bg-black/5 dark:bg-white/5 overflow-x-auto">
-          <code class="language-plaintext">Satellite(String satID, String sec, String obsLat, String obsLong, String APIKEY) throws URISyntaxException, IOException, InterruptedException {
-    ...
-</code>
-        </pre>
-      </div>
-    </div>
-  <p>Next, we will use HttpRequest to build a GET request to send to N2YO.</p>
-
-    <div class="relative my-4 group">
-      <div class="absolute -inset-px bg-gradient-to-r from-transparent via-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-200"></div>
-      <div class="relative">
-        <div class="flex items-center justify-between px-4 py-2 bg-black/10 dark:bg-white/10 border-b border-black/20 dark:border-white/20">
-          <span class="text-sm opacity-60">plaintext</span>
-          <button 
-            class="px-2 py-1 text-xs border border-transparent hover:border-current opacity-60 hover:opacity-100 transition-all duration-200"
-            onclick="navigator.clipboard.writeText(this.parentElement.nextElementSibling.textContent)"
-          >
-            Copy
-          </button>
-        </div>
-        <pre class="p-4 bg-black/5 dark:bg-white/5 overflow-x-auto">
-          <code class="language-plaintext">HttpRequest getRequest = HttpRequest.newBuilder()
-                .uri(new URI("https://api.n2yo.com/rest/v1/satellite/positions/" + satID + "/" + obsLat + "/" + obsLong + "/0/" + sec + "/&amp;apiKey="+ APIKEY))
-                .GET()
-                .build();</code>
-        </pre>
-      </div>
-    </div>
-  <p>We will then create an HttpClient and make a GET request to N2YO and try to get a response from the API. </p>
-
-    <div class="relative my-4 group">
-      <div class="absolute -inset-px bg-gradient-to-r from-transparent via-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-200"></div>
-      <div class="relative">
-        <div class="flex items-center justify-between px-4 py-2 bg-black/10 dark:bg-white/10 border-b border-black/20 dark:border-white/20">
-          <span class="text-sm opacity-60">plaintext</span>
-          <button 
-            class="px-2 py-1 text-xs border border-transparent hover:border-current opacity-60 hover:opacity-100 transition-all duration-200"
-            onclick="navigator.clipboard.writeText(this.parentElement.nextElementSibling.textContent)"
-          >
-            Copy
-          </button>
-        </div>
-        <pre class="p-4 bg-black/5 dark:bg-white/5 overflow-x-auto">
-          <code class="language-plaintext">HttpClient httpClient = HttpClient.newHttpClient();
-HttpResponse&lt;String> getResponse = httpClient.send(getRequest, HttpResponse.BodyHandlers.ofString());</code>
-        </pre>
-      </div>
-    </div>
-  <p>Since this response is being recieved as a Json String, we will have to parse this using a Json String parser to utilize the components inside. To do this, we first must look at a sample response given in N2YO&#39;s website:</p>
-
-    <div class="relative my-4 group">
-      <div class="absolute -inset-px bg-gradient-to-r from-transparent via-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-200"></div>
-      <div class="relative">
-        <div class="flex items-center justify-between px-4 py-2 bg-black/10 dark:bg-white/10 border-b border-black/20 dark:border-white/20">
-          <span class="text-sm opacity-60">plaintext</span>
-          <button 
-            class="px-2 py-1 text-xs border border-transparent hover:border-current opacity-60 hover:opacity-100 transition-all duration-200"
-            onclick="navigator.clipboard.writeText(this.parentElement.nextElementSibling.textContent)"
-          >
-            Copy
-          </button>
-        </div>
-        <pre class="p-4 bg-black/5 dark:bg-white/5 overflow-x-auto">
-          <code class="language-plaintext">{
-  "info": {
-    "satname": "SPACE STATION",
-    "satid": 25544,
-    "transactionscount": 5
-  },
-  "positions": [
-    {
-      "satlatitude": -39.90318514,
-      "satlongitude": 158.28897924,
-      "sataltitude": 417.85,
-      "azimuth": 254.31,
-      "elevation": -69.09,
-      "ra": 44.77078138,
-      "dec": -43.99279118,
-      "timestamp": 1521354418
-    },
-    {
-      "satlatitude": -39.86493451,
-      "satlongitude": 158.35261287,
-      "sataltitude": 417.84,
-      "azimuth": 254.33,
-      "elevation": -69.06,
-      "ra": 44.81676119,
-      "dec": -43.98086419,
-      "timestamp": 1521354419
-    }
-  ]
-}</code>
-        </pre>
-      </div>
-    </div>
-  <p>We note that the response is in a nested format, so we must use define two classes for the <code>info</code> and <code>positions</code> section. Each of these classes will contain the get and set function for all the variables. On top of that, we must define a <code>Request</code> class which encapsulates both the subclasses. The names of the variables should be the same as the ones in the Json response.</p>
-<p>Once we have created those classes, we can then use ObjectMapper to map the response body to the given variables inside the classes. We can then access these variables for the stored information.</p>
-
-    <div class="relative my-4 group">
-      <div class="absolute -inset-px bg-gradient-to-r from-transparent via-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-200"></div>
-      <div class="relative">
-        <div class="flex items-center justify-between px-4 py-2 bg-black/10 dark:bg-white/10 border-b border-black/20 dark:border-white/20">
-          <span class="text-sm opacity-60">plaintext</span>
-          <button 
-            class="px-2 py-1 text-xs border border-transparent hover:border-current opacity-60 hover:opacity-100 transition-all duration-200"
-            onclick="navigator.clipboard.writeText(this.parentElement.nextElementSibling.textContent)"
-          >
-            Copy
-          </button>
-        </div>
-        <pre class="p-4 bg-black/5 dark:bg-white/5 overflow-x-auto">
-          <code class="language-plaintext">ObjectMapper mapper = new ObjectMapper();
-
-Request request = mapper.readValue(getResponse.body(), Request.class);
-
-
-this.satname = request.info.satname;
-this.satlong = request.positions.get(0).satlongitude;
-this.satlat = request.positions.get(0).satlatitude;</code>
-        </pre>
-      </div>
-    </div>
-  <p>Now that we have the information required, all that&#39;s left is to display the satellite as a point on the map and update the location in real time!</p>
-<h2>Displaying the satellite on the map</h2>
-<p>Before we start displaying the satellite on the map, we need to create a map. In a from-scratch implementation we would consider adding a map and then calculating the coordinates per pixel on the map ourselves. This is a hard problem. Luckily, ARCGiS does this entire process for us. All we need to do is create a JavaFX application window, and then declare a MapView variable. This is our infinite scrollable and pannable workspace inside the JavaFX Application window which will house the map (so that we can zoom in and out and do everything we can with modern mapping applications like Google Maps).</p>
-
-    <div class="relative my-4 group">
-      <div class="absolute -inset-px bg-gradient-to-r from-transparent via-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-200"></div>
-      <div class="relative">
-        <div class="flex items-center justify-between px-4 py-2 bg-black/10 dark:bg-white/10 border-b border-black/20 dark:border-white/20">
-          <span class="text-sm opacity-60">plaintext</span>
-          <button 
-            class="px-2 py-1 text-xs border border-transparent hover:border-current opacity-60 hover:opacity-100 transition-all duration-200"
-            onclick="navigator.clipboard.writeText(this.parentElement.nextElementSibling.textContent)"
-          >
-            Copy
-          </button>
-        </div>
-        <pre class="p-4 bg-black/5 dark:bg-white/5 overflow-x-auto">
-          <code class="language-plaintext">public class App extends Application {
-
-    private MapView mapView;
-    ...</code>
-        </pre>
-      </div>
-    </div>
-  <p>Next, we create and call the map itself:</p>
-
-    <div class="relative my-4 group">
-      <div class="absolute -inset-px bg-gradient-to-r from-transparent via-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-200"></div>
-      <div class="relative">
-        <div class="flex items-center justify-between px-4 py-2 bg-black/10 dark:bg-white/10 border-b border-black/20 dark:border-white/20">
-          <span class="text-sm opacity-60">plaintext</span>
-          <button 
-            class="px-2 py-1 text-xs border border-transparent hover:border-current opacity-60 hover:opacity-100 transition-all duration-200"
-            onclick="navigator.clipboard.writeText(this.parentElement.nextElementSibling.textContent)"
-          >
-            Copy
-          </button>
-        </div>
-        <pre class="p-4 bg-black/5 dark:bg-white/5 overflow-x-auto">
-          <code class="language-plaintext">ArcGISMap map = new ArcGISMap(BasemapStyle.ARCGIS_STREETS_NIGHT);
-mapView.setMap(map);</code>
-        </pre>
-      </div>
-    </div>
-  <p>There&#39;s a lot of map styles and can be accessed through BasemapStyle. I chose one with night mode cause it&#39;s cool.</p>
-<p>Next, we create a graphics overlay to display our graphics (like our satellite image or any other line or point):</p>
-
-    <div class="relative my-4 group">
-      <div class="absolute -inset-px bg-gradient-to-r from-transparent via-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-200"></div>
-      <div class="relative">
-        <div class="flex items-center justify-between px-4 py-2 bg-black/10 dark:bg-white/10 border-b border-black/20 dark:border-white/20">
-          <span class="text-sm opacity-60">plaintext</span>
-          <button 
-            class="px-2 py-1 text-xs border border-transparent hover:border-current opacity-60 hover:opacity-100 transition-all duration-200"
-            onclick="navigator.clipboard.writeText(this.parentElement.nextElementSibling.textContent)"
-          >
-            Copy
-          </button>
-        </div>
-        <pre class="p-4 bg-black/5 dark:bg-white/5 overflow-x-auto">
-          <code class="language-plaintext">GraphicsOverlay graphicsOverlay = new GraphicsOverlay();
-graphicsOverlay.setLabelsEnabled(true);
-mapView.getGraphicsOverlays().add(graphicsOverlay);</code>
-        </pre>
-      </div>
-    </div>
-  <p>We then create a point to dislay on the overlay:</p>
-
-    <div class="relative my-4 group">
-      <div class="absolute -inset-px bg-gradient-to-r from-transparent via-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-200"></div>
-      <div class="relative">
-        <div class="flex items-center justify-between px-4 py-2 bg-black/10 dark:bg-white/10 border-b border-black/20 dark:border-white/20">
-          <span class="text-sm opacity-60">plaintext</span>
-          <button 
-            class="px-2 py-1 text-xs border border-transparent hover:border-current opacity-60 hover:opacity-100 transition-all duration-200"
-            onclick="navigator.clipboard.writeText(this.parentElement.nextElementSibling.textContent)"
-          >
-            Copy
-          </button>
-        </div>
-        <pre class="p-4 bg-black/5 dark:bg-white/5 overflow-x-auto">
-          <code class="language-plaintext">Float[] coords = satAPICall(satID);
-Point point = new Point(coords[0], coords[1], SpatialReferences.getWgs84());</code>
-        </pre>
-      </div>
-    </div>
-  <p>Then we set a PictureMarker symbol to the point&#39;s coordinates:</p>
-
-    <div class="relative my-4 group">
-      <div class="absolute -inset-px bg-gradient-to-r from-transparent via-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-200"></div>
-      <div class="relative">
-        <div class="flex items-center justify-between px-4 py-2 bg-black/10 dark:bg-white/10 border-b border-black/20 dark:border-white/20">
-          <span class="text-sm opacity-60">plaintext</span>
-          <button 
-            class="px-2 py-1 text-xs border border-transparent hover:border-current opacity-60 hover:opacity-100 transition-all duration-200"
-            onclick="navigator.clipboard.writeText(this.parentElement.nextElementSibling.textContent)"
-          >
-            Copy
-          </button>
-        </div>
-        <pre class="p-4 bg-black/5 dark:bg-white/5 overflow-x-auto">
-          <code class="language-plaintext">PictureMarkerSymbol satmarker = new PictureMarkerSymbol("src/Images/satimage.png");
-satmarker.setHeight(40);
-satmarker.setWidth(40);</code>
-        </pre>
-      </div>
-    </div>
-  <p>Finally, so that we can apply the image on top of the overlay so it&#39;s rendered, we must create a JavaFX Graphic object, and add our graphic to the overlay:</p>
-
-    <div class="relative my-4 group">
-      <div class="absolute -inset-px bg-gradient-to-r from-transparent via-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-200"></div>
-      <div class="relative">
-        <div class="flex items-center justify-between px-4 py-2 bg-black/10 dark:bg-white/10 border-b border-black/20 dark:border-white/20">
-          <span class="text-sm opacity-60">plaintext</span>
-          <button 
-            class="px-2 py-1 text-xs border border-transparent hover:border-current opacity-60 hover:opacity-100 transition-all duration-200"
-            onclick="navigator.clipboard.writeText(this.parentElement.nextElementSibling.textContent)"
-          >
-            Copy
-          </button>
-        </div>
-        <pre class="p-4 bg-black/5 dark:bg-white/5 overflow-x-auto">
-          <code class="language-plaintext">Graphic satpoint = new Graphic(point, satmarker);
-graphicsOverlay.getGraphics().add(satpoint);</code>
-        </pre>
-      </div>
-    </div>
-  <p>This will display our satellite, but right now we do not have any access to the coordinates we just found through the API. We will then define a function to set our point to a location by calling the API:</p>
-
-    <div class="relative my-4 group">
-      <div class="absolute -inset-px bg-gradient-to-r from-transparent via-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-200"></div>
-      <div class="relative">
-        <div class="flex items-center justify-between px-4 py-2 bg-black/10 dark:bg-white/10 border-b border-black/20 dark:border-white/20">
-          <span class="text-sm opacity-60">plaintext</span>
-          <button 
-            class="px-2 py-1 text-xs border border-transparent hover:border-current opacity-60 hover:opacity-100 transition-all duration-200"
-            onclick="navigator.clipboard.writeText(this.parentElement.nextElementSibling.textContent)"
-          >
-            Copy
-          </button>
-        </div>
-        <pre class="p-4 bg-black/5 dark:bg-white/5 overflow-x-auto">
-          <code class="language-plaintext">public void setpoint(Graphic point, Graphic text, MapView mapView) throws URISyntaxException, IOException, InterruptedException {
-    Float[] newcoords = satAPICall(satID);
-    Point newpoint = new Point(newcoords[0], newcoords[1], SpatialReferences.getWgs84());
-    point.setGeometry(newpoint);
-    mapView.setViewpoint(new Viewpoint(newcoords[1], newcoords[0], scale));
-}</code>
-        </pre>
-      </div>
-    </div>
-  <p>Here, satAPICall is just an API calling function. You might notice that this function is not being called enough, so we will add a thread which keeps updating every N seconds. We set N as 10 at the top of our file.</p>
-
-    <div class="relative my-4 group">
-      <div class="absolute -inset-px bg-gradient-to-r from-transparent via-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-200"></div>
-      <div class="relative">
-        <div class="flex items-center justify-between px-4 py-2 bg-black/10 dark:bg-white/10 border-b border-black/20 dark:border-white/20">
-          <span class="text-sm opacity-60">plaintext</span>
-          <button 
-            class="px-2 py-1 text-xs border border-transparent hover:border-current opacity-60 hover:opacity-100 transition-all duration-200"
-            onclick="navigator.clipboard.writeText(this.parentElement.nextElementSibling.textContent)"
-          >
-            Copy
-          </button>
-        </div>
-        <pre class="p-4 bg-black/5 dark:bg-white/5 overflow-x-auto">
-          <code class="language-plaintext">Thread updateThread = new Thread(() -> {
-    while (true) {
-        try {
-            setpoint(satpoint, sattextgraphic, mapView);
-            countdown(timeremaining);
-        } catch (URISyntaxException | IOException | InterruptedException e) {
-            throw new RuntimeException(e);
-        }
-        try {
-            Thread.sleep(frequency);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-    }
-});
-
-updateThread.start();</code>
-        </pre>
-      </div>
-    </div>
-  <p>Nice! We can now display the satellite image. However, we have no way to actually choose any satellite right now. So let&#39;s try defining a list of satellites and a drop down (combo box) menu the queries for user input on that list:</p>
-
-    <div class="relative my-4 group">
-      <div class="absolute -inset-px bg-gradient-to-r from-transparent via-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-200"></div>
-      <div class="relative">
-        <div class="flex items-center justify-between px-4 py-2 bg-black/10 dark:bg-white/10 border-b border-black/20 dark:border-white/20">
-          <span class="text-sm opacity-60">plaintext</span>
-          <button 
-            class="px-2 py-1 text-xs border border-transparent hover:border-current opacity-60 hover:opacity-100 transition-all duration-200"
-            onclick="navigator.clipboard.writeText(this.parentElement.nextElementSibling.textContent)"
-          >
-            Copy
-          </button>
-        </div>
-        <pre class="p-4 bg-black/5 dark:bg-white/5 overflow-x-auto">
-          <code class="language-plaintext">
-String[] satList = {
-    "ISS",
-    "Hubble Space Telescope",
-    "IRIDIUM 167",
-    "STARLINK-30783"
-};
-
-ComboBox&lt;String> combo_box = new ComboBox&lt;>(FXCollections.observableArrayList(satList));
-combo_box.setValue("ISS"); // Default Value
-
-stackPane.getChildren().add(combo_box);
-StackPane.setAlignment(combo_box, Pos.TOP_RIGHT);
-StackPane.setMargin(combo_box, new Insets(125, 100, 0, 0));
-</code>
-        </pre>
-      </div>
-    </div>
-  <p>We will add a corresponding listener for the combo box:</p>
-
-    <div class="relative my-4 group">
-      <div class="absolute -inset-px bg-gradient-to-r from-transparent via-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-200"></div>
-      <div class="relative">
-        <div class="flex items-center justify-between px-4 py-2 bg-black/10 dark:bg-white/10 border-b border-black/20 dark:border-white/20">
-          <span class="text-sm opacity-60">plaintext</span>
-          <button 
-            class="px-2 py-1 text-xs border border-transparent hover:border-current opacity-60 hover:opacity-100 transition-all duration-200"
-            onclick="navigator.clipboard.writeText(this.parentElement.nextElementSibling.textContent)"
-          >
-            Copy
-          </button>
-        </div>
-        <pre class="p-4 bg-black/5 dark:bg-white/5 overflow-x-auto">
-          <code class="language-plaintext">combo_box.setOnAction((event) -> {
-    String selection = combo_box.getValue();
-    satID = returnNORADID(selection);
-    try {
-        setpoint(satpoint, sattextgraphic, mapView);
-        countdown(timeremaining);
-    } catch (URISyntaxException | IOException | InterruptedException e) {
-        throw new RuntimeException(e);
-    }
-    sattext.setText(selection);
-});</code>
-        </pre>
-      </div>
-    </div>
-  <p>Now, we will implement a very simple switch statement based function to return the NORAD ID of the satellites based on what satellite name the user has selected which we can use to make an API call with :</p>
-
-    <div class="relative my-4 group">
-      <div class="absolute -inset-px bg-gradient-to-r from-transparent via-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-200"></div>
-      <div class="relative">
-        <div class="flex items-center justify-between px-4 py-2 bg-black/10 dark:bg-white/10 border-b border-black/20 dark:border-white/20">
-          <span class="text-sm opacity-60">plaintext</span>
-          <button 
-            class="px-2 py-1 text-xs border border-transparent hover:border-current opacity-60 hover:opacity-100 transition-all duration-200"
-            onclick="navigator.clipboard.writeText(this.parentElement.nextElementSibling.textContent)"
-          >
-            Copy
-          </button>
-        </div>
-        <pre class="p-4 bg-black/5 dark:bg-white/5 overflow-x-auto">
-          <code class="language-plaintext">public Integer returnNORADID(String satOption) {
-    int ID;
-    switch (satOption) {
-        case "ISS":
-            ID = 25544;
-            break;
-        case "IRIDIUM 167":
-            ID = 43931;
-            break;
-        case "STARLINK-30783":
-            ID = 58130;
-            break;
-        case "Hubble Space Telescope":
-            ID = 20580;
-            break;
-        default:
-            ID = 25544;
-    }
-    return ID;
-}</code>
-        </pre>
-      </div>
-    </div>
-  6:["$","$Le",null,{"children":["$","$Lf",null,{"posts":[{"slug":"yolov9","title":"Understanding the YOLOv9 Paper","date":"2024-02-29","author":"snowclipsed","tags":["vision","research","computer science"],"image":"","description":"My notes on the YOLOv9 paper.","content":"$10"},{"slug":"sattrack","title":"Satellite Tracker","date":"2023-11-31","author":"$undefined","tags":["orbital mechanics","java","computer science"],"image":"","description":"A real- time satellite tracker written in Java.","content":"$11"}],"initialPost":"$6:props:children:props:posts:0"}]}]
+6:["$","$Le",null,{"children":["$","$Lf",null,{"posts":[{"slug":"rubiks-cube-1","title":"Teaching Language Models to Solve Rubik's Cubes (Part I)","date":"2025-10-23","author":"$undefined","tags":["reinforcement learning","computer science","deep learning"],"image":"","description":"How hard could it be?","content":"$10"},{"slug":"yolov9","title":"Understanding the YOLOv9 Paper","date":"2024-02-29","author":"snowclipsed","tags":["vision","research","computer science"],"image":"","description":"My notes on the YOLOv9 paper.","content":"$11"}],"initialPost":"$6:props:children:props:posts:1"}]}]
