@@ -250,7 +250,6 @@ const CyberpunkBlog: React.FC<CyberpunkBlogProps> = ({ posts = [] }) => {
               dark:border-white border-black
               p-4 relative group cursor-pointer"
             style={{ 
-              transform: `translateX(${index * 5}px)`,
               zIndex: filteredPosts.length - index 
             }}
             onClick={() => handlePostClick(post)}
