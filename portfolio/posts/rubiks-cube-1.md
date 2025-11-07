@@ -8,18 +8,26 @@ tags: [reinforcement learning, computer science, deep learning]
 
 ## What are long horizon tasks (and why should we care about them)?
 
-Science-fiction AIs such as TARS, Cortana or the Terminator all exhibit a quality that today’s systems still lack, which is the capacity to pursue far-off goals on their own. We do have “agents”, but once the chain of actions stretches beyond a certain number of turns their performance collapses, and there's no easy way of training these models. These _long-horizon tasks_ are exactly what I care about - how can we teach a language model to carry out long-horizon tasks without paying an astronomical training bill? This is exactly we will try to explore in this blog-series. In part I of this series, we will focus on using reinforcement learning methods head-on and analyse our results. In part II, we will use our learnings to make something better. 
+Science-fiction AIs such as TARS, Cortana or the Terminator all exhibit a quality that today’s systems still lack, which is the capacity to pursue far-off goals on their own. We do have “agents”, but once the chain of actions stretches beyond a certain number of turns their performance collapses, and there's no easy way of training these models. These _long-horizon tasks_ are exactly what I care about - how can we teach a language model to carry out long-horizon tasks without paying an astronomical training bill? 
+
+This is exactly we will try to explore in this blog-series. In part I of this series, we will focus on using reinforcement learning methods head-on and analyse our results. In part II, we will use our learnings to make something better. 
 
 But first.. we need a proxy task to experiment on.
 
 ## Why Must We Solve a Cube?
 
-Ever solved a Rubik's cube? It's _deceptively_ hard when you're starting out. Sure, you can scramble it in a few seconds, but the state space you've just plunged into is combinatorial, and it contains roughly around \\(4.3 \times 10^{19}\\) possible configurations! To put it to scale, if you were to stack a tower of cubes for every state, you'd be shooting way past the current brightest star in the sky (Sirius) and then do it again past planet [Reach](https://www.halopedia.org/Reach). That's a lot of cubes. Still, traditional algorithmic solvers struggle with this enormousness, and this is why clever methods like the [two phase solver](https://kociemba.org/math/twophase.htm) exist—they narrow down the search space by satisfying a set of conditions. Learnt algorithms are the same way, they create latent representations and have biases which allow them to cut through most of the search space.
+Ever solved a Rubik's cube? It's _deceptively_ hard when you're starting out. Sure, you can scramble it in a few seconds, but the state space you've just plunged into is combinatorial, and it contains roughly around \\(4.3 \times 10^{19}\\) possible configurations! To put it to scale, if you were to stack a tower of cubes for every state, you'd be shooting way past the current brightest star in the sky (Sirius) and then do it again past planet [Reach](https://www.halopedia.org/Reach). That's a lot of cubes. 
 
-So you think about it, a Rubik's cube is exactly the kind of long-horizon problem we're looking to test - it takes multiple steps to reach the solution space, and it is verifiable that they reached a solution. The state graph is vertex-transitive (every scramble looks like every other scramble from the right vantage point), so there are no privileged "easy corners" where the agent can camp. Best of all, God, on an alias of the brute-force cluster that exhaustively enumerated the cube state group - has announced that the diameter of this graph is [20 moves in the half-turn metric](https://www.cube20.org/). Twenty! That is a _constant_ that fits inside a tweet (and makes our problem tractable to learn for an agent), yet the shortest path between two arbitrary vertices is still long enough to punish greedy myopia.
+Traditional algorithmic solvers struggle with this enormousness, and this is why clever methods like the [two phase solver](https://kociemba.org/math/twophase.htm) exist. They narrow down the search space by satisfying a set of conditions. Learnt algorithms are the same way, they create latent representations and have biases which allow them to cut through most of the search space.
+
+So you think about it, a Rubik's cube is exactly the kind of long-horizon problem we're looking to test - it takes multiple steps to reach the solution space, and it is verifiable that they reached a solution. The state graph is vertex-transitive (every scramble looks like every other scramble from the right vantage point), so there are no privileged "easy corners" where the agent can camp. 
+
+Best of all, God, on an alias of the brute-force cluster that exhaustively enumerated the cube state group - has announced that the diameter of this graph is [20 moves in the half-turn metric](https://www.cube20.org/). Twenty! That is a _constant_ that fits inside a tweet (and makes our problem tractable to learn for an agent), yet the shortest path between two arbitrary vertices is still long enough to punish greedy myopia.
 ![alt text](godstable.png)
 
-The cube is also _deterministic_. Which means, in principle, you only need the starting state to solve the whole thing - that's why blindfolded cubing exists! But it's hard because you cannot state-action mappings, the key again is cutting down these massive search spaces through learnt approaches. Humans get around this by only memorizing small algorithms like PLL using learning and pattern recognition to know _when_ to apply a combination of these algorithms to get closer to the solution.
+The cube is also _deterministic_. Which means, in principle, you only need the starting state to solve the whole thing - that's why blindfolded cubing exists! But it's hard because you cannot state-action mappings, the key again is cutting down these massive search spaces through learnt approaches. 
+
+Humans get around this by only memorizing small algorithms like PLL using learning and pattern recognition to know _when_ to apply a combination of these algorithms to get closer to the solution.
 
 ## How are we going to do it?
 
@@ -47,9 +55,9 @@ $$ \bar{A}_i = R(\tau_i) - \langle R \rangle $$
 
 be the advantage of trajectory \\(i\\) versus the batch mean \\(\langle R \rangle\\). The policy gradient is
 
-$$ J_{\text{GRPO}}(\theta) = \mathbb{E}_{q, {o_i}} \left[ \frac{1}{G} \sum_{i=1}^{G} \min\left(\frac{\pi_\theta(o_i|q)}{\pi_{\theta_{\text{old}}}(o_i|q)} A_i, \text{clip}\left(\frac{\pi_\theta(o_i|q)}{\pi_{\theta_{\text{old}}}(o_i|q)}, 1-\epsilon, 1+\epsilon\right) A_i \right) - \beta D_{\text{KL}}[\pi_\theta || \pi_{\text{ref}}] \right] $$
+$$ J\_{\text{GRPO}}(\theta) = \mathbb{E}\_{q, o\_i} \left[ \frac{1}{G} \sum\_{i=1}^{G} \min\left(\frac{\pi\_\theta(o\_i|q)}{\pi\_{\theta\_{\text{old}}}(o\_i|q)} A\_i, \operatorname{clip}\left(\frac{\pi\_\theta(o\_i|q)}{\pi\_{\theta\_{\text{old}}}(o\_i|q)}, 1-\epsilon, 1+\epsilon\right) A\_i \right) - \beta D\_{\text{KL}}[\pi\_\theta || \pi\_{\text{ref}}] \right] $$
 
-In words: up-weight the moves that appear in _above-average_ roll-outs, down-weight the rest. The baseline is not a learned value network but the empirical mean of the _same_ group, so the update is _zero-centred_ by construction and needs no critic. When the model samples a group of trajectories, the algorithm pushes probability mass toward whichever ones scored above the group average. This works beautifully when your model can already occasionally stumble into some success, because then you have clear winners to amplify. 
+In words: up-weight the moves that appear in _above-average_ roll-outs, down-weight the rest. The baseline is not a learned value network but the empirical mean of the _same_ group, so the update is _zero-centred_ by construction and needs no critic. When the model samples a group of trajectories, the algorithm pushes probability mass toward whichever ones scored above the group average. This works beautifully when your model can already occasionally stumble into some success, because then you have clear winners to amplify.
 
 
 ## Experiments with Reward Modeling
