@@ -211,4 +211,4 @@ All shall be revealed in part II.
 
 Thanks a lot to [Will Brown](https://x.com/willccbb) and [Prime Intellect](https://www.primeintellect.ai/) for giving me credits that allowed me to dip my hands into RL. You have the mandate of heaven.
 
-Also huge thanks to [Secemp](https://x.com/secemp9), [Eric W. Tamel](https://x.com/fujikanaeda), [ueaj](https://x.com/_ueaj), [vatsa](https://x.com/_vatsadev), [sinatras](https://x.com/myainotez) for their valuable feedback.
+Also huge thanks to [Secemp](https://x.com/secemp9), [Eric W. Tamel](https://x.com/fujikanaeda), [ueaj](https://x.com/_ueaj), [tokenbender](https://x.com/tokenbender), [vatsa](https://x.com/_vatsadev), [sinatras](https://x.com/myainotez) for their valuable feedback.
