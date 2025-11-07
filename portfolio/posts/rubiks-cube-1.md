@@ -18,6 +18,8 @@ But first.. we need a proxy task to experiment on.
 
 Ever solved a Rubik's cube? It's _deceptively_ hard when you're starting out. Sure, you can scramble it in a few seconds, but the state space you've just plunged into is combinatorial, and it contains roughly around \\(4.3 \times 10^{19}\\) possible configurations! To put it to scale, if you were to stack a tower of cubes for every state, you'd be shooting way past the current brightest star in the sky (Sirius) and then do it again past planet [Reach](https://www.halopedia.org/Reach). That's a lot of cubes. 
 
+![alt text](reach.png)
+
 Traditional algorithmic solvers struggle with this enormousness, and this is why clever methods like the [two phase solver](https://kociemba.org/math/twophase.htm) exist. They narrow down the search space by satisfying a set of conditions. Learnt algorithms are the same way, they create latent representations and have biases which allow them to cut through most of the search space.
 
 So you think about it, a Rubik's cube is exactly the kind of long-horizon problem we're looking to test - it takes multiple steps to reach the solution space, and it is verifiable that they reached a solution. The state graph is vertex-transitive (every scramble looks like every other scramble from the right vantage point), so there are no privileged "easy corners" where the agent can camp. 
