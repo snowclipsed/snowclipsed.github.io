@@ -10,7 +10,7 @@ tags: [reinforcement learning, computer science, deep learning]
 
 Science-fiction AIs such as TARS, Cortana or the Terminator all exhibit a quality that today’s systems still lack, which is the capacity to pursue far-off goals on their own. We do have “agents”, but once the chain of actions stretches beyond a certain number of turns their performance collapses, and there's no easy way of training these models. These _long-horizon tasks_ are exactly what I care about - how can we teach a language model to carry out long-horizon tasks without paying an astronomical training bill? 
 
-This is exactly we will try to explore in this blog-series. In part I of this series, we will focus on using reinforcement learning methods head-on and analyse our results. In part II, we will use our learnings to make something better. 
+This is exactly we will try to explore in this blog-series. In part I of this series, we will focus on using reinforcement learning methods head-on and pick the most straightforward approach, and march with it (despite many warnings) to see what happens. In part II, we will use our learnings to make something better. 
 
 But first.. we need a proxy task to experiment on.
 
@@ -22,12 +22,12 @@ Ever solved a Rubik's cube? It's _deceptively_ hard when you're starting out. Su
 
 Traditional algorithmic solvers struggle with this enormousness, and this is why clever methods like the [two phase solver](https://kociemba.org/math/twophase.htm) exist. They narrow down the search space by satisfying a set of conditions. Learnt algorithms are the same way, they create latent representations and have biases which allow them to cut through most of the search space.
 
-So you think about it, a Rubik's cube is exactly the kind of long-horizon problem we're looking to test - it takes multiple steps to reach the solution space, and it is verifiable that they reached a solution. The state graph is vertex-transitive (every scramble looks like every other scramble from the right vantage point), so there are no privileged "easy corners" where the agent can camp. 
+So if you think about it, a Rubik's cube is exactly the kind of long-horizon problem we're looking to test - it takes multiple steps to reach the solution space, and it is verifiable that they reached a solution. The state graph is vertex-transitive (every scramble looks like every other scramble from the right vantage point), so there are no privileged "easy corners" where the agent can camp. 
 
 Best of all, God, on an alias of the brute-force cluster that exhaustively enumerated the cube state group - has announced that the diameter of this graph is [20 moves in the half-turn metric](https://www.cube20.org/). Twenty! That is a _constant_ that fits inside a tweet (and makes our problem tractable to learn for an agent), yet the shortest path between two arbitrary vertices is still long enough to punish greedy myopia.
 ![alt text](godstable.png)
 
-The cube is also _deterministic_. Which means, in principle, you only need the starting state to solve the whole thing - that's why blindfolded cubing exists! But it's hard because you cannot state-action mappings, the key again is cutting down these massive search spaces through learnt approaches. 
+The cube is also _deterministic_. Which means, in principle, you only need the starting state to solve the whole thing - that's why [blindfolded cubing](https://jperm.net/bld) exists! But it's hard because you cannot state-action mappings, the key again is cutting down these massive search spaces through learnt approaches. 
 
 Humans get around this by only memorizing small algorithms like PLL using learning and pattern recognition to know _when_ to apply a combination of these algorithms to get closer to the solution.
 
@@ -39,9 +39,9 @@ There's actually another reason that we're going to choose a Rubik's cube as our
 
 ## A Quick Detour: What's GRPO?
 
-Now, there's various reinforcement learning algorithms that we can utilize to train our language model how to solve a rubik's cube. Among those dozens of policy-gradient acronyms floating around, Group Relative Policy Optimization is the one whose reference implementation already speaks transformer and comes with a great support from the verifiers library. That single convenience is why we borrow its machinery for the cube.
+Now, there's various reinforcement learning algorithms that we can utilize to train our language model how to solve a rubik's cube. Among those dozens of policy-gradient acronyms floating around, Group Relative Policy Optimization is the one whose reference implementation already speaks fluent transformer and comes with a great support from the [verifiers](https://github.com/PrimeIntellect-ai/verifiers) library. That single convenience is why we borrow its machinery for the cube.
 
-I'll only cover GRPO on a high level, but here are some resources if you want to read more about the internals of how GRPO works.
+I'll only cover GRPO on a high level, but [here](https://arxiv.org/pdf/2402.03300) [are](https://kalomaze.bearblog.dev/why-does-grpo-work/) [some](https://arxiv.org/pdf/2508.14094v1) [resources](https://x.com/leloykun/status/1903382502158500119) if you want to read more about the internals of how GRPO works.
 
 The ritual is actually disarmingly short. For a given scramble \\(s\\) we prompt the network once and sample a _batch_ of roll-outs:
 
@@ -59,18 +59,31 @@ be the advantage of trajectory \\(i\\) versus the batch mean \\(\langle R \rangl
 
 $$ J\_{\text{GRPO}}(\theta) = \mathbb{E}\_{q, o\_i} \left[ \frac{1}{G} \sum\_{i=1}^{G} \min\left(\frac{\pi\_\theta(o\_i|q)}{\pi\_{\theta\_{\text{old}}}(o\_i|q)} A\_i, \operatorname{clip}\left(\frac{\pi\_\theta(o\_i|q)}{\pi\_{\theta\_{\text{old}}}(o\_i|q)}, 1-\epsilon, 1+\epsilon\right) A\_i \right) - \beta D\_{\text{KL}}[\pi\_\theta || \pi\_{\text{ref}}] \right] $$
 
-In words: up-weight the moves that appear in _above-average_ roll-outs, down-weight the rest. The baseline is not a learned value network but the empirical mean of the _same_ group, so the update is _zero-centred_ by construction and needs no critic. When the model samples a group of trajectories, the algorithm pushes probability mass toward whichever ones scored above the group average. This works beautifully when your model can already occasionally stumble into some success, because then you have clear winners to amplify.
+In words: up-weight the moves that appear in _above-average_ roll-outs, down-weight the rest. The baseline is not a learned value network but the empirical mean of the _same_ group, so the update is _zero-centred_ by construction and needs no critic. When the model samples a group of trajectories, the algorithm pushes probability mass toward whichever ones scored above the group average. This works beautifully when your model can already occasionally stumble into some success, because then you have clear winners to amplify. 
+
+But what happens when the model has no baseline at all? Well, literature warns us of this and we will see why, *very* soon.
 
 
 ## Experiments with Reward Modeling
 
 To get started, we need to first create our environment which will allow our language model to interact with a rubiks cube. And to create our environment, we need to solve two problems : 1) problem representation 2) reward model.
 
-Let's quickly jump back to how humans solve Rubik's cubes ; each mental step we decide to play an algorithm of \\(N\\) moves. We can model after this behavior to incentivize the model to make its own algorithms ; a multi-turn setup where the model could take \\(K\\) turns of maximum \\(N\\) moves each. For verifiability, we will use the very popular [singmaster notation](https://www.speedsolving.com/wiki/index.php/Singmaster_notation): Each face gets a letter: F (front), B (back), U (up), D (down), L (left), R (right). The letter alone means turn that face 90° clockwise. We add a prime symbol (like R') for counterclockwise, or a 2 (like U2) for 180°. So "R U R' U'" means: right clockwise, up clockwise, right counter-clockwise, up counter-clockwise.
+Let's quickly jump back to how humans solve Rubik's cubes ; each mental step we decide to play an algorithm of \\(N\\) moves. We can model after this behavior to incentivize the model to make its own algorithms ; a multi-turn setup where the model could take \\(K\\) turns of maximum \\(N\\) moves each. 
+
+For verifiability, we will use the very popular [singmaster notation](https://www.speedsolving.com/wiki/index.php/Singmaster_notation): Each face gets a letter: F (front), B (back), U (up), D (down), L (left), R (right). The letter alone means turn that face 90° clockwise. We add a prime symbol (like R') for counterclockwise, or a 2 (like U2) for 180°. So "R U R' U'" means: right clockwise, up clockwise, right counter-clockwise, up counter-clockwise.
 
 ![alt text](singmaster.png)
 
-The cube state has to be represented as text and each face (U/L/F/R/B/D) gets its own grid format with colors as single letters, looking something like `TOP(U): WRB/OWG/YWW`. It's regex-friendly, preserves spatial relationships, and reasonably compact. The model interacts through Singmaster notation by outputting moves in `<move>...</move>` tags.
+The cube state has to be represented as text and each face (U/L/F/R/B/D) gets its own grid format with colors as single letters, looking something like 
+```
+TOP(U): WRB/OWG/YWW
+LEFT(L): BBG/BBR/GGR
+FRONT(F): OOY/OOY/ROO
+RIGHT(R): GYG/RRR/YYO
+BACK(B): RRW/GGW/BWB
+BOTTOM(D): YOB/WWG/WYR
+```
+It's regex-friendly, preserves spatial relationships, and reasonably compact. The model interacts through Singmaster notation by outputting moves in `<move>...</move>` tags.
 
 For the RL setup, I used GRPO with a multi-turn structure where the model could take up \\(K\\) turns of \\(N\\) moves each. Since a sparse reward may be too harsh for the our policy when we're just starting out, we shape the reward for rewarding progress and efficiency while keeping the reward function as positive only:
 
@@ -82,7 +95,7 @@ During designing the reward, the primary idea is to keep enough variance between
 
 ### Curriculum
 
-Feeding the agent 1–20-move scrambles on day one is educational malpractice. The trainer therefore exposes only scrambles in a user-chosen band \\([s_{\min}, s_{\max}]\\) and can be configured to expand the band once the rolling success rate exceeds a threshold. This is in contrast with an approach like DeepCubeA where they train their network on the full combination range, where there's no explicit curriculum but more of an emergent one because the model learns the combinations in the order of easy to hard. However, they train for hundreds of thousands of steps, which we cannot, so we schedule ours by hand and keep the wall-time budget honest.
+Feeding the agent 1–20 move scrambles on day one is educational malpractice. The trainer therefore exposes only scrambles in a user-chosen band \\([s_{\min}, s_{\max}]\\) and can be configured to expand the band once the rolling success rate exceeds a threshold. This is in contrast with an approach like [DeepCubeA](https://deepcube.igb.uci.edu/) where they train their network on the full combination range, where there's no explicit curriculum but more of an emergent one because the model learns the combinations in the order of easy to hard. However, they train for hundreds of thousands of steps, which we cannot, so we schedule ours by hand and keep the wall-time budget honest.
 
 ### The Diagnostic: The 1-Move Test
 
@@ -104,7 +117,7 @@ So, across 1,832 attempts we get 10 successful solves. That's a 0.55% success ra
 
 This extreme bias essentially creates extreme reward sparsity because there's no clear pattern for GRPO to latch onto, because there's basically no in group variance in most cases. When all your rollouts never solve anything, there's nothing to amplify. This is what happens when the prior is too strong, the signal becomes too sparse and too noisy to overcome the strong prior. There's a chance that this may work when scaled up, but that's an insane amount of compute to introduce a base capability!
 
-## Reward-shaping, curricula, prayers
+### Reward-shaping, curricula, prayers
 
 Once I realized that the 1-move test was failing, I tried getting inspired by Potential-Based Reward Shaping (PBRS)—adding \\(\gamma \Phi(s') - \Phi(s)\\) where \\( \Phi(s) = -0.5 \cdot d(s)\\). In traditional RL with learned value functions, this is theoretically sound because the value function absorbs the potential. But GRPO works on _relative_ differences within rollout groups so this results in shifting every advantage by the same constant and leaves the _relative_ structure untouched.
 
@@ -114,7 +127,25 @@ Reasoning models actually consistently outperformed non-reasoning models. I hypo
 
 ![alt text](thinkingbetter.png)
 
-The representation experiments provided the final irony. I held a hypothesis that if we give the model a cube representation that is more represented in the dataset (by simply sampling the model about it), we may get better or more confident results. And yes! When I gave the model the flat unfolded net - the representation it found most natural - it started generating moves that looked _scarily_ informed. "Ah, I see the orange face needs to move to the top layer," it would declare, before proposing a sequence that would make any cuber weep. The model had learned to _talk_ about cubes like an expert while remaining fundamentally unable to _solve_ them. The distribution of the moves taken did not budge much but the models simply got more confident at justifying their moves!
+The representation experiments provided the final irony. I held a hypothesis that if we give the model a cube representation that is more represented in the dataset (by simply sampling the model about it), we may get better or more confident results. 
+
+```
+        W W W        
+        W W W   TOP
+        W W W        
+
+O O O   G G G   R R R   B B B
+O O O   G G G   R R R   B B B
+O O O   G G G   R R R   B B B
+LEFT    FRONT   RIGHT   BACK
+
+        Y Y Y
+        Y Y Y   BOTTOM
+        Y Y Y
+```
+
+
+And yes! When I gave the model the flat unfolded net - the representation it found most natural - it started generating moves that looked _scarily_ informed. "Ah, I see the orange face needs to move to the top layer," it would declare, before proposing a sequence that would make any cuber weep. The model had learned to _talk_ about cubes like an expert while remaining fundamentally unable to _solve_ them. The distribution of the moves taken did not budge much but the models simply got more confident at justifying their moves!
 
 ![alt text](wrongmove.png)
 
@@ -126,7 +157,7 @@ Let's be precise about how GRPO works. For each question, say \\(q\\), GRPO samp
 
 $$ A_i = \frac{r_i - \text{mean}({r_1, r_2, \ldots, r_G})}{\text{std}({r_1, r_2, \ldots, r_G})} $$
 
-Verifiers by default uses a "corrected" GRPO variation that removes the normalization term from the advantage calculation. So the advantage actually becomes:
+Verifiers by default uses a "corrected" [GRPO variation](https://arxiv.org/pdf/2503.20783) that removes the normalization term from the advantage calculation since this otherwise results in double biases. So the advantage actually becomes:
 
 $$ A_i = r_i - \text{mean}({r_1, r_2, \ldots, r_G}) $$
 
@@ -149,23 +180,29 @@ $$ P(\text{at least 1 success}) = 1 - (1 - 0.0055)^{16} = 1 - (0.9945)^{16} \app
 
 So only about 8.4% of groups have any success at all. In the other 91.6% of groups, all rewards cluster around 0.1 (format reward), all advantages are near zero, and the gradient collapses to pure KL regularization. This is also what the reward distribution graph justifies.
 
-This immediately points towards the hypothesis that any strong baseline should immediately help in allowing a model to learn further. I am of course, remotely not the first person to observe this - if we look at the DeepSeekMath paper (which introduces GRPO), they try to explain why reinforcement learning works in the first place:
+### My Tiny Plot Twist :)
+
+This immediately points towards the hypothesis that any strong baseline should immediately help in allowing a model to learn further. Well, here's my big reveal: after my first attempt, I already knew what was going to happen. Because I am of course, remotely not the first person to observe this- if we look at the [DeepSeekMath paper](https://arxiv.org/abs/2402.03300) (which introduces GRPO), they try to explain why reinforcement learning works in the first place:
 
 ![alt text](deepseeksnippet.png)
 
-Translation : They compare compares Pass@K ("does _any_ sample solve it?") with Maj@K ("does majority voting solve it?"). GRPO boosts Maj@K while barely touching Pass@K.
+Translation : They compare compares Pass@K ("does _any_ sample solve it?") with Maj@K ("does majority voting solve it?"). GRPO boosts Maj@K while barely touching Pass@K. 
+
+And it's not just them, many [others](https://kalomaze.bearblog.dev/why-does-grpo-work/) discuss this footgun of GRPO. This is why we have the [verifiers training guide ](https://github.com/PrimeIntellect-ai/verifiers/blob/896500a7d1378b59c433b58b34c94ecc53558f71/docs/source/training.md#rl-rules-of-thumb) specifically caution against low baseline performance. However, I like verifying approaches that do not work has some really good educational value that I didn't want to miss out on :P
 
 GRPO doesn't teach new skills. It shifts probability mass toward solutions the model can already sometimes produce. If your Pass@K is 0, the algorithm has nothing to amplify; the relative advantages stay zero and you burn compute turning the KL crank. Our 4B and 3B checkpoints sit squarely in the "Pass@K ≈0" regime.
 
 There's a whole subfield which does study capability aquisition, and the consensus is quite clear: ["capability acquisition occurs during pre-training and continual fine-tuning, while GRPO mainly amplifies skills the base model already has"](https://arxiv.org/abs/2507.10616) and ["The method works by leveraging existing capabilities that do not easily emerge from greedy decoding but sometimes show up when working with higher temperatures."](https://huggingface.co/blog/lmassaron/gemma-grpo)
 
-But does any model hold the mandate of the cube? (Or, at least for 1 move?). Well, I put OpenAI's latest family through the wringer. Here's what Pass@5 performance looks like:
+### Above the Zero Line
+
+But does any model hold the mandate of the cube? (Or, at least for 1 move?). Well, I put OpenAI's latest family through the wringer. Here's what Pass@5, N=10 performance looks like:
 
 ![alt text](gpt5cube.png)
 
 We can clearly see the capabilities evaporating as the parameter budget decreases and drops between some latent representation threshold. Our Qwen checkpoints sit _below_ GPT-5-nano, i.e. in the region where Pass@K is indistinguishable from zero.
 
-However, the GPT-5 gap just doesn't sit right, so I ran some head-to-head on 1-move scrambles across families, and reran GPT-5.
+However, the GPT-5 gap just doesn't sit right, so I ran some head-to-head on 1-move scrambles across families, and reran GPT-5 (Pass@5, N=10).
 
 |model|avg reward / 2.0|solves / 50|equiv. %|
 |---|---|---|---|
@@ -178,7 +215,7 @@ However, the GPT-5 gap just doesn't sit right, so I ran some head-to-head on 1-m
 |Qwen-4B|0|0|0 %|
 |our Qwen-4B|~0|1 / 183|0.55 %|
 
-Remember, random guessing sits at 8.3%. GPT-5 seems to be playing another game entirely, and the chinese models seem to be terrible shape rotators. I did expect claude to score higher than what it did, so that indeed comes as a surprise.||||
+Remember, random guessing sits at 8.3%. GPT-5 seems to be playing another game entirely, and the chinese models seem to be terrible shape rotators. I did expect claude to score higher than what it did, so that indeed comes as a surprise.
 
 ## Corpus Delicti
 
@@ -188,9 +225,9 @@ Distillation tells the same story. Qwen 4B inherited every linguistic prior its 
 
 To put all of this bluntly, the literature had drawn the map in fluorescent ink:
 
-**"Here be dragons - bring either a bigger model, a distilled prior, or architectural biases that match the domain."**
+**"Here be dragons - bring either a strong prior, a bigger model, or architectural biases that match the domain."**
 
-And so I charged in with a 4B param scribbler and a dream.
+And so I intentionally charged in with a 4B param scribbler and a dream.
 
 The dragons won... for now.
 
@@ -212,5 +249,7 @@ All shall be revealed in part II.
 ## Acknowledgements
 
 Thanks a lot to [Will Brown](https://x.com/willccbb) and [Prime Intellect](https://www.primeintellect.ai/) for giving me credits that allowed me to dip my hands into RL. You have the mandate of heaven.
+
+I have also hosted my environment on the very popular [prime environments hub](https://app.primeintellect.ai/dashboard/environments/snowclipsed/cuber-rl) if you want to try this problem out for yourself.
 
 Also huge thanks to [Secemp](https://x.com/secemp9), [Eric W. Tamel](https://x.com/fujikanaeda), [ueaj](https://x.com/_ueaj), [tokenbender](https://x.com/tokenbender), [vatsa](https://x.com/_vatsadev), [sinatras](https://x.com/myainotez) for their valuable feedback.
