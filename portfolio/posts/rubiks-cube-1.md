@@ -170,9 +170,9 @@ However, the GPT-5 gap just doesn't sit right, so I ran some head-to-head on 1-m
 
 Remember, random guessing sits at 8.3%. GPT-5 seems to be playing another game entirely, and the chinese models seem to be terrible shape rotators. I did expect claude to score higher than what it did, so that indeed comes as a surprise.||||
 
-## When in doubt, blame the data (and then the parameters)
+## Corpus Delicti
 
-The corpus giveth and the corpus withholdeth. Internet text should be largely unhelpful to all the models in this regard. If we peek at the forums, they overflow with something like "spam the R U R′ U′ until the corner permutes" and "white cross first", but almost nobody writes out the full 54-sticker before/after. The causal model "R maps _this_ state to _that_ state" is largely absent from the raw corpus, unless OpenAI has hands on some significantly large piece of multiturn puzzle data that it has generalized on.
+The corpus giveth and the corpus withholdeth. Internet text should be largely unhelpful to all the models in this regard. If we peek at the forums, they overflow with something like "spam the R U R′ U′ until the corner permutes" and "white cross first", but almost nobody writes out the full 54-sticker before/after. The causal model of "R maps _this_ state to _that_ state" is largely absent from the raw corpus, unless OpenAI has hands on some significantly large piece of multiturn puzzle data that it has generalized on.
 
 Distillation tells the same story. Qwen 4B inherited every linguistic prior its 235B teacher had, hence the obsessive over-generation of R. But since the teacher itself never learned the conditional mapping, there was nothing _to_ distil. Strong-to-weak knowledge transfer works only when the _strong_ model actually possesses the knowledge. Compression can't create what isn't there. And our empirical observation with parameter scale dictates that the incredibly smaller distilled model should probably only perform worse.
 
@@ -190,9 +190,17 @@ The dragons won... for now.
 
 GRPO can't bootstrap capability from nothing. So we stop praying for emergent algorithms and hand them to the model instead. Our cube simulator is also a bottomless generator for SFT : scramble, ask Kociemba for the optimal reversal, record the trace, repeat. Now you may say "erm, that's memorization" - but memorisation is not a dirty word here because it's needed as a warmup for building our functional baseline. Once the weights have cached the macro patterns we can go back to RL to _compress_ them.
 
-However, we can also only do SFT for low-depths in our scramble graph since the possible state space expands exponentially as the number of moves goes up. Another hard learnt lesson for RL is to take the pre-RL baseline more seriously because some tasks may just be too hard for a model to start with. So once that supervised checkpoint reaches a respectable solve-rate on held-out 5-move scrambles we unfreeze the RL loop. The answer also may lie in simply choosing a better model with an more acceptable baseline than Qwen, but I am not giving up on my tiny warriors just yet.
+However, we can also only do SFT for low-depths in our scramble graph since the possible state space expands exponentially (see figure) as the number of moves goes up. Another hard learnt lesson for RL is to take the pre-RL baseline more seriously because some tasks may just be too hard for a model to start with. So once that supervised checkpoint reaches a respectable solve-rate on held-out 5-move scrambles we unfreeze the RL loop. The answer also may lie in simply choosing a better model with an more acceptable baseline than Qwen, but I am not giving up on my tiny warriors just yet.
 
 ![cubegraph](cubegraph.png)
-GRPO now starts from a prior that already respects primes and doubles, so its job is reduced to _compression_ by shaving excess turns and stitching algorithms. We can further augment this by doing something like multi-token prediction, but instead predict multiple moves at once, like our original environment envisioned, and then reward based on that. If all of this does not work, we can also look into less complex cubes, like 2x2 cubes with a much smaller state-space.
+GRPO now starts from a prior that already respects primes and doubles, so its job is reduced to _compression_ by shaving excess turns and stitching algorithms. We can further augment this by doing something like multi-token prediction, but instead predict multiple moves at once, like our original environment envisioned, and then reward based on that. If all of this does not work, we can also look into less complex cubes, like 2x2 cubes with a much smaller state-space. 
+
+Is there a way we can combat the model getting sparse rewards because of inherent biases by doing better exploration? Well, I (and some other people) think flow matching can help.
 
 All shall be revealed in part II.
+
+## Acknowledgements
+
+Thanks a lot to [Will Brown](https://x.com/willccbb) and [Prime Intellect](https://www.primeintellect.ai/) for giving me credits that allowed me to dip my hands into RL. You have the mandate of heaven.
+
+Also huge thanks to [Secemp](https://x.com/secemp9), [Eric W. Tamel](https://x.com/fujikanaeda), [ueaj](https://x.com/_ueaj), [vatsa](https://x.com/_vatsadev), [sinatras](https://x.com/myainotez) for their valuable feedback.
