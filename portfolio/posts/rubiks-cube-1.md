@@ -5,6 +5,7 @@ date: "2025-10-23"
 description: How hard could it be?
 tags: [reinforcement learning, computer science, deep learning]
 ---
+# Teaching Language Models to Solve Rubik's Cubes (Part I)
 
 ## What are long horizon tasks (and why should we care about them)?
 
@@ -117,7 +118,7 @@ So, across 1,832 attempts we get 10 successful solves. That's a 0.55% success ra
 
 This extreme bias essentially creates extreme reward sparsity because there's no clear pattern for GRPO to latch onto, because there's basically no in group variance in most cases. When all your rollouts never solve anything, there's nothing to amplify. This is what happens when the prior is too strong, the signal becomes too sparse and too noisy to overcome the strong prior. There's a chance that this may work when scaled up, but that's an insane amount of compute to introduce a base capability!
 
-### Reward-shaping, curricula, prayers
+### Reward-shaping, alchemy, prayers
 
 Once I realized that the 1-move test was failing, I tried getting inspired by Potential-Based Reward Shaping (PBRS)—adding \\(\gamma \Phi(s') - \Phi(s)\\) where \\( \Phi(s) = -0.5 \cdot d(s)\\). In traditional RL with learned value functions, this is theoretically sound because the value function absorbs the potential. But GRPO works on _relative_ differences within rollout groups so this results in shifting every advantage by the same constant and leaves the _relative_ structure untouched.
 
