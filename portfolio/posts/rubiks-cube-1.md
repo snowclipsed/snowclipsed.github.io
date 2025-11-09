@@ -40,7 +40,7 @@ There's actually another reason that we're going to choose a Rubik's cube as our
 
 ## A Quick Detour: What's GRPO?
 
-Now, there's various reinforcement learning algorithms that we can utilize to train our language model how to solve a rubik's cube. Among those dozens of policy-gradient acronyms floating around, Group Relative Policy Optimization is the one whose reference implementation already speaks fluent transformer and comes with a great support from the [verifiers](https://github.com/PrimeIntellect-ai/verifiers) library. That single convenience is why we borrow its machinery for the cube.
+The reinforcement learning toolbox overflows with acronyms ; PPO, DPO, REINFORCE, GRPO, and a half-dozen other policy-gradient methods, each with its own cult following and hyperparameter shrine. In many ways they are all related to each other. Group Relative Policy Optimization is the one whose reference implementation already speaks fluent transformer and comes with a great support from the [verifiers](https://github.com/PrimeIntellect-ai/verifiers) library. That single convenience is why we borrow its machinery for the cube. Don't worry, we will circle around to other methods in a future blog.
 
 I'll only cover GRPO on a high level, but [here](https://arxiv.org/pdf/2402.03300) [are](https://kalomaze.bearblog.dev/why-does-grpo-work/) [some](https://arxiv.org/pdf/2508.14094v1) [resources](https://x.com/leloykun/status/1903382502158500119) if you want to read more about the internals of how GRPO works.
 
